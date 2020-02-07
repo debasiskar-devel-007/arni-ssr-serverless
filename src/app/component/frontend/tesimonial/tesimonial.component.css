@@ -1,0 +1,208 @@
+.title {
+    margin-top: 60px;
+  }
+  
+  .demo-one {
+    height: auto !important;
+    min-height: 500px;
+    background-color: #FFFFFF;
+  }
+  
+  .demo-one img {
+    height: 260px;
+    width: 260px;
+  }
+  
+  @media (max-width: 1000px) {
+    .demo-one {
+      height: auto !important;
+      min-height: 500px;
+    }
+  
+    .demo-one img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  .demo-two {
+    height: 500px;
+  }
+  
+  .demo-border {
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
+    border: none !important;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-box {
+    width: 49%;
+    display: inline-block;
+  }
+  
+  .toggle-box mat-slide-toggle {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .footer {
+    font-weight: 300;
+    font-size: 15px;
+    background-color: rgb(33, 33, 33);
+  }
+  
+  .footer a {
+    background-color: transparent;
+    text-decoration: none;
+    cursor: auto;
+  }
+  
+  .docs-api-properties-table {
+    border-collapse: collapse;
+    border-radius: 2px;
+    border-spacing: 0;
+    margin: 0 0 32px;
+    width: 100%;
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+  }
+  
+  .docs-api-properties-table p {
+    margin: 0;
+  }
+  
+  .docs-api-properties-table th {
+    max-width: 100px;
+    padding: 13px 32px;
+    text-align: left;
+  }
+  
+  .docs-api-properties-table td {
+    font-weight: 400;
+    padding: 8px 30px;
+    color: rgba(0,0,0,.54);
+    border: 1px solid rgba(0,0,0,.03);
+  }
+  
+
+
+
+  .modelthumbwrapper{
+    width: 33.33%;
+    text-align: center;
+    height:auto;
+    display: inline-block;
+    position: relative;
+    margin: 8px;    
+    white-space: normal;
+  }
+  
+  .align-center .element {
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+ .testimonialcontent{position:relative; text-align: center;}
+  .modelthumbwrapper .modelmodelthumbimg1{float: right;}
+  .modelthumbwrapper.active + .modelthumbwrapper .modelmodelthumbimg1{float: left !important;}
+  .modelthumbwrapper.active .modelmodelthumbimg1{width:329px;height:329px; float: none;}
+  .modelmodelthumbimg1{display:block;width:210px;height:210px;overflow:hidden; margin: 0 auto 15px; border-radius:50%;}
+  .modelmodelthumbimg1 img{width:100%; height: auto;}
+  .testimonialcontent{display: none;}
+  .modelthumbwrapper.active .testimonialcontent{display: block !important;} 
+
+  .modelthumbwrapper.active .testimonialcontent .mat-card-title {
+    display: block !important;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+/* 
+.modelthumbwrapper.active{justify-content:center}
+.modelthumbwrapper.active .testimonialwrapper{justify-content:center}
+.modelthumbwrapper{justify-content:flex-end}
+.modelthumbwrapper .testimonialwrapper{justify-content:flex-end} */
+/* .modelthumbwrapper.active + .modelthumbwrapper{justify-content:flex-start}
+.modelthumbwrapper.active + .modelthumbwrapper .testimonialwrapper{justify-content:flex-start} */
+.modelthumbwrapper.active .testimonialcontent {
+  position: absolute;
+  width: 200%;
+  text-align: center;
+  left: -50%;
+  top: 100%;
+  white-space: normal;
+}
+  
+.testimonialbg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat center center !important;background-size: cover !important;}
+
+
+/*--- slide-image css---*/
+
+.slide-image-wrapper{
+  width: 231px;
+  height: 231px;
+  border-radius: 100%;
+  background-color: #efefef;
+  overflow: hidden;
+  display: block;
+  position: relative;    
+  margin: 20px auto 30px;
+}
+.quatation .quotestarticon{margin: 0 auto 20px; width: inherit;}
+.slide-image-wrapper-main img {
+  height: 100% !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100% !important;
+  width: auto;
+  height: auto;
+}
+
+.slide-image-wrapper-main{
+  width: 185px;
+  height: 185px;
+  border-radius: 100%;
+  background-color: #dedede;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  left: 25px;
+  top: 8px;
+}
+
+.generalcls .testicontent .quatation p{text-align:left !important;}
+
+
+/*--- slide-image css---*/
+
+
+
+  @media only screen and  (max-width: 960px) {
+    .toggle-box {
+      width: 100%;
+      display: block;
+    }
+  
+    .demo-content {
+      margin: 16px;
+    }
+  }
+  
+  .content {
+    margin: 50px 70px;
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1279px) {
+    .content {
+      margin: 20px 30px;
+    }
+  }
+  
+  @media screen and (max-width: 599px) {
+    .content {
+      margin: 8px 12px;
+    }
+    .api-table-containter {
+      display: none;
+    }
+  }

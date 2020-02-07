@@ -1,0 +1,24 @@
+
+
+    <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <!----START SINGLE TESTIMONIAL-->
+
+        <div *ngFor="let image of TestimonialListArray;let i= index">
+          <span class="slide-image-wrapper">
+            <span class="slide-image-wrapper-main"> 
+                <img class="slide-image" src="{{image.testimonial_img}}" >
+            </span>            
+          </span>
+          <span class="slide-text" (click)="showBut()">
+              <p class="quatation demo cursor">
+                <!-- <span [innerHtml]="image.testimonial"></span> -->
+                <img class="quotestarticon" src="../../../../assets/images/quotestart-icon-yellow.png"><span [innerHtml]="image.description"></span>
+              </p>    
+          </span>
+          <h3 class="title1"> -- {{image.name}}</h3>
+        </div>  
+        <!----END SINGLE TESTIMONIAL-->
+        
+        
+      </owl-carousel>
+

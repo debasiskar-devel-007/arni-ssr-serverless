@@ -1,0 +1,146 @@
+@media only screen and (max-width: 1500px) {
+    .tablediv {
+        margin-top: 0;
+    }
+
+    .bloglists .tablediv .searchbar, .blogcatlists .tablediv .searchbar {
+        padding-right: 9px!important;
+        background: #70daee;
+    }
+
+    .searchblock { 
+        padding: 10px 10px 10px 10px !important; 
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:0 10px}
+    /* .topmenulist .navigation-left a{font-size:12px;padding:0} */
+    .admcls .header .toolbar-row .logo{width:150px;padding:20px 13px;}
+    .tablediv .searchbar{height:auto}
+    .bloglists .tablediv .searchbar,.blogcatlists .tablediv .searchbar{padding:9px!important}
+    .tablediv .searchbar{flex-wrap:wrap}
+    .tablediv .searchbar .mat-form-field{margin:4px!important}
+    }
+    @media only screen and (max-width: 1300px) {
+    .topmenulist .navigation-left a{font-size:14px;padding:0 8px}
+    }
+    @media only screen and (max-width: 1199px) {
+
+        .topmenulist { margin-top: 10px;
+            margin-left: 0;
+            display: block;
+            overflow: hidden;
+            width: 100%;
+        }
+    .topmenulist .navigation-left{flex-wrap: wrap;-webkit-box-pack: center;justify-content: center;}
+    .topmenulist .navigation-left .mat-list-item{height: auto;width: auto;}    
+    .admcls .header .toolbar-row div[style]{margin: 0 !important;}
+    .admcls .header .toolbar-row {height: auto;}
+    .admcls .header {height: auto; position: relative; padding-bottom: 20px;}
+    .adminwrappercls .main-content-wrap {padding: 20px 20px 20px; min-height: calc(100vh - 20px);position: relative;}
+    .tablediv{margin-top:0!important}
+    .bloglists .tablediv .searchbar,.blogcatlists .tablediv .searchbar{padding-right:9px!important;background:#70daee}
+    .tablediv .searchbar{padding-right:9px!important;background:#70daee}
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper{padding-bottom:0!important}
+    /* .topmenulist{display:none} */
+    .admcls .header .toolbar-row .logo {flex: 1 1 100%; align-items: center;justify-content: center;}
+    }
+    @media only screen and (max-width: 1080px) {
+    .clearmenu{clear:both;overflow:hidden;background:none!important;border:none!important;box-shadow:none!important;margin:0!important;padding:0!important;border-radius:0!important;display:block!important}
+    .topblock .mat-list{display:block;float:none;margin:22px auto;padding:0;clear:both;width:586px}
+    }
+    @media only screen and (max-width: 991px) {
+
+        .tablediv .searchbar .mat-form-field {
+            margin: 4px 0!important;
+            display: block;
+            width: 100%;
+        }
+
+        
+        .tablediv .searchbar{ display: block; width: 100%;}
+    .tablediv table td{text-align:right!important}
+    .tabblock .tablists ul li.nav-item a.nav-link{font-size:20px;line-height:24px;padding:15px}
+    .tablediv table td.tablebuttondiv{border:0!important;border-bottom:0 solid #fff!important}
+    .tablediv table td.norecordfound{border:0!important;border-bottom:0 solid #fff!important;font-size:16px;border:0!important;border-bottom:0 solid #fff!important;font-size:16px}
+    .tablediv table td.tablebuttondiv{padding-left:0!important}
+    .tablediv table td.empycell{border:0!important;border-bottom:0 solid #fff!important;display:none}
+    .tablediv table tr:last-child td.empycell{border-bottom:0 solid #ddd!important}
+    .newcheckboxdiv{text-align:left;float:right}
+    .tablediv table th,.tablediv table td{border-bottom:1px solid #c0c1c3!important}
+    .tablediv table td{padding:10px}
+    .tablediv.affiliatetree table.mat-table tr:nth-child(even){background-color:#353434}
+    .n-audiodeadeline_admin_header .n-audiodeadeline_admin_header_user .n-audiodeadeline_user{width:37px;height:auto}
+    .tablediv.affiliatetree table th,.tablediv.affiliatetree table td{width:100%}
+    .n-socialsinglepostcontentinner{padding:0;width:48.33%;margin:.5% 1%}
+    .n-sponsorblocklists{justify-content:center}
+    .tablediv table td.text-center{text-align:right!important}
+    .tablediv .btnedit,.tablediv .btndelete,.tablediv .btnedit:hover,.tablediv .btndelete:hover{display:inline-block;float:none;margin-left:auto;margin-right:auto}
+    .tablediv table{border:0}
+    .tablediv table caption{font-size:1.3em}
+    .tablediv table thead{border:none;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
+    .tablediv table tr{border-bottom:0 solid #c0c1c3;width:100%;margin-bottom:.625em}
+    .tablediv table td{border-bottom:1px solid #c0c1c3;display:block;font-size:13px;text-align:right;padding-left:25%}
+    .tablediv table tr:last-child td{border-bottom:1px solid #c0c1c3!important}
+    .adminlisttable .whitebtnlists{text-align:right!important}
+    .tablediv table td button,.tablediv table td button:hover{float:right}
+    .tablediv table td:first-child::before{content:attr(data-label)!important;float:left;font-weight:700;text-transform:uppercase;text-align:left;margin-left:-18px;color:#000}
+    .adminlisttable.adminlisttabledashboard .tablediv table tr{display:table-row!important}
+    .tablediv table td:last-child::before{content:attr(data-label)!important;float:left;font-weight:700;text-transform:uppercase;text-align:left;color:#000}
+    .tablediv table td::after{display:none}
+    .tablediv .mytranningcategory .admin_table_wrapper table td::before{content:attr(datalabel)!important;float:left;font-weight:700;text-transform:uppercase;text-align:left;margin-left:0;color:#000}
+    .tablediv table td::before{content:attr(title);float:left;font-weight:700;text-transform:uppercase;text-align:left;margin-left:-33%;color:#000}
+    .tablediv table td:last-child{border-bottom:0}
+    .tablediv table td.mat-column-Actions{width:auto;padding-right:10px}
+    }
+    @media only screen and (max-width: 767px) {
+    .tablediv .searchbar .mat-form-field{display:flex!important;flex:1 1 50%}
+    .bloglists .tablediv .searchbar span.textsearch,.blogcatlists .tablediv .searchbar span.textsearch{width:100%}
+
+    .admcls .header .header-part-right{ margin-top: 25px;}
+    }
+    @media only screen and (max-width: 667px) {
+    .topmenudevider2{display:block;width:30px;height:78px;float:left}
+    .topmenudevider2 .dehazeicon{color:#fb4a32;display:block;margin:24px 0 0!important;font-size:30px;cursor:pointer}
+    .topblock .mat-list{margin:0 auto;height:0;width:0;position:absolute;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-o-transition:all .2s linear;transition:all .2s linear}
+    .topblock .mat-list .mat-list-item{display:block;float:none;width:auto;margin:0;padding:0;height:auto;color:#fff!important;background:#222!important;text-align:center}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:5px;height:auto;line-height:32px;font-size:16px!important;color:#fff!important;text-align:center;border-bottom:solid 1px #ccc!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button:hover{color:#fff!important;background:#dc4430!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button.active{color:#fff!important;background:#dc4430!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button:last-of-type{border:none}
+
+
+    .activebread::after{   display: none;}
+    .activebread::before{ display: none;}
+
+    .bred_cram_wrapper a{ display:block; position: relative;}
+
+    /* .bred_cram_wrapper .mat-list-item::after {
+        display: block;
+        width: 100%;
+        text-align: center;
+        content: '&#x2193;';
+        position: absolute;
+        right: 0px;
+        top: 30px; z-index: 9;
+    } */
+
+    .generalcls .mat-card-content {
+        display: block!important;
+        text-align: center;
+        clear: both;
+        overflow: hidden;
+    }
+
+    .bred_cram_wrapper a{     display: block!important; float: none;} 
+    }
+
+    
+    @media only screen and (max-width: 540px) {
+    .headerlogo{width:100%;float:none;background:#222!important;padding:10px 2px;display:block}
+    .headerlogo img{width:auto;max-width:90%}
+    .searchblock .searchblockwrapper{display:block;align-items:stretch;justify-content:center;flex-direction:row;flex-wrap:wrap;}
+
+    .searchblock span{ display: block; text-align: center;}
+    }

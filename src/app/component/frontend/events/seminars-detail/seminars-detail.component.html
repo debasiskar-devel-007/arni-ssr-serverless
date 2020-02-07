@@ -1,0 +1,252 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner seminarsbg">
+    <span class="mainwrappercontent">
+        <mat-card-content>
+            <span>
+                <h1>seminars</h1>
+                <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods that will make immediate improvements in your lives.</p>
+            </span>
+        </mat-card-content>
+    </span>
+</mat-card>
+
+<mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f2 !important;">
+
+  <mat-card class="event_wrapper">
+
+
+    <mat-card-content class="event_right">
+      <h2>PAst seminers</h2>
+
+        <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="{{seminer[0].image}}"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>{{seminer[0].description}}</p>
+
+                    <label>{{seminer[0].event_date}}</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span>
+        <!-- <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span>
+
+        <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span>
+        <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span>
+        <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span>
+        <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span> -->
+
+       <!-- <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn" (click)="blogloadmore()">View More</button>-->
+
+
+
+    </mat-card-content>
+
+
+    <mat-card-content class="event_left">
+
+             <span class="event_blog">
+            <span class="event_blog_top">
+           <label>{{seminer[0].event_date}} </label>
+
+             <p>Conference Room • {{seminer[0].location}} </p>
+             </span>
+               <h3>{{seminer[0].title}} – {{seminer[0].time}}-{{seminer[0].timeZone}}</h3>
+
+             <span class="event_img">
+            <img src="{{seminer[0].image}}" >
+                 </span>
+
+            <p class="event_text">  <span class="spantext" [innerHtml]="seminer[0].description"></span></p>
+
+
+
+
+                 <h6>Tickets:</h6>
+
+               <label> <a href="{{seminer[0].bookingLink}}" target="_blank">{{seminer[0].bookingLink}}</a></label>
+
+
+
+               <span class="clear"></span>
+
+
+                <span class="event_share_block">
+                    <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{seminer[0]._id}}" target="_blank">
+                                    <img src="../../../../assets/images/share_img1.jpg"  >
+                                  </a>
+                                  <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{seminer[0]._id}}" target="_blank">
+                                   <img src="../../../../assets/images/share_img2.jpg"  >
+                                  </a>
+                                  <a class="sociallink fa tumblr" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{seminer[0]._id}}" target="_blank">
+                                    <img src="../../../../assets/images/share_img3.jpg"  >
+                                  </a>
+                                  <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{seminer[0]._id}}" target="_blank">
+                                 <img src="../../../../assets/images/share_img4.jpg"  >
+                                  </a>
+                    <!-- <a class="sociallink fa env">
+                      <fa name="envelope" class="fa-envelope"></fa>
+                    </a> -->
+                                  <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/seminars%2F?affid='+seminer[0]._id)">
+                                   <img src="../../../../assets/images/share_img6.jpg"  >
+                                  </a>
+
+                </span>
+
+           </span>
+
+
+
+
+
+
+
+
+
+    </mat-card-content>
+
+
+
+
+
+
+
+    <span class="clear"></span>
+
+
+  </mat-card>
+</mat-card>
+
+<app-footer></app-footer>
