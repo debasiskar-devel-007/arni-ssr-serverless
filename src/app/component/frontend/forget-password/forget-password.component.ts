@@ -13,8 +13,8 @@ export class ForgetPasswordComponent implements OnInit {
   public loginRouteingUrl: any = { 
     "path":"",
     "buttonName":"Login",
-    "customLink":"/login",
-    "customURl":""
+    "customLink":"",
+    "customURl":"https://dev.arniefonseca.influxiq.com/login"
   };
   public signUpRouteingUrl: any = { 
     "path":"",

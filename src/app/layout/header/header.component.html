@@ -106,7 +106,7 @@
         <span class="infoblock">
           <mat-list role="list">
             <mat-list-item role="listitem" class="activedropmenu">
-              <span><a  [routerLink]="['/login']"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a></span>
+              <span><a target="_blank" href="https://dev.arniefonseca.influxiq.com/login"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a></span>
               <!-- <span><a  (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></span> -->
               
               <!-- <span><a *ngIf="cookieService.get('jwtToken')==''" [routerLink]="['/login']"><img
@@ -194,9 +194,9 @@
                   <mat-list-item *ngIf="userCookies != null && userCookies.type == 'admin'" fxFlex routerLinkActive="activemenu">
                     <a [routerLink]="['/admin-dashboard']">Dashboard</a>
                   </mat-list-item>
-                  <mat-list-item *ngIf="userCookies != null && userCookies.type == 'affiliate'" fxFlex routerLinkActive="activemenu">
+                  <!-- <mat-list-item *ngIf="userCookies != null && userCookies.type == 'affiliate'" fxFlex routerLinkActive="activemenu">
                     <a [routerLink]="['/affiliate-dashboard']">Dashboard</a>
-                  </mat-list-item>
+                  </mat-list-item> -->
                 </span>
               </mat-nav-list>
             </span>

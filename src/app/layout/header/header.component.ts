@@ -43,6 +43,7 @@ export class HeaderComponent implements OnInit {
     //   this.userCookies = JSON.parse(this.cookieService.get('user_details'));
     //   console.log(this.userCookies)
     //   }
+
       
    }
 
