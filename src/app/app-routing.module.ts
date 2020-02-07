@@ -28,7 +28,6 @@ import { BioComponent } from './component/frontend/bio/bio.component';
 import { SpeakerEngagementsDetailComponent } from './component/frontend/events/speaker-engagements-detail/speaker-engagements-detail.component';
 
 
-import { BkLeftdivComponent } from './layout/bk-leftdiv/bk-leftdiv.component';
 import { EmployeeTrainingComponent } from './component/frontend/services/employee-training/employee-training.component';
 import { CouplesCounselingComponent } from './component/frontend/services/couples-counseling/couples-counseling.component';
 import { PersonalDevelopmentCoachingComponent } from './component/frontend/services/personal-development-coaching/personal-development-coaching.component';
@@ -37,7 +36,6 @@ import { SpecialProgramsForYoungMenComponent } from './component/frontend/servic
 
 const routes: Routes = [
   /**Frontend Routing**/
-  { path: 'bk-leftdiv', component: BkLeftdivComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },

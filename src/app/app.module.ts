@@ -54,18 +54,12 @@ import { HttpLoaderService } from './http-loader.service';
 import { LoaderInterceptor } from './loader.interceptor';
 
 import { SidenavService } from './../app/services/sidenav.service';
-import { BkHeaderComponent } from './layout/bk-header/bk-header.component';
-import { BkFooterComponent } from './layout/bk-footer/bk-footer.component';
-import { BkLeftdivComponent } from './layout/bk-leftdiv/bk-leftdiv.component';
 
 /**End Frontend Component**/
 
 @NgModule({
   declarations: [
     AppComponent,
-    BkHeaderComponent,
-    BkFooterComponent,
-    BkLeftdivComponent,
     HeaderComponent,
     FooterComponent,
     ForgetPasswordComponent,
