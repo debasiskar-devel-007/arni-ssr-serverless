@@ -32,10 +32,10 @@ export class BkHeaderComponent implements OnInit {
 
   ngOnInit() {
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
-      this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-      this.token = this.cookieService.get('jwtToken')
+      // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
+      // this.token = this.cookieService.get('jwtToken')
       //console.log(this.userCookies.type);
-      this.user_full_name = this.userCookies.firstname + ' '+ this.userCookies.lastname ;
+      // this.user_full_name = this.userCookies.firstname + ' '+ this.userCookies.lastname ;
       // this.userid = this.userCookies._id;    
       }
   }

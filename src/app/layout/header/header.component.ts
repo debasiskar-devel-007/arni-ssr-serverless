@@ -39,10 +39,10 @@ export class HeaderComponent implements OnInit {
     // this.user_full_name = this.userCookies.firstname +' '+this.userCookies.lastname;
     // console.log(this.user_full_name);
 
-    if (this.cookieService.get('jwtToken') != undefined  && this.cookieService.get('user_details') != null && this.cookieService.get('jwtToken') != null && this.cookieService.get('jwtToken') != '') {
-      this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-      console.log(this.userCookies)
-      }
+    // if (this.cookieService.get('jwtToken') != undefined  && this.cookieService.get('user_details') != null && this.cookieService.get('jwtToken') != null && this.cookieService.get('jwtToken') != '') {
+    //   this.userCookies = JSON.parse(this.cookieService.get('user_details'));
+    //   console.log(this.userCookies)
+    //   }
       
    }
 
