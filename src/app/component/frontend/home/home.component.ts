@@ -9,7 +9,7 @@ import { MetaService } from '@ngx-meta/core';
 export class HomeComponent implements OnInit {
 
 
-  public slides: any = ["https://dev.arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://dev.arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://dev.arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
+  public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
     margin: 0,
