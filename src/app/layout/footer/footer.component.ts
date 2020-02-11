@@ -21,6 +21,9 @@ export class FooterComponent implements OnInit {
   public serverUrl:any;
   // public tokenViaCookie : any;
 
+  public  name: string;
+  navbarOpen = false;
+
 
   constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService) {
 
@@ -100,6 +103,11 @@ export class FooterComponent implements OnInit {
   }
 
 
+  inputUntouch(form: any, val: any) {
+    console.log('on blur .....');
+    form.controls[val].markAsUntouched();
+  }
+
     doSubmit() {
         // console.log('ok');
         // this.data = this.myform.value;
@@ -162,11 +170,21 @@ newslatterViewModal(deta:any){
 
   }
 
+  openDialogfooter(): void {
+    const dialogRef = this.dialog.open(comingSoonDialogfooter, {
+     
+      // data: {name: this.name}
+    });
+
+    setTimeout(() => {
+      this.dialog.closeAll();
+    }, 4000);
+  }
 
 
 }
 
-
+ 
 @Component({
     selector: 'terms-dialog',
     templateUrl: 'terms-dialog.html',
@@ -233,6 +251,8 @@ constructor(public dialogRef: MatDialogRef<NewslatterDialogComponent>,
     this.dialogRef.close();
   }
 
+
+ 
 
     donewsSubmit() {
 
@@ -305,6 +325,8 @@ constructor(public dialogRef: MatDialogRef<NewslatterDialogComponent>,
 }
 
 
+
+
 // newslatter success dialog component
 @Component({
     selector: 'newslatter-success-dialog',
@@ -324,3 +346,25 @@ export class NewslattersuccessDialogComponent {
 }
 
 
+
+@Component({
+  selector: 'coming',
+  // templateUrl: './coming-soon.html',
+  template: `
+  <div class="comingwrapper">
+   <img src="../../assets/images/logo.png"> 
+  <h2>coming soon</h2>
+  </div>
+  `
+})
+export class comingSoonDialogfooter {
+
+  constructor(
+    public dialogRef: MatDialogRef<comingSoonDialogfooter>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}

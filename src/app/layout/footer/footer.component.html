@@ -48,7 +48,7 @@
               <form [formGroup]="myform" name="myform" (ngSubmit)="doSubmit()">
                 <span>
                   <mat-form-field>
-                    <input matInput placeholder="Email Address" id="newsEmail" [formControl]="myform.controls['email']">
+                    <input matInput placeholder="Email Address" id="newsEmail" [formControl]="myform.controls['email']" (blur)="inputUntouch(myform,'email')" >
                   </mat-form-field>
                   <button mat-raised-button ><img src="../../assets/images/newlettericon.png"></button>
 
@@ -60,6 +60,9 @@
                 && myform.controls['email'].errors.pattern">
 
                   Email is not Valid</mat-error>
+
+
+
               </form>
             </div>
             <h5>We’ll never share your email address</h5>
@@ -98,7 +101,9 @@
                   </mat-menu>
                 </mat-list-item>
                 <mat-list-item fxFlex routerLinkActive="activemenu">
-                  <a [matMenuTriggerFor]="menu3">Events</a>
+                  <a (click)="openDialogfooter()">Events</a>
+
+                  <!-- <a [matMenuTriggerFor]="menu3">Events</a> -->
                   <mat-menu #menu3="matMenu" class="activedropmenu">
                     <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/seminars']">Seminars</a>
                     <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/workshops']">Workshops</a>
