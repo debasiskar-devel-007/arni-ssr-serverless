@@ -171,7 +171,9 @@
                     </mat-menu>
                   </mat-list-item>
                   <mat-list-item fxFlex routerLinkActive="activemenu">
-                    <a [matMenuTriggerFor]="menu3">Events</a>
+                    <a (click)="openDialog()">Events</a>
+
+                    <!-- <a [matMenuTriggerFor]="menu3">Events</a> -->
                     <mat-menu #menu3="matMenu" class="activedropmenu">
                       <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/seminars']">Seminars</a>
                       <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/workshops']">Workshops</a>

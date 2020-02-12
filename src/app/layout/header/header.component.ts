@@ -81,9 +81,10 @@ export class HeaderComponent implements OnInit {
   selector: 'coming',
   // templateUrl: './coming-soon.html',
   template: `
-  <div class="logomodalwrapper">
-  <div class="logomodal"><img src="../../assets/images/logo.png"></div>
-  <h2>coming soon</h2></div>
+  <div class="comingwrapper">
+  <img src="../../assets/images/logo.png"> 
+ <h2>coming soon</h2>
+ </div>
   `
 })
 export class comingSoonDialog {
