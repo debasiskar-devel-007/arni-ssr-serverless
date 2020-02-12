@@ -298,6 +298,11 @@ a{cursor:pointer;outline:none}
 .fa-envelope i{display:none}
 .fa-share i{display:none}
 .fa-link i{display:none}
+
+.sociallink.tumblr fa, .sociallink.tumblr i {
+  background-color: #34526f;
+}
+
 .sociallink.fb fa, .sociallink.fb i{background-color:#5170b1}
 .sociallink.twi fa, .sociallink.twi i{background-color:#1bbef7}
 .sociallink.tbl fa, .sociallink.tbl i{background-color:#34526f}
@@ -556,3 +561,21 @@ a{cursor:pointer;outline:none}
     white-space: normal!important;
     text-align: center;
 }
+
+
+.videoblocknew{ position: relative;}
+
+ 
+
+.videoblocknew button::after {
+  background: url(../images/videoicon.png) no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  left: 45px;
+    top: 50px;
+  content: '';
+}
+
+
