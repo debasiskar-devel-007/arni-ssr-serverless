@@ -45,7 +45,15 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .homeblock2servcontent h2 span{flex:inherit}
 .homeblock2servcontent h2 span.homeblock2iconcontent{text-align:left;margin-left:18px}
 .homeblock2servcontent h2 span.homeblock2iconcontent span{display:block;font-family:'Helvetica-Normal';font-size:14px!important;line-height:normal!important}
-.homeblock2servcontent p{padding:0 30px;text-align:left}
+.homeblock2servcontent p{
+  padding: 0 30px;
+  text-align: left;
+  max-height: 197px;
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+}
 .homeblock2servimg{overflow:hidden}
 .homeblock2listssingleitem.mat-list-item:nth-child(even) .mat-list-item-content{flex-direction:row-reverse!important}
 .homeblock2listssingleitem .mat-list-item-content{align-items:stretch!important}

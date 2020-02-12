@@ -504,6 +504,11 @@ a{cursor:pointer;outline:none}
 .newsletter_modal{width:auto}
 }
 .homeblock2servcontent button{float:right!important;margin:10px 15px!important}
+.homeblock2icon img {
+  min-width: 40px;
+  min-height: 30px;
+  max-width: 150px;
+}
 .truncate{overflow:ellipsis;text-overflow:-o-ellipsis-lastline;display:-webkit-box;line-height:normal;max-height:108px;-webkit-line-clamp:5}
 .truncateopen{overflow:inherit!important;min-height:94px;height:100%!important;height:auto!important;text-overflow:inherit!important;-webkit-line-clamp:inherit!important}
 .truncateopen p{height:auto!important;overflow:inherit;min-height:auto!important;text-overflow:inherit;display:inherit;line-height:24px;height:auto!important;-webkit-line-clamp:inherit!important}

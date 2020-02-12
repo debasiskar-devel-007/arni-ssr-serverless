@@ -2,7 +2,7 @@
 
 
 
-.homeblock2servimg{position: relative;}
+.homeblock2servimg{position: relative; min-height: 315px; max-height: 400px;}
 .homeblock2servimg {
     position:relative;
   }
