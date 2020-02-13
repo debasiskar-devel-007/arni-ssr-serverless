@@ -39,7 +39,7 @@ export class ResolveService implements Resolve<any> {
     if (route.data.requestcondition.condition._id == "id") {
       route.data.requestcondition.condition._id = _id;
       delete route.data.requestcondition.condition.id;
-      console.log(route.data.requestcondition.condition);
+      // console.log(route.data.requestcondition.condition);
     }
     var endpoint = route.data.link;
     var source = route.data.source;
@@ -54,9 +54,9 @@ export class ResolveService implements Resolve<any> {
         route.params
       );
       delete route.data.requestcondition.condition.id;
-      console.log("route.data");
-      console.log(route.data);
-      console.log(requestData.condition);
+      // console.log("route.data");
+      // console.log(route.data);
+      // console.log(requestData.condition);
       if (route.url[0].path == "blogdetail") {
         route.data.requestcondition.condition._id_object = route.params["id"];
       }
