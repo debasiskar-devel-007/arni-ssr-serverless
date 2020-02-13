@@ -7,6 +7,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { getLocaleDateFormat } from '@angular/common';
 import { format } from 'url';
 import {DatePipe} from '@angular/common';
+import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
 
 @Component({
   selector: 'app-seminars',
@@ -31,8 +32,9 @@ export class SeminarsComponent implements OnInit {
   public eventImage:any;
   public title:any;
   public eventTitle:any;
+  public profile:any
 
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService,public datePipe:DatePipe ) {
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService,public datePipe:DatePipe ,public FB:FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
@@ -47,6 +49,12 @@ export class SeminarsComponent implements OnInit {
     this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
+
+    FB.init({
+      appId: '2540470256228526',
+      version: 'v2.9'
+    });
+
    }
 
   ngOnInit() {
@@ -105,6 +113,91 @@ export class SeminarsComponent implements OnInit {
 //   console.log('>>>>>>>>',currentDate);
       
 //     }
+
+
+
+
+//facebook share for event
+
+login() {
+  this.FB.login()
+    .then((res: LoginResponse) => {
+     
+      this.getProfile();
+    })
+    .catch();
+}
+getProfile() {
+  this.FB.api('me/?fields=id,name,email,picture')
+    .then((res: any) => {
+     
+      this.profile = res;
+      
+    })
+    .catch((error: any) => {
+
+    });
+}
+
+fbshare(val: any) {
+  console.log(val)
+  this.title = val.title;
+  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  console.log(this.eventTitle)
+  var url='https://dev.probidauto.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
+  // console.log(url)
+
+  let params: UIParams = {
+    href: url,
+    method: 'share',
+    quote: 'https://dev.probidauto.com/'
+  };
+  this.FB.ui(params).then((res:UIResponse)=>{
+  }).catch(facebook=>{
+    // console.log(facebook)
+  });
+}
+
+logoutWithFacebook(): void {
+
+  this.FB.logout().then();
+}
+
+
+twitterShare(val:any){
+
+  this.title = val.title;
+  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  console.log(this.eventTitle)
+  window.open('https://twitter.com/intent/tweet?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+  // console.log(url)
+
+}
+
+linkedinShare(val:any){
+
+  this.title = val.title;
+  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  console.log(this.eventTitle)
+
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+  // console.log(url)
+
+}
+
+
+ // tumblr share 
+
+ tumblrShare(val:any){
+
+  this.title = val.title;
+  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  console.log(this.eventTitle)
+
+  window.open('http://www.tumblr.com/share?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+  // console.log(url)
+
+}
 
 
 }
