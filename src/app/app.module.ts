@@ -19,7 +19,7 @@ import { ContactusModule } from 'contactus-lib-influxiq';
 import { LoginComponent } from './component/frontend/login/login.component';
 import { HeaderComponent, comingSoonDialog } from './layout/header/header.component';
 import { FooterComponent, DialogTermsDialog, DialogPrivacyDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent, comingSoonDialogfooter} from './layout/footer/footer.component';
-import { HomeComponent, comingSoonDialogTestimonhome } from './component/frontend/home/home.component';
+import { HomeComponent } from './component/frontend/home/home.component';
 import { ContactusComponent } from './component/frontend/contactus/contactus.component';
 import { ForgetPasswordComponent } from './component/frontend/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './component/frontend/reset-password/reset-password.component';
@@ -30,7 +30,7 @@ import { BlogdetailComponent, VideoModalComponent } from './component/frontend/b
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/services/servicelist/servicelist.component';
-import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.component';
+import { TesimonialComponent, comingSoonDialogTestimonhome } from './component/frontend/tesimonial/tesimonial.component';
 import { TesimoniallistComponent, CommonTestimonialVideoModalComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 import { EmployeeTrainingComponent } from './component/frontend/services/employee-training/employee-training.component';
 import { CouplesCounselingComponent } from './component/frontend/services/couples-counseling/couples-counseling.component';
@@ -104,7 +104,7 @@ import { SidenavService } from './../app/services/sidenav.service';
     CommonTestimonialVideoModalComponent,
 
     HttpLoaderComponent,
-    comingSoonDialogTestimonhome
+    comingSoonDialogTestimonhome,
 
 
   ],

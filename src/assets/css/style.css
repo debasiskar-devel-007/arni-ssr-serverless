@@ -287,6 +287,8 @@ a{cursor:pointer;outline:none}
 .listsbottominfo .listsbottom .mat-list-item .mat-list-item-content{flex-wrap:nowrap;color:#fff}
 .listsbottominfo .listsbottom .mat-list-item .mat-list-item-content img{margin-right:8px}
 .sociallink fa{padding:6px 10px;color:#fff;font-size:24px;display: block;}
+
+.homeblogsociallistswrapper{width: 260px; margin: 0 auto;display: block;}
 .blogsociallists{margin-top:20px;display: flex;flex-direction: row;align-items: flex-start;flex: 1; margin-right: 10px;}
 .blogsociallists .sociallink {flex: 1;align-items: center;justify-content: center;text-align: center;}
 .sociallink fb{width: 100%;}

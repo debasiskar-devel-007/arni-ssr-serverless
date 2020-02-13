@@ -1,6 +1,16 @@
-import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵConsole,Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../../api.service';
+import { MetaService } from '@ngx-meta/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+
+export interface DialogData {
+  errorMsg: string;
+  loginMsg: string;
+  name: string;
+}
+
+
 
 @Component({
   selector: 'app-tesimonial',
@@ -8,6 +18,8 @@ import { ApiService } from '../../../api.service';
   styleUrls: ['./tesimonial.component.css']
 })
 export class TesimonialComponent implements OnInit {
+
+  public name: string;
   
   carouselOptions = {
     margin: 5,
@@ -59,7 +71,7 @@ export class TesimonialComponent implements OnInit {
 
   public TestimonialListArray: any = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, public dialog: MatDialog) { }
 
   ngOnInit() {
     var data: any = {};
@@ -88,6 +100,39 @@ export class TesimonialComponent implements OnInit {
 
   showBut() {
     console.log('show button')
+  }
+
+
+  //*********** Coming Soon ************//
+  comingSoonDialogTestimonhome(): void {
+    const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
+
+      data: { name: this.name }
+    });
+
+    setTimeout(() => {
+      this.dialog.closeAll();
+    }, 4000);
+  }
+  //*********** Coming Soon ************//
+
+
+}
+
+
+
+@Component({
+  selector: 'app-coming-soon',
+  templateUrl: '../../../layout/coming-soon.html'
+})
+export class comingSoonDialogTestimonhome {
+
+  constructor(
+    public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

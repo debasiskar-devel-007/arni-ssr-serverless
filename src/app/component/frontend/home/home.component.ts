@@ -95,36 +95,6 @@ export class HomeComponent implements OnInit {
   };
 
   
-  //*********** Coming Soon ************//
-  comingSoonDialogTestimonhome(): void {
-    const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
-
-      data: { name: this.name }
-    });
-
-    setTimeout(() => {
-      this.dialog.closeAll();
-    }, 4000);
-  }
-  //*********** Coming Soon ************//
-
-
-  
+    
 }
 
-
-@Component({
-  selector: 'app-coming-soon',
-  templateUrl: '../../../layout/coming-soon.html'
-})
-export class comingSoonDialogTestimonhome {
-
-  constructor(
-    public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}
