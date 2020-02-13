@@ -1,13 +1,28 @@
-import { Component, OnInit, ChangeDetectorRef, ViewChild, ɵConsole } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MetaService } from '@ngx-meta/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+
+export interface DialogData {
+  errorMsg: string;
+  loginMsg: string;
+  name: string;
+}
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
+
+
+
 export class HomeComponent implements OnInit {
 
+  public name: string;
 
   public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
   
@@ -50,7 +65,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor(private cdr: ChangeDetectorRef, private router: Router, private readonly meta: MetaService) {
+  constructor(private cdr: ChangeDetectorRef, private router: Router, private readonly meta: MetaService, public dialog: MatDialog) {
 
     this.meta.setTitle('Arnie Fonseca - Personal Development Mentor');
     this.meta.setTag('og:description', 'Invite your audience to be mentored by “Coach Arnie” at your events, and create an environment for them to learn simple, yet powerful self-development methods that will improve their lives considerably.');
@@ -78,4 +93,38 @@ export class HomeComponent implements OnInit {
   btnClick() {
     this.router.navigateByUrl('/testimonial');
   };
+
+  
+  //*********** Coming Soon ************//
+  comingSoonDialogTestimonhome(): void {
+    const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
+
+      data: { name: this.name }
+    });
+
+    setTimeout(() => {
+      this.dialog.closeAll();
+    }, 4000);
+  }
+  //*********** Coming Soon ************//
+
+
+  
+}
+
+
+@Component({
+  selector: 'app-coming-soon',
+  templateUrl: '../../../layout/coming-soon.html'
+})
+export class comingSoonDialogTestimonhome {
+
+  constructor(
+    public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

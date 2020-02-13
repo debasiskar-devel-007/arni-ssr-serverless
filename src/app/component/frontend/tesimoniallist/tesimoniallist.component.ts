@@ -96,8 +96,9 @@ export class TesimoniallistComponent implements OnInit {
      
      // console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
      const dialogRef = this.dialog.open(CommonTestimonialVideoModalComponent, {
-       panelClass:['modal-md','success-modal'],       
-       width:'450px',
+      //  panelClass:['modal-md','success-modal'],       
+      //  width:'450px',
+      panelClass:'blogdetail_videomodal',
        data:this.safeSrc, 
      });
      dialogRef.afterClosed().subscribe(result => {  
