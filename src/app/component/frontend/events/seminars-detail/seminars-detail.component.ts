@@ -25,7 +25,7 @@ export class SeminarsDetailComponent implements OnInit {
   public eventImage: any;
   public profile:any;
 
-  constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public facebook:FacebookService) {
+  constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
@@ -42,7 +42,8 @@ export class SeminarsDetailComponent implements OnInit {
     this.dataformate = moment();
 
 
-    facebook.init({
+ 
+    FB.init({
       appId: '2540470256228526',
       version: 'v2.9'
     });
@@ -108,7 +109,7 @@ export class SeminarsDetailComponent implements OnInit {
 //facebook share for event
 
   login() {
-    this.facebook.login()
+    this.FB.login()
       .then((res: LoginResponse) => {
        
         this.getProfile();
@@ -116,7 +117,7 @@ export class SeminarsDetailComponent implements OnInit {
       .catch();
   }
   getProfile() {
-    this.facebook.api('me/?fields=id,name,email,picture')
+    this.FB.api('me/?fields=id,name,email,picture')
       .then((res: any) => {
        
         this.profile = res;
@@ -140,7 +141,7 @@ export class SeminarsDetailComponent implements OnInit {
       method: 'share',
       quote: 'https://dev.probidauto.com/'
     };
-    this.facebook.ui(params).then((res:UIResponse)=>{
+    this.FB.ui(params).then((res:UIResponse)=>{
     }).catch(facebook=>{
       // console.log(facebook)
     });
@@ -148,7 +149,7 @@ export class SeminarsDetailComponent implements OnInit {
 
   logoutWithFacebook(): void {
 
-    this.facebook.logout().then();
+    this.FB.logout().then();
   }
 
 
