@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/arni-ssr/production/1581339975637-2020-02-10T13:06:15.637Z/arni-ssr.zip"
+          "S3Key": "serverless/arni-ssr/production/1581516510357-2020-02-12T14:08:30.357Z/arni-ssr.zip"
         },
         "FunctionName": "arni-ssr-production-api",
         "Handler": "lambda.universal",
@@ -291,7 +291,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1581339935979": {
+    "ApiGatewayDeployment1581516467602": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
