@@ -45,7 +45,15 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .homeblock2servcontent h2 span{flex:inherit}
 .homeblock2servcontent h2 span.homeblock2iconcontent{text-align:left;margin-left:18px}
 .homeblock2servcontent h2 span.homeblock2iconcontent span{display:block;font-family:'Helvetica-Normal';font-size:14px!important;line-height:normal!important}
-.homeblock2servcontent p{padding:0 30px;text-align:left}
+.homeblock2servcontent p{
+  padding: 0 30px;
+  text-align: left;
+  max-height: 197px;
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+}
 .homeblock2servimg{overflow:hidden}
 .homeblock2listssingleitem.mat-list-item:nth-child(even) .mat-list-item-content{flex-direction:row-reverse!important}
 .homeblock2listssingleitem .mat-list-item-content{align-items:stretch!important}
@@ -152,6 +160,59 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .footewrmoadbox  .generalmodalcls p{ text-align: left; font-family: 'Helvetica-Normal';
     font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;}
 
+
+
+
+
+.blogdetail_videomodal iframe{ width: 100%; border: none;}
+
+
+
+.blogdetail_videomodal {padding: 15px!Important; max-width: inherit;   background: #fff; box-shadow: inset 0 0 10px #000 inset; border: solid 1px #ddd;}
+.blogdetail_videomodal .mat-dialog-container{ width: 960px!Important; max-width: inherit!Important; padding: 0px!important;} 
+
+.blogdetail_videomodal .generalmodalcls .modal-content{ box-shadow: none!important;}
+
+
+
+.blogdetail_videomodal  .mat-dialog-content {
+  display: block;
+  margin: 5px;
+  padding: 0;
+  max-height: inherit;
+  overflow: auto;}
+
+
+
+  .blogdetail_videomodal .video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.blogdetail_videomodal .video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+
+@media only screen and (max-width: 1199px) {
+  .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}
+
+ 
+
+}
+
+@media only screen and (max-width: 580px) {
+
+  .blogdetail_videomodal .mat-dialog-container{ width:90%!Important}
+
+  .blogdetail_videomodal .mat-dialog-container{
+    min-width: 220px!important;}
+}
 
 
 
