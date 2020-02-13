@@ -17,7 +17,7 @@ export class SeminarsDetailComponent implements OnInit {
 
 
   public indexval:any=6;
-  public seminer_img:any
+  // public seminer_img:any
 public seminer:any;
   public SeminarsdetailArry: any = []
   public dataformate: any;
@@ -57,11 +57,29 @@ public seminer:any;
     // })
 
     this.activatedRoute.data.forEach((data: any) => {
-      this.seminer = data.seminarsDetailData.res;
+      this.seminer = data.seminarsDetailData.res[0];
       console.log('>>>>>>>kb>>>>>>>',this.seminer)
-      this.seminer_img=this.seminer[0].Image;
+      // this.seminer_img=this.seminer.Image;
 
     })
+
+
+    // if (this.seminer != '') {
+    //   this.meta.setTitle('ProBid Auto-'+''+this.seminer);
+    //   this.meta.setTag('og:description', this.seminer.description_html);
+    //   this.meta.setTag('twitter:description', this.seminer.description_html);
+    //   this.meta.setTag("description", this.seminer.description_html)
+
+    //   this.meta.setTag('og:title', this.seminer);
+    //   this.meta.setTag('twitter:title', this.seminer);
+    //   this.meta.setTag('og:image', );
+    //   this.meta.setTag('og:image:width', 'auto');
+    //   this.meta.setTag('og:image:height', 'auto');
+    //   this.meta.setTag('twitter:image', );
+    //   this.meta.setTag('og:url', 'https://dev.probidauto.com/blogs/'+this.activatedRoute.snapshot.params.blogtitle+'/'+this.blog._id);
+
+
+    // }
 
 
   }
@@ -76,7 +94,7 @@ public seminer:any;
 
 
   copyText(val:any){
-    console.log('copyText');
+    // console.log('copyText');
   }
 
 }
