@@ -5,7 +5,7 @@
         <h1>Blogs Details</h1>
       </mat-card-content>
     </span>
-    <img [src]="blog_img" class="blogheaderimg">
+    <img [src]="image" class="blogheaderimg">
     <span class="blogheaderimgbg"></span>
   </mat-card>
 
@@ -51,7 +51,7 @@
                   </span>
                 </mat-card-content>
                 <span class="item_images">  
-                  <img [src]="blog_img">
+                  <img [src]="blog[0].image">
                 </span>
   
                 <p class="description"><span [innerHtml]="blog[0].description"></span></p>
@@ -62,22 +62,27 @@
           <mat-list class="photogallerylists">
             <mat-list-item class="writer_image">
               <span class="writer_image_wrapper">
-                <img [src]="blog_img">
+
+        
+                <img [src]="blog[0].image">
               </span>
             </mat-list-item>
           </mat-list>
           <!-- end gallery section -->
-  
+
+
+          <!-- <img src="https://www.youtube.com/embed/v-t3L7nWEbg"> -->
+        
           <!-- start video section -->
-          <mat-list class="photogallerylists">
+          <mat-list class="photogallerylists videoblocknew ">
             <mat-list-item class="writer_image">
               <span class="writer_image_wrapper">
-                <div *ngFor="let vurl of blog[0].credentials">
-                  <button *ngIf="vurl.video_url !='' && vurl.video_url !=null "
-                    (click)="openvideourl(vurl.video_url)">
-                    <img src="//img.youtube.com/vi/{{vurl.video_url}}/0.jpg">
+               
+                  <button *ngIf="blog[0].video !='' && blog[0].video !=null "
+                    (click)="openvideourl(blog[0].video)">
+                    <img src="//img.youtube.com/vi/{{blog[0].video}}/0.jpg">
                   </button>
-                </div>
+                
               </span>
             </mat-list-item>
           </mat-list>
@@ -240,6 +245,7 @@
   
                 <mat-card-content class="item">
                     <span class="item_images">
+                      
                       <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
                     </span>
                     <mat-card-content class="contentsection">
