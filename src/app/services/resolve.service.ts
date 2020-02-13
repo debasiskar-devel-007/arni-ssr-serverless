@@ -60,6 +60,20 @@ export class ResolveService implements Resolve<any> {
       if (route.url[0].path == "blogdetail") {
         route.data.requestcondition.condition._id_object = route.params["id"];
       }
+
+  //     if (route.data.requestcondition.condition._id == '_id') {
+  //       requestData.condition = requestData.condition._id;
+  //       console.log( '>>>>>',route.data)
+
+  //       delete requestData.condition.title;
+  //       // delete requestData.condition._id;
+       
+  // }
+
+
+
+
+
       return new Promise(resolve => {
         this._apiService
           .CustomRequest(route.data.requestcondition, route.data.endpoint)

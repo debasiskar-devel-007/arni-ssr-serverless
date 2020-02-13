@@ -29,8 +29,10 @@ export class SeminarsComponent implements OnInit {
   public SeminarsListArry: any = []
   public dataformate: any;
   public eventImage:any;
+  public title:any;
+  public eventTitle:any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public datePipe:DatePipe ) {
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService,public datePipe:DatePipe ) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
@@ -86,11 +88,14 @@ export class SeminarsComponent implements OnInit {
 
   detail(val:any){
     console.log(val)
-    this.router.navigateByUrl("/seminars-detail/"+val);
+    this.title=val.title;
+    this.eventTitle=this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log( this.eventTitle)
+    this.router.navigateByUrl("/seminars-detail/"+ this.eventTitle +'/' + val._id);
   }
 
   //current date
-// getCurrentDate(){
+// getCurrentDate(){  
   
 //   let dateFormat = require('dateformat');
 //   let now = new Date();

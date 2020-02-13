@@ -45,9 +45,9 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data: any) => {
-      this.speaker = data.speakerengagementsDetailData.res;
+      this.speaker = data.speakerengagementsDetailData.events_data[0];
       // console.log('>>>>>>>kb>>>>>>>',this.speaker)
-      this.speaker_img=this.speaker[0].Image[0];
+      // this.speaker_img=this.speaker[0].Image[0];
 
      
 

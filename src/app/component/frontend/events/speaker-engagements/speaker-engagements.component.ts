@@ -23,6 +23,9 @@ export class SpeakerEngagementsComponent implements OnInit {
   public indexvalleft:any=2;
 
 
+  public title:any;
+  public eventTitle:any;
+
 
   public  SpeakerListArry: any = []
   public dataformate: any;
@@ -81,8 +84,12 @@ export class SpeakerEngagementsComponent implements OnInit {
   }
 
   detail(val:any){
+
     console.log(val)
-    this.router.navigateByUrl("/speaker-engagements-detail/"+val);
+    this.title=val.title;
+    this.eventTitle=this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log( this.eventTitle)
+    this.router.navigateByUrl("/speaker-engagements-detail/"+ this.eventTitle +'/' + val._id);
   }
 
 }

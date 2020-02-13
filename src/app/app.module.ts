@@ -15,6 +15,7 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { LoginModule } from 'login-lib-influxiq';
 import { ContactusModule } from 'contactus-lib-influxiq';
 /**Frontend Component**/
+import { FacebookModule } from 'ngx-facebook';
 
 import { LoginComponent } from './component/frontend/login/login.component';
 import { HeaderComponent, comingSoonDialog } from './layout/header/header.component';
@@ -116,6 +117,7 @@ import { SidenavService } from './../app/services/sidenav.service';
     NgtUniversalModule,
     DemoMaterialModule,
     MetaModule.forRoot(),
+    FacebookModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     OwlModule,

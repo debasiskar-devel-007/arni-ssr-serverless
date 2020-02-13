@@ -41,7 +41,7 @@
 
                     <label>{{pasteventsem.event_date}}</label>
 
-                    <button (click)="detail(pasteventsem._id)">Know more</button>
+                    <button (click)="detail(pasteventsem)">Know more</button>
 
                      <span class="clear"></span>
                 </span>
@@ -70,7 +70,7 @@
             <img src="{{eventsem.image}}"    >
                     </span>
 
-             <p class="event_text">  <span class="spantext" [innerHtml]="eventsem.description"></span> <a href="javascript:void(0);" (click)="detail(eventsem._id)" >Continue Reading</a></p>
+             <p class="event_text">  <span class="spantext" [innerHtml]="eventsem.description"></span> <a href="javascript:void(0);" (click)="detail(eventsem)" >Continue Reading</a></p>
 
 
                 <span class="event_share_block">

@@ -42,9 +42,9 @@ export class WorkshopDetailComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data: any) => {
-      this.workshop = data.workshopsDetailData.res;
+      this.workshop = data.workshopsDetailData.events_data[0];
       console.log('>>>>>>>kb>>>>>>>',this.workshop)
-      this.workshop_img=this.workshop[0].Image[0];
+      // this.workshop_img=this.workshop[0].Image[0];
 
     })
   }

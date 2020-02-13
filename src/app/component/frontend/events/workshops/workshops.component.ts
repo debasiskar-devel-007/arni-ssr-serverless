@@ -16,7 +16,8 @@ export class WorkshopsComponent implements OnInit {
 
 
   public indexval:any=6;
-
+  public eventTitle:any;
+  public title:any;
 
   public indexvalleftlengthlength: any=1;
 
@@ -82,7 +83,11 @@ export class WorkshopsComponent implements OnInit {
 
   detail(val:any){
     console.log(val)
-    this.router.navigateByUrl("/workshop-detail/"+val);
+    this.title=val.title;
+    this.eventTitle=this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log( this.eventTitle)
+    this.router.navigateByUrl("/workshop-detail/"+ this.eventTitle +'/' + val._id);
+
   }
 
 
