@@ -19,7 +19,7 @@ import { ContactusModule } from 'contactus-lib-influxiq';
 import { LoginComponent } from './component/frontend/login/login.component';
 import { HeaderComponent, comingSoonDialog } from './layout/header/header.component';
 import { FooterComponent, DialogTermsDialog, DialogPrivacyDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent, comingSoonDialogfooter} from './layout/footer/footer.component';
-import { HomeComponent } from './component/frontend/home/home.component';
+import { HomeComponent, comingSoonDialogTestimonhome } from './component/frontend/home/home.component';
 import { ContactusComponent } from './component/frontend/contactus/contactus.component';
 import { ForgetPasswordComponent } from './component/frontend/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './component/frontend/reset-password/reset-password.component';
@@ -103,7 +103,8 @@ import { SidenavService } from './../app/services/sidenav.service';
     VideoModalComponent,
     CommonTestimonialVideoModalComponent,
 
-    HttpLoaderComponent
+    HttpLoaderComponent,
+    comingSoonDialogTestimonhome
 
 
   ],
@@ -125,6 +126,6 @@ import { SidenavService } from './../app/services/sidenav.service';
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent]
+  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent, comingSoonDialogTestimonhome]
 })
 export class AppModule { }
