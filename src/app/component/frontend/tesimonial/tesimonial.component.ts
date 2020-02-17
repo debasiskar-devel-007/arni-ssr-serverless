@@ -113,16 +113,16 @@ export class TesimonialComponent implements OnInit {
 
 
   //*********** Coming Soon ************//
-  comingSoonDialogTestimonhome(): void {
-    const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
+  // comingSoonDialogTestimonhome(): void {
+  //   const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
 
-      data: { name: this.name }
-    });
+  //     data: { name: this.name }
+  //   });
 
-    setTimeout(() => {
-      this.dialog.closeAll();
-    }, 4000);
-  }
+  //   setTimeout(() => {
+  //     this.dialog.closeAll();
+  //   }, 4000);
+  // }
   //*********** Coming Soon ************//
 
 
@@ -170,18 +170,18 @@ tumblrTestimonialShare(val:any){
 
 
 
-@Component({
-  selector: 'app-coming-soon',
-  templateUrl: '../../../layout/coming-soon.html'
-})
-export class comingSoonDialogTestimonhome {
+// @Component({
+//   selector: 'app-coming-soon',
+//   templateUrl: '../../../layout/coming-soon.html'
+// })
+// export class comingSoonDialogTestimonhome {
 
-  constructor(
-    public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+//   constructor(
+//     public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
+//     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
 
-}
+// }
