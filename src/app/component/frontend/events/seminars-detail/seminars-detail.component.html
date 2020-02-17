@@ -15,31 +15,84 @@
   <mat-card class="event_wrapper">
 
 
+
+
+    <mat-card-content class="event_left">
+
+             <span class="event_blog">
+            <span class="event_blog_top">
+           <label>{{seminer.event_date}} </label>
+
+             <p>Conference Room • {{seminer.location}} </p>
+             </span>
+               <h3>{{seminer.title}} – {{seminer.time}}-{{seminer.timeZone}}</h3>
+
+             <span class="event_img">
+            <img [src]="seminer.image" >
+                 </span>
+
+            <p class="event_text">  <span class="spantext" [innerHtml]="seminer.description"></span></p>
+
+
+
+
+                 <h6>Tickets:</h6>
+
+               <label> <a href="{{seminer.bookingLink}}" target="_blank">{{seminer.bookingLink}}</a></label>
+
+
+
+               <span class="clear"></span>
+
+
+                <span class="event_share_block">
+                                <a class="sociallink fa fb"  (click)="fbshare(seminer)"   target="_blank">
+                                    <img src="../../../../assets/images/share_img1.jpg"  >
+                                  </a>
+                                  <a class="sociallink fa twi"  (click)="twitterShare(seminer)" target="_blank">
+                                   <img src="../../../../assets/images/share_img2.jpg"  >
+                                  </a>
+                                  <a class="sociallink fa tumblr" (click)="tumblrShare(seminer)"  target="_blank">
+                                    <img src="../../../../assets/images/share_img3.jpg"  >
+                                  </a>
+                                  <a class="sociallink fa lin" (click)="linkedinShare(seminer)"  target="_blank">
+                                 <img src="../../../../assets/images/share_img4.jpg"  >
+                                  </a>
+                   
+
+                </span>
+
+           </span>
+
+
+    </mat-card-content>
+
+
     <mat-card-content class="event_right">
-      <h2>PAst seminers</h2>
+      <h2>Past seminers</h2>
 
         <span class="event_right_blog">
 
 
                 <span class="event_right_blog_wrapper">
+                  <span class="event_right_blog_wrapperrow">
+                        <span class="event_right_blog_img">
+                            <img [src]="seminer.image"   >
+                        </span>
+                        <span class="event_right_blog_text">
 
-                      <span class="event_right_blog_wrapperrow">
+                            <p>{{seminer.title}}</p>
 
-                <span class="event_right_blog_img">
-                    <img [src]="seminer.image"   >
-                </span>
-                <span class="event_right_blog_text">
+                            <label>{{seminer.event_date}}</label>
 
-                    <p>{{seminer.description}}</p>
+                            <button>Know more</button>
+                            
 
-                    <label>{{seminer.event_date}}</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
+                            <span class="clear"></span>
+                        </span>
+                        <span class="clear"></span>
                   </span>
+                  <button class="viewalleventbtn">Load More</button>
                 </span>
 
             </span>
@@ -173,74 +226,6 @@
 
 
     </mat-card-content>
-
-
-    <mat-card-content class="event_left">
-
-             <span class="event_blog">
-            <span class="event_blog_top">
-           <label>{{seminer.event_date}} </label>
-
-             <p>Conference Room • {{seminer.location}} </p>
-             </span>
-               <h3>{{seminer.title}} – {{seminer.time}}-{{seminer.timeZone}}</h3>
-
-             <span class="event_img">
-            <img [src]="seminer.image" >
-                 </span>
-
-            <p class="event_text">  <span class="spantext" [innerHtml]="seminer.description"></span></p>
-
-
-
-
-                 <h6>Tickets:</h6>
-
-               <label> <a href="{{seminer.bookingLink}}" target="_blank">{{seminer.bookingLink}}</a></label>
-
-
-
-               <span class="clear"></span>
-
-
-                <span class="event_share_block">
-                    <a class="sociallink fa fb" href="" target="_blank">
-                                    <img src="../../../../assets/images/share_img1.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa twi" href="" target="_blank">
-                                   <img src="../../../../assets/images/share_img2.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa tumblr" href="" target="_blank">
-                                    <img src="../../../../assets/images/share_img3.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa lin" href="" target="_blank">
-                                 <img src="../../../../assets/images/share_img4.jpg"  >
-                                  </a>
-                    <!-- <a class="sociallink fa env">
-                      <fa name="envelope" class="fa-envelope"></fa>
-                    </a> -->
-                                  <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/seminars%2F?affid='+seminer[0]._id)">
-                                   <img src="../../../../assets/images/share_img6.jpg"  >
-                                  </a> -->
-
-                </span>
-
-           </span>
-
-
-
-
-
-
-
-
-
-    </mat-card-content>
-
-
-
-
-
 
 
     <span class="clear"></span>

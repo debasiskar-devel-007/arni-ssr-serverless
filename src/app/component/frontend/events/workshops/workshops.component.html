@@ -39,7 +39,7 @@
 
                     <label>{{pasteventsem.date}}</label>
 
-                    <button (click)="detail(pasteventsem._id)">Know more</button>
+                    <button (click)="detail(pasteventsem)">Know more</button>
 
                      <span class="clear"></span>
                 </span>
@@ -64,11 +64,23 @@
 
           <span class="event_img">  <img src="{{eventsem.image}}"   ></span>
 
-             <p class="event_text">  <span class="spantext" [innerHtml]="eventsem.description"></span>  <a href="javascript:void(0);" (click)="detail(eventsem._id)" >Continue Reading</a></p>
+             <p class="event_text">  <span class="spantext" [innerHtml]="eventsem.description"></span>  <a href="javascript:void(0);" (click)="detail(eventsem)" >Continue Reading</a></p>
 
 
              <span class="event_share_block">
-                <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshopss{{eventsem._id}}" target="_blank">
+                <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
+                    <img src="../../../../assets/images/share_img1.jpg"  >
+                  </a>
+                  <a class="sociallink fa twi" (click)="twitterShare(eventsem)" target="_blank">
+                   <img src="../../../../assets/images/share_img2.jpg"  >
+                  </a>
+                  <a class="sociallink fa tumblr"  (click)="tumblrShare(eventsem)" target="_blank">
+                    <img src="../../../../assets/images/share_img3.jpg"  >
+                  </a>
+                  <a class="sociallink fa lin"  (click)="linkedinShare(eventsem)" target="_blank">
+                 <img src="../../../../assets/images/share_img4.jpg"  >
+                  </a>
+                <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshopss{{eventsem._id}}" target="_blank">
                                  <img src="../../../../assets/images/share_img1.jpg"  >
                                </a>
                                <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshops{{eventsem._id}}" target="_blank">
@@ -79,7 +91,7 @@
                                </a>
                                <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshops{{eventsem._id}}" target="_blank">
                               <img src="../../../../assets/images/share_img4.jpg"  >
-                               </a>
+                               </a> -->
                  <!-- <a class="sociallink fa env">
                    <fa name="envelope" class="fa-envelope"></fa>
                  </a> -->

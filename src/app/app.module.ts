@@ -15,6 +15,7 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { LoginModule } from 'login-lib-influxiq';
 import { ContactusModule } from 'contactus-lib-influxiq';
 /**Frontend Component**/
+import { FacebookModule } from 'ngx-facebook';
 
 import { LoginComponent } from './component/frontend/login/login.component';
 import { HeaderComponent, comingSoonDialog } from './layout/header/header.component';
@@ -30,7 +31,7 @@ import { BlogdetailComponent, VideoModalComponent } from './component/frontend/b
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/services/servicelist/servicelist.component';
-import { TesimonialComponent, comingSoonDialogTestimonhome } from './component/frontend/tesimonial/tesimonial.component';
+import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.component';
 import { TesimoniallistComponent, CommonTestimonialVideoModalComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 import { EmployeeTrainingComponent } from './component/frontend/services/employee-training/employee-training.component';
 import { CouplesCounselingComponent } from './component/frontend/services/couples-counseling/couples-counseling.component';
@@ -104,7 +105,6 @@ import { SidenavService } from './../app/services/sidenav.service';
     CommonTestimonialVideoModalComponent,
 
     HttpLoaderComponent,
-    comingSoonDialogTestimonhome,
 
 
   ],
@@ -117,6 +117,7 @@ import { SidenavService } from './../app/services/sidenav.service';
     NgtUniversalModule,
     DemoMaterialModule,
     MetaModule.forRoot(),
+    FacebookModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     OwlModule,
@@ -126,6 +127,6 @@ import { SidenavService } from './../app/services/sidenav.service';
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent, comingSoonDialogTestimonhome]
+  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent]
 })
 export class AppModule { }

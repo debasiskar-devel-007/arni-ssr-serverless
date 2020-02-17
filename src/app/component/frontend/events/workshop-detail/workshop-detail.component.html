@@ -152,13 +152,18 @@
                       <span class="event_right_blog_wrapperrow">
 
                 <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
+                    <!-- <img src="../../../../assets/images/event_img1.jpg"   > -->
+                    <img [src]="workshop.image"   >
                 </span>
                 <span class="event_right_blog_text">
 
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+                    <!-- <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
 
-                    <label>Oct 17, 2019</label>
+                    <label>Oct 17, 2019</label> -->
+
+                    <p>{{workshop.title}}</p>
+
+                    <label>{{workshop.event_date}}</label>
 
                     <button>Know more</button>
 
@@ -181,24 +186,24 @@
 
              <span class="event_blog">
             <span class="event_blog_top">
-           <label>{{workshop[0].date}} </label>
+           <label>{{workshop.date}} </label>
 
-             <p>Conference Room • {{workshop[0].location}} </p>
+             <p>Conference Room • {{workshop.location}} </p>
              </span>
-               <h3>{{workshop[0].title}} – {{workshop[0].time}}</h3>
+               <h3>{{workshop.title}} – {{workshop.time}}</h3>
 
              <span class="event_img">
-            <img src="{{workshop[0].image}}" >
+            <img [src]="workshop.image" >
                  </span>
 
-            <p class="event_text">  <span class="spantext" [innerHtml]="workshop[0].description"></span></p>
+            <p class="event_text">  <span class="spantext" [innerHtml]="workshop.description"></span></p>
 
 
 
 
                  <h6>Tickets:</h6>
 
-               <label> <a href="{{workshop[0].bookingLink}}" target="_blank">{{workshop[0].bookingLink}}</a></label>
+               <label> <a href="{{workshop.bookingLink}}" target="_blank">{{workshop.bookingLink}}</a></label>
 
 
 
@@ -206,24 +211,32 @@
 
 
                 <span class="event_share_block">
-                    <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshops{{workshop[0]._id}}" target="_blank">
+                    <!-- <a class="sociallink fa fb" href="" target="_blank">
                                     <img src="../../../../assets/images/share_img1.jpg"  >
                                   </a>
-                                  <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshops{{workshop[0]._id}}" target="_blank">
+                                  <a class="sociallink fa twi" href="" target="_blank">
                                    <img src="../../../../assets/images/share_img2.jpg"  >
                                   </a>
-                                  <a class="sociallink fa tumblr" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshops{{workshop[0]._id}}" target="_blank">
+                                  <a class="sociallink fa tumblr" href="" target="_blank">
                                     <img src="../../../../assets/images/share_img3.jpg"  >
                                   </a>
-                                  <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fworkshops{{workshop[0]._id}}" target="_blank">
+                                  <a class="sociallink fa lin" href="">
                                  <img src="../../../../assets/images/share_img4.jpg"  >
                                   </a>
-                    <!-- <a class="sociallink fa env">
-                      <fa name="envelope" class="fa-envelope"></fa>
-                    </a> -->
-                                  <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/workshop%2F?affid='+workshop[0]._id)">
-                                   <img src="../../../../assets/images/share_img6.jpg"  >
-                                  </a>
+                  -->
+
+                  <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
+                    <img src="../../../../assets/images/share_img1.jpg"  >
+                  </a>
+                  <a class="sociallink fa twi" (click)="twitterShare(eventsem)" target="_blank">
+                   <img src="../../../../assets/images/share_img2.jpg"  >
+                  </a>
+                  <a class="sociallink fa tumblr"  (click)="tumblrShare(eventsem)" target="_blank">
+                    <img src="../../../../assets/images/share_img3.jpg"  >
+                  </a>
+                  <a class="sociallink fa lin"  (click)="linkedinShare(eventsem)" target="_blank">
+                 <img src="../../../../assets/images/share_img4.jpg"  >
+                  </a>
 
                 </span>
 
