@@ -27,7 +27,8 @@
                     <mat-card>
                         <span class="testiimgwarpper">
                             <span class="testiimgwarpper-main">
-                                <img src="{{testmon.testimonial_img}}" class="iconcls">
+                                <img [src]="testmon.testimonial_img" class="iconcls" 
+                                (click)="detailsView(testmon)">
                             </span>
                             <span class="bnticons">
                                 <button *ngIf="testmon.video_url !='' && testmon.video_url !=null " (click)="openvideourl(testmon.video_url)"><img src="../../../../assets/images/videoicon.png"></button>

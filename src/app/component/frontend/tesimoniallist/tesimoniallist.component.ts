@@ -32,6 +32,25 @@ export class TesimoniallistComponent implements OnInit {
 
     this.meta.setTitle('Arnie Fonseca - Testimonials');
 
+
+    this.dataformate = moment();
+  }
+
+  
+
+  ngOnInit() {    
+
+    if(this.activatedRoute.snapshot.params.id ==null){
+      this.activatedRoute.data.forEach(data => {
+        let result: any = {};
+        result = data.testimonialListData.res;
+        // console.warn(result);
+        this.TestimonialListArray = result;
+        this.indexvallength = this.TestimonialListArray.length;
+      })
+
+
+
     this.meta.setTag('og:description', 'Check out what Coach Arnie’s students, clients and other people from the Personal Development Industry have to say about him and the many programs that he offers.');
     this.meta.setTag('twitter:description', 'Check out what Coach Arnie’s students, clients and other people from the Personal Development Industry have to say about him and the many programs that he offers.');
 
@@ -43,23 +62,41 @@ export class TesimoniallistComponent implements OnInit {
 
     this.meta.setTag('og:type', 'website');
 
-    this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-    this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
+    this.meta.setTag('og:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
+    this.meta.setTag('twitter:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
+    }
 
-    this.dataformate = moment();
+    else {
+
+      this.activatedRoute.data.forEach(data => {
+        let result: any = {};
+        result = data.testimonialListData.testimonial_list;
+        // console.warn(result);
+        this.TestimonialListArray = result;
+        this.indexvallength = this.TestimonialListArray.length;
+      })
+
+      for(let item in  this.TestimonialListArray){
+        if(this.activatedRoute.snapshot.params.id == this.TestimonialListArray[item]._id){
+          console.log('???', this.TestimonialListArray[item])
+          this.meta.setTag('og:title', 'arniefonseca - Testimonials '+this.TestimonialListArray[item].name);
+          this.meta.setTag('twitter:title', 'arniefonseca - Testimonials'+this.TestimonialListArray[item].name);
+          this.meta.setTag('og:image', this.TestimonialListArray[item].testimonial_img);
+          this.meta.setTag('twitter:image', this.TestimonialListArray[item].testimonial_img);
+          this.meta.setTag('og:description', this.TestimonialListArray[item].description);
+          this.meta.setTag('twitter:description', this.TestimonialListArray[item].description);  
+          this.meta.setTag('og:url', 'http://arniefonseca.influxiq.com/testimonial/'+  this.TestimonialListArray[item]._id);
+        }
+      }
+    }
+    
   }
 
-  
 
-  ngOnInit() {    
+  detailsView(val:any){
+    console.log(val)
 
-    this.activatedRoute.data.forEach(data => {
-      let result: any = {};
-      result = data.testimonialListData.res;
-      // console.warn(result);
-      this.TestimonialListArray = result;
-      this.indexvallength = this.TestimonialListArray.length;
-    })
+    this.router.navigateByUrl('/testimonial/'+val._id)
   }
 
   

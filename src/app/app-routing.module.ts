@@ -109,6 +109,17 @@ const routes: Routes = [
       endpoint: "datalistwithouttoken"
     }
   },
+    
+
+  {
+    path: "testimonial/:id",
+    component: TesimoniallistComponent,
+    resolve: { testimonialListData: ResolveService },
+    data: {
+      requestcondition: { source: "", condition: {} },
+      endpoint: "testimoniallistdata"
+    }
+  },
 
   { path: 'employee-training', component: EmployeeTrainingComponent },
   { path: 'couples-counseling', component: CouplesCounselingComponent },
