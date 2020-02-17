@@ -5,6 +5,7 @@ import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 
 export interface DialogData {data: any;} 
 
@@ -21,6 +22,7 @@ export class TesimoniallistComponent implements OnInit {
   public indexval: any = 6;
   public dataformate: any;
   public p_id: any;
+  public profile: any;
 
   safeSrc: SafeResourceUrl;
 
@@ -28,12 +30,17 @@ export class TesimoniallistComponent implements OnInit {
     console.log('copyText');
   }
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,  private sanitizer: DomSanitizer,public dialog:MatDialog) { 
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,  private sanitizer: DomSanitizer,public dialog:MatDialog,private facebook:FacebookService) { 
 
     this.meta.setTitle('Arnie Fonseca - Testimonials');
 
 
     this.dataformate = moment();
+
+    facebook.init({
+      appId: '2540470256228526',
+      version: 'v2.9'
+    });
   }
 
   
@@ -49,6 +56,8 @@ export class TesimoniallistComponent implements OnInit {
         this.indexvallength = this.TestimonialListArray.length;
       })
 
+
+     
 
 
     this.meta.setTag('og:description', 'Check out what Coach Arnie’s students, clients and other people from the Personal Development Industry have to say about him and the many programs that he offers.');
@@ -89,6 +98,7 @@ export class TesimoniallistComponent implements OnInit {
         }
       }
     }
+    
     
   }
 
@@ -143,6 +153,66 @@ export class TesimoniallistComponent implements OnInit {
    }
 
 //********* end Video modal section***********//
+
+
+
+
+//facebook share for event
+
+login() {
+  this.facebook.login()
+    .then((res: LoginResponse) => {
+     
+      this.getProfile();
+    })
+    .catch();
+}
+getProfile() {
+  this.facebook.api('me/?fields=id,name,email,picture')
+    .then((res: any) => {
+     
+      this.profile = res;
+      
+    })
+    .catch((error: any) => {
+
+    });
+}
+
+
+
+  // testimonial share 
+
+  fbTestimonialShare(val:any){
+    console.log(val)
+    var url='https://arniefonseca.influxiq.com/testimonial/'+ val._id;
+    console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+
+  twitterTestimonialShare(val:any){
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+  }
+
+
+  linkedinTestimonialShare(val:any){
+
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+
+  }
+
+tumblrTestimonialShare(val:any){
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+
+}
 
 
 }
