@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
 
 
 @Component({
@@ -23,8 +24,12 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   public dataformate: any;
   public eventImage:any;
 
+  public profile:any;
+  public title: any;
+  public eventTitle: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer ) {
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
 
     this.meta.setTitle('Arnie Fonseca - Speaker Engagements');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');
@@ -40,6 +45,14 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
 
     this.dataformate = moment();
+
+
+    FB.init({
+      appId: '2540470256228526',
+      version: 'v2.9'
+    });
+
+
   }
 
   ngOnInit() {
@@ -47,11 +60,29 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
     this.activatedRoute.data.forEach((data: any) => {
       this.speaker = data.speakerengagementsDetailData.events_data[0];
       // console.log('>>>>>>>kb>>>>>>>',this.speaker)
-      // this.speaker_img=this.speaker[0].Image[0];
-
-     
+      // this.speaker_img=this.speaker[0].Image[0];    
 
     })
+
+
+    if (this.speaker != '') {
+      this.meta.setTitle('Arnie Fonseca- speaker-engagements-detail');
+      this.meta.setTag('og:description', this.speaker.description);
+      this.meta.setTag('twitter:description', this.speaker.description);
+      this.meta.setTag("description", this.speaker.description)
+
+      this.meta.setTag('og:title', this.speaker.title);
+      this.meta.setTag('twitter:title', this.speaker.title);
+      this.meta.setTag('og:image', this.speaker.image);
+      this.meta.setTag('og:image:width', 'auto');
+      this.meta.setTag('og:image:height', 'auto');
+      this.meta.setTag('twitter:image', this.speaker.image);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/speaker-engagements-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+
+
+    }
+
+
   }
 
 
@@ -67,5 +98,90 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   copyText(val:any){
     console.log('copyText');
   }
+
+
+  //facebook share for event
+
+  login() {
+    this.FB.login()
+      .then((res: LoginResponse) => {
+       
+        this.getProfile();
+      })
+      .catch();
+  }
+  getProfile() {
+    this.FB.api('me/?fields=id,name,email,picture')
+      .then((res: any) => {
+       
+        this.profile = res;
+        
+      })
+      .catch((error: any) => {
+
+      });
+  }
+
+  fbshare(val: any) {
+    console.log(val)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+    var url='https://arniefonseca.influxiq.com/speaker-engagements-detail/'+ this.eventTitle+'/'+val._id;
+    // console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share',
+      quote: 'https://arniefonseca.influxiq.com/'
+    };
+    this.FB.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+
+  logoutWithFacebook(): void {
+
+    this.FB.logout().then();
+  }
+
+
+  twitterShare(val:any){
+  
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
+    // console.log(url)
+
+  }
+
+  linkedinShare(val:any){
+  
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
+    // console.log(url)
+
+  }
+
+
+   // tumblr share 
+  
+   tumblrShare(val:any){
+  
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
+    // console.log(url)
+
+  }
+
+
 
 }

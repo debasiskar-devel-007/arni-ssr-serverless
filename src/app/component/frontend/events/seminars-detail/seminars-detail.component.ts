@@ -15,8 +15,7 @@ export class SeminarsDetailComponent implements OnInit {
   public indexvallength: any = 1;
 
 
-  public title: any;
-  public eventTitle: any;
+ 
   public indexval: any = 6;
   // public seminer_img:any
   public seminer: any;
@@ -24,7 +23,9 @@ export class SeminarsDetailComponent implements OnInit {
   public dataformate: any;
   public eventImage: any;
   public profile:any;
-
+  public title: any;
+  public eventTitle: any;
+  
   constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
@@ -37,8 +38,8 @@ export class SeminarsDetailComponent implements OnInit {
     this.meta.setTag('og:title', 'Arnie Fonseca - Seminars');
     this.meta.setTag('twitter:title', 'Arnie Fonseca - Seminars');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-    this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
+    this.meta.setTag('og:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
+    this.meta.setTag('twitter:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
 
 
@@ -68,7 +69,7 @@ export class SeminarsDetailComponent implements OnInit {
     this.activatedRoute.data.forEach((data: any) => {
       // console.log(data)
       this.seminer = data.seminarsDetailData.events_data[0];
-      console.log('>>>>>>>kb>>>>>>>', this.seminer)
+      // console.log('>>>>>>>kb>>>>>>>', this.seminer)
       // this.seminer_img=this.seminer.Image;
 
     })
@@ -86,7 +87,7 @@ export class SeminarsDetailComponent implements OnInit {
       this.meta.setTag('og:image:width', 'auto');
       this.meta.setTag('og:image:height', 'auto');
       this.meta.setTag('twitter:image', this.seminer.image);
-      this.meta.setTag('og:url', 'https://dev.probidauto.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
 
 
     }
@@ -133,13 +134,13 @@ export class SeminarsDetailComponent implements OnInit {
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     console.log(this.eventTitle)
-    var url='https://dev.probidauto.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
+    var url='https://arniefonseca.influxiq.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
     // console.log(url)
 
     let params: UIParams = {
       href: url,
       method: 'share',
-      quote: 'https://dev.probidauto.com/'
+      quote: 'https://arniefonseca.influxiq.com/'
     };
     this.FB.ui(params).then((res:UIResponse)=>{
     }).catch(facebook=>{
@@ -158,7 +159,7 @@ export class SeminarsDetailComponent implements OnInit {
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     console.log(this.eventTitle)
-    window.open('https://twitter.com/intent/tweet?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
 
   }
@@ -169,7 +170,7 @@ export class SeminarsDetailComponent implements OnInit {
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     console.log(this.eventTitle)
 
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
 
   }
@@ -183,7 +184,7 @@ export class SeminarsDetailComponent implements OnInit {
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     console.log(this.eventTitle)
 
-    window.open('http://www.tumblr.com/share?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
 
   }

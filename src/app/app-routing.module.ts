@@ -55,7 +55,7 @@ const routes: Routes = [
     component: TesimonialComponent,
     resolve: { testimonialListData: ResolveService },
     data: {
-      requestcondition: { source: "testimonal", condition: {} },
+      requestcondition: { source: "testimonial_view", condition: {} },
       endpoint: "datalistwithouttoken"
     }
   },
@@ -109,7 +109,7 @@ const routes: Routes = [
       endpoint: "datalistwithouttoken"
     }
   },
-    
+
 
   {
     path: "testimonial/:id",
