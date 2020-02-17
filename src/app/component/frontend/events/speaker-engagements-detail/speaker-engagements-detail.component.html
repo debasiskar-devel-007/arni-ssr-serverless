@@ -27,13 +27,18 @@
                       <span class="event_right_blog_wrapperrow">
 
                 <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
+                  <img [src]="speaker.image"   >
                 </span>
                 <span class="event_right_blog_text">
 
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+                    <!-- <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
 
                     <label>Oct 17, 2019</label>
+
+                    <button>Know more</button> -->
+                    <p>{{speaker.title}}</p>
+
+                    <label>{{speaker.event_date}}</label>
 
                     <button>Know more</button>
 
@@ -41,61 +46,11 @@
                 </span>
                 <span class="clear"></span>
                   </span>
+                  <button class="viewalleventbtn">Load More</button>
                 </span>
 
             </span>
-            <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span>
-
-            <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span>
-            <span class="event_right_blog">
+            <!-- <span class="event_right_blog">
 
 
                 <span class="event_right_blog_wrapper">
@@ -170,6 +125,56 @@
                 </span>
 
             </span>
+            <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span>
+            <span class="event_right_blog">
+
+
+                <span class="event_right_blog_wrapper">
+
+                      <span class="event_right_blog_wrapperrow">
+
+                <span class="event_right_blog_img">
+                    <img src="../../../../assets/images/event_img1.jpg"   >
+                </span>
+                <span class="event_right_blog_text">
+
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+
+                    <label>Oct 17, 2019</label>
+
+                    <button>Know more</button>
+
+                     <span class="clear"></span>
+                </span>
+                <span class="clear"></span>
+                  </span>
+                </span>
+
+            </span> -->
 
             <!-- <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn" (click)="blogloadmore()">View More</button>-->
 
@@ -208,7 +213,20 @@
 
 
                 <span class="event_share_block">
-                    <a class="sociallink fa fb" href="" target="_blank">
+                    <a class="sociallink fa fb"  (click)="fbshare(seminer)"   target="_blank">
+                        <img src="../../../../assets/images/share_img1.jpg"  >
+                      </a>
+                      <a class="sociallink fa twi"  (click)="twitterShare(seminer)" target="_blank">
+                       <img src="../../../../assets/images/share_img2.jpg"  >
+                      </a>
+                      <a class="sociallink fa tumblr" (click)="tumblrShare(seminer)"  target="_blank">
+                        <img src="../../../../assets/images/share_img3.jpg"  >
+                      </a>
+                      <a class="sociallink fa lin" (click)="linkedinShare(seminer)"  target="_blank">
+                     <img src="../../../../assets/images/share_img4.jpg"  >
+                      </a>
+                      
+                    <!-- <a class="sociallink fa fb" href="" target="_blank">
                                      <img src="../../../../assets/images/share_img1.jpg"  >
                                    </a>
                                    <a class="sociallink fa twi" href="" target="_blank">
@@ -219,7 +237,7 @@
                                    </a>
                                    <a class="sociallink fa lin" href="" target="_blank">
                                   <img src="../../../../assets/images/share_img4.jpg"  >
-                                   </a>
+                                   </a> -->
                      <!-- <a class="sociallink fa env">
                        <fa name="envelope" class="fa-envelope"></fa>
                      </a> -->

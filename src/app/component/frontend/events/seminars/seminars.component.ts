@@ -144,13 +144,13 @@ fbshare(val: any) {
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   console.log(this.eventTitle)
-  var url='https://dev.probidauto.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
+  var url='https://arniefonseca.influxiq.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
   // console.log(url)
 
   let params: UIParams = {
     href: url,
     method: 'share',
-    quote: 'https://dev.probidauto.com/'
+    quote: 'https://arniefonseca.influxiq.com/'
   };
   this.FB.ui(params).then((res:UIResponse)=>{
   }).catch(facebook=>{
@@ -169,7 +169,7 @@ twitterShare(val:any){
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   console.log(this.eventTitle)
-  window.open('https://twitter.com/intent/tweet?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }
@@ -180,7 +180,7 @@ linkedinShare(val:any){
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   console.log(this.eventTitle)
 
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }
@@ -194,7 +194,7 @@ linkedinShare(val:any){
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   console.log(this.eventTitle)
 
-  window.open('http://www.tumblr.com/share?url=dev.probidauto.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }

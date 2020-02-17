@@ -5,6 +5,8 @@ import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
+import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
+
 @Component({
   selector: 'app-workshop-detail',
   templateUrl: './workshop-detail.component.html',
@@ -22,8 +24,11 @@ export class WorkshopDetailComponent implements OnInit {
   // public SeminarsdetailArry: any = []
   public dataformate: any;
   public eventImage:any;
+  public profile:any;
+  public title: any;
+  public eventTitle: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer ) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
     this.meta.setTag('twitter:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -37,16 +42,41 @@ export class WorkshopDetailComponent implements OnInit {
     this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
+
+    FB.init({
+      appId: '2540470256228526',
+      version: 'v2.9'
+    });
+
   }
 
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data: any) => {
       this.workshop = data.workshopsDetailData.events_data[0];
-      console.log('>>>>>>>kb>>>>>>>',this.workshop)
+      // console.log('>>>>>>>kb>>>>>>>',this.workshop)
       // this.workshop_img=this.workshop[0].Image[0];
 
     })
+
+    if (this.workshop != '') {
+      this.meta.setTitle('Arnie Fonseca- workshop-detail');
+      this.meta.setTag('og:description', this.workshop.description);
+      this.meta.setTag('twitter:description', this.workshop.description);
+      this.meta.setTag("description", this.workshop.description)
+
+      this.meta.setTag('og:title', this.workshop.title);
+      this.meta.setTag('twitter:title', this.workshop.title);
+      this.meta.setTag('og:image', this.workshop.image);
+      this.meta.setTag('og:image:width', 'auto');
+      this.meta.setTag('og:image:height', 'auto');
+      this.meta.setTag('twitter:image', this.workshop.image);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/workshop-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+
+
+    }
+
+
   }
 
 
@@ -60,6 +90,89 @@ export class WorkshopDetailComponent implements OnInit {
 
   copyText(val:any){
     console.log('copyText');
+  }
+
+
+  //facebook share for event
+
+  login() {
+    this.FB.login()
+      .then((res: LoginResponse) => {
+       
+        this.getProfile();
+      })
+      .catch();
+  }
+  getProfile() {
+    this.FB.api('me/?fields=id,name,email,picture')
+      .then((res: any) => {
+       
+        this.profile = res;
+        
+      })
+      .catch((error: any) => {
+
+      });
+  }
+
+  fbshare(val: any) {
+    console.log(val)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
+    var url='https://arniefonseca.influxiq.com/workshop-detail/'+ this.eventTitle+'/'+val._id;
+    // console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share',
+      quote: 'https://arniefonseca.influxiq.com/'
+    };
+    this.FB.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+
+  logoutWithFacebook(): void {
+
+    this.FB.logout().then();
+  }
+
+
+  twitterShare(val:any){
+  
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
+    // console.log(url)
+
+  }
+
+  linkedinShare(val:any){
+  
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
+    // console.log(url)
+
+  }
+
+
+   // tumblr share 
+  
+   tumblrShare(val:any){
+  
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.eventTitle)
+
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
+    // console.log(url)
+
   }
 
 }
