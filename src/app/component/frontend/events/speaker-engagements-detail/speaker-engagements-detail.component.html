@@ -1,56 +1,57 @@
 <app-header></app-header>
 <mat-card class="innerpagebanner speakerengagementsbg">
-    <span class="mainwrappercontent">
-        <mat-card-content>
-            <span>
-                <h1>speaker engagements</h1>
-                <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods that will make immediate improvements in your lives.</p>
-            </span>
-        </mat-card-content>
-    </span>
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>speaker engagements</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
 </mat-card>
 
 
 <mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f4 !important;">
 
-    <mat-card class="event_wrapper">
+  <mat-card class="event_wrapper">
 
 
-        <mat-card-content class="event_right">
-            <h2>PAst Speaker Engagements</h2>
+    <mat-card-content class="event_right">
+      <h2>PAst Speaker Engagements</h2>
 
-            <span class="event_right_blog">
+      <span class="event_right_blog">
 
 
-                <span class="event_right_blog_wrapper">
+        <span class="event_right_blog_wrapper">
 
-                      <span class="event_right_blog_wrapperrow">
+          <span class="event_right_blog_wrapperrow">
 
-                <span class="event_right_blog_img">
-                  <img [src]="speaker.image"   >
-                </span>
-                <span class="event_right_blog_text">
+            <span class="event_right_blog_img">
+              <img [src]="speaker.image">
+            </span>
+            <span class="event_right_blog_text">
 
-                    <!-- <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
+              <!-- <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
 
                     <label>Oct 17, 2019</label>
 
                     <button>Know more</button> -->
-                    <p>{{speaker.title}}</p>
+              <p>{{speaker.title}}</p>
 
-                    <label>{{speaker.event_date}}</label>
+              <label>{{speaker.event_date}}</label>
 
-                    <button>Know more</button>
+              <button>Know more</button>
 
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                  <!-- <button class="viewalleventbtn">Load More</button> -->
-                </span>
-
+              <span class="clear"></span>
             </span>
-            <!-- <span class="event_right_blog">
+            <span class="clear"></span>
+          </span>
+          <!-- <button class="viewalleventbtn">Load More</button> -->
+        </span>
+
+      </span>
+      <!-- <span class="event_right_blog">
 
 
                 <span class="event_right_blog_wrapper">
@@ -176,57 +177,58 @@
 
             </span> -->
 
-            <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn" (click)="blogloadmore()">Load More</button>
+      <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
+        (click)="blogloadmore()">Load More</button>
 
 
 
-        </mat-card-content>
+    </mat-card-content>
 
 
-        <mat-card-content class="event_left">
+    <mat-card-content class="event_left">
 
-             <span class="event_blog">
-            <span class="event_blog_top">
-           <label>{{speaker.date}} </label>
+      <span class="event_blog">
+        <span class="event_blog_top">
+          <label>{{speaker.date}} </label>
 
-             <p>Conference Room • {{speaker.location}} </p>
-             </span>
-               <h3>{{speaker.title}} – {{speaker.time}}</h3>
+          <p>Conference Room • {{speaker.location}} </p>
+        </span>
+        <h3>{{speaker.title}} – {{speaker.time}}</h3>
 
-             <span class="event_img">
-            <img [src]="speaker.image" >
-                 </span>
+        <span class="event_img">
+          <img [src]="speaker.image">
+        </span>
 
-            <p class="event_text">  <span class="spantext" [innerHtml]="speaker.description"></span></p>
-
-
-
-
-                 <h6>Tickets:</h6>
-
-               <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
+        <p class="event_text"> <span class="spantext" [innerHtml]="speaker.description"></span></p>
 
 
 
-               <span class="clear"></span>
+
+        <h6>Tickets:</h6>
+
+        <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
 
 
 
-                <span class="event_share_block">
-                    <a class="sociallink fa fb"  (click)="fbshare(speaker)"   target="_blank">
-                        <img src="../../../../assets/images/share_img1.jpg"  >
-                      </a>
-                      <a class="sociallink fa twi"  (click)="twitterShare(speaker)" target="_blank">
-                       <img src="../../../../assets/images/share_img2.jpg"  >
-                      </a>
-                      <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)"  target="_blank">
-                        <img src="../../../../assets/images/share_img3.jpg"  >
-                      </a>
-                      <a class="sociallink fa lin" (click)="linkedinShare(speaker)"  target="_blank">
-                     <img src="../../../../assets/images/share_img4.jpg"  >
-                      </a>
-                      
-                    <!-- <a class="sociallink fa fb" href="" target="_blank">
+        <span class="clear"></span>
+
+
+
+        <span class="event_share_block">
+          <a class="sociallink fa fb" (click)="fbshare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img1.jpg">
+          </a>
+          <a class="sociallink fa twi" (click)="twitterShare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img2.jpg">
+          </a>
+          <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img3.jpg">
+          </a>
+          <a class="sociallink fa lin" (click)="linkedinShare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img4.jpg">
+          </a>
+
+          <!-- <a class="sociallink fa fb" href="" target="_blank">
                                      <img src="../../../../assets/images/share_img1.jpg"  >
                                    </a>
                                    <a class="sociallink fa twi" href="" target="_blank">
@@ -238,17 +240,15 @@
                                    <a class="sociallink fa lin" href="" target="_blank">
                                   <img src="../../../../assets/images/share_img4.jpg"  >
                                    </a> -->
-                     <!-- <a class="sociallink fa env">
+          <!-- <a class="sociallink fa env">
                        <fa name="envelope" class="fa-envelope"></fa>
                      </a> -->
-                                  
-    
-                 </span>
-    
-
-           </span>
 
 
+        </span>
+
+
+      </span>
 
 
 
@@ -256,7 +256,9 @@
 
 
 
-        </mat-card-content>
+
+
+    </mat-card-content>
 
 
 
@@ -264,10 +266,10 @@
 
 
 
-        <span class="clear"></span>
+    <span class="clear"></span>
 
 
-    </mat-card>
+  </mat-card>
 </mat-card>
 
 <app-footer></app-footer>
