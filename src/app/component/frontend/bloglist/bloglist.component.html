@@ -170,7 +170,15 @@
                 </li>
             </mat-tree-node>
           </mat-tree> -->
-
+          <mat-accordion *ngFor="let d of blogcategorycount;let i=index; ">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+               {{d.blogtitle}}
+              </mat-expansion-panel-header>
+          
+            {{d.count_blogs}}
+            </mat-expansion-panel>
+          </mat-accordion>
           <!-- <span class="categorywrapper">  
                         <h2 class="blogtitle">Categories ({{blogcategorycount}}) <button mat-raised-button (click)="openAll()">Open All</button></h2>            
                         <button mat-raised-button (click)="closeAll()">close All</button> 
