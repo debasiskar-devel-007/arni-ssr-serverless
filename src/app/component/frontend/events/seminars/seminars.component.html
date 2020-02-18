@@ -28,7 +28,7 @@
     <mat-card-content class="event_right">
       <h2>Past seminers</h2>
 
-      <span class="event_right_blog" *ngFor="let pasteventsem of SeminarsListArry | slice:0:indexval; let i=index">
+      <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent">
 
         <span class="event_right_blog_wrapper">
 
@@ -61,11 +61,11 @@
 
     <mat-card-content class="event_left">
 
-      <span class="event_blog" *ngFor="let eventsem of SeminarsListArry | slice:0:indexvalleft; let i=index">
+      <span class="event_blog" *ngFor="let eventsem of upComingEvent | slice:0:indexvalleft; let i=index">
         <span class="event_blog_top">
 
           <label>{{eventsem.event_date}}</label>
-          <p>Conference Room • {{eventsem.location}}</p>
+          <p>{{eventsem.location}} , {{eventsem.state}} , {{eventsem.city}}</p>
         </span>
         <h3>{{eventsem.title}} – {{eventsem.time}}-{{eventsem.timeZone}}</h3>
 

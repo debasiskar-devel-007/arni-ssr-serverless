@@ -17,9 +17,9 @@
 
 
         <mat-card-content class="event_right">
-            <h2>PAst Speaker Engagements</h2>
+            <h2>Past Speaker Engagements</h2>
 
-            <span class="event_right_blog">
+            <span class="event_right_blog" *ngFor="let item of speakerList">
 
 
                 <span class="event_right_blog_wrapper">
@@ -27,7 +27,7 @@
                       <span class="event_right_blog_wrapperrow">
 
                 <span class="event_right_blog_img">
-                  <img [src]="speaker.image"   >
+                  <img [src]="item.image"   >
                 </span>
                 <span class="event_right_blog_text">
 
@@ -36,11 +36,11 @@
                     <label>Oct 17, 2019</label>
 
                     <button>Know more</button> -->
-                    <p>{{speaker.title}}</p>
+                    <p>{{item.title}}</p>
 
-                    <label>{{speaker.event_date}}</label>
+                    <label>{{item.event_date}}</label>
 
-                    <button>Know more</button>
+                    <!-- <button>Know more</button> -->
 
                      <span class="clear"></span>
                 </span>
@@ -50,135 +50,7 @@
                 </span>
 
             </span>
-            <!-- <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span>
-            <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span>
-            <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span>
-            <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span>
-            <span class="event_right_blog">
-
-
-                <span class="event_right_blog_wrapper">
-
-                      <span class="event_right_blog_wrapperrow">
-
-                <span class="event_right_blog_img">
-                    <img src="../../../../assets/images/event_img1.jpg"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
-
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
-            </span> -->
-
-            <!-- <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn" (click)="blogloadmore()">View More</button>-->
-
-
+       
 
         </mat-card-content>
 

@@ -5,6 +5,8 @@ import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-speaker-engagements',
   templateUrl: './speaker-engagements.component.html',
@@ -33,7 +35,10 @@ export class SpeakerEngagementsComponent implements OnInit {
   public eventImage:any;
   public profile:any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
+  public upComingEvent:any=[];
+  public pastEvent:any=[];
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
     
     this.meta.setTitle('Arnie Fonseca - Speaker Engagements');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');
@@ -67,6 +72,29 @@ export class SpeakerEngagementsComponent implements OnInit {
 
       this.indexvalleftlengthlength = this.SpeakerListArry.length;
     })
+
+
+
+
+    //past and upcoming event
+
+    let currentdate: Date;
+    currentdate = new Date();
+    let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+    let eventDate = moment(curdate).format('x');
+    console.log('s d',eventDate);
+
+
+    for(let i in  this.SpeakerListArry){
+      console.log('d', this.SpeakerListArry[i].date_unix)
+      if(this.SpeakerListArry[i].date_unix > eventDate){
+        console.log('up',this.SpeakerListArry[i])
+        this.upComingEvent.push(this.SpeakerListArry[i]);
+      } else {
+        console.log('past',this.SpeakerListArry[i])
+        this.pastEvent.push(this.SpeakerListArry[i]);
+      }
+    }
 
 
   }

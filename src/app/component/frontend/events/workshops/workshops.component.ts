@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-workshops',
@@ -32,7 +33,11 @@ export class WorkshopsComponent implements OnInit {
   public eventImage:any;
   public profile:any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
+  public upComingEvent:any=[];
+  public pastEvent:any=[];
+
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService,public datePipe: DatePipe ) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
     this.meta.setTag('twitter:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -65,6 +70,29 @@ export class WorkshopsComponent implements OnInit {
       this.indexvalleftlengthlength = this.WorkshopsListArry.length;
     })
 
+
+
+
+          //past and upcoming event
+
+          let currentdate: Date;
+          currentdate = new Date();
+          let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+          let eventDate = moment(curdate).format('x');
+          console.log('s d',eventDate);
+      
+      
+          for(let i in  this.WorkshopsListArry){
+            console.log('d', this.WorkshopsListArry[i].date_unix)
+            if(this.WorkshopsListArry[i].date_unix > eventDate){
+              console.log('up',this.WorkshopsListArry[i])
+              this.upComingEvent.push(this.WorkshopsListArry[i]);
+            } else {
+              console.log('past',this.WorkshopsListArry[i])
+              this.pastEvent.push(this.WorkshopsListArry[i]);
+            }
+          }
+   
 
   }
 

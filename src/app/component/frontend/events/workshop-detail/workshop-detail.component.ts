@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { DatePipe } from '@angular/common';
 
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
 
@@ -17,7 +18,7 @@ export class WorkshopDetailComponent implements OnInit {
 
   public indexvallength: any=1;
 
-
+  public 
   public indexval:any=6;
   public workshop_img:any
   public workshop:any;
@@ -27,7 +28,7 @@ export class WorkshopDetailComponent implements OnInit {
   public profile:any;
   public title: any;
   public eventTitle: any;
-
+  public workshopList:any;
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -53,14 +54,18 @@ export class WorkshopDetailComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data: any) => {
-      this.workshop = data.workshopsDetailData.events_data[0];
+      this.workshop = data.workshopsDetailData.results.event[0];
+
+      this.workshopList = data.workshopsDetailData.results.event_list
+
       // console.log('>>>>>>>kb>>>>>>>',this.workshop)
       // this.workshop_img=this.workshop[0].Image[0];
 
     })
 
+
     if (this.workshop != '') {
-      this.meta.setTitle('Arnie Fonseca- workshop-detail');
+      this.meta.setTitle('Arnie Fonseca- seminars-detail');
       this.meta.setTag('og:description', this.workshop.description);
       this.meta.setTag('twitter:description', this.workshop.description);
       this.meta.setTag("description", this.workshop.description)
@@ -71,7 +76,7 @@ export class WorkshopDetailComponent implements OnInit {
       this.meta.setTag('og:image:width', 'auto');
       this.meta.setTag('og:image:height', 'auto');
       this.meta.setTag('twitter:image', this.workshop.image);
-      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/workshop-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
 
 
     }

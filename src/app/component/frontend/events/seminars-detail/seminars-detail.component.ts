@@ -25,7 +25,7 @@ export class SeminarsDetailComponent implements OnInit {
   public profile:any;
   public title: any;
   public eventTitle: any;
-  
+  public seminerList:any;
   constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
@@ -68,11 +68,19 @@ export class SeminarsDetailComponent implements OnInit {
 
     this.activatedRoute.data.forEach((data: any) => {
       // console.log(data)
-      this.seminer = data.seminarsDetailData.events_data[0];
-      // console.log('>>>>>>>kb>>>>>>>', this.seminer)
-      // this.seminer_img=this.seminer.Image;
+      this.seminer = data.seminarsDetailData.results.event[0];
+
+      this.seminerList = data.seminarsDetailData.results.event_list;
+
+      
 
     })
+
+    
+
+
+
+
 
 
     if (this.seminer != '') {

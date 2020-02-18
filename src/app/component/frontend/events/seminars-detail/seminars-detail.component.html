@@ -71,19 +71,19 @@
     <mat-card-content class="event_right">
       <h2>Past seminers</h2>
 
-        <span class="event_right_blog">
+        <span class="event_right_blog" *ngFor="let item of seminerList">
 
 
-                <span class="event_right_blog_wrapper">
+                <span class="event_right_blog_wrapper" >
                   <span class="event_right_blog_wrapperrow">
                         <span class="event_right_blog_img">
-                            <img [src]="seminer.image"   >
+                            <img [src]="item.image"   >
                         </span>
                         <span class="event_right_blog_text">
 
-                            <p>{{seminer.title}}</p>
+                            <p>{{item.title}}</p>
 
-                            <label>{{seminer.event_date}}</label>
+                            <label>{{item.event_date}}</label>
 
                             <button>Know more</button>
                             
@@ -92,7 +92,7 @@
                         </span>
                         <span class="clear"></span>
                   </span>
-                  <button class="viewalleventbtn">Load More</button>
+                  <!-- <button class="viewalleventbtn">Load More</button> -->
                 </span>
 
             </span>

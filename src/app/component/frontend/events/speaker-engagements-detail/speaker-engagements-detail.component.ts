@@ -27,7 +27,7 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   public profile:any;
   public title: any;
   public eventTitle: any;
-
+public speakerList:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
 
@@ -58,7 +58,10 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data: any) => {
-      this.speaker = data.speakerengagementsDetailData.events_data[0];
+      this.speaker = data.speakerengagementsDetailData.results.event[0];
+
+      this.speakerList = data.speakerengagementsDetailData.results.event_list;
+
       // console.log('>>>>>>>kb>>>>>>>',this.speaker)
       // this.speaker_img=this.speaker[0].Image[0];    
 

@@ -41,6 +41,9 @@ export class ResolveService implements Resolve<any> {
       delete route.data.requestcondition.condition.id;
       // console.log(route.data.requestcondition.condition);
     }
+
+   
+
     var endpoint = route.data.link;
     var source = route.data.source;
     var condition = route.data.condition;

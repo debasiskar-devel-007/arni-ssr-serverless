@@ -159,14 +159,14 @@ data: {
 { path: 'seminars-detail/:title/:id', component: SeminarsDetailComponent,
 resolve: { seminarsDetailData: ResolveService },
 data: {
-  requestcondition: { condition: {_id:"id"} },
+  requestcondition: { condition: {_id:"id", type:"seminars"} },
   endpoint: "eventdata"
 }
 },
 { path: 'workshop-detail/:title/:id', component: WorkshopDetailComponent,
 resolve: { workshopsDetailData: ResolveService },
 data: {
-  requestcondition: {condition: {_id:"id"} },
+  requestcondition: { condition:{_id:"id", type:"workshops"} },
   endpoint: "eventdata"
 }
 },
@@ -176,7 +176,7 @@ data: {
 { path: 'speaker-engagements-detail/:title/:id', component: SpeakerEngagementsDetailComponent,
 resolve: { speakerengagementsDetailData: ResolveService },
 data: {
-requestcondition: {  condition: {_id:"id"} },
+requestcondition: {  condition: {_id:"id", type:"speaker_engagement"} },
 endpoint: "eventdata"
 }
 },
