@@ -89,12 +89,14 @@
                   <img class="d-block w-100" [src]="item.slideimg">
                 </span>
                 <span class="slide1info">
+                  <h4 [innerHTML]="item.subtitle2"></h4>
                   <h1 [innerHTML]="item.title"></h1>
                   <h3 [innerHTML]="item.subtitle"></h3>
                 </span>           
               </div>
-              <p [innerHTML]="item.description"></p>
-              <button mat-button class="btngray" [routerLink]="['/']">{{item.button_view_more}}</button>
+              <p class="description1" [innerHTML]="item.description"></p>
+              <p class="description3" [innerHTML]="item.description3"></p>
+              <p class="description2" [innerHTML]="item.description2"></p>
             </div>
       </div>
     </owl-carousel>
