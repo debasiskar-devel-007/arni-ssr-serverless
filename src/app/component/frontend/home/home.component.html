@@ -86,7 +86,8 @@
             <div class="carousalinfo">
               <div class="carousalinfoinner">
                 <span class="slide1imgperson">
-                  <img class="d-block w-100" src="../../assets/images/slide1img-person.jpg">
+                  <!-- <img class="d-block w-100" src="../../assets/images/slide1img-person.jpg"> -->
+                  <img class="d-block w-100" [src]="item.slideimg">
                 </span>
                 <span class="slide1info">
                   <!-- <h1>Arnie <br>Fonseca</h1> -->
@@ -97,7 +98,7 @@
               </div>
               <!-- <p>Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b></p> -->
               <p>{{item.description}}</p>
-              <button mat-button class="btngray" [routerLink]="['/']">view more</button>
+              <button mat-button class="btngray" [routerLink]="['/']">{{item.button_view_more}}</button>
             </div>
       </div>
     </owl-carousel>
