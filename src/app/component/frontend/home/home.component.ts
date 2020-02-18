@@ -24,7 +24,16 @@ export class HomeComponent implements OnInit {
 
   public name: string;
 
-  public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
+
+  
+  public slides: any = [
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg","title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "button_view_more":"view more", "button_view_more_link":"https://arniefonseca.influxiq.com"},
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg","title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "button_view_more":"view more", "button_view_more_link":"https://arniefonseca.influxiq.com"},
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg","title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "button_view_more":"view more", "button_view_more_link":"https://arniefonseca.influxiq.com"}
+  ];
+
+
+  // public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
     margin: 0,
@@ -95,36 +104,6 @@ export class HomeComponent implements OnInit {
   };
 
   
-  //*********** Coming Soon ************//
-  comingSoonDialogTestimonhome(): void {
-    const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
-
-      data: { name: this.name }
-    });
-
-    setTimeout(() => {
-      this.dialog.closeAll();
-    }, 4000);
-  }
-  //*********** Coming Soon ************//
-
-
-  
+    
 }
 
-
-@Component({
-  selector: 'app-coming-soon',
-  templateUrl: '../../../layout/coming-soon.html'
-})
-export class comingSoonDialogTestimonhome {
-
-  constructor(
-    public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}

@@ -55,7 +55,7 @@ const routes: Routes = [
     component: TesimonialComponent,
     resolve: { testimonialListData: ResolveService },
     data: {
-      requestcondition: { source: "testimonal", condition: {} },
+      requestcondition: { source: "testimonial_view", condition: {} },
       endpoint: "datalistwithouttoken"
     }
   },
@@ -83,7 +83,7 @@ const routes: Routes = [
 
   {
     path: 'blog', component: BloglistComponent, resolve: { blogCatList: ResolveService },
-    data: { requestcondition: { condition: { "limit": 4, "skip": 1 } }, endpoint: 'blogdata' }
+    data: { requestcondition: { condition: { "limit": 4, "skip": 0 } }, endpoint: 'blogdata' }
   },
 
   {
@@ -107,6 +107,17 @@ const routes: Routes = [
     data: {
       requestcondition: { source: "testimonial_view", condition: {} },
       endpoint: "datalistwithouttoken"
+    }
+  },
+
+
+  {
+    path: "testimonial/:id",
+    component: TesimoniallistComponent,
+    resolve: { testimonialListData: ResolveService },
+    data: {
+      requestcondition: { source: "", condition: {} },
+      endpoint: "testimoniallistdata"
     }
   },
 
@@ -145,28 +156,28 @@ data: {
 }
 },
 
-{ path: 'seminars-detail/:_id', component: SeminarsDetailComponent,
+{ path: 'seminars-detail/:title/:id', component: SeminarsDetailComponent,
 resolve: { seminarsDetailData: ResolveService },
 data: {
-  requestcondition: { source: "events_view", condition: {type:"seminars"} },
-  endpoint: "datalistwithouttoken"
+  requestcondition: { condition: {_id:"id"} },
+  endpoint: "eventdata"
 }
 },
-{ path: 'workshop-detail/:_id', component: WorkshopDetailComponent,
+{ path: 'workshop-detail/:title/:id', component: WorkshopDetailComponent,
 resolve: { workshopsDetailData: ResolveService },
 data: {
-  requestcondition: { source: "events_view", condition: {type:"workshops"} },
-  endpoint: "datalistwithouttoken"
+  requestcondition: {condition: {_id:"id"} },
+  endpoint: "eventdata"
 }
 },
 
 
 
-{ path: 'speaker-engagements-detail/:_id', component: SpeakerEngagementsDetailComponent,
+{ path: 'speaker-engagements-detail/:title/:id', component: SpeakerEngagementsDetailComponent,
 resolve: { speakerengagementsDetailData: ResolveService },
 data: {
-requestcondition: { source: "events_view", condition: {type:"speaker_engagement"} },
-endpoint: "datalistwithouttoken"
+requestcondition: {  condition: {_id:"id"} },
+endpoint: "eventdata"
 }
 },
 

@@ -56,6 +56,7 @@
     "login-lib-influxiq": "0.0.14",
     "moment": "^2.24.0",
     "ngx-cookie-service": "^2.3.0",
+    "ngx-facebook": "^2.4.0",
     "ngx-moment": "^3.5.0",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-uploader": "^8.0.0",

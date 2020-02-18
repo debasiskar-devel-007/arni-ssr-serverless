@@ -1,6 +1,17 @@
-import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵConsole,Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../../api.service';
+import { MetaService } from '@ngx-meta/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
+
+export interface DialogData {
+  errorMsg: string;
+  loginMsg: string;
+  name: string;
+}
+
+
 
 @Component({
   selector: 'app-tesimonial',
@@ -8,6 +19,8 @@ import { ApiService } from '../../../api.service';
   styleUrls: ['./tesimonial.component.css']
 })
 export class TesimonialComponent implements OnInit {
+
+  public name: string;
   
   carouselOptions = {
     margin: 5,
@@ -59,7 +72,15 @@ export class TesimonialComponent implements OnInit {
 
   public TestimonialListArray: any = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, public dialog: MatDialog,private facebook:FacebookService) {
+
+    facebook.init({
+      appId: '2540470256228526',
+      version: 'v2.9'
+    });
+
+
+   }
 
   ngOnInit() {
     var data: any = {};
@@ -90,4 +111,77 @@ export class TesimonialComponent implements OnInit {
     console.log('show button')
   }
 
+
+  //*********** Coming Soon ************//
+  // comingSoonDialogTestimonhome(): void {
+  //   const dialogRef = this.dialog.open(comingSoonDialogTestimonhome, {
+
+  //     data: { name: this.name }
+  //   });
+
+  //   setTimeout(() => {
+  //     this.dialog.closeAll();
+  //   }, 4000);
+  // }
+  //*********** Coming Soon ************//
+
+
+
+
+
+  
+  // testimonial share 
+
+  fbTestimonialShare(val:any){
+    console.log(val)
+    var url='https://arniefonseca.influxiq.com/testimonial/'+ val._id;
+    console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+
+  twitterTestimonialShare(val:any){
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+  }
+
+
+  linkedinTestimonialShare(val:any){
+
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+
+  }
+
+tumblrTestimonialShare(val:any){
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+
 }
+
+
+
+
+}
+
+
+
+// @Component({
+//   selector: 'app-coming-soon',
+//   templateUrl: '../../../layout/coming-soon.html'
+// })
+// export class comingSoonDialogTestimonhome {
+
+//   constructor(
+//     public dialogRef: MatDialogRef<comingSoonDialogTestimonhome>,
+//     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
+
+// }

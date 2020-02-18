@@ -59,7 +59,7 @@
             <span class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
              
               <mat-card>
-                <span class="item_images" (click)="blogdetail(item._id)"><img [src]="item.image"></span>
+                <span class="item_images" (click)="blogdetail(item._id)"><img [src]="item.blogs_image"></span>
                 <mat-card-content>
                       <span class="bnticons">
                         <button *ngIf="item.video_url !='' && item.video_url !=null "
@@ -145,8 +145,8 @@
           <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null && indexval < bloglisting.length" (click)="blogloadmore()">Load More</button>
         </span>
         <span class="categorywrapper">
-          <h2 class="blogtitle">Categories ({{blogcategorycount}})</h2>
-          
+          <h2 class="blogtitle">Categories ({{blogcategorycount.length}})</h2>
+<!--           
           <mat-tree [dataSource]="blogCategoryDataSource" [treeControl]="nestedTreeControl" class="example-tree">            
             <mat-tree-node *matTreeNodeDef="let item" matTreeNodePadding>
                 <li class="mat-tree-node">
@@ -169,8 +169,16 @@
                     </ul>
                 </li>
             </mat-tree-node>
-          </mat-tree>
-
+          </mat-tree> -->
+          <mat-accordion *ngFor="let d of blogcategorycount;let i=index; ">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+               {{d.blogtitle}}
+              </mat-expansion-panel-header>
+          
+            {{d.count_blogs}}
+            </mat-expansion-panel>
+          </mat-accordion>
           <!-- <span class="categorywrapper">  
                         <h2 class="blogtitle">Categories ({{blogcategorycount}}) <button mat-raised-button (click)="openAll()">Open All</button></h2>            
                         <button mat-raised-button (click)="closeAll()">close All</button> 

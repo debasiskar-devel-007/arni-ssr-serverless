@@ -82,14 +82,19 @@
 
     <owl-carousel [options]="carouselBannerOptions" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
       <div class="itemcls"  *ngFor="let item of slides">    
-          <img class="slide-image" [src]="item">
+          <img class="slide-image" [src]="item.img">
             <div class="carousalinfo">
               <div class="carousalinfoinner">
-                <span class="slide1imgperson"><img class="d-block w-100" src="../../assets/images/slide1img-person.jpg"></span>
-                <span class="slide1info"><h1>Arnie <br>Fonseca</h1><h3>Personal Development Mentor</h3></span>           
+                <span class="slide1imgperson">
+                  <img class="d-block w-100" [src]="item.slideimg">
+                </span>
+                <span class="slide1info">
+                  <h1 [innerHTML]="item.title"></h1>
+                  <h3 [innerHTML]="item.subtitle"></h3>
+                </span>           
               </div>
-              <p>Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b></p>
-              <button mat-button class="btngray" [routerLink]="['/']">view more</button>
+              <p [innerHTML]="item.description"></p>
+              <button mat-button class="btngray" [routerLink]="['/']">{{item.button_view_more}}</button>
             </div>
       </div>
     </owl-carousel>
@@ -193,13 +198,6 @@
     <mat-card-content class="blockcontent">  
       <app-tesimonial></app-tesimonial>
       <button mat-button class="btnblue sim-button" (click)="btnClick();">View More</button>
-      <span class="blogsociallists">
-        <a class="sociallink fa fb" (click)="comingSoonDialogTestimonhome()"><fa name="facebook" class="fa-facebook"></fa></a>
-        <a class="sociallink fa twi" (click)="comingSoonDialogTestimonhome()"><fa name="twitter" class="fa-twitter"></fa></a>
-        <a class="sociallink fa lin" (click)="comingSoonDialogTestimonhome()"><fa name="linkedin" class="fa-linkedin"></fa></a>
-        <a class="sociallink fa tumblr" (click)="comingSoonDialogTestimonhome()"><fa name="tumblr" class="fa-tumblr"></fa></a>
-        <!-- <fa class="sociallink fa share" (click)="comingSoonDialogTestimonhome()"><fa name="share" class="fa-share"></fa></a> -->
-      </span>
     </mat-card-content>
   </span>
 </mat-card>

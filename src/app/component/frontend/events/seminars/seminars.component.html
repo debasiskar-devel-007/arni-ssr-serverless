@@ -1,120 +1,110 @@
 <app-header></app-header>
 <mat-card class="innerpagebanner seminarsbg">
-    <span class="mainwrappercontent">
-        <mat-card-content>
-            <span>
-                <h1>seminars</h1>
-                <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods that will make immediate improvements in your lives.</p>
-            </span>
-        </mat-card-content>
-    </span>
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>seminars</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
 </mat-card>
-<mat-card class="ptb-40 generalcls seminarswrapper" style="background: #f2f4f4 !important;">  
-    <span class="mainwrappercontent bloghead">
-        <mat-card-content>
-            <h2> seminars</h2>
-            <p>
-                View the schedule for all upcoming Seminars and book your seat(s) in advance so that you don’t have to miss out on an all-important event that<br> could have a life-changing impact. You can also contact me to speak at a seminar in your community!
-            </p>
-        </mat-card-content>
-    </span>
+<mat-card class="ptb-40 generalcls seminarswrapper" style="background: #f2f4f4 !important;">
+  <span class="mainwrappercontent bloghead">
+    <mat-card-content>
+      <h2> seminars</h2>
+      <p>
+        View the schedule for all upcoming Seminars and book your seat(s) in advance so that you don’t have to miss out
+        on an all-important event that<br> could have a life-changing impact. You can also contact me to speak at a
+        seminar in your community!
+      </p>
+    </mat-card-content>
+  </span>
 
 
-    <mat-card class="event_wrapper">
+  <mat-card class="event_wrapper">
 
-        <mat-card-content class="event_right">
-            <h2>Past seminers</h2>
+    <mat-card-content class="event_right">
+      <h2>Past seminers</h2>
 
-            <span class="event_right_blog" *ngFor="let pasteventsem of SeminarsListArry | slice:0:indexval; let i=index" >
+      <span class="event_right_blog" *ngFor="let pasteventsem of SeminarsListArry | slice:0:indexval; let i=index">
 
+        <span class="event_right_blog_wrapper">
 
-                <span class="event_right_blog_wrapper" >
-                
-                      <span class="event_right_blog_wrapperrow">
+          <span class="event_right_blog_wrapperrow">
 
-                <span class="event_right_blog_img">
-                    <img src="{{pasteventsem.image}}"   >
-                </span>
-                <span class="event_right_blog_text">
-
-                    <p [innerHtml]="pasteventsem.title"></p>
-
-                    <label>{{pasteventsem.event_date}}</label>
-
-                    <button (click)="detail(pasteventsem._id)">Know more</button>
-
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
-
+            <span class="event_right_blog_img">
+              <img src="{{pasteventsem.image}}">
             </span>
+            <span class="event_right_blog_text">
 
-            <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn" (click)="blogloadmore()">View More</button>
+              <p [innerHtml]="pasteventsem.title"></p>
 
-        </mat-card-content>
+              <label>{{pasteventsem.event_date}}</label>
 
+              <button (click)="detail(pasteventsem)">Know more</button>
 
-        <mat-card-content class="event_left">
+              <span class="clear"></span>
+            </span>
+            <span class="clear"></span>
+          </span>
+        </span>
 
-            <span class="event_blog" *ngFor="let eventsem of SeminarsListArry | slice:0:indexvalleft; let i=index">
-            <span class="event_blog_top">
+      </span>
 
-           <label>{{eventsem.event_date}}</label>
-            <p>Conference Room • {{eventsem.location}}</p>
-             </span>
-                <h3>{{eventsem.title}} – {{eventsem.time}}-{{eventsem.timeZone}}</h3>
+      <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
+        (click)="blogloadmore()">Load More</button>
 
-                <span class="event_img">
-            <img src="{{eventsem.image}}"    >
-                    </span>
-
-             <p class="event_text">  <span class="spantext" [innerHtml]="eventsem.description"></span> <a href="javascript:void(0);" (click)="detail(eventsem._id)" >Continue Reading</a></p>
+    </mat-card-content>
 
 
-                <span class="event_share_block">
-                   <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{eventsem._id}}" target="_blank">
-                                    <img src="../../../../assets/images/share_img1.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{eventsem._id}}" target="_blank">
-                                   <img src="../../../../assets/images/share_img2.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa tumblr" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{eventsem._id}}" target="_blank">
-                                    <img src="../../../../assets/images/share_img3.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fseminars{{eventsem._id}}" target="_blank">
-                                 <img src="../../../../assets/images/share_img4.jpg"  >
-                                  </a>
-                    <!-- <a class="sociallink fa env">
+    <mat-card-content class="event_left">
+
+      <span class="event_blog" *ngFor="let eventsem of SeminarsListArry | slice:0:indexvalleft; let i=index">
+        <span class="event_blog_top">
+
+          <label>{{eventsem.event_date}}</label>
+          <p>Conference Room • {{eventsem.location}}</p>
+        </span>
+        <h3>{{eventsem.title}} – {{eventsem.time}}-{{eventsem.timeZone}}</h3>
+
+        <span class="event_img">
+          <img src="{{eventsem.image}}">
+        </span>
+
+        <p class="event_text"> <span class="spantext" [innerHtml]="eventsem.description"></span> <a
+            href="javascript:void(0);" (click)="detail(eventsem)">Continue Reading</a></p>
+
+        <span class="event_share_block">
+          <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
+            <img src="../../../../assets/images/share_img1.jpg">
+          </a>
+          <a class="sociallink fa twi" (click)="twitterShare(eventsem)" target="_blank">
+            <img src="../../../../assets/images/share_img2.jpg">
+          </a>
+          <a class="sociallink fa tumblr" (click)="tumblrShare(eventsem)" target="_blank">
+            <img src="../../../../assets/images/share_img3.jpg">
+          </a>
+          <a class="sociallink fa lin" (click)="linkedinShare(eventsem)" target="_blank">
+            <img src="../../../../assets/images/share_img4.jpg">
+          </a>
+          <!-- <a class="sociallink fa env">
                       <fa name="envelope" class="fa-envelope"></fa>
                     </a> -->
-                                  <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/seminars%2F?affid='+eventsem._id)">
+          <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/seminars%2F?affid='+eventsem._id)">
                                    <img src="../../../../assets/images/share_img6.jpg"  >
                                   </a> -->
+        </span>
 
+      </span>
 
-                </span>
+      <button *ngIf="indexvalleftlengthlength > indexvalleft && indexvalleftlengthlength !=null" class="viewalleventbtn"
+        (click)="blogloadmorenew()">View More</button>
 
-           </span>
-
-            <button *ngIf="indexvalleftlengthlength > indexvalleft && indexvalleftlengthlength !=null" class="viewalleventbtn" (click)="blogloadmorenew()">View More</button>
-
-
-        </mat-card-content>
-
-
-
-
-
-
-
-<span class="clear"></span>
-
-
-    </mat-card>
-
-
+    </mat-card-content>
+    <span class="clear"></span>
+  </mat-card>
 </mat-card>
 
 <app-footer></app-footer>
