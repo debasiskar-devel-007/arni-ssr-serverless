@@ -21,15 +21,15 @@ export class ServiceComponent implements OnInit {
 
     }
     this.apiservice.getDatalist(data).subscribe((result: any)=>{
-      console.log(result.res);
+      //console.log(result.res);
       this.serviceListConfig= result.res;
-      console.log('service list', this.serviceListConfig.datasource);
+      //console.log('service list', this.serviceListConfig.datasource);
     });
    }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data: any)=>{
-      console.log(data)
+      //console.log(data)
       // this.ServiceListArray=data;
       // console.log("ojjjjjjjjhgdfhgdf",this.ServiceListArray);   
     })
