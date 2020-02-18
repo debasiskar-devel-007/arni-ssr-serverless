@@ -24,7 +24,16 @@ export class HomeComponent implements OnInit {
 
   public name: string;
 
-  public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
+
+  
+  public slides: any = [
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","title":"Arnie Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn some simple, but powerful methods that will make immediate improvements in your lives."},
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","title":"Arnie Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn some simple, but powerful methods that will make immediate improvements in your lives."},
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","title":"Arnie Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn some simple, but powerful methods that will make immediate improvements in your lives."}
+   ];
+
+
+  // public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
     margin: 0,
