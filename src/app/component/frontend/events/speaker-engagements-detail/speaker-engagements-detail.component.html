@@ -1,124 +1,114 @@
 <app-header></app-header>
 <mat-card class="innerpagebanner speakerengagementsbg">
-    <span class="mainwrappercontent">
-        <mat-card-content>
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>speaker engagements</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+      <app-header></app-header>
+      <mat-card class="innerpagebanner speakerengagementsbg">
+        <span class="mainwrappercontent">
+          <mat-card-content>
             <span>
-                <h1>speaker engagements</h1>
-                <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods that will make immediate improvements in your lives.</p>
+              <h1>speaker engagements</h1>
+              <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful
+                methods
+                that will make immediate improvements in your lives.</p>
             </span>
-        </mat-card-content>
-    </span>
-</mat-card>
+          </mat-card-content>
+        </span>
+      </mat-card>
 
 
-<mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f4 !important;">
+      <mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f4 !important;">
 
-    <mat-card class="event_wrapper">
+        <mat-card class="event_wrapper">
 
 
-        <mat-card-content class="event_right">
+          <mat-card-content class="event_right">
             <h2>Past Speaker Engagements</h2>
 
             <span class="event_right_blog" *ngFor="let item of speakerList">
 
 
-                <span class="event_right_blog_wrapper">
+              <span class="event_right_blog_wrapper">
 
-                      <span class="event_right_blog_wrapperrow">
+                <span class="event_right_blog_wrapperrow">
 
-                <span class="event_right_blog_img">
-                  <img [src]="item.image"   >
-                </span>
-                <span class="event_right_blog_text">
+                  <span class="event_right_blog_img">
+                    <img [src]="item.image">
+                  </span>
+                  <span class="event_right_blog_text">
 
-                    <!-- <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected</p>
 
-                    <label>Oct 17, 2019</label>
-
-                    <button>Know more</button> -->
                     <p>{{item.title}}</p>
 
                     <label>{{item.event_date}}</label>
 
-                    <!-- <button>Know more</button> -->
 
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
+                    <span class="clear"></span>
                   </span>
-                  <button class="viewalleventbtn">Load More</button>
+                  <span class="clear"></span>
                 </span>
+                <button class="viewalleventbtn">Load More</button>
+              </span>
+
+              <span class="clear"></span>
+            </span>
+
+
+          </mat-card-content>
+
+
+          <mat-card-content class="event_left">
+
+            <span class="event_blog">
+              <span class="event_blog_top">
+                <label>{{speaker.date}} </label>
+
+                <p>Conference Room • {{speaker.location}} </p>
+              </span>
+              <h3>{{speaker.title}} – {{speaker.time}}</h3>
+
+              <span class="event_img">
+                <img [src]="speaker.image">
+              </span>
+
+              <p class="event_text"> <span class="spantext" [innerHtml]="speaker.description"></span></p>
+
+
+
+
+              <h6>Tickets:</h6>
+
+              <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
+
+
+
+              <span class="clear"></span>
+
+
+
+              <span class="event_share_block">
+                <a class="sociallink fa fb" (click)="fbshare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img1.jpg">
+                </a>
+                <a class="sociallink fa twi" (click)="twitterShare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img2.jpg">
+                </a>
+                <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img3.jpg">
+                </a>
+                <a class="sociallink fa lin" (click)="linkedinShare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img4.jpg">
+                </a>
+
+              </span>
+
 
             </span>
-       
-
-        </mat-card-content>
-
-
-        <mat-card-content class="event_left">
-
-             <span class="event_blog">
-            <span class="event_blog_top">
-           <label>{{speaker.date}} </label>
-
-             <p>Conference Room • {{speaker.location}} </p>
-             </span>
-               <h3>{{speaker.title}} – {{speaker.time}}</h3>
-
-             <span class="event_img">
-            <img [src]="speaker.image" >
-                 </span>
-
-            <p class="event_text">  <span class="spantext" [innerHtml]="speaker.description"></span></p>
-
-
-
-
-                 <h6>Tickets:</h6>
-
-               <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
-
-
-
-               <span class="clear"></span>
-
-
-
-                <span class="event_share_block">
-                    <a class="sociallink fa fb"  (click)="fbshare(seminer)"   target="_blank">
-                        <img src="../../../../assets/images/share_img1.jpg"  >
-                      </a>
-                      <a class="sociallink fa twi"  (click)="twitterShare(seminer)" target="_blank">
-                       <img src="../../../../assets/images/share_img2.jpg"  >
-                      </a>
-                      <a class="sociallink fa tumblr" (click)="tumblrShare(seminer)"  target="_blank">
-                        <img src="../../../../assets/images/share_img3.jpg"  >
-                      </a>
-                      <a class="sociallink fa lin" (click)="linkedinShare(seminer)"  target="_blank">
-                     <img src="../../../../assets/images/share_img4.jpg"  >
-                      </a>
-                      
-                    <!-- <a class="sociallink fa fb" href="" target="_blank">
-                                     <img src="../../../../assets/images/share_img1.jpg"  >
-                                   </a>
-                                   <a class="sociallink fa twi" href="" target="_blank">
-                                    <img src="../../../../assets/images/share_img2.jpg"  >
-                                   </a>
-                                   <a class="sociallink fa tumblr" href="" target="_blank">
-                                     <img src="../../../../assets/images/share_img3.jpg"  >
-                                   </a>
-                                   <a class="sociallink fa lin" href="" target="_blank">
-                                  <img src="../../../../assets/images/share_img4.jpg"  >
-                                   </a> -->
-                     <!-- <a class="sociallink fa env">
-                       <fa name="envelope" class="fa-envelope"></fa>
-                     </a> -->
-                                  
-    
-                 </span>
-    
-
-           </span>
 
 
 
@@ -128,18 +118,134 @@
 
 
 
-        </mat-card-content>
+          </mat-card-content>
 
 
 
 
+
+
+
+          <span class="clear"></span>
+
+
+        </mat-card>
+      </mat-card>
+
+      <app-footer></app-footer>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+
+<mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f4 !important;">
+
+  <mat-card class="event_wrapper">
+
+
+    <mat-card-content class="event_right">
+      <h2>Past Speaker Engagements</h2>
+
+      <span class="event_right_blog" *ngFor="let item of speakerList">
+
+
+        <span class="event_right_blog_wrapper">
+
+          <span class="event_right_blog_wrapperrow">
+
+            <span class="event_right_blog_img">
+              <img [src]="item.image">
+            </span>
+            <span class="event_right_blog_text">
+
+              <p>{{item.title}}</p>
+
+              <label>{{item.event_date}}</label>
+
+
+              <span class="clear"></span>
+            </span>
+            <span class="clear"></span>
+          </span>
+          <button class="viewalleventbtn">Load More</button>
+        </span>
+
+        <span class="clear"></span>
+      </span>
+
+
+    </mat-card-content>
+
+
+    <mat-card-content class="event_left">
+
+      <span class="event_blog">
+        <span class="event_blog_top">
+          <label>{{speaker.date}} </label>
+
+          <p>Conference Room • {{speaker.location}} </p>
+        </span>
+        <h3>{{speaker.title}} – {{speaker.time}}</h3>
+
+        <span class="event_img">
+          <img [src]="speaker.image">
+        </span>
+
+        <p class="event_text"> <span class="spantext" [innerHtml]="speaker.description"></span></p>
+
+
+
+
+        <h6>Tickets:</h6>
+
+        <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
 
 
 
         <span class="clear"></span>
 
 
-    </mat-card>
+
+        <span class="event_share_block">
+          <a class="sociallink fa fb" (click)="fbshare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img1.jpg">
+          </a>
+          <a class="sociallink fa twi" (click)="twitterShare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img2.jpg">
+          </a>
+          <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img3.jpg">
+          </a>
+          <a class="sociallink fa lin" (click)="linkedinShare(speaker)" target="_blank">
+            <img src="../../../../assets/images/share_img4.jpg">
+          </a>
+
+
+        </span>
+
+
+      </span>
+
+
+
+
+
+
+
+
+
+    </mat-card-content>
+
+
+
+
+
+
+
+    <span class="clear"></span>
+
+
+  </mat-card>
 </mat-card>
 
 <app-footer></app-footer>

@@ -194,18 +194,61 @@
       width: 90%; left: 5%;
   }
 
-  .slide1imgperson{ width: 200px;}
+  .slide1imgperson{ width: 200px;display: block;}
   }
 
   @media only screen and (max-width: 1199px) {
-  .carousalinfoinner{ display: block; width: 100px;} 
+      .carousalinfo h1 {font-size: 90px!important;line-height: normal!important;}
+      .carousalinfo h3 {font-size: 50px;line-height: normal;}
+  }
 
-  .carousalinfo{ position: initial; left: 0; top: 0; 
-    width: 90%;
-    margin: 0 auto;}
+  @media only screen and (max-width: 991px) {
+  .carousalinfoinner{ display: block; width: 100%;} 
+  .carousalinfo{
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 95%;
+    margin: 0 auto;
+    height: auto;
+    -webkit-transform: inherit;
+    transform: inherit;
+    background-color: #3ab9d9;
+    padding: 20px 15px;
+    text-align: center;
+    
+  }
+
+  .homebanner .owl-theme .owl-dots {
+    display: -webkit-box;
+    display: block;
+    position: relative !important;
+    left: 0!important;
+    z-index: 99;
+    bottom: 0!important;
+    text-align: center!important;
+    margin: 5px auto!important;
+    display: block !important;
+}
+  .carousalinfo h1 {font-size: 90px!important;line-height: normal!important;margin-left: auto; text-align: center;}
+  .carousalinfo h3 {font-size: 50px;line-height: normal;text-align: center;margin-left: auto;}
+  .generalcls .carousalinfo p{text-align: center!important;}
+  .carousalinfo h1 br{display: none;}
+
+    .slide1imgperson {
+      width: 200px;
+      display: block;
+      margin: 0 auto;
+  }
 
     
   }
+
+  @media only screen and (max-width: 840px) {
+    .carousalinfo h3 {font-size: 32px;line-height: normal; margin-left: auto;}
+    .carousalinfo h1 {font-size: 50px!important;line-height: normal!important;margin-left: auto;text-align: center;}
+}
 
 
   @media only screen and (max-width: 767px) {
@@ -297,6 +340,10 @@
 
   @media only screen and (max-width: 520px) {
     .blogdetail .bottom_blog .item_wrapper .item{width: 99%!important;}
+    .carousalinfo h1 {font-size: 36px!important; line-height: normal!important;margin-left: auto;text-align: center;margin-bottom: 10px;}
+    .carousalinfo h3 {font-size: 24px;}
+    .slide1imgperson {width: 120px;display: block;margin: 0 auto;height: 140px;}
+    .carousalinfo {width: 88%;}
   }
 
   @media (max-width: 500px) {

@@ -54,7 +54,7 @@
       </span>
 
       <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
-        (click)="blogloadmore()">View More</button>
+        (click)="blogloadmore()">Load More</button>
 
     </mat-card-content>
 
@@ -73,7 +73,8 @@
           <img src="{{eventsem.image}}">
         </span>
 
-        <p class="event_text"> <span class="spantext" [innerHtml]="eventsem.description"></span> <a href="javascript:void(0);" (click)="detail(eventsem)">Continue Reading</a></p>   
+        <p class="event_text"> <span class="spantext" [innerHtml]="eventsem.description"></span> <a
+            href="javascript:void(0);" (click)="detail(eventsem)">Continue Reading</a></p>
 
         <span class="event_share_block">
           <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
@@ -102,7 +103,7 @@
         (click)="blogloadmorenew()">View More</button>
 
     </mat-card-content>
-   <span class="clear"></span>
+    <span class="clear"></span>
   </mat-card>
 </mat-card>
 

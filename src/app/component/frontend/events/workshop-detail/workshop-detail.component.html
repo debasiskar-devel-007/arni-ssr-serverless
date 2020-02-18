@@ -1,13 +1,14 @@
 <app-header></app-header>
 <mat-card class="innerpagebanner workshopsbg">
-    <span class="mainwrappercontent">
-        <mat-card-content>
-            <span>
-                <h1>workshops</h1>
-                <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods that will make immediate improvements in your lives.</p>
-            </span>
-        </mat-card-content>
-    </span>
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>workshops</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
 </mat-card>
 
 <mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f4 !important;">
@@ -41,101 +42,79 @@
 
                     <!-- <button>Know more</button> -->
 
-                     <span class="clear"></span>
-                </span>
-                <span class="clear"></span>
-                  </span>
-                </span>
+              <button>Know more</button>
 
+              <span class="clear"></span>
             </span>
+            <span class="clear"></span>
+          </span>
+        </span>
 
-            <!-- <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn" (click)="blogloadmore()">View More</button>-->
+      </span>
 
-
-
-        </mat-card-content>
-
-
-        <mat-card-content class="event_left">
-
-             <span class="event_blog">
-            <span class="event_blog_top">
-           <label>{{workshop.date}} </label>
-
-             <p>Conference Room • {{workshop.location}} </p>
-             </span>
-               <h3>{{workshop.title}} – {{workshop.time}}</h3>
-
-             <span class="event_img">
-            <img [src]="workshop.image" >
-                 </span>
-
-            <p class="event_text">  <span class="spantext" [innerHtml]="workshop.description"></span></p>
+      <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
+        (click)="blogloadmore()">Load More</button>
 
 
 
-
-                 <h6>Tickets:</h6>
-
-               <label> <a href="{{workshop.bookingLink}}" target="_blank">{{workshop.bookingLink}}</a></label>
+    </mat-card-content>
 
 
+    <mat-card-content class="event_left">
 
-               <span class="clear"></span>
+      <span class="event_blog">
+        <span class="event_blog_top">
+          <label>{{workshop.date}} </label>
 
+          <p>Conference Room • {{workshop.location}} </p>
+        </span>
+        <h3>{{workshop.title}} – {{workshop.time}}</h3>
 
-                <span class="event_share_block">
-                    <!-- <a class="sociallink fa fb" href="" target="_blank">
-                                    <img src="../../../../assets/images/share_img1.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa twi" href="" target="_blank">
-                                   <img src="../../../../assets/images/share_img2.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa tumblr" href="" target="_blank">
-                                    <img src="../../../../assets/images/share_img3.jpg"  >
-                                  </a>
-                                  <a class="sociallink fa lin" href="">
-                                 <img src="../../../../assets/images/share_img4.jpg"  >
-                                  </a>
-                  -->
+        <span class="event_img">
+          <img [src]="workshop.image">
+        </span>
 
-                  <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
-                    <img src="../../../../assets/images/share_img1.jpg"  >
-                  </a>
-                  <a class="sociallink fa twi" (click)="twitterShare(eventsem)" target="_blank">
-                   <img src="../../../../assets/images/share_img2.jpg"  >
-                  </a>
-                  <a class="sociallink fa tumblr"  (click)="tumblrShare(eventsem)" target="_blank">
-                    <img src="../../../../assets/images/share_img3.jpg"  >
-                  </a>
-                  <a class="sociallink fa lin"  (click)="linkedinShare(eventsem)" target="_blank">
-                 <img src="../../../../assets/images/share_img4.jpg"  >
-                  </a>
-
-                </span>
-
-           </span>
+        <p class="event_text"> <span class="spantext" [innerHtml]="workshop.description"></span></p>
 
 
 
 
+        <h6>Tickets:</h6>
 
-
-
-
-
-        </mat-card-content>
-
-
-
-
+        <label> <a href="{{workshop.bookingLink}}" target="_blank">{{workshop.bookingLink}}</a></label>
 
 
 
         <span class="clear"></span>
 
 
-    </mat-card>
+        <span class="event_share_block">
+          <a class="sociallink fa fb" (click)="fbshare(workshop)" target="_blank">
+            <img src="../../../../assets/images/share_img1.jpg">
+          </a>
+          <a class="sociallink fa twi" (click)="twitterShare(workshop)" target="_blank">
+            <img src="../../../../assets/images/share_img2.jpg">
+          </a>
+          <a class="sociallink fa tumblr" (click)="tumblrShare(workshop)" target="_blank">
+            <img src="../../../../assets/images/share_img3.jpg">
+          </a>
+          <a class="sociallink fa lin" (click)="linkedinShare(workshop)" target="_blank">
+            <img src="../../../../assets/images/share_img4.jpg">
+          </a>
+
+        </span>
+
+      </span>
+
+
+
+    </mat-card-content>
+
+
+    <span class="clear"></span>
+
+
+  </mat-card>
 </mat-card>
 
 <app-footer></app-footer>

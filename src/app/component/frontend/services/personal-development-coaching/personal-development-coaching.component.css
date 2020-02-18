@@ -37,18 +37,23 @@
 .block5subwrapper .mat-list .mat-list-item p {text-align: center;padding: 25px;font-size: 20px;}
 .block5subwrapper {display: block;padding-top: 30px;position: relative;}
 .titlewrapper.block4titlewrapper2 h3 {text-transform: uppercase;text-align: center;color: #282828;font-family: 'HelveticaBold';font-size: 18px;width: 90%;margin: 0 auto;line-height: 28px;padding-top: 35px;}
-.lstabimg {position: absolute;left: 0;bottom: 0;}
-.block5subwrapper mat-list {padding-left: 520px;padding-bottom: 30px}
+.lstabimg {
+    position: absolute;
+    left: 180px;
+    bottom: 0;
+    width: 23%;
+}
+.block5subwrapper mat-list {padding-left: 463px;padding-bottom: 30px}
 .titlewrapper.block4titlewrapper2 {margin-bottom: 0}
 .block5subwrapper .textwrapper p {padding-left: 390px}
 .generalcls .titlewrapper h2 {text-transform: inherit}
 .generalcls .titlewrapper.titlewrapper1 h2 {text-transform: uppercase}
 @media only screen and (max-width: 1920px) {
-.block5subwrapper mat-list {padding-left: 663px;}
+.block5subwrapper mat-list {padding-left: 463px;}
 .block5subwrapper .textwrapper p {padding-left: 590px;}
 }
 @media only screen and (max-width: 1820px) {
-.block5subwrapper mat-list {padding-left: 733px;}
+/* .block5subwrapper mat-list {padding-left: 733px;} */
 .block5subwrapper .textwrapper p {padding-left: 620px;}
 }
 @media only screen and (max-width: 1700px) {
@@ -56,6 +61,17 @@
 }
 @media only screen and (max-width: 1670px) {
 .block4subwrapper {padding: 47px 672px 47px 47px}
+}
+@media only screen and (max-width: 1540px) {
+    .lstabimg {
+        position: absolute;
+        left: 30px;
+        bottom: 0;
+        width: 31%;
+    }
+    .block5subwrapper .textwrapper p {
+        padding-left: 530px;
+    }
 }
 @media only screen and (max-width: 1500px) {
 .block4subwrapper {background-position: right -120px bottom;}

@@ -125,23 +125,18 @@ panelOpenState = false;
 
     this.activatedRoute.data.forEach((data: any) => {
       this.blogList = data;
-      //  console.log('>>>>>>>>>>>>>>',this.blogList)
+      console.log('>>>>>>>>>>>>>>',this.blogList)
 
     })
     
    //****total blog list****//
           this.bloglisting = this.blogList.blogCatList.blogs
-          console.log('---------------',this.bloglisting)
-          
-
-
-    /**api service for total blog_catagory by uttam */
-   
-          this.blogCategoryDataSource =this.blogList.blogCatList.blog_category;
+          //console.log('---------------',this.bloglisting)
+        
           // console.log('++++++++++++++++++',this.blogcategory)
 
     /**api service for blog_catagory total count by uttam */  
-          this.blogcategorycount = this.blogList.blogCatList.blog_category.length;
+          this.blogcategorycount = this.blogList.blogCatList.blog_category;
           // console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
 }
 

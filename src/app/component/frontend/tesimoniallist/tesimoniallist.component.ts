@@ -27,7 +27,7 @@ export class TesimoniallistComponent implements OnInit {
   safeSrc: SafeResourceUrl;
 
   copyText(val:any){
-    console.log('copyText');
+    //console.log('copyText');
   }
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,  private sanitizer: DomSanitizer,public dialog:MatDialog,private facebook:FacebookService) { 
@@ -87,7 +87,7 @@ export class TesimoniallistComponent implements OnInit {
 
       for(let item in  this.TestimonialListArray){
         if(this.activatedRoute.snapshot.params.id == this.TestimonialListArray[item]._id){
-          console.log('???', this.TestimonialListArray[item])
+          //console.log('???', this.TestimonialListArray[item])
           this.meta.setTag('og:title', 'arniefonseca - Testimonials '+this.TestimonialListArray[item].name);
           this.meta.setTag('twitter:title', 'arniefonseca - Testimonials'+this.TestimonialListArray[item].name);
           this.meta.setTag('og:image', this.TestimonialListArray[item].testimonial_img);
@@ -104,7 +104,7 @@ export class TesimoniallistComponent implements OnInit {
 
 
   detailsView(val:any){
-    console.log(val)
+    //console.log(val)
 
     this.router.navigateByUrl('/testimonial/'+val._id)
   }
@@ -125,11 +125,11 @@ export class TesimoniallistComponent implements OnInit {
   }
 
   showaudio() {
-    console.log('showaudio function is wirking')
+   // console.log('showaudio function is wirking')
   }
 
   showvideo() {
-    console.log('showvideo function is wirking')
+    //console.log('showvideo function is wirking')
   }
 
   //*********view Video modal section***********//
@@ -184,9 +184,9 @@ getProfile() {
   // testimonial share 
 
   fbTestimonialShare(val:any){
-    console.log(val)
+    //console.log(val)
     var url='https://arniefonseca.influxiq.com/testimonial/'+ val._id;
-    console.log(url)
+    //console.log(url)
 
     let params: UIParams = {
       href: url,
