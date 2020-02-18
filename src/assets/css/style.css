@@ -327,10 +327,13 @@ a{cursor:pointer;outline:none}
 .carousel-indicators > button{width:10px;height:10px;margin:7.5px}
 .carousel .carousel-indicators>button{width:12px!important;height:12px!important;margin:2.5px!important;background-color:#fff;border-radius:0;box-shadow:none}
 .carousalinfo h1{color:#fff;font-family:"HelveticaBold";font-size:110px!important;font-weight:600;line-height:100px!important;text-transform:uppercase;text-align:left;margin-top:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.1);margin-left:15px}
+.carousalinfo h4{color:#fff;font-family:"HelveticaBold";font-size:60px;font-weight:600;line-height:60px;text-transform:capitalize;text-align:left;margin-top:8px;text-shadow:2px 2px 8px rgba(0,0,0,0.1);margin-left:0px; text-transform:uppercase;}
 .carousalinfo h3{color:#fff;font-family:"HelveticaBold";font-size:60px;font-weight:600;line-height:60px;text-transform:capitalize;text-align:left;margin-top:8px;text-shadow:2px 2px 8px rgba(0,0,0,0.1);margin-left:15px}
-.carousalinfo h3{color:#fff;font-family:"HelveticaBold";font-size:60px;font-weight:600;line-height:60px;text-transform:capitalize;text-align:left;margin-top:8px;text-shadow:2px 2px 8px rgba(0,0,0,0.1);margin-left:15px}
-.carousalinfo p{color:#24252c;font-family:"Helvetica-Normal";font-size:18px;text-align:left;margin-top:10px}
-.carousalinfo p b{color:#24252c;font-family:"HelveticaBold";font-size:18px}
+.carousalinfo p{color:#141415;font-family:"Helvetica-Normal";font-size:18px;text-align:left;margin-top:10px}
+.carousalinfo p b{color:#141415;font-family:"HelveticaBold";font-size:18px}
+.carousalinfo p.description3{color:#fff;font-family:"Helvetica-Normal";font-size:36px;text-align:left;margin-top:10px;line-height: 36px;}
+.carousalinfo p.description3 b{color:#fff;font-family:"HelveticaBold";font-size:36px}
+
 .singlecolgallarycontent{position:absolute;bottom:-745px;left:0;display:block;background-color:rgba(0,0,0,0.7);padding:2%;transition:all .5s;width:96%;color:#fff}
 .singlecolgallarycontent h2{font-family:'Helvetica-Normal';font-size:22px;line-height:normal;text-transform:uppercase;color:#fff;margin:0;margin-bottom:5px;text-align:left}
 .singlecolgallarycontent p{font-family:'Helvetica-Normal';font-size:14px;line-height:normal;color:#fff}
@@ -377,11 +380,13 @@ a{cursor:pointer;outline:none}
   padding: 0;
 }
 
-.homebanner .owl-stage .owl-item:nth-child(1).active .slide1info h2{display:none}
+.homebanner .owl-stage .owl-item:nth-child(1).active .slide1info h4{display:none}
 .homebanner .owl-stage .owl-item:nth-child(1).active .description2{display:none}
+.homebanner .owl-stage .owl-item:nth-child(1).active .description3{display:none}
 
-.homebanner .owl-stage .owl-item:nth-child(2).active .slide1info h2{display:none}
+.homebanner .owl-stage .owl-item:nth-child(2).active .slide1info h4{display:none}
 .homebanner .owl-stage .owl-item:nth-child(2).active .description2{display:none}
+.homebanner .owl-stage .owl-item:nth-child(2).active .description3{display:none}
 
 .homebanner .owl-stage .owl-item:nth-child(2).active .slide1imgperson{display:none}
 .homebanner .owl-stage .owl-item:nth-child(2).active .carousalinfo h1{margin-left: 0;}
@@ -391,6 +396,7 @@ a{cursor:pointer;outline:none}
 .homebanner .owl-stage .owl-item:nth-child(3).active .carousalinfo h1{margin-left: 0;}
 .homebanner .owl-stage .owl-item:nth-child(3).active .carousalinfo h3{margin-left: 0;}
 .homebanner .owl-stage .owl-item:nth-child(3).active .slide1info h3{display:none}
+.homebanner .owl-stage .owl-item:nth-child(3).active .description1{display:none}
 
 @media only screen and (max-width: 1199px) {
   .block4subwrapper.textwrapper .mat-list .mat-list-item .mat-list-item-content{justify-content: center;}
