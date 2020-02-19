@@ -62,23 +62,6 @@ export class WorkshopDetailComponent implements OnInit {
 
       this.workshopList = data.workshopsDetailData.results.event_list
 
-      let currentdate: Date;
-      currentdate = new Date();
-      let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
-      let eventDate = moment(curdate).format('x');
-      // console.log('s d',eventDate);
-  
-  
-      for(let i in  this.workshopList){
-        // console.log('d', this.workshopList[i].date_unix)
-        if(this.workshopList[i].date_unix > eventDate){
-          // console.log('up',this.workshopList[i])
-          this.upComingEvent.push(this.workshopList[i]);
-        } else {
-          // console.log('past',this.workshopList[i])
-          this.pastEvent.push(this.workshopList[i]);
-        }
-      }
   
 
     })
@@ -101,7 +84,31 @@ export class WorkshopDetailComponent implements OnInit {
 
     }
 
+    this.getForPastEvent();
 
+
+  }
+
+
+  getForPastEvent(){
+    let currentdate: Date;
+      currentdate = new Date();
+      let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+      let eventDate = moment(curdate).format('x');
+      // console.log('s d',eventDate);
+  
+  
+      for(let i in  this.workshopList){
+        // console.log('d', this.workshopList[i].date_unix)
+        if(this.workshopList[i].date_unix > eventDate){
+          // console.log('up',this.workshopList[i])
+          this.upComingEvent.push(this.workshopList[i]);
+        } else {
+          // console.log('past',this.workshopList[i])
+          this.pastEvent.push(this.workshopList[i]);
+        }
+      }
+  
   }
 
 
