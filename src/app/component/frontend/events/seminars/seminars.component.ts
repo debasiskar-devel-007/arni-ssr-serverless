@@ -116,6 +116,11 @@ export class SeminarsComponent implements OnInit {
     this.indexvalleft = this.indexvalleft + 4;
   }
 
+
+  viewallbutton(){
+    this.router.navigateByUrl("/past-seminars");
+  }
+
   detail(val: any) {
     // console.log(val)
     this.title = val.title;
