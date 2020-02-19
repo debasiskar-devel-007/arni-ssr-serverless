@@ -23,7 +23,7 @@
             <span class="event_blog_top">
            <label>{{seminer.event_date}} </label>
 
-             <p>Conference Room • {{seminer.location}} </p>
+             <p>{{seminer.location}} ,{{seminer.state}} ,{{seminer.city}}</p>
              </span>
                <h3>{{seminer.title}} – {{seminer.time}}-{{seminer.timeZone}}</h3>
 
@@ -63,7 +63,7 @@
     <mat-card-content class="event_right">
       <h2>Past seminers</h2>
 
-        <span class="event_right_blog" *ngFor="let item of seminerList">
+        <span class="event_right_blog" *ngFor="let item of pastEvent">
 
 
                 <span class="event_right_blog_wrapper" >
@@ -84,11 +84,7 @@
                         </span>
                         <span class="clear"></span>
                   </span>
-<<<<<<< HEAD
                   <!-- <button class="viewalleventbtn">Load More</button> -->
-=======
-                  
->>>>>>> 1716da6df9dba5a89efaa4cbce38e4acbc589dbc
                 </span>
                
 

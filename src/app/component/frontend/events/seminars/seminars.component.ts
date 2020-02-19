@@ -65,7 +65,7 @@ export class SeminarsComponent implements OnInit {
       // console.log('test',data);
       let result: any = {};
       result = data.seminarsListData.res;
-      console.log('>>>>>>>', result);
+      // console.log('>>>>>>>', result);
 
       // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
       // console.log('+++++>>>>>>>>>>>>', this.eventImage)
@@ -86,16 +86,16 @@ export class SeminarsComponent implements OnInit {
     currentdate = new Date();
     let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
     let eventDate = moment(curdate).format('x');
-    console.log('s d',eventDate);
+    // console.log('s d',eventDate);
 
 
     for(let i in  this.SeminarsListArry){
-      console.log('d', this.SeminarsListArry[i].date_unix)
+      // console.log('d', this.SeminarsListArry[i].date_unix)
       if(this.SeminarsListArry[i].date_unix > eventDate){
-        console.log('up',this.SeminarsListArry[i])
+        // console.log('up',this.SeminarsListArry[i])
         this.upComingEvent.push(this.SeminarsListArry[i]);
       } else {
-        console.log('past',this.SeminarsListArry[i])
+        // console.log('past',this.SeminarsListArry[i])
         this.pastEvent.push(this.SeminarsListArry[i]);
       }
     }
@@ -117,10 +117,10 @@ export class SeminarsComponent implements OnInit {
   }
 
   detail(val: any) {
-    console.log(val)
+    // console.log(val)
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
     this.router.navigateByUrl("/seminars-detail/" + this.eventTitle + '/' + val._id);
   }
 
@@ -162,10 +162,10 @@ export class SeminarsComponent implements OnInit {
   }
 
   fbshare(val: any) {
-    console.log(val)
+    // console.log(val)
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
     var url = 'https://arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id;
     // console.log(url)
 
@@ -190,7 +190,7 @@ export class SeminarsComponent implements OnInit {
 
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
     window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)
 
@@ -200,7 +200,7 @@ export class SeminarsComponent implements OnInit {
 
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
 
     window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)
@@ -214,7 +214,7 @@ export class SeminarsComponent implements OnInit {
 
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
 
     window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)

@@ -79,16 +79,16 @@ export class WorkshopsComponent implements OnInit {
           currentdate = new Date();
           let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
           let eventDate = moment(curdate).format('x');
-          console.log('s d',eventDate);
+          // console.log('s d',eventDate);
       
       
           for(let i in  this.WorkshopsListArry){
-            console.log('d', this.WorkshopsListArry[i].date_unix)
+            // console.log('d', this.WorkshopsListArry[i].date_unix)
             if(this.WorkshopsListArry[i].date_unix > eventDate){
-              console.log('up',this.WorkshopsListArry[i])
+              // console.log('up',this.WorkshopsListArry[i])
               this.upComingEvent.push(this.WorkshopsListArry[i]);
             } else {
-              console.log('past',this.WorkshopsListArry[i])
+              // console.log('past',this.WorkshopsListArry[i])
               this.pastEvent.push(this.WorkshopsListArry[i]);
             }
           }
@@ -112,7 +112,7 @@ export class WorkshopsComponent implements OnInit {
   }
 
   detail(val:any){
-    console.log(val)
+    // console.log(val)
     this.title=val.title;
     this.eventTitle=this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log( this.eventTitle)
@@ -145,10 +145,10 @@ getProfile() {
 }
 
 fbshare(val: any) {
-  console.log(val)
+  // console.log(val)
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
+  // console.log(this.eventTitle)
   var url='https://arniefonseca.influxiq.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
   // console.log(url)
 
@@ -173,7 +173,7 @@ twitterShare(val:any){
 
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
+  // console.log(this.eventTitle)
   window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
@@ -183,7 +183,7 @@ linkedinShare(val:any){
 
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
+  // console.log(this.eventTitle)
 
   window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
@@ -197,7 +197,7 @@ linkedinShare(val:any){
 
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
+  // console.log(this.eventTitle)
 
   window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)

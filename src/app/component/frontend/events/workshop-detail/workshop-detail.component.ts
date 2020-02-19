@@ -18,7 +18,6 @@ export class WorkshopDetailComponent implements OnInit {
 
   public indexvallength: any=1;
 
-  public 
   public indexval:any=6;
   public workshop_img:any
   public workshop:any;
@@ -29,7 +28,12 @@ export class WorkshopDetailComponent implements OnInit {
   public title: any;
   public eventTitle: any;
   public workshopList:any;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ) {
+
+  public upComingEvent:any=[];
+  public pastEvent:any=[];
+
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
     this.meta.setTag('twitter:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -58,8 +62,24 @@ export class WorkshopDetailComponent implements OnInit {
 
       this.workshopList = data.workshopsDetailData.results.event_list
 
-      // console.log('>>>>>>>kb>>>>>>>',this.workshop)
-      // this.workshop_img=this.workshop[0].Image[0];
+      let currentdate: Date;
+      currentdate = new Date();
+      let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+      let eventDate = moment(curdate).format('x');
+      // console.log('s d',eventDate);
+  
+  
+      for(let i in  this.workshopList){
+        // console.log('d', this.workshopList[i].date_unix)
+        if(this.workshopList[i].date_unix > eventDate){
+          // console.log('up',this.workshopList[i])
+          this.upComingEvent.push(this.workshopList[i]);
+        } else {
+          // console.log('past',this.workshopList[i])
+          this.pastEvent.push(this.workshopList[i]);
+        }
+      }
+  
 
     })
 
@@ -94,7 +114,7 @@ export class WorkshopDetailComponent implements OnInit {
   }
 
   copyText(val:any){
-    console.log('copyText');
+    // console.log('copyText');
   }
 
 
@@ -121,7 +141,7 @@ export class WorkshopDetailComponent implements OnInit {
   }
 
   fbshare(val: any) {
-    console.log(val)
+    // console.log(val)
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
@@ -149,7 +169,7 @@ export class WorkshopDetailComponent implements OnInit {
   
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
     window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
 
@@ -159,7 +179,7 @@ export class WorkshopDetailComponent implements OnInit {
   
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
 
     window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
@@ -173,7 +193,7 @@ export class WorkshopDetailComponent implements OnInit {
   
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log(this.eventTitle)
+    // console.log(this.eventTitle)
 
     window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)

@@ -17,9 +17,9 @@
 
 
         <mat-card-content class="event_right">
-            <h2>Past seminers</h2>
+            <h2>Past workshops</h2>
 
-            <span class="event_right_blog" *ngFor="let item of workshopList">
+            <span class="event_right_blog" *ngFor="let item of pastEvent">
 
 
                 <span class="event_right_blog_wrapper">
@@ -66,7 +66,7 @@
         <span class="event_blog_top">
           <label>{{workshop.date}} </label>
 
-          <p>Conference Room • {{workshop.location}} </p>
+          <p>{{workshop.location}} ,{{workshop.state}} , {{workshop.city}} </p>
         </span>
         <h3>{{workshop.title}} – {{workshop.time}}</h3>
 
