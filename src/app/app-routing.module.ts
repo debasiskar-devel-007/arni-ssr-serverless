@@ -140,8 +140,20 @@ const routes: Routes = [
     endpoint: "datalistwithouttoken"
   }
 },
-  { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent },
-  { path: 'past-workshops', component: PastWorkshopsComponent },
+  { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent,
+  resolve: { speakerEngagementsListData: ResolveService },
+  data: {
+    requestcondition: { source: "events_view", condition: {type:"speaker_engagement"} },
+    endpoint: "datalistwithouttoken"
+  }
+},
+  { path: 'past-workshops', component: PastWorkshopsComponent,
+  resolve: { workshopsListData: ResolveService },
+  data: {
+    requestcondition: { source: "events_view", condition: {type:"workshops"} },
+    endpoint: "datalistwithouttoken"
+  }
+ },
 
 
 // ___________________event frontend__________________//

@@ -63,6 +63,25 @@ export class PastSeminarsComponent implements OnInit {
 
   ngOnInit() {
 
+
+    this.activatedRoute.data.forEach(data => {
+      // console.log('test',data);
+      let result: any = {};
+      result = data.seminarsListData.res;
+      // console.log('>>>>>>>', result);
+
+      // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
+      // console.log('+++++>>>>>>>>>>>>', this.eventImage)
+      // console.log('>>>>>>>>>>>>>>>>',result);
+      this.SeminarsListArry = result;
+
+
+      this.indexvallength = this.SeminarsListArry.length;
+
+      this.indexvalleftlengthlength = this.SeminarsListArry.length;
+    })
+
+    
     //past and upcoming event
 
     let currentdate: Date;

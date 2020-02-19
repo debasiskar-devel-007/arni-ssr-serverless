@@ -56,6 +56,16 @@ export class PastWorkshopsComponent implements OnInit {
 
   ngOnInit() {
 
+    this.activatedRoute.data.forEach(data => {
+      let result: any = {};
+      result = data.workshopsListData.res;
+      this.WorkshopsListArry = result;
+
+      this.indexvallength = this.WorkshopsListArry.length;
+
+      this.indexvalleftlengthlength = this.WorkshopsListArry.length;
+    })
+
      //past and upcoming event
 
      let currentdate: Date;

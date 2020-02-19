@@ -58,6 +58,21 @@ export class PastSpeakerEngagementsComponent implements OnInit {
 
   ngOnInit() {
 
+    this.activatedRoute.data.forEach(data => {
+      let result: any = {};
+      result = data.speakerEngagementsListData.res;
+      // console.warn(result);
+
+      // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
+      // console.log('+++++>>>>>>>>>>>>', this.eventImage)
+      // console.log('>>>>>>>>>>>>>>>>',result);
+      this.SpeakerListArry = result;
+
+      this.indexvallength = this.SpeakerListArry.length;
+
+      this.indexvalleftlengthlength = this.SpeakerListArry.length;
+    })
+
     //past and upcoming event
 
     let currentdate: Date;
