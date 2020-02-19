@@ -55,6 +55,9 @@ import { HttpLoaderService } from './http-loader.service';
 import { LoaderInterceptor } from './loader.interceptor';
 
 import { SidenavService } from './../app/services/sidenav.service';
+import { PastSeminarsComponent } from './component/frontend/events/past-seminars/past-seminars.component';
+import { PastSpeakerEngagementsComponent } from './component/frontend/events/past-speaker-engagements/past-speaker-engagements.component';
+import { PastWorkshopsComponent } from './component/frontend/events/past-workshops/past-workshops.component';
 
 /**End Frontend Component**/
 
@@ -105,6 +108,12 @@ import { SidenavService } from './../app/services/sidenav.service';
     CommonTestimonialVideoModalComponent,
 
     HttpLoaderComponent,
+
+    PastSeminarsComponent,
+
+    PastSpeakerEngagementsComponent,
+
+    PastWorkshopsComponent,
 
 
   ],
