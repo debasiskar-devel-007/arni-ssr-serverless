@@ -404,10 +404,10 @@ a{cursor:pointer;outline:none}
   .couplescounselingbg.mat-card, .innerpagebanner.mat-card {
     background-size: 230% !important;
     background-position: right top !important;
-    padding-top: 38% !important;
+    padding-top: 36% !important;
     background-color: #7ddde4 !important;
     min-height: inherit !important;
-    padding-bottom: 30px !important;
+    padding-bottom: 20px !important;
 }
 @media only screen and (max-width: 991px) {
   .innerpagebanner.mat-card h1{    font-size: 60px;}
@@ -415,6 +415,7 @@ a{cursor:pointer;outline:none}
 .innerpagebanner.mat-card h1{    text-align: center;}
 .innerpagebanner.mat-card .mat-card-content{    height: auto;    display: inline-block;width: 100%;}
 .innerpagebanner.mat-card p{text-align: center;}
+.speakerengagementsbg.mat-card{background-size: 205% !important;}
 }
 
 
@@ -480,8 +481,10 @@ a{cursor:pointer;outline:none}
 .generalcls.blogdetail .mat-card-title{font-size:24px!important;line-height:normal!important;justify-content:center;margin-bottom:15px!important;margin-top:15px!important;text-transform:uppercase}
 .blogdetail .bottom_blog .item_wrapper .item .author{margin-bottom:0;display:flex;align-items:center;justify-content:space-between}
 .blogdetail .bottom_blog .item_wrapper .item .author .authornmimg{display:flex;align-items:center;position:relative}
-.blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images{height:400px;overflow:hidden;display:block}
-.blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto}
+/* .blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images{height:400px;overflow:hidden;display:block} */
+.blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images{display:block}
+.blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images img{display: block; height: auto;}
+/* .blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto} */
 .blogdetail .blogsociallists{margin-top:0;margin-left:25px;position:relative;display:flex;align-items:center}
 .blogdetail .bloglistinner .bottom_blog .item_wrapper .item .description{margin-top:10px}
 .photogallerylists{padding:5px}

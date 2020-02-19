@@ -36,12 +36,11 @@ export class HomeComponent implements OnInit {
   // public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
-    autoPlay : 3000,
+    autoPlay : 6000,
     stopOnHover : true,
     navigation:true,
     paginationSpeed : 1000,
     goToFirstSpeed : 2000,
-    singleItem : true,
     transitionStyle:"fade",
     margin: 0,
     nav: false,

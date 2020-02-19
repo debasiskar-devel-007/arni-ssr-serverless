@@ -62,13 +62,13 @@
     <mat-card-content class="event_left">
 
       <span class="event_blog" *ngFor="let eventsem of upComingEvent | slice:0:indexvalleft; let i=index">
+        
+        <h3>{{eventsem.title}} – {{eventsem.time}}-{{eventsem.timeZone}}</h3>
         <span class="event_blog_top">
 
           <label>{{eventsem.event_date}}</label>
           <p>{{eventsem.location}} , {{eventsem.state}} , {{eventsem.city}}</p>
         </span>
-        <h3>{{eventsem.title}} – {{eventsem.time}}-{{eventsem.timeZone}}</h3>
-
         <span class="event_img">
           <img src="{{eventsem.image}}">
         </span>
