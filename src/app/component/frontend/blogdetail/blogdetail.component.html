@@ -76,9 +76,9 @@
           <!-- start video section -->
           <mat-list class="photogallerylists videoblocknew ">
             <mat-list-item class="writer_image">
-              <span class="writer_image_wrapper">
+              <span class="writer_image_wrapper" *ngIf="blog[0].video !='' && blog[0].video !=null ">
                
-                  <button *ngIf="blog[0].video !='' && blog[0].video !=null "
+                  <button 
                     (click)="openvideourl(blog[0].video)">
                     <img src="//img.youtube.com/vi/{{blog[0].video}}/0.jpg">
                   </button>
