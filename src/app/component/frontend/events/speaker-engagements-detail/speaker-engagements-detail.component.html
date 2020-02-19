@@ -17,6 +17,71 @@
 
         <mat-card class="event_wrapper">
 
+          <mat-card-content class="event_left">
+
+            <span class="event_blog">
+              <span class="event_blog_top">
+                <span>
+                  <label><i class="material-icons">date_range</i> {{speaker.date}} </label>
+                  <p><i class="material-icons">location_on</i> {{speaker.location}} ,{{speaker.state}} ,{{speaker.city}}</p>
+                </span>  
+                <span class="blogsociallists event_share_block">
+                  <a class="sociallink fa fb" (click)="fbshare(speaker)" target="_blank">
+                    <fa name="facebook" class="fa-facebook"></fa>
+                  </a>
+                  <a class="sociallink fa twi" (click)="twitterShare(speaker)" target="_blank">
+                    <fa name="twitter" class="fa-twitter"></fa>
+                  </a>
+                  <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)" target="_blank">
+                    <fa name="tumblr" class="fa-tumblr"></fa>
+                  </a>
+                  <a class="sociallink fa lin" (click)="linkedinShare(speaker)" target="_blank">
+                    <fa name="linkedin" class="fa-linkedin"></fa>
+                  </a>
+                  <!-- <a class="sociallink fa env">
+                    <fa name="envelope" class="fa-envelope"></fa>
+                  </a> -->
+                  <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blogdetail?affid='+blog[0]._id)">
+                    <fa name="share" class="fa-share"></fa>
+                  </a> -->
+                </span>
+              </span>
+              <h3>{{speaker.title}} – {{speaker.time}}</h3>
+              <span class="event_img">
+                <img [src]="speaker.image">
+              </span>
+              <p class="event_text"> <span class="spantext" [innerHtml]="speaker.description"></span></p>
+
+              <h6>Tickets:</h6>
+
+              <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
+
+
+
+              <span class="clear"></span>
+
+              
+
+              <!-- <span class="event_share_block">
+                <a class="sociallink fa fb" (click)="fbshare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img1.jpg">
+                </a>
+                <a class="sociallink fa twi" (click)="twitterShare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img2.jpg">
+                </a>
+                <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img3.jpg">
+                </a>
+                <a class="sociallink fa lin" (click)="linkedinShare(speaker)" target="_blank">
+                  <img src="../../../../assets/images/share_img4.jpg">
+                </a>
+
+              </span> -->
+
+
+            </span>
+
+          </mat-card-content>
 
           <mat-card-content class="event_right">
             <h2>Past Speaker Engagements</h2>
@@ -54,66 +119,7 @@
           </mat-card-content>
 
 
-          <mat-card-content class="event_left">
-
-            <span class="event_blog">
-              <span class="event_blog_top">
-                <label>{{speaker.date}} </label>
-
-                <p>{{speaker.location}} ,{{speaker.state}} ,{{speaker.city}} </p>
-              </span>
-              <h3>{{speaker.title}} – {{speaker.time}}</h3>
-
-              <span class="event_img">
-                <img [src]="speaker.image">
-              </span>
-
-              <p class="event_text"> <span class="spantext" [innerHtml]="speaker.description"></span></p>
-
-
-
-
-              <h6>Tickets:</h6>
-
-              <label> <a href="{{speaker.bookingLink}}" target="_blank">{{speaker.bookingLink}}</a></label>
-
-
-
-              <span class="clear"></span>
-
-
-
-              <span class="event_share_block">
-                <a class="sociallink fa fb" (click)="fbshare(speaker)" target="_blank">
-                  <img src="../../../../assets/images/share_img1.jpg">
-                </a>
-                <a class="sociallink fa twi" (click)="twitterShare(speaker)" target="_blank">
-                  <img src="../../../../assets/images/share_img2.jpg">
-                </a>
-                <a class="sociallink fa tumblr" (click)="tumblrShare(speaker)" target="_blank">
-                  <img src="../../../../assets/images/share_img3.jpg">
-                </a>
-                <a class="sociallink fa lin" (click)="linkedinShare(speaker)" target="_blank">
-                  <img src="../../../../assets/images/share_img4.jpg">
-                </a>
-
-              </span>
-
-
-            </span>
-
-
-
-
-
-
-
-
-
-          </mat-card-content>
-
-
-
+  
 
 
 
