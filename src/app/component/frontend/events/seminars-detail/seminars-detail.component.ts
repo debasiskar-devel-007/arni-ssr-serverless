@@ -30,7 +30,7 @@ export class SeminarsDetailComponent implements OnInit {
 
   public upComingEvent:any=[];
   public pastEvent:any=[];
-  constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService, public datePipe: DatePipe) {
+  constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService, public datePipe: DatePipe,public router:Router) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
@@ -132,6 +132,16 @@ export class SeminarsDetailComponent implements OnInit {
     // console.log('load more')
     this.indexval = this.indexval + 1;
 
+  }
+
+
+
+  viewDetails(val:any){
+
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
+    this.router.navigateByUrl("/seminars-detail/" + this.eventTitle + '/' + val._id);
   }
 
 

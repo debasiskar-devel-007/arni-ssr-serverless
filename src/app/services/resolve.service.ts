@@ -34,19 +34,27 @@ export class ResolveService implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> | Promise<any> | any {
-    let _id = route.params["id"];
-
-    if (route.data.requestcondition.condition._id == "id") {
-      route.data.requestcondition.condition._id = _id;
-      delete route.data.requestcondition.condition.id;
-      // console.log(route.data.requestcondition.condition);
-    }
-
-   
+    // let _id = route.params["id"];
+    // console.log('>>>>>>',_id)
 
     var endpoint = route.data.link;
     var source = route.data.source;
     var condition = route.data.condition;
+
+    let _id = route.params["_id"];
+    console.log('>>>>>>', _id)
+
+    if (route.data.requestcondition.condition._id == "_id") {
+      console.log('>>>>>>if', route.params["_id"])
+
+      route.data.requestcondition.condition._id = route.params["_id"];
+      delete route.data.requestcondition.condition.id;
+      delete route.data.requestcondition.condition.title;
+
+      // console.log(route.data.requestcondition.condition);
+    }
+
+
     var requestData: any = route.data.requestcondition;
     if (route.data.requestcondition.trainingcategory != null) {
       requestData.trainingcategory = route.params.cid;
@@ -64,14 +72,14 @@ export class ResolveService implements Resolve<any> {
         route.data.requestcondition.condition._id_object = route.params["id"];
       }
 
-  //     if (route.data.requestcondition.condition._id == '_id') {
-  //       requestData.condition = requestData.condition._id;
-  //       console.log( '>>>>>',route.data)
+      //     if (route.data.requestcondition.condition._id == '_id') {
+      //       requestData.condition = requestData.condition._id;
+      //       console.log( '>>>>>',route.data)
 
-  //       delete requestData.condition.title;
-  //       // delete requestData.condition._id;
-       
-  // }
+      //       delete requestData.condition.title;
+      //       // delete requestData.condition._id;
+
+      // }
 
 
 
@@ -92,6 +100,9 @@ export class ResolveService implements Resolve<any> {
       });
     }
 
+
+
+
     // /* will come into play while editing otherwise no effect */
     // let requestData: any = route.data.requestcondition;
     // requestData.condition = Object.assign(requestData.condition, route.params);
@@ -105,5 +116,7 @@ export class ResolveService implements Resolve<any> {
     //     }
     //   });
     // });
+
+
   }
 }
