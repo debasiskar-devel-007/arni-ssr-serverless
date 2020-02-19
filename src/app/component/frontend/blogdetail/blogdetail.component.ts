@@ -11,6 +11,7 @@ import { NestedTreeControl } from '@angular/cdk/tree';
 import { BehaviorSubject, observable, of as observableOf } from 'rxjs';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
+import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 
 export interface DialogData {
   data: any;  
@@ -55,6 +56,10 @@ export class BlogdetailComponent implements OnInit {
 
   public MostViwedBlog:any=[];
   public similarBlogs:any=[];
+
+  public dataformate: any;
+  // public p_id: any;
+  public profile: any;
   // @ViewChild('myaccordion') myPanels: MatAccordion;
 
   // openAll(){
@@ -70,7 +75,7 @@ export class BlogdetailComponent implements OnInit {
     console.log('copyText');
   }
 
-  constructor(private readonly meta: MetaService, private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,private sanitizer: DomSanitizer,public dialog:MatDialog) { 
+  constructor(private readonly meta: MetaService, private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,private sanitizer: DomSanitizer,public dialog:MatDialog, private facebook:FacebookService) { 
     
     this.meta.setTitle('Arnie Fonseca - Blogs');
     this.meta.setTag('og:description', 'Check out the latest blogs by “Coach Arnie” about everything that is happening in the Personal Development industry and learn of the best ways to improve your lives and achieve success.');
@@ -265,6 +270,57 @@ export class BlogdetailComponent implements OnInit {
        
   }
 
+
+  login() {
+    this.facebook.login()
+      .then((res: LoginResponse) => {
+       
+        this.getProfile();
+      })
+      .catch();
+  }
+  getProfile() {
+    this.facebook.api('me/?fields=id,name,email,picture')
+      .then((res: any) => {
+       
+        this.profile = res;
+        
+      })
+      .catch((error: any) => {
+  
+      });
+  }
+  
+  fbTestimonialShare(val:any){
+    //console.log(val)
+    var url='https://arniefonseca.influxiq.com/blogdetail/'+ val._id;
+    //console.log(url)
+  
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+  
+  twitterTestimonialShare(val:any){
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+  }
+  
+  
+  linkedinTestimonialShare(val:any){
+  
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+  
+  }
+  
+  tumblrTestimonialShare(val:any){
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+  
+  }
   openvideourl(val: any){
     //console.log(val)
     let url:any;

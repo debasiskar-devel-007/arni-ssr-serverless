@@ -38,7 +38,12 @@ export class BloglistComponent implements OnInit {
   public indexval:any=2;
   public bloglisting:any;
   public videourl:any='';
+  public dataformate: any;
+  public p_id: any;
+  public profile: any;
   public url:"https://www.youtube.com/embed/"
+
+  
   
   safeSrc: SafeResourceUrl;
 
@@ -143,6 +148,26 @@ panelOpenState = false;
     /**api service for blog_catagory total count by uttam */  
           this.blogcategorycount = this.blogList.blogCatList.blog_category;
           // console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
+}
+
+login() {
+  this.facebook.login()
+    .then((res: LoginResponse) => {
+     
+      this.getProfile();
+    })
+    .catch();
+}
+getProfile() {
+  this.facebook.api('me/?fields=id,name,email,picture')
+    .then((res: any) => {
+     
+      this.profile = res;
+      
+    })
+    .catch((error: any) => {
+
+    });
 }
 
 fbTestimonialShare(val:any){
