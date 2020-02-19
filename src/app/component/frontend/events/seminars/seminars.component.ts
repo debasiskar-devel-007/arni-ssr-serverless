@@ -25,6 +25,7 @@ export class SeminarsComponent implements OnInit {
 
 
   public indexvalleft: any = 2;
+  public indexvalright:any=4;
 
 
   public SeminarsListArry: any = []
