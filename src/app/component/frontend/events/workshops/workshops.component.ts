@@ -100,16 +100,21 @@ export class WorkshopsComponent implements OnInit {
   //***********load more view blog *************//
   blogloadmore(){
     // console.log('load more')
-    this.indexval=this.indexval+1;
+    this.indexval=this.indexval+4;
 
   }
 
 
   blogloadmorenew(){
     // console.log('load more')
-    this.indexvalleft=this.indexvalleft+1;
+    this.indexvalleft=this.indexvalleft+4;
 
   }
+
+   viewallbutton(){
+    this.router.navigateByUrl("/past-workshops");
+  }
+
 
   detail(val:any){
     // console.log(val)

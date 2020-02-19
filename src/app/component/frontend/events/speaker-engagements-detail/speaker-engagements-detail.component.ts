@@ -101,6 +101,10 @@ public pastEvent:any=[];
 
   }
 
+ viewallbutton(){
+    this.router.navigateByUrl("/past-speaker-engagements");
+  }
+
   getForPastEvent(){
               //past and upcoming event
 
