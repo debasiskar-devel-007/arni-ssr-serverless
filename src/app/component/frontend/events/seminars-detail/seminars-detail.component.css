@@ -2,6 +2,7 @@
 .clear{display:block!important;overflow:hidden!important;clear:both!important}
 .event_wrapper{display:block!important;width:1668px!important;margin:38px auto!important;margin-bottom:0!important;border:none!important;box-shadow:none!important;background:none!important;padding:0!important}
 .event_wrapper .event_left{width:1155px;float:left;margin-bottom:0!important}
+.event_wrapper .event_left h2{font-size: 22px!important;line-height: normal !important;border-bottom: 1px solid #d2d2d2;padding-bottom: 10px; text-align: left;}
 .event_wrapper .event_right{width:495px;float:right;margin-bottom:0!important}
 .event_wrapper .event_right h2{background:#292b33;text-transform:uppercase;padding:18px 18px 12px;text-align:left;font-size:22px!important;font-family:"Helvetica-Regular";color:#fff;font-weight:400}
 .event_blog{display:block;margin-bottom:40px;border-bottom:solid 2px #3ab9d9;padding-bottom:36px}
