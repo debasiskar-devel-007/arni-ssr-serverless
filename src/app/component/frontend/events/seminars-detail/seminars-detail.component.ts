@@ -26,7 +26,7 @@ export class SeminarsDetailComponent implements OnInit {
   public profile:any;
   public title: any;
   public eventTitle: any;
-  public seminerList:any;
+  public seminerList:any='';
 
   public upComingEvent:any=[];
   public pastEvent:any=[];
@@ -77,26 +77,8 @@ export class SeminarsDetailComponent implements OnInit {
       this.seminerList = data.seminarsDetailData.results.event_list;
 
 
-      let currentdate: Date;
-      currentdate = new Date();
-      let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
-      let eventDate = moment(curdate).format('x');
-      // console.log('s d',eventDate);
-  
-  
-      for(let i in  this.seminerList){
-        // console.log('d', this.seminerList[i].date_unix)
-        if(this.seminerList[i].date_unix > eventDate){
-          // console.log('up',this.seminerList[i])
-          this.upComingEvent.push(this.seminerList[i]);
-        } else {
-          // console.log('past',this.seminerList[i])
-          this.pastEvent.push(this.seminerList[i]);
-        }
-      }
-  
-
-      
+     
+      this.getForPastEvent();
 
     })
 
@@ -125,6 +107,31 @@ export class SeminarsDetailComponent implements OnInit {
     }
 
 
+  }
+
+
+
+  getForPastEvent(){
+    this.upComingEvent=[];
+    this.pastEvent=[];
+    let currentdate: Date;
+    currentdate = new Date();
+    let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+    let eventDate = moment(curdate).format('x');
+    // console.log('s d',eventDate);
+
+
+    for(let i in  this.seminerList){
+     
+      // console.log('d', this.seminerList[i].date_unix)
+      if(this.seminerList[i].date_unix > eventDate){
+        // console.log('up',this.seminerList[i])
+        this.upComingEvent.push(this.seminerList[i]);
+      } else {
+        // console.log('past',this.seminerList[i])
+        this.pastEvent.push(this.seminerList[i]);
+      }
+    }
   }
 
   //***********load more view blog *************//

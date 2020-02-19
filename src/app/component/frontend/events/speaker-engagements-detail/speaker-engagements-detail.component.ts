@@ -68,27 +68,6 @@ public pastEvent:any=[];
       this.speakerList = data.speakerengagementsDetailData.results.event_list;
 
 
-          //past and upcoming event
-
-    let currentdate: Date;
-    currentdate = new Date();
-    let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
-    let eventDate = moment(curdate).format('x');
-    // console.log('s d',eventDate);
-
-
-    for(let i in  this.speakerList){
-      // console.log('d', this.SpeakerListArry[i].date_unix)
-      if(this.speakerList[i].date_unix > eventDate){
-        // console.log('up',this.SpeakerListArry[i])
-        this.upComingEvent.push(this.speakerList[i]);
-      } else {
-        // console.log('past',this.SpeakerListArry[i])
-        this.pastEvent.push(this.speakerList[i]);
-      }
-    }
-
-
     })
 
 
@@ -108,7 +87,7 @@ public pastEvent:any=[];
 
 
     }
-
+    this.getForPastEvent()
 
   }
 
@@ -120,6 +99,28 @@ public pastEvent:any=[];
     // console.log('load more')
     this.indexval=this.indexval+1;
 
+  }
+
+  getForPastEvent(){
+              //past and upcoming event
+
+              let currentdate: Date;
+              currentdate = new Date();
+              let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+              let eventDate = moment(curdate).format('x');
+              // console.log('s d',eventDate);
+          
+          
+              for(let i in  this.speakerList){
+                // console.log('d', this.SpeakerListArry[i].date_unix)
+                if(this.speakerList[i].date_unix > eventDate){
+                  // console.log('up',this.SpeakerListArry[i])
+                  this.upComingEvent.push(this.speakerList[i]);
+                } else {
+                  // console.log('past',this.SpeakerListArry[i])
+                  this.pastEvent.push(this.speakerList[i]);
+                }
+              }
   }
 
 
