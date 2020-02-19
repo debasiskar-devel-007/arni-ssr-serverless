@@ -95,7 +95,7 @@
 }
 @media screen and (max-width:991px) {
 .vpheaderwrapper .mat-nav-list a{width:100%;display:inline-block;padding:15px 10px}
-.homemain .mat-list-item{height:auto;width:100%}
+.homemain .mat-list-item{height:auto;}
 .vpheaderwrapper{position:inherit!important;top:0}
 .vpheaderwrapper .mat-toolbar.mat-primary{background:#3f3c44!important;color:#fff}
 .homemain .mat-drawer-backdrop.mat-drawer-shown{visibility:hidden!important}

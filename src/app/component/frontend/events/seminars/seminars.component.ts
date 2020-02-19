@@ -6,7 +6,7 @@ import { ApiService } from '../../../../api.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { getLocaleDateFormat } from '@angular/common';
 import { format } from 'url';
-import {DatePipe} from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
 
 @Component({
@@ -15,26 +15,28 @@ import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebo
   styleUrls: ['./seminars.component.css']
 })
 export class SeminarsComponent implements OnInit {
-  public indexvallength: any=1;
-
-  
-  public indexval:any=6;
+  public indexvallength: any = 1;
 
 
-  public indexvalleftlengthlength: any=1;
+  public indexval: any = 6;
 
 
-  public indexvalleft:any=2;
+  public indexvalleftlengthlength: any = 1;
+
+
+  public indexvalleft: any = 2;
 
 
   public SeminarsListArry: any = []
   public dataformate: any;
-  public eventImage:any;
-  public title:any;
-  public eventTitle:any;
-  public profile:any
+  public eventImage: any;
+  public title: any;
+  public eventTitle: any;
+  public profile: any;
+  public upComingEvent:any=[];
+  public pastEvent:any=[];
 
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService,public datePipe:DatePipe ,public FB:FacebookService) {
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public FB: FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
@@ -55,7 +57,7 @@ export class SeminarsComponent implements OnInit {
       version: 'v2.9'
     });
 
-   }
+  }
 
   ngOnInit() {
 
@@ -63,14 +65,14 @@ export class SeminarsComponent implements OnInit {
       // console.log('test',data);
       let result: any = {};
       result = data.seminarsListData.res;
-      console.log('>>>>>>>',result);
+      // console.log('>>>>>>>', result);
 
       // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
       // console.log('+++++>>>>>>>>>>>>', this.eventImage)
       // console.log('>>>>>>>>>>>>>>>>',result);
       this.SeminarsListArry = result;
 
-     
+
       this.indexvallength = this.SeminarsListArry.length;
 
       this.indexvalleftlengthlength = this.SeminarsListArry.length;
@@ -78,126 +80,146 @@ export class SeminarsComponent implements OnInit {
 
     // this.getCurrentDate();
 
+//past and upcoming event
+
+    let currentdate: Date;
+    currentdate = new Date();
+    let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+    let eventDate = moment(curdate).format('x');
+    // console.log('s d',eventDate);
+
+
+    for(let i in  this.SeminarsListArry){
+      // console.log('d', this.SeminarsListArry[i].date_unix)
+      if(this.SeminarsListArry[i].date_unix > eventDate){
+        // console.log('up',this.SeminarsListArry[i])
+        this.upComingEvent.push(this.SeminarsListArry[i]);
+      } else {
+        // console.log('past',this.SeminarsListArry[i])
+        this.pastEvent.push(this.SeminarsListArry[i]);
+      }
+    }
+
 
   }
 
 
   //***********load more view blog *************//
-  blogloadmore(){
+  blogloadmore() {
     // console.log('load more')
-    this.indexval=this.indexval+1;
+    this.indexval = this.indexval + 1;
 
   }
 
-  blogloadmorenew(){
+  blogloadmorenew() {
     // console.log('load more')
-    this.indexvalleft=this.indexvalleft+1;
+    this.indexvalleft = this.indexvalleft + 1;
   }
 
-  detail(val:any){
-    console.log(val)
-    this.title=val.title;
-    this.eventTitle=this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    console.log( this.eventTitle)
-    this.router.navigateByUrl("/seminars-detail/"+ this.eventTitle +'/' + val._id);
+  detail(val: any) {
+    // console.log(val)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
+    this.router.navigateByUrl("/seminars-detail/" + this.eventTitle + '/' + val._id);
   }
 
   //current date
-// getCurrentDate(){  
-  
-//   let dateFormat = require('dateformat');
-//   let now = new Date();
-//   // dateFormat(now,"mm-dd-yyyy");
-//   let currentDate=this.datePipe.transform(now,"MM-dd-yyyy")
+  // getCurrentDate(){  
 
-//   console.log('>>>>>>>>',currentDate);
-      
-//     }
+  //   let dateFormat = require('dateformat');
+  //   let now = new Date();
+  //   // dateFormat(now,"mm-dd-yyyy");
+  //   let currentDate=this.datePipe.transform(now,"MM-dd-yyyy")
 
+  //   console.log('>>>>>>>>',currentDate);
 
+  //     }
 
 
-//facebook share for event
 
-login() {
-  this.FB.login()
-    .then((res: LoginResponse) => {
-     
-      this.getProfile();
-    })
-    .catch();
-}
-getProfile() {
-  this.FB.api('me/?fields=id,name,email,picture')
-    .then((res: any) => {
-     
-      this.profile = res;
-      
-    })
-    .catch((error: any) => {
 
+  //facebook share for event
+
+  login() {
+    this.FB.login()
+      .then((res: LoginResponse) => {
+
+        this.getProfile();
+      })
+      .catch();
+  }
+  getProfile() {
+    this.FB.api('me/?fields=id,name,email,picture')
+      .then((res: any) => {
+
+        this.profile = res;
+
+      })
+      .catch((error: any) => {
+
+      });
+  }
+
+  fbshare(val: any) {
+    // console.log(val)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
+    var url = 'https://arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id;
+    // console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share',
+      quote: 'https://arniefonseca.influxiq.com/'
+    };
+    this.FB.ui(params).then((res: UIResponse) => {
+    }).catch(facebook => {
+      // console.log(facebook)
     });
-}
+  }
 
-fbshare(val: any) {
-  console.log(val)
-  this.title = val.title;
-  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
-  var url='https://arniefonseca.influxiq.com/seminars-detail/'+ this.eventTitle+'/'+val._id;
-  // console.log(url)
+  logoutWithFacebook(): void {
 
-  let params: UIParams = {
-    href: url,
-    method: 'share',
-    quote: 'https://arniefonseca.influxiq.com/'
-  };
-  this.FB.ui(params).then((res:UIResponse)=>{
-  }).catch(facebook=>{
-    // console.log(facebook)
-  });
-}
-
-logoutWithFacebook(): void {
-
-  this.FB.logout().then();
-}
+    this.FB.logout().then();
+  }
 
 
-twitterShare(val:any){
+  twitterShare(val: any) {
 
-  this.title = val.title;
-  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
-  window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
-  // console.log(url)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    // console.log(url)
 
-}
+  }
 
-linkedinShare(val:any){
+  linkedinShare(val: any) {
 
-  this.title = val.title;
-  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
 
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
-  // console.log(url)
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    // console.log(url)
 
-}
+  }
 
 
- // tumblr share 
+  // tumblr share 
 
- tumblrShare(val:any){
+  tumblrShare(val: any) {
 
-  this.title = val.title;
-  this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-  console.log(this.eventTitle)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
 
-  window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/'+this.eventTitle+'/'+ val._id);
-  // console.log(url)
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    // console.log(url)
 
-}
+  }
 
 
 }

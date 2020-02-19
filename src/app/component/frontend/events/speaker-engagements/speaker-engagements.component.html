@@ -25,9 +25,9 @@
 
 
     <mat-card-content class="event_right">
-      <h2>PAst speaker engagements</h2>
+      <h2>Past speaker engagements</h2>
 
-      <span class="event_right_blog" *ngFor="let pasteventsem of SpeakerListArry | slice:0:indexval; let i=index">
+      <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent">
         <span class="event_right_blog_wrapper">
 
           <span class="event_right_blog_wrapperrow">
@@ -35,6 +35,8 @@
               <img src="{{pasteventsem.image}}">
             </span>
             <span class="event_right_blog_text">
+
+              <p [innerHtml]="pasteventsem.title"></p>
 
               <p [innerHtml]="pasteventsem.title"></p>
 
@@ -57,14 +59,14 @@
 
     <mat-card-content class="event_left">
 
-      <span class="event_blog" *ngFor="let eventsem of SpeakerListArry | slice:0:indexvalleft; let i=index">
+      <span class="event_blog" *ngFor="let eventsem of upComingEvent | slice:0:indexvalleft; let i=index">
+        
+        <h3>{{eventsem.title}} – {{eventsem.time}}</h3>
         <span class="event_blog_top">
 
           <label>{{eventsem.date}}</label>
-          <p>Conference Room • {{eventsem.location}}</p>
+          <p>{{eventsem.location}}, {{eventsem.state}}, {{eventsem.city}}</p>
         </span>
-        <h3>{{eventsem.title}} – {{eventsem.time}}</h3>
-
         <span class="event_img"> <img src="{{eventsem.image}}"></span>
 
         <p class="event_text"> <span class="spantext" [innerHtml]="eventsem.description"></span> <a
@@ -84,24 +86,7 @@
           <a class="sociallink fa lin" (click)="linkedinShare(eventsem)" target="_blank">
             <img src="../../../../assets/images/share_img4.jpg">
           </a>
-          <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fspeaker-engagements{{eventsem._id}}" target="_blank">
-                                 <img src="../../../../assets/images/share_img1.jpg"  >
-                               </a>
-                               <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fspeaker-engagements{{eventsem._id}}" target="_blank">
-                                <img src="../../../../assets/images/share_img2.jpg"  >
-                               </a>
-                               <a class="sociallink fa tumblr" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fspeaker-engagements{{eventsem._id}}" target="_blank">
-                                 <img src="../../../../assets/images/share_img3.jpg"  >
-                               </a>
-                               <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fspeaker-engagements{{eventsem._id}}" target="_blank">
-                              <img src="../../../../assets/images/share_img4.jpg"  >
-                               </a> -->
-          <!-- <a class="sociallink fa env">
-                   <fa name="envelope" class="fa-envelope"></fa>
-                 </a> -->
-          <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/speaker-engagements%2F?affid='+eventsem._id)">
-                                <img src="../../../../assets/images/share_img6.jpg"  >
-                               </a> -->
+
 
 
         </span>

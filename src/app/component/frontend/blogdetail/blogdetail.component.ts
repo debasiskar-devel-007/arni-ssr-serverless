@@ -53,7 +53,8 @@ export class BlogdetailComponent implements OnInit {
   public resc: any;
   public blogListing: any;
 
-  
+  public MostViwedBlog:any=[];
+  public similarBlogs:any=[];
   // @ViewChild('myaccordion') myPanels: MatAccordion;
 
   // openAll(){
@@ -91,7 +92,34 @@ export class BlogdetailComponent implements OnInit {
 
     this.dataChange.subscribe(data => this.blogCategoryDataSource.data = data);
 
-   
+  
+    this.activatedRoute.data.forEach((data: any) => {
+      this.blog = data.blogCatList.res;
+      //console.warn('>>>>>>>kb>>>>>>>',this.blog[0])  
+      this.blog_img=this.blog[0].blogs_image[0];
+      
+    })
+     /**fetch user api and store by sourav*/
+    let dat:any;
+    dat={
+    
+      "blogid":this.blog[0]._id
+    }
+    this.apiService.CustomRequest(dat,'apiforip').subscribe(resc=>{
+    //console.log(resc)
+    })
+ 
+     /*------------Most Viewed Blogs List and popular blog list by sourav-----*/
+     let data: any = {
+       condition: {"_id":this.blog[0].blogcat}
+     }
+ 
+     this.apiService.CustomRequest(data,"popularsimilarblogs").subscribe((result: any) => {
+       //console.warn(result);
+       this.MostViwedBlog = result.popular_blogs;
+       this.similarBlogs=result.similar_blogs
+       //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>', this.MostViwedBlog);
+     });
 
     
     this.dataChange.next([
@@ -125,13 +153,7 @@ export class BlogdetailComponent implements OnInit {
     //**all blog category and blog list from resolve in routing**//
 // ************* blog details *****************//
       
-      this.activatedRoute.data.forEach((data: any) => {
-        this.blog = data.blogCatList.res;
-        //console.log('>>>>>>>kb>>>>>>>',this.blog)  
-        this.blog_img=this.blog[0].blogs_image[0];
-        
-      })
- 
+     
       
 
       

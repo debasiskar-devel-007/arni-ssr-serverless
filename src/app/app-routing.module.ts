@@ -156,27 +156,27 @@ data: {
 }
 },
 
-{ path: 'seminars-detail/:title/:id', component: SeminarsDetailComponent,
+{ path: 'seminars-detail/:title/:_id', component: SeminarsDetailComponent,
 resolve: { seminarsDetailData: ResolveService },
 data: {
-  requestcondition: { condition: {_id:"id"} },
+  requestcondition: { condition: {_id:"_id", type:"seminars"} },
   endpoint: "eventdata"
 }
 },
-{ path: 'workshop-detail/:title/:id', component: WorkshopDetailComponent,
+{ path: 'workshop-detail/:title/:_id', component: WorkshopDetailComponent,
 resolve: { workshopsDetailData: ResolveService },
 data: {
-  requestcondition: {condition: {_id:"id"} },
+  requestcondition: { condition:{_id:"_id", type:"workshops"} },
   endpoint: "eventdata"
 }
 },
 
 
 
-{ path: 'speaker-engagements-detail/:title/:id', component: SpeakerEngagementsDetailComponent,
+{ path: 'speaker-engagements-detail/:title/:_id', component: SpeakerEngagementsDetailComponent,
 resolve: { speakerengagementsDetailData: ResolveService },
 data: {
-requestcondition: {  condition: {_id:"id"} },
+requestcondition: {  condition: {_id:"_id", type:"speaker_engagement"} },
 endpoint: "eventdata"
 }
 },

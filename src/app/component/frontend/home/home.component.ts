@@ -27,20 +27,25 @@ export class HomeComponent implements OnInit {
 
   
   public slides: any = [
-    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg","title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "button_view_more":"view more", "button_view_more_link":"https://arniefonseca.influxiq.com"},
-    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg","title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "button_view_more":"view more", "button_view_more_link":"https://arniefonseca.influxiq.com"},
-    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg","title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "button_view_more":"view more", "button_view_more_link":"https://arniefonseca.influxiq.com"}
+    {"img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", "imgmobile":"../../assets/images/slide1img-imgmobile.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg", "subtitle2":"The Best & The Most Powerful <br>Transformation Process <br>There Is", "title":"Arnie <br>Fonseca","subtitle":"Personal Development Mentor", "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", "description3":"Personal and Professional Coaching & Training, Couples & Relationship Counselling, High-Performance Programs and many other such offerings", "description2":"You have a large variety to choose from."},
+    {"img":"../../assets/images/arnehome-slide2img.jpg", "imgmobile":"../../assets/images/slide2img-imgmobile.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg", "subtitle2":"The Best & The Most Powerful <br>Transformation Process <br>There Is", "title":"The Best","subtitle":"The Best & The Most Powerful <br>Transformation Process <br>There Is", "description":"Come One, Come All! Be a part of a <b>Powerful Transformation <br>Process</b> that will show you the key to achieving success at a high <br>level, <b>Surely and Consistently!</b>", "description3":"Personal and Professional Coaching & Training, Couples & Relationship Counselling, High-Performance Programs and many other such offerings", "description2":"You have a large variety to choose from."},
+    {"img":"../../assets/images/arnehome-slide3img.jpg", "imgmobile":"../../assets/images/slide3img-imgmobile.jpg", "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg", "subtitle2":"Coaching, Training, <br>Counselling", "title":"It’s All Here!!","subtitle":"The Best & The Most Powerful <br>Transformation Process <br>There Is", "description":"Personal and Professional Coaching & Training, Couples & Relationship Counselling, High-Performance Programs and many other such offerings", "description3":"Personal and Professional Coaching & Training, <br>Couples & Relationship Counselling, <br>High-Performance Programs and many other such <br>offerings -", "description2":"You have a large variety to choose from."}
   ];
 
 
   // public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
+    autoPlay : 6000,
+    stopOnHover : true,
+    navigation:true,
+    paginationSpeed : 1000,
+    goToFirstSpeed : 2000,
+    transitionStyle:"fade",
     margin: 0,
     nav: false,
     loop: false,
     rewind: true,
-    autoplayTimeout: 6000,
     autoplay: false,
     autoplayHoverPause: true,
     center: false,

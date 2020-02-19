@@ -23,7 +23,7 @@
             <span class="event_blog_top">
            <label>{{seminer.event_date}} </label>
 
-             <p>Conference Room • {{seminer.location}} </p>
+             <p>{{seminer.location}} ,{{seminer.state}} ,{{seminer.city}}</p>
              </span>
                <h3>{{seminer.title}} – {{seminer.time}}-{{seminer.timeZone}}</h3>
 
@@ -63,28 +63,28 @@
     <mat-card-content class="event_right">
       <h2>Past seminers</h2>
 
-        <span class="event_right_blog">
+        <span class="event_right_blog" *ngFor="let item of pastEvent">
 
 
-                <span class="event_right_blog_wrapper">
+                <span class="event_right_blog_wrapper" >
                   <span class="event_right_blog_wrapperrow">
                         <span class="event_right_blog_img">
-                            <img [src]="seminer.image"   >
+                            <img [src]="item.image"   >
                         </span>
                         <span class="event_right_blog_text">
 
-                            <p>{{seminer.title}}</p>
+                            <p>{{item.title}}</p>
 
-                            <label>{{seminer.event_date}}</label>
+                            <label>{{item.event_date}}</label>
 
-                            <button>Know more</button>
+                            <button (click)="viewDetails(item)">Know more</button>
                             
 
                             <span class="clear"></span>
                         </span>
                         <span class="clear"></span>
                   </span>
-                  
+                  <!-- <button class="viewalleventbtn">Load More</button> -->
                 </span>
                
 

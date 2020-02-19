@@ -433,7 +433,7 @@ forgetPassword(requestdata: any) {
 
 /**add postData */
 postdata(requestdata: any) {
-  console.log('post Data');
+  //console.log('post Data');
   const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -441,7 +441,7 @@ postdata(requestdata: any) {
     })
   };
 
-  console.log(this.serverUrl,requestdata);
+  //console.log(this.serverUrl,requestdata);
   var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   return result;
 }
@@ -461,8 +461,8 @@ postdata(requestdata: any) {
         'Content-Type':  'application/json'
       })
     };
-    console.log('endpoint');
-    console.log(endpoint);
+   // console.log('endpoint');
+   // console.log(endpoint);
     var result = this._http.post(this.serverUrl+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
     return result;
   }
