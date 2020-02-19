@@ -3,7 +3,7 @@
   <span class="mainwrappercontent">
     <mat-card-content>
       <span>
-        <h1>workshops</h1>
+        <h1>Past workshops</h1>
         <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
           that will make immediate improvements in your lives.</p>
       </span>
@@ -13,7 +13,7 @@
 <mat-card class="ptb-40 generalcls workshopswrapper" style="background: #f2f4f4 !important;">
   <span class="mainwrappercontent bloghead">
     <mat-card-content>
-      <h2>workshops</h2>
+      <h2>Past workshops</h2>
       <p>
         Check out some of the pictures from the many conferences, seminars, workshops and other such events that I have
         been a part of in the past.This <br>Image Gallery is updated after every event I attend. So, you can always
@@ -24,7 +24,7 @@
   <mat-card class="event_wrapper">
 
     <mat-card-content class="event_right">
-      <h2>PAST WORKSHOPS</h2>
+      <!-- <h2>PAST WORKSHOPS</h2> -->
 
       <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent | slice:0:indexval; let i=index">
 
@@ -42,7 +42,24 @@
               <label>{{pasteventsem.date}}</label>
               <button (click)="detail(pasteventsem)">Know more</button>
 
-            </span>
+              <span class="clear"></span>
+
+              <span class="blogsociallists event_share_block">
+                <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
+                  <fa name="facebook" class="fa-facebook"></fa>
+                </a>
+                <a class="sociallink fa twi" (click)="twitterShare(eventsem)" target="_blank">
+                  <fa name="twitter" class="fa-twitter"></fa>
+                </a>
+                <a class="sociallink fa tumblr" (click)="tumblrShare(eventsem)" target="_blank">
+                  <fa name="tumblr" class="fa-tumblr"></fa>
+                </a>
+                <a class="sociallink fa lin" (click)="linkedinShare(eventsem)" target="_blank">
+                  <fa name="linkedin" class="fa-linkedin"></fa>
+                </a>
+              </span>
+            </span>            
+              <span class="clear"></span>
           </span>
         </span>
       </span>
