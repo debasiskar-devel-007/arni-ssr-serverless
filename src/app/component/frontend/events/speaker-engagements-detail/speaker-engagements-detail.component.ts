@@ -122,6 +122,16 @@ public pastEvent:any=[];
 
   }
 
+
+  detail(val:any){
+
+    // console.log(val)
+    this.title=val.title;
+    this.eventTitle=this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log( this.eventTitle)
+    this.router.navigateByUrl("/speaker-engagements-detail/"+ this.eventTitle +'/' + val._id);
+  }
+
   copyText(val:any){
     console.log('copyText');
   }
