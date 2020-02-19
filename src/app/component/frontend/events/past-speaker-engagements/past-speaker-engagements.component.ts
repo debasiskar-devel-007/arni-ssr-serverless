@@ -8,12 +8,11 @@ import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebo
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-speaker-engagements',
-  templateUrl: './speaker-engagements.component.html',
-  styleUrls: ['./speaker-engagements.component.css']
+  selector: 'app-past-speaker-engagements',
+  templateUrl: './past-speaker-engagements.component.html',
+  styleUrls: ['./past-speaker-engagements.component.css']
 })
-export class SpeakerEngagementsComponent implements OnInit {
-
+export class PastSpeakerEngagementsComponent implements OnInit {
   public indexvallength: any=1;
 
 
@@ -38,8 +37,8 @@ export class SpeakerEngagementsComponent implements OnInit {
   public upComingEvent:any=[];
   public pastEvent:any=[];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
-    
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) { 
+
     this.meta.setTitle('Arnie Fonseca - Speaker Engagements');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');
     this.meta.setTag('twitter:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');
@@ -54,27 +53,10 @@ export class SpeakerEngagementsComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
 
     this.dataformate = moment();
+
   }
 
   ngOnInit() {
-
-    this.activatedRoute.data.forEach(data => {
-      let result: any = {};
-      result = data.speakerEngagementsListData.res;
-      // console.warn(result);
-
-      // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
-      // console.log('+++++>>>>>>>>>>>>', this.eventImage)
-      // console.log('>>>>>>>>>>>>>>>>',result);
-      this.SpeakerListArry = result;
-
-      this.indexvallength = this.SpeakerListArry.length;
-
-      this.indexvalleftlengthlength = this.SpeakerListArry.length;
-    })
-
-
-
 
     //past and upcoming event
 
@@ -96,23 +78,10 @@ export class SpeakerEngagementsComponent implements OnInit {
       }
     }
 
-
   }
 
-    //***********load more view blog *************//
-    blogloadmore(){
-      // console.log('load more')
-      this.indexval=this.indexval+1;
+
   
-    }
-
-
-  blogloadmorenew(){
-    // console.log('load more')
-    this.indexvalleft=this.indexvalleft+1;
-
-  }
-
   detail(val:any){
 
     // console.log(val)
@@ -207,8 +176,5 @@ linkedinShare(val:any){
   // console.log(url)
 
 }
-
-
-
 
 }

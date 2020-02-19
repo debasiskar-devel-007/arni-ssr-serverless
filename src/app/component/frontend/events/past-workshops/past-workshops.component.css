@@ -1,47 +1,16 @@
 .workshopsbg.mat-card{background:url(../../../../../assets/images/workshopsbannerbg.jpg) no-repeat top right;background-size:cover;}
 
-
 .clear{ display: block!important; overflow: hidden!important; clear:both!important;}
 
 .event_wrapper{ display: block!important; width: 1668px!important; margin: 38px auto!important; margin-bottom: 0px!important; border: none!important; box-shadow: none!important; background: none!important; padding: 0px!important;}
 
-.event_wrapper .event_left{ width: 1155px; float: left; margin-bottom: 0px!important;}
-.event_wrapper .event_right{ width: 495px; float: right; margin-bottom: 0px!important;}
-
+.event_wrapper .event_right{ width: 100%; margin-bottom: 0px!important;}
 .event_wrapper .event_right h2{ background: #292b33; text-transform: uppercase; padding: 18px 18px 12px 18px; text-align: left; font-size: 22px!important; font-family:"Helvetica-Regular"; color: #fff; font-weight: normal; }
-.event_blog{ display: block; margin-bottom: 40px; border-bottom: solid 2px #3ab9d9; padding-bottom: 36px;}
 
-.event_blog .event_blog_top{display: flex;padding: 10px;justify-content: space-between;align-items: center;}
-.event_blog .event_blog_top span {display: inherit;}
-.event_blog .event_blog_top label{display:inherit;font-family:"Helvetica-Regular";font-size:18px;color:#24252c;text-transform:uppercase;margin:0;padding:0;font-weight:700}
-.event_blog .event_blog_top label i{margin-right: 5px;color:#3ab9d9}
-.event_blog .event_blog_top p i{margin-right: 5px;color:#3ab9d9}
-.event_blog .event_blog_top  p{ display: inherit; margin: 0; padding: 0; font-size: 18px; color: #24252c;margin-left: 20px;text-transform: capitalize;}
-
-.event_blog h3{ display: block; margin: 0; background: #3ab9d9; padding: 12px 20px 10px 20px; font-size: 24px; color: #fff; font-family:"Helvetica-Regular";  font-weight: normal; text-transform: uppercase;}
-
-.event_img{ display: block; width: 100%; }
-
-.event_img img{ display: block; width: 100%;}
-
-.event_text{ display: block; margin-top: 35px; font-size: 18px; color: #24252c; font-family:"Helvetica-Regular";}
-
-.event_text a{ color: #ff3333;}
-
-/* .event_share_block{ display: inline-block; background: #fff; padding: 6px; padding-bottom:3px; margin-top: 16px;} */
-.event_share_block{width: 300px; flex: inherit;margin-top: 0px;margin-right: 0;}
+.event_share_block{padding: 0px 10px 10px;margin-right: 0;}
 /* .event_share_block img{ width: 29px;} */
 
-.event_text .spantext{ display: block;  margin-bottom: 15px; }
-
-
-.event_blog h6{font-size: 18px; color: #24252c; font-family:"Helvetica-Regular"; text-transform: uppercase; margin: 0; padding: 10px 0;}
-
-.event_blog label{ display: block; margin: 2px 0; padding: 0px; font-size: 18px;
-    color: #24252c;
-    font-family: "Helvetica-Regular";}
-.event_blog label a{  color: #ff3f3a;white-space: normal;word-break: break-word;}
-
+.event_text .spantext{display:block;max-height:122px;margin-bottom:15px;overflow:hidden}
 
 .eventpagination{ overflow: hidden; background: #0fc47e; display: block; text-align: center; padding: 30px 15px;  font-family:"Helvetica-Regular"; font-size: 18px; color: #fefefe;}
 
@@ -95,31 +64,7 @@
 
 @media only screen and (max-width: 1700px) {
     .event_wrapper{   width: 96%!important; padding: 0px!important;}
-    .event_wrapper .event_left{ width: 70%; float: left;}
-    .event_wrapper .event_right{ width: 28%; float: right;}
-
-
-
-
 }
-
-
-
-
-@media only screen and (max-width: 1560px) {
-
-    .event_wrapper .event_left{ width: 68%; float: left;}
-    .event_wrapper .event_right{ width: 30%; float: right;}
-
-}
-
-@media only screen and (max-width: 1300px) {
-
-    .event_wrapper .event_left{ width: 65%; float: left;}
-    .event_wrapper .event_right{ width: 33%; float: right;}
-
-}
-
 
 @media only screen and (max-width: 1199px) {
 
@@ -161,9 +106,8 @@
     .event_right_blog_text p{ margin: 0; padding:0 0 15px 0; font-size: 18px;  font-family:"Helvetica-Regular"; height: auto; overflow: inherit; line-height: 22px; text-align: center;}
 }
 
-
-@media only screen and (max-width: 768px) {
-    .event_blog .event_blog_top {display: -webkit-box;display: flex;padding: 10px;-webkit-box-pack: center;justify-content: center;-webkit-box-align: center;align-items: center;flex-wrap: wrap;}
+@media only screen and (max-width: 767px) {
+    .event_blog {width: calc(1/1*100% - (1 - 1/1)*20px) !important;}
 }
 
 @media only screen and (max-width: 480px) {

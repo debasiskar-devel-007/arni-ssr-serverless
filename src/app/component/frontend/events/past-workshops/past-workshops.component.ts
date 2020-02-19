@@ -8,11 +8,11 @@ import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebo
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-workshops',
-  templateUrl: './workshops.component.html',
-  styleUrls: ['./workshops.component.css']
+  selector: 'app-past-workshops',
+  templateUrl: './past-workshops.component.html',
+  styleUrls: ['./past-workshops.component.css']
 })
-export class WorkshopsComponent implements OnInit {
+export class PastWorkshopsComponent implements OnInit {
 
   public indexvallength: any=1;
 
@@ -36,8 +36,8 @@ export class WorkshopsComponent implements OnInit {
   public upComingEvent:any=[];
   public pastEvent:any=[];
 
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService,public datePipe: DatePipe) { 
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService,public datePipe: DatePipe ) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
     this.meta.setTag('twitter:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -51,66 +51,35 @@ export class WorkshopsComponent implements OnInit {
     this.meta.setTag('og:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
     this.meta.setTag('twitter:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
+
   }
 
   ngOnInit() {
 
-    this.activatedRoute.data.forEach(data => {
-      let result: any = {};
-      result = data.workshopsListData.res;
-      // console.warn(result);
+     //past and upcoming event
 
-      // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
-      // console.log('+++++>>>>>>>>>>>>', this.eventImage)
-      // console.log('>>>>>>>>>>>>>>>>',result);
-      this.WorkshopsListArry = result;
-
-      this.indexvallength = this.WorkshopsListArry.length;
-
-      this.indexvalleftlengthlength = this.WorkshopsListArry.length;
-    })
-
-
-
-
-          //past and upcoming event
-
-          let currentdate: Date;
-          currentdate = new Date();
-          let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
-          let eventDate = moment(curdate).format('x');
-          // console.log('s d',eventDate);
-      
-      
-          for(let i in  this.WorkshopsListArry){
-            // console.log('d', this.WorkshopsListArry[i].date_unix)
-            if(this.WorkshopsListArry[i].date_unix > eventDate){
-              // console.log('up',this.WorkshopsListArry[i])
-              this.upComingEvent.push(this.WorkshopsListArry[i]);
-            } else {
-              // console.log('past',this.WorkshopsListArry[i])
-              this.pastEvent.push(this.WorkshopsListArry[i]);
-            }
-          }
-   
+     let currentdate: Date;
+     currentdate = new Date();
+     let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
+     let eventDate = moment(curdate).format('x');
+     // console.log('s d',eventDate);
+ 
+ 
+     for(let i in  this.WorkshopsListArry){
+       // console.log('d', this.WorkshopsListArry[i].date_unix)
+       if(this.WorkshopsListArry[i].date_unix > eventDate){
+         // console.log('up',this.WorkshopsListArry[i])
+         this.upComingEvent.push(this.WorkshopsListArry[i]);
+       } else {
+         // console.log('past',this.WorkshopsListArry[i])
+         this.pastEvent.push(this.WorkshopsListArry[i]);
+       }
+     }
 
   }
 
 
-  //***********load more view blog *************//
-  blogloadmore(){
-    // console.log('load more')
-    this.indexval=this.indexval+1;
-
-  }
-
-
-  blogloadmorenew(){
-    // console.log('load more')
-    this.indexvalleft=this.indexvalleft+1;
-
-  }
-
+  
   detail(val:any){
     // console.log(val)
     this.title=val.title;
