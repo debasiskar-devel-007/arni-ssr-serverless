@@ -4,8 +4,9 @@
 
 .event_wrapper{ display: block!important; width: 1668px!important; margin: 38px auto!important; margin-bottom: 0px!important; border: none!important; box-shadow: none!important; background: none!important; padding: 0px!important;}
 
-
-.event_wrapper .event_right{ width:100%; margin-bottom: 0px!important;}
+.event_wrapper .event_left{width:1155px;float:left;margin-bottom:0!important}
+.event_wrapper .event_left h2{font-size: 22px!important;line-height: normal !important; text-align: left;}
+.event_wrapper .event_right{width:495px;float:right;margin-bottom:0!important}
 .event_wrapper .event_right h2{ background: #292b33; text-transform: uppercase; padding: 18px 18px 12px 18px; text-align: left; font-size: 22px!important; font-family:"Helvetica-Regular"; color: #fff; font-weight: normal; }
 .event_share_block{padding: 0px 10px 10px;margin-right: 0;}
 /* .event_share_block img{ width: 29px;} */
@@ -50,10 +51,19 @@
     box-shadow: none !Important;
     padding: 15px 5px 10px!important;}
 
-@media only screen and (max-width: 1700px) {
-    .event_wrapper{   width: 96%!important; padding: 0px!important;}
-
-}
+    @media only screen and (max-width: 1700px) {
+        .event_wrapper{width:96%!important;padding:0!important}
+        .event_wrapper .event_left{width:70%;float:left}
+        .event_wrapper .event_left{width:70%;float:left}
+        }
+        @media only screen and (max-width: 1560px) {
+        .event_wrapper .event_left{width:68%;float:left}
+        .event_wrapper .event_right{width:30%;float:right}
+        }
+        @media only screen and (max-width: 1300px) {
+        .event_wrapper .event_left{width:65%;float:left}
+        .event_wrapper .event_right{width:33%;float:right}
+        }
 
 
 @media only screen and (max-width: 1199px) {
