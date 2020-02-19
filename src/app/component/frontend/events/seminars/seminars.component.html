@@ -26,36 +26,41 @@
   <mat-card class="event_wrapper">
 
     <mat-card-content class="event_right">
-      <h2>Past seminers <span><button (click)="viewallbutton()">View All</button></span></h2>
+      <h2>Past seminers <span></span></h2>
 
-      <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent">
+      <span>
+        <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent | slice:0:indexvalright; let i=indexval">
 
-        <span class="event_right_blog_wrapper">
-
-          <span class="event_right_blog_wrapperrow">
-
-            <span class="event_right_blog_img">
-              <img src="{{pasteventsem.image}}">
-            </span>
-            <span class="event_right_blog_text">
-
-              <p [innerHtml]="pasteventsem.title"></p>
-
-              <label>{{pasteventsem.event_date}}</label>
-
-              <button (click)="detail(pasteventsem)">Know more</button>
-
+          <span class="event_right_blog_wrapper">
+  
+            <span class="event_right_blog_wrapperrow">
+  
+              <span class="event_right_blog_img">
+                <img src="{{pasteventsem.image}}">
+              </span>
+              <span class="event_right_blog_text">
+  
+                <p [innerHtml]="pasteventsem.title"></p>
+  
+                <label>{{pasteventsem.event_date}}</label>
+  
+                <button (click)="detail(pasteventsem)">Know more</button>
+  
+                <span class="clear"></span>
+              </span>
               <span class="clear"></span>
             </span>
-            <span class="clear"></span>
           </span>
+          
+    
         </span>
 
+        <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
+          (click)="blogloadmore()">Load More</button> 
+          <button class="viewalleventbtn" (click)="viewallbutton()">View All</button>
       </span>
-
-      <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
-        (click)="blogloadmore()">Load More</button>
-
+  
+     
     </mat-card-content>
 
 
