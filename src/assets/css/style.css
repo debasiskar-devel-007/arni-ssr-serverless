@@ -122,6 +122,7 @@ a{cursor:pointer;outline:none}
 .innerpagebanner{background-color:#01110d;padding:20px}
 .innerpagebanner.mat-card{padding:0!important;overflow-x:hidden;background:url(../images/contactusbg.jpg) no-repeat center center;top:0;left:0;min-width:100%;min-height:300px;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;position:relative}
 .innerpagebanner.mat-card h1{text-transform:uppercase;font-size:90px;font-family:"HelveticaBold";width:100%;text-align:left;color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,0.1)}
+.innerpagebanner.pasteventbanner.mat-card h1{text-transform:uppercase;font-size:65px;font-family:"HelveticaBold";width:100%;text-align:left;color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,0.1)}
 .innerpagebanner.mat-card p{font-size:18px;font-family:"Helvetica-Normal";width:100%;text-align:left;color:#24252c}
 .innerpagebanner.mat-card .mainwrappercontent{position:relative}
 .innerpagebanner.mat-card .mat-card-content{height:300px;position:relative;margin-bottom:0;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;align-items:center;flex-wrap:wrap}
@@ -419,6 +420,7 @@ a{cursor:pointer;outline:none}
 @media only screen and (max-width: 1199px) {
   .innerpagebanner.mat-card h1{font-size: 60px;}
   .innerpagebanner.mat-card h1{text-align: center;font-size: 55px;}
+  .innerpagebanner.pasteventbanner.mat-card h1{text-align: center;font-size: 55px;}
 .innerpagebanner.mat-card .mat-card-content{height: auto;display: inline-block;width: 100%;}
 .innerpagebanner.mat-card p{text-align: center;}
 .bloghead p br, .blockheader p br{display: none;}
