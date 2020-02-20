@@ -102,11 +102,10 @@
               <span class="event_right_blog_text">
   
                 <p>{{item.title}}</p>
-  
-                <label>{{item.event_date}}</label>
-  
-                <button (click)="viewDetails(item)">Know more</button>
-  
+                <span class="event_blog_top">
+                  <label>{{item.event_date}}</label>  
+                  <button (click)="viewDetails(item)">Know more</button>
+                </span>
   
                 <span class="clear"></span>
                 <span class="blogsociallists event_share_block">

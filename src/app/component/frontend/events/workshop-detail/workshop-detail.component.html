@@ -112,12 +112,10 @@
                 <label>Oct 17, 2019</label> -->
   
                 <p>{{item.title}}</p>
-  
-                <label>{{item.event_date}}</label>
-  
-                <!-- <button>Know more</button> -->
-  
-                <button (click)="detail(item)">Know more</button>
+                <span class="event_blog_top">
+                  <label>{{item.event_date}}</label> 
+                  <button (click)="detail(item)">Know more</button>
+                </span>
   
                 <span class="clear"></span>
 

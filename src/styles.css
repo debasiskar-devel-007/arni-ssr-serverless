@@ -193,7 +193,7 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     padding: 0;
 }
 
-
+.event_right_blog .event_blog_top{display: flex;padding: 10px 0px 0px;justify-content: space-between;align-items: center;}
 
 @media only screen and (max-width: 1199px) {
   .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}

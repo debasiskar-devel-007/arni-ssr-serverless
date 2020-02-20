@@ -39,10 +39,11 @@
 
               <p [innerHtml]="pasteventsem.title"></p>
 
-              <label>{{pasteventsem.date}}</label>
+              <span class="event_blog_top">
+                <label>{{pasteventsem.date}}</label>
+                <button (click)="detail(pasteventsem)">Know more</button>
+              </span>
               
-              <button (click)="detail(pasteventsem)">Know more</button>
-
               <span class="clear"></span>
 
               <span class="blogsociallists event_share_block">
