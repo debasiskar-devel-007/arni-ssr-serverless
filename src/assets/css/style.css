@@ -403,6 +403,23 @@ a{cursor:pointer;outline:none}
 .homebanner .owl-stage .owl-item:nth-child(3).active .slide1info h3{display:none}
 .homebanner .owl-stage .owl-item:nth-child(3).active .description1{display:none}
 
+
+
+.innercommonbannercls{height: 295px; width: 100%;}
+.innercommonbannercls.mat-card .mat-card-content {padding-top: 20px;}
+
+@media (min-width: 320px) {
+    .innercommonbannercls { height: auto; }
+}
+
+@media (min-width: 768px) {
+    .innercommonbannercls { height: auto; }
+}
+
+@media (min-width: 992px) {
+    .innercommonbannercls{ height: auto; }
+}
+
 @media only screen and (max-width: 1199px) {
   .block4subwrapper.textwrapper .mat-list .mat-list-item .mat-list-item-content{justify-content: center;}
 

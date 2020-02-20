@@ -1,4 +1,4 @@
-.testimonialbg.mat-card{background:url(../../../../assets/images/testimonialbannerbg.jpg) no-repeat center center !important;background-size: cover !important;}
+.testimonialbg.mat-card{background:url(../../../../assets/images/testimonialbannerbg.jpg) no-repeat top right;background-size: cover;}
 
 .testimonialwrapper{
     background: url(../../../../assets/images/testimonialbg.png) no-repeat top center #fff !important;

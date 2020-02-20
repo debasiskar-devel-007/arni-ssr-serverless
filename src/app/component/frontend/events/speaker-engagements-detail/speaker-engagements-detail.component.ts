@@ -28,12 +28,12 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   public profile:any;
   public title: any;
   public eventTitle: any;
-public speakerList:any;
-public indexvalright:any=4;
+  public speakerList:any;
+  public indexvalright:any=4;
 
-public upComingEvent:any=[];
-public pastEvent:any=[]; 
-public eventsem:any;
+  public upComingEvent:any=[];
+  public pastEvent:any=[]; 
+  public item:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
 
