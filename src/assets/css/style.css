@@ -292,6 +292,8 @@ a{cursor:pointer;outline:none}
 
 .homeblogsociallistswrapper{width: 260px; margin: 0 auto;display: block;}
 .blogsociallists{margin-top:20px;display: flex;flex-direction: row;align-items: flex-start;flex: 1; margin-right: 10px;}
+.event_blog .blogsociallists{margin:10px !important;}
+.event_blog .event_share_block{padding:0px !important;}
 .blogsociallists .sociallink {flex: 1;align-items: center;justify-content: center;text-align: center;}
 .sociallink fb{width: 100%;}
     .fa-facebook i{display:none}
