@@ -25,8 +25,8 @@
 
   <mat-card class="event_wrapper">
 
-    <mat-card-content class="event_right">
-      <h2>Past seminers <span></span></h2>
+    <mat-card-content class="event_right eventlistrightthumbnail">
+      <h2>Past seminers </h2>
 
       <span>
         <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent | slice:0:indexvalright; let i=indexval">
@@ -41,12 +41,26 @@
               <span class="event_right_blog_text">
   
                 <p [innerHtml]="pasteventsem.title"></p>
-  
-                <label>{{pasteventsem.event_date}}</label>
-  
-                <button (click)="detail(pasteventsem)">Know more</button>
+                <span class="event_blog_top">
+                  <label>{{pasteventsem.event_date}}</label>  
+                  <button (click)="detail(pasteventsem)">Know more</button>
+                </span>                
   
                 <span class="clear"></span>
+                <span class="blogsociallists event_share_block">
+                  <a class="sociallink fa fb" (click)="fbshare(eventsem)" target="_blank">
+                    <fa name="facebook" class="fa-facebook"></fa>
+                  </a>
+                  <a class="sociallink fa twi" (click)="twitterShare(eventsem)" target="_blank">
+                    <fa name="twitter" class="fa-twitter"></fa>
+                  </a>
+                  <a class="sociallink fa tumblr" (click)="tumblrShare(eventsem)" target="_blank">
+                    <fa name="tumblr" class="fa-tumblr"></fa>
+                  </a>
+                  <a class="sociallink fa lin" (click)="linkedinShare(eventsem)" target="_blank">
+                    <fa name="linkedin" class="fa-linkedin"></fa>
+                  </a>
+                </span>
               </span>
               <span class="clear"></span>
             </span>

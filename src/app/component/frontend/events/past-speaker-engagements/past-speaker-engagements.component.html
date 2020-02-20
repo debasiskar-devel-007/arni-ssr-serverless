@@ -1,5 +1,5 @@
 <app-header></app-header>
-<mat-card class="innerpagebanner speakerengagementsbg">
+<mat-card class="innerpagebanner speakerengagementsbg pasteventbanner">
   <span class="mainwrappercontent">
     <mat-card-content>
       <span>
@@ -25,7 +25,7 @@
   <mat-card class="event_wrapper">
     <mat-card-content class="event_right">
 
-      <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent">
+      <span class="event_right_blog" *ngFor="let pasteventsem of SpeakerListArry | slice:0:indexvalright; let i=indexval">
         <span class="event_right_blog_wrapper">
 
           <span class="event_right_blog_wrapperrow">
@@ -33,14 +33,12 @@
               <img src="{{pasteventsem.image}}">
             </span>
             <span class="event_right_blog_text">
-
-              <p [innerHtml]="pasteventsem.title"></p>
-
-              <p [innerHtml]="pasteventsem.title"></p>
-
-              <label>{{pasteventsem.date}}</label>
-
-              <button (click)="detail(pasteventsem)">Know more</button>
+              <p [innerHtml]="pasteventsem.title"></p>  
+                          
+              <span class="event_blog_top">
+                <label>{{pasteventsem.date}}</label>
+                <button (click)="detail(pasteventsem)">Know more</button>
+              </span>
 
               <span class="clear"></span>
               <span class="blogsociallists event_share_block">
@@ -64,7 +62,7 @@
         </span>
       </span>
 
-      <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
+      <button *ngIf="indexvallength !=null && indexvalright < indexvallength " class="viewalleventbtn"
         (click)="blogloadmore()">Load More</button>
 
     </mat-card-content>

@@ -121,7 +121,7 @@ export class SeminarsComponent implements OnInit {
 
 
   viewallbutton(){
-    this.router.navigateByUrl("/past-seminars");
+    this.router.navigateByUrl('/past-seminars');
   }
 
   detail(val: any) {

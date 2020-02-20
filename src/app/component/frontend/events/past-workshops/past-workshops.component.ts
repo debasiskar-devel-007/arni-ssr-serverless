@@ -17,7 +17,7 @@ export class PastWorkshopsComponent implements OnInit {
   public indexvallength: any=1;
 
 
-  public indexval:any=6;
+  public indexval:any=12;
   public eventTitle:any;
   public title:any;
 
@@ -59,7 +59,7 @@ export class PastWorkshopsComponent implements OnInit {
 
     this.activatedRoute.data.forEach(data => {
       let result: any = {};
-      result = data.workshopsListData.res;
+      result = data.workshopsListData.past_events;
       this.WorkshopsListArry = result;
 
       this.indexvallength = this.WorkshopsListArry.length;
@@ -89,7 +89,9 @@ export class PastWorkshopsComponent implements OnInit {
 
   }
 
-
+  blogloadmore(){
+    this.indexval=this.indexval + 6
+  }
   
   detail(val:any){
     // console.log(val)

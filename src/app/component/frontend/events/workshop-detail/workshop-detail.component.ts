@@ -121,8 +121,6 @@ export class WorkshopDetailComponent implements OnInit {
 
 
 
-
-
   //***********load more view blog *************//
   blogloadmore(){
     // console.log('load more')

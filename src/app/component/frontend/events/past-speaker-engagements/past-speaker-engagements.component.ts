@@ -16,7 +16,7 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   public indexvallength: any=1;
 
 
-  public indexval:any=6;
+  public indexvalright:any=12;
 
 
   public indexvalleftlengthlength: any=1;
@@ -37,7 +37,6 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   public upComingEvent:any=[];
   public pastEvent:any=[];  
   public eventsem:any;
-  public blogloadmore:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) { 
 
@@ -62,7 +61,7 @@ export class PastSpeakerEngagementsComponent implements OnInit {
 
     this.activatedRoute.data.forEach(data => {
       let result: any = {};
-      result = data.speakerEngagementsListData.res;
+      result = data.speakerEngagementsListData.past_events;
       // console.warn(result);
 
       // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
@@ -109,7 +108,9 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   }
 
 
-
+  blogloadmore(){
+    this.indexvalright=this.indexvalright + 6
+  }
   
 
 //facebook share for event

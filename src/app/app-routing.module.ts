@@ -137,21 +137,21 @@ const routes: Routes = [
   { path: 'past-seminars', component: PastSeminarsComponent,
   resolve: { seminarsListData: ResolveService },
   data: {
-    requestcondition: {  type:"seminars" },
+    requestcondition: { source: "", condition: {} , type:"seminars" },
     endpoint: "pasteventdatalist"
   }
 },
   { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent,
   resolve: { speakerEngagementsListData: ResolveService },
   data: {
-    requestcondition: {type:"speaker_engagement"},
+    requestcondition: {source: "", condition: {} ,type:"speaker_engagement"},
     endpoint: "pasteventdatalist"
   }
 },
   { path: 'past-workshops', component: PastWorkshopsComponent,
   resolve: { workshopsListData: ResolveService },
   data: {
-    requestcondition: { type:"workshops" },
+    requestcondition: { source: "", condition: {} , type:"workshops" },
     endpoint: "pasteventdatalist"
   }
  },

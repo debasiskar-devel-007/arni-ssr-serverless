@@ -211,6 +211,7 @@
   }
 
   @media only screen and (max-width: 1199px) {
+    .innerpagebanner.mat-card p br{display:none;}
       .carousalinfo h1 {font-size: 90px!important;line-height: normal!important;}
       .carousalinfo h3 {font-size: 50px;line-height: normal;}
   }
@@ -282,7 +283,8 @@
 
 
   @media only screen and (max-width: 767px) {
-
+    .innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 40px;}
+    .couplescounselingbg.mat-card, .innerpagebanner.mat-card {background-size: 210% !important;}
     .bloglistswrapper .mat-list-base{ display: inline-block;}
 
 .homeblock1contentlefttop h2{ text-align: center!important;}
@@ -371,6 +373,7 @@
 
   
   @media only screen and (max-width: 520px) {
+    .innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 32px;}
     .blogdetail .bottom_blog .item_wrapper .item{width: 99%!important;}
     .carousalinfo h1 {font-size: 36px!important; line-height: normal!important;margin-left: auto;text-align: center;margin-bottom: 10px;}
     .carousalinfo h3 {font-size: 24px;}

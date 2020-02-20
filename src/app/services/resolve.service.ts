@@ -42,10 +42,10 @@ export class ResolveService implements Resolve<any> {
     var condition = route.data.condition;
 
     let _id = route.params["_id"];
-    console.log('>>>>>>', _id)
+    // console.log('>>>>>>', _id)
 
     if (route.data.requestcondition.condition._id == "_id") {
-      console.log('>>>>>>if', route.params["_id"])
+      // console.log('>>>>>>if', route.params["_id"])
 
       route.data.requestcondition.condition._id = route.params["_id"];
       delete route.data.requestcondition.condition.id;
