@@ -8,6 +8,7 @@ import { getLocaleDateFormat } from '@angular/common';
 import { format } from 'url';
 import { DatePipe } from '@angular/common';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
+import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-past-seminars',
@@ -96,8 +97,51 @@ export class PastSeminarsComponent implements OnInit {
 
 
   blogloadmore(){
-    this.indexvalright=this.indexvalright + 6
+    this.indexvalright=this.indexvalright + 6;
+    // let data:any;
+    // data={
+      
+    //   "skip":this.indexvalright
+    // }
+    // this.apiService.CustomRequest(data,'pasteventdatalist').subscribe(result=>{
+    //   this.SeminarsListArry = result;
+    // })
   }
+
+
+
+  // blogloadmore() {
+  //   let data: any = {};
+  //   if(this.blogCat==''){
+  //   data={
+  //     endpoint: 'loadmoreblogdata',
+  //     "condition": {
+  //       "limit": 10,
+  //       "skip": this.indexval
+  //   }
+  // }
+  //   }else{
+
+  //     data={
+  //       endpoint: 'loadmoreblogdata',
+  //       "condition": {
+  //         "limit": 10,
+  //         "skip": this.indexval,
+  //         "catid":this.blogCat
+  //     }
+  //   }
+
+  //   }
+  //   this.apiService.getDatalist(data).subscribe((res:any)=>{
+  //     if(res.blogs.length > 0){
+  //       this.bloglisting = this.bloglisting.concat(res.blogs);
+  //       this.indexval = this.indexval + 10;
+  //     }else{
+  //       this.highLoadMore=true;
+  //     }
+      
+  //   })
+  // }
 
 
   
