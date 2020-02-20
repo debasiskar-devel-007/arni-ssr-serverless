@@ -7,7 +7,7 @@
 
 .event_wrapper .event_left{ width: 1155px; float: left; margin-bottom: 0px!important;}
 .event_wrapper .event_left h2{font-size: 22px!important;line-height: normal !important;border-bottom: 1px solid #d2d2d2;padding-bottom: 10px; text-align: left;}
-.event_wrapper .event_right{ width: 495px; float: right; margin-bottom: 0px!important;}
+.event_wrapper .event_right{ width: 478px; float: right; margin-bottom: 0px!important;}
 
 .event_wrapper .event_right h2{ background: #292b33; text-transform: uppercase; padding: 18px 18px 12px 18px; text-align: left; font-size: 22px!important; font-family:"Helvetica-Regular"; color: #fff; font-weight: normal; }
 .event_blog{ display: block; margin-bottom: 40px; border-bottom: solid 2px #3ab9d9; padding-bottom: 36px;}
@@ -54,9 +54,9 @@
 .event_right_blog{display:block;margin:0px 0 10px!important;overflow:hidden;box-shadow:0 0 10px #ccc}
 .event_right_blog_wrapper{display:table;width:100%;border-collapse:separate;}
 .event_right_blog_wrapperrow{display:table-row}
-.event_right_blog_img{display:table-cell;width:42%;vertical-align:middle;overflow:hidden;border: 9px solid #fff;}
+.event_right_blog_img{display:table-cell;width:28%;vertical-align:middle;overflow:hidden;border: 9px solid #fff;}
 .event_right_blog_img img{width:100%;display:block}
-.event_right_blog_text{display:table-cell;width:58%;padding:2%;background: #85c2d2;}
+.event_right_blog_text{display:table-cell;width:72%;padding:2%;background: #85c2d2;}
 
 /* .event_right_blog{ display: block; background: #3ab9d9; margin:10px 0!important; overflow: hidden; box-shadow: 0 0 10px #ccc;}
 
@@ -95,8 +95,10 @@
     padding: 15px 5px 10px!important;}
 
     .eventlistrightthumbnail .event_share_block{padding: 10px 0px 10px;margin-right: 0;}
-    .eventlistrightthumbnail .event_share_block{margin-top: 9px;}
+    .eventlistrightthumbnail .event_share_block{margin-top: 9px;width: 100%;}
     .eventlistrightthumbnail .event_share_block .sociallink fa{font-size: 16px;}
+
+
 
 @media only screen and (max-width: 1700px) {
     .event_wrapper{   width: 96%!important; padding: 0px!important;}
