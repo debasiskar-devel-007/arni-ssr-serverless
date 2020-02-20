@@ -71,8 +71,9 @@
 
       </span>
 
-      <button *ngIf="indexvallength !=null && indexvalright < indexvallength" class="viewalleventbtn"
+      <button *ngIf="searchLoadMore==false &&  indexvallength > indexvalright" class="viewalleventbtn"
         (click)="blogloadmore()">Load More</button>
+
 
     </mat-card-content>
 
