@@ -72,6 +72,9 @@
         .event_wrapper .event_left{width:70%;float:left}
         .event_wrapper .event_left{width:70%;float:left}
         }
+          @media only screen and (max-width: 1660px) {
+        .event_wrapper .event_right {width: 430px;}
+    }
         @media only screen and (max-width: 1560px) {
         .event_wrapper .event_left{width:68%;float:left}
         .event_wrapper .event_right{width:30%;float:right}
@@ -84,7 +87,7 @@
 
 @media only screen and (max-width: 1199px) {
 
-    .event_img{ height: auto!important;}
+    /* .event_img{ height: auto!important;} */
 
     .event_wrapper .event_left{ width: 100%; float: none; margin-bottom: 15px;}
     .event_wrapper .event_right{ width: 100%; float: right;  margin-bottom: 45px!important;}

@@ -45,6 +45,9 @@
 .event_wrapper .event_left{width:70%;float:left}
 .event_wrapper .event_left{width:70%;float:left}
 }
+  @media only screen and (max-width: 1660px) {
+        .event_wrapper .event_right {width: 430px;}
+    }
 @media only screen and (max-width: 1560px) {
 .event_wrapper .event_left{width:68%;float:left}
 .event_wrapper .event_right{width:30%;float:right}
