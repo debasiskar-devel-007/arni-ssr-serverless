@@ -20,11 +20,11 @@ export class SpeakerEngagementsComponent implements OnInit {
   public indexval:any=6;
 
 
-  public indexvalleftlengthlength: any=1;
+  public indexvalleftlengthlength: any=2;
 
 
   public indexvalleft:any=2;
-
+  public indexvalright:any=4;
 
   public title:any;
   public eventTitle:any;
@@ -98,6 +98,9 @@ export class SpeakerEngagementsComponent implements OnInit {
 
 
   }
+
+  
+
 
     //***********load more view blog *************//
     blogloadmore(){

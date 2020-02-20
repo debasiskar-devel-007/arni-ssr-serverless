@@ -29,7 +29,7 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   public title: any;
   public eventTitle: any;
 public speakerList:any;
-
+public indexvalright:any=4;
 
 public upComingEvent:any=[];
 public pastEvent:any=[];
@@ -101,7 +101,7 @@ public pastEvent:any=[];
 
   }
 
- viewallbutton(){
+  viewallbutton(){
     this.router.navigateByUrl("/past-speaker-engagements");
   }
 

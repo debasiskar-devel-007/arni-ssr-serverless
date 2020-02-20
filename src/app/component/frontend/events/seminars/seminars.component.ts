@@ -101,6 +101,8 @@ export class SeminarsComponent implements OnInit {
       }
     }
 
+    console.log('>>>>>>pastEvent',this.pastEvent.length)
+
 
   }
 

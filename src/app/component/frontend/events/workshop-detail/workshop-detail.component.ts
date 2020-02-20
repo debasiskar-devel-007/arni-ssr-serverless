@@ -32,6 +32,13 @@ export class WorkshopDetailComponent implements OnInit {
   public upComingEvent:any=[];
   public pastEvent:any=[];
 
+  // public indexvalleftlengthlength: any = 1;
+
+
+  // public indexvalleft: any = 2;
+  public indexvalright:any=4;
+
+
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
@@ -109,6 +116,11 @@ export class WorkshopDetailComponent implements OnInit {
         }
       }
   
+  }
+
+
+  viewallbutton(){
+    this.router.navigateByUrl("/past-workshops");
   }
 
 

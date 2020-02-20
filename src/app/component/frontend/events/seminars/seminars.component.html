@@ -54,10 +54,10 @@
           
     
         </span>
-
+<!-- 
         <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
-          (click)="blogloadmore()">Load More</button> 
-          <button class="viewalleventbtn" (click)="viewallbutton()">View All</button>
+          (click)="blogloadmore()">Load More</button>  -->
+          <button class="viewalleventbtn" (click)="viewallbutton()" *ngIf=" pastEvent!=null &&pastEvent.length > indexvalright">View All</button>
       </span>
   
      
@@ -124,7 +124,7 @@
 
       </span>
 
-      <button *ngIf="indexvalleftlengthlength > indexvalleft && indexvalleftlengthlength !=null" class="viewalleventbtn"
+      <button *ngIf="indexvalleftlengthlength !=null && indexvalleft < indexvalleftlengthlength" class="viewalleventbtn"
         (click)="blogloadmorenew()">View More</button>
 
     </mat-card-content>
