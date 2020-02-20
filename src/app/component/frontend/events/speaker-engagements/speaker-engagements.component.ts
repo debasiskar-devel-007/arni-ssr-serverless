@@ -20,11 +20,11 @@ export class SpeakerEngagementsComponent implements OnInit {
   public indexval:any=6;
 
 
-  public indexvalleftlengthlength: any=1;
+  public indexvalleftlengthlength: any=2;
 
 
   public indexvalleft:any=2;
-
+  public indexvalright:any=4;
 
   public title:any;
   public eventTitle:any;
@@ -99,6 +99,11 @@ export class SpeakerEngagementsComponent implements OnInit {
 
   }
 
+  viewallbutton(){
+    this.router.navigateByUrl("/past-speaker-engagements");
+  }
+
+
     //***********load more view blog *************//
     blogloadmore(){
       // console.log('load more')
@@ -109,7 +114,7 @@ export class SpeakerEngagementsComponent implements OnInit {
 
   blogloadmorenew(){
     // console.log('load more')
-    this.indexvalleft=this.indexvalleft+1;
+    this.indexvalleft=this.indexvalleft+4;
 
   }
 

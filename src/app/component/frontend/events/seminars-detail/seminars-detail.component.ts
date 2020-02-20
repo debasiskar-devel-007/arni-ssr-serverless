@@ -16,7 +16,8 @@ export class SeminarsDetailComponent implements OnInit {
   public indexvallength: any = 1;
 
 
- 
+  public indexvalright:any=4;
+
   public indexval: any = 6;
   // public seminer_img:any
   public seminer: any;
@@ -107,6 +108,11 @@ export class SeminarsDetailComponent implements OnInit {
     }
 
 
+  }
+
+
+  viewallbutton(){
+    this.router.navigateByUrl("/past-seminars");
   }
 
 

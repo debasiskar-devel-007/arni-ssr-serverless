@@ -17,11 +17,11 @@ export class WorkshopsComponent implements OnInit {
   public indexvallength: any=1;
 
 
-  public indexval:any=6;
+  public indexval:any=4;
   public eventTitle:any;
   public title:any;
 
-  public indexvalleftlengthlength: any=1;
+  public indexvalleftlengthlength: any=2;
 
 
   public indexvalleft:any=2;
@@ -104,11 +104,14 @@ export class WorkshopsComponent implements OnInit {
 
   }
 
+  viewallbutton(){
+    this.router.navigateByUrl("/past-workshops");
+  }
 
-  blogloadmorenew(){
+
+  blogloadmorenew() {
     // console.log('load more')
-    this.indexvalleft=this.indexvalleft+1;
-
+    this.indexvalleft = this.indexvalleft + 4;
   }
 
   detail(val:any){

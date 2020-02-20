@@ -25,9 +25,9 @@
 
 
     <mat-card-content class="event_right">
-      <h2>speaker engagements</h2>
+      <h2>Past speaker engagements</h2>
 
-      <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent">
+      <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent  | slice:0:indexvalright; let i=indexval">
         <span class="event_right_blog_wrapper">
 
           <span class="event_right_blog_wrapperrow">
@@ -52,8 +52,11 @@
         </span>
       </span>
 
-      <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
-        (click)="blogloadmore()">Load More</button>
+      <!-- <button *ngIf="indexvallength > indexval && indexvallength !=null" class="viewalleventbtn"
+        (click)="blogloadmore()">Load More</button> -->
+
+
+        <button class="viewalleventbtn" (click)="viewallbutton()" *ngIf=" pastEvent!=null &&pastEvent.length > indexvalright">View All</button>
 
     </mat-card-content>
 
@@ -112,7 +115,7 @@
       </span>
 
 
-      <button *ngIf="indexvalleftlengthlength > indexvalleft && indexvalleftlengthlength !=null" class="viewalleventbtn"
+      <button *ngIf="indexvalleftlengthlength !=null && indexvalleft < indexvalleftlengthlength" class="viewalleventbtn"
         (click)="blogloadmorenew()">View More</button>
 
     </mat-card-content>
