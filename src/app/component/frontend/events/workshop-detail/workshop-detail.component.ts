@@ -31,6 +31,7 @@ export class WorkshopDetailComponent implements OnInit {
 
   public upComingEvent:any=[];
   public pastEvent:any=[];
+  public eventsem:any;
 
   // public indexvalleftlengthlength: any = 1;
 

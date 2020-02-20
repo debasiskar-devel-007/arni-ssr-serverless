@@ -36,6 +36,7 @@ export class SeminarsComponent implements OnInit {
   public profile: any;
   public upComingEvent:any=[];
   public pastEvent:any=[];
+  public eventsem:any;
 
   constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public FB: FacebookService) {
 

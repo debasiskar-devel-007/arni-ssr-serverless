@@ -31,6 +31,8 @@ export class SeminarsDetailComponent implements OnInit {
 
   public upComingEvent:any=[];
   public pastEvent:any=[];
+  public eventsem:any;
+
   constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService, public datePipe: DatePipe,public router:Router) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
