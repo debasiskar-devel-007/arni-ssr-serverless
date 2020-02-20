@@ -27,7 +27,7 @@
 
     <mat-card-content class="event_right eventlistrightthumbnail">
       <h2>Past seminers </h2>
-
+      <h3 class="norecordfound">No Record Found</h3>
       <span>
         <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent | slice:0:indexvalright; let i=indexval">
 
@@ -79,7 +79,9 @@
 
 
     <mat-card-content class="event_left">
-      <h2>Current seminers</h2>
+      <h2>upcoming seminers</h2>
+
+      <h3 class="norecordfound">No Record Found</h3>
 
       <span class="event_blog" *ngFor="let eventsem of upComingEvent | slice:0:indexvalleft; let i=index">
         
