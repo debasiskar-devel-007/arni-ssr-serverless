@@ -56,6 +56,10 @@
             </span>
           </span>
           <span class="item_wrapper">
+
+          
+            <h3 class="norecordfound"  *ngIf="bloglisting =='' "><span>Oops!</span> No Record Found</h3>
+
             <span class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
              
               <mat-card>
