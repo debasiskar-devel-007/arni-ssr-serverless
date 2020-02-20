@@ -94,6 +94,10 @@
     box-shadow: none !Important;
     padding: 15px 5px 10px!important;}
 
+    .eventlistrightthumbnail .event_share_block{padding: 10px 0px 10px;margin-right: 0;}
+    .eventlistrightthumbnail .event_share_block{margin-top: 9px;}
+    .eventlistrightthumbnail .event_share_block .sociallink fa{font-size: 16px;}
+
 @media only screen and (max-width: 1700px) {
     .event_wrapper{   width: 96%!important; padding: 0px!important;}
     .event_wrapper .event_left{ width: 70%; float: left;}
