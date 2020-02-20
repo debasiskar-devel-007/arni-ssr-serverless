@@ -34,7 +34,7 @@ export class SpeakerEngagementsComponent implements OnInit {
   public dataformate: any;
   public eventImage:any;
   public profile:any;
-
+  public pasteventsem:any;
   public upComingEvent:any=[];
   public pastEvent:any=[];
   public eventsem:any;

@@ -33,6 +33,7 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
 
   public upComingEvent:any=[];
   public pastEvent:any=[]; 
+  public item:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
 
