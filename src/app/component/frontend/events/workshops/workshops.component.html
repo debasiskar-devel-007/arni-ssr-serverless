@@ -27,7 +27,7 @@
 
 
     <mat-card-content class="event_right">
-      <h2>PAST WORKSHOPS</h2>
+      <h2>PAST WORKSHOPS <span><button (click)="viewallbutton()">View All</button></span></h2>
 
       <span>
         <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent | slice:0:indexval; let i=index">

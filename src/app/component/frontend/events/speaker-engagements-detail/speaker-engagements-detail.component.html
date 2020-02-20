@@ -84,7 +84,7 @@
           </mat-card-content>
 
           <mat-card-content class="event_right">
-            <h2>Past Speaker Engagements</h2>
+            <h2>Past Speaker Engagements <span><button (click)="viewallbutton()">View All</button></span></h2>
 
             <span>
               <span class="event_right_blog" *ngFor="let item of pastEvent | slice:0:indexvalright; let i=indexval">

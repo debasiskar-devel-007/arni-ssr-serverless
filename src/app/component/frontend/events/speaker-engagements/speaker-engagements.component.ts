@@ -99,15 +99,13 @@ export class SpeakerEngagementsComponent implements OnInit {
 
   }
 
-  viewallbutton(){
-    this.router.navigateByUrl("/past-speaker-engagements");
-  }
+  
 
 
     //***********load more view blog *************//
     blogloadmore(){
       // console.log('load more')
-      this.indexval=this.indexval+1;
+      this.indexval=this.indexval+4;
   
     }
 
@@ -116,6 +114,10 @@ export class SpeakerEngagementsComponent implements OnInit {
     // console.log('load more')
     this.indexvalleft=this.indexvalleft+4;
 
+  }
+
+   viewallbutton(){
+    this.router.navigateByUrl("/past-speaker-engagements");
   }
 
   detail(val:any){

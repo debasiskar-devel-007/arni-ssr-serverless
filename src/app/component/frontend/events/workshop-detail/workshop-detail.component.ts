@@ -144,7 +144,9 @@ export class WorkshopDetailComponent implements OnInit {
     // console.log('copyText');
   }
 
-
+viewallbutton(){
+    this.router.navigateByUrl("/past-workshops");
+  }
   //facebook share for event
 
   login() {

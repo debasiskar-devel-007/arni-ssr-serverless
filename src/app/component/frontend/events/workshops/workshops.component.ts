@@ -100,7 +100,7 @@ export class WorkshopsComponent implements OnInit {
   //***********load more view blog *************//
   blogloadmore(){
     // console.log('load more')
-    this.indexval=this.indexval+1;
+    this.indexval=this.indexval+4;
 
   }
 
@@ -113,6 +113,7 @@ export class WorkshopsComponent implements OnInit {
     // console.log('load more')
     this.indexvalleft = this.indexvalleft + 4;
   }
+
 
   detail(val:any){
     // console.log(val)
