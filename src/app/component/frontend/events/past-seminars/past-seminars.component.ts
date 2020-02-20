@@ -38,7 +38,7 @@ export class PastSeminarsComponent implements OnInit {
   public pastEvent:any=[];
   public eventsem:any;
   public pasteventsem:any;
-
+  public searchLoadMore:boolean=false;
   constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public FB: FacebookService) { 
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
@@ -97,15 +97,23 @@ export class PastSeminarsComponent implements OnInit {
 
 
   blogloadmore(){
-    this.indexvalright=this.indexvalright + 6;
-    // let data:any;
-    // data={
-      
-    //   "skip":this.indexvalright
-    // }
-    // this.apiService.CustomRequest(data,'pasteventdatalist').subscribe(result=>{
-    //   this.SeminarsListArry = result;
-    // })
+    // this.indexvalright=this.indexvalright + 6;
+    let data:any;
+    data={
+      "type":"seminars",
+      "limit":10,
+      "skip":this.indexvalright
+    }
+    this.apiService.CustomRequest(data,'pasteventdatalist').subscribe(res=>{
+      let result:any=res;
+      console.log(result.past_events)
+      if(result.past_events.length>0){
+        this.SeminarsListArry = this.SeminarsListArry.concat(result.past_events);
+        this.indexvalright = this.indexvalright + 10;
+      }else{
+           this.searchLoadMore=true;
+      }
+    })
   }
 
 
