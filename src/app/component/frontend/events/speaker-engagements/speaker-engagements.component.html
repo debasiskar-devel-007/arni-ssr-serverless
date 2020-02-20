@@ -26,6 +26,7 @@
 
     <mat-card-content class="event_right eventlistrightthumbnail">
       <h2>Past speaker engagements</h2>
+      <h3 class="norecordfound" *ngIf="pastEvent =='' ">No Record Found</h3>
 
       <span class="event_right_blog" *ngFor="let pasteventsem of pastEvent  | slice:0:indexvalright; let i=indexval">
         <span class="event_right_blog_wrapper">
@@ -74,6 +75,8 @@
 
     <mat-card-content class="event_left">
       <h2>upcoming speaker engagements</h2>
+      <h3 class="norecordfound"  *ngIf="upComingEvent =='' ">No Record Found</h3>
+
       <span class="event_blog" *ngFor="let eventsem of upComingEvent | slice:0:indexvalleft; let i=index">
         
         <h3>{{eventsem.title}} – {{eventsem.time}}</h3>
