@@ -152,7 +152,7 @@
 }
 @media only screen and (max-width: 991px) {
     .event_wrapper .event_left h2 {text-align: center;}
-    .event_text .spantext {height: auto;}
+    .event_text .spantext {height: auto;overflow: inherit;display: inherit;-webkit-line-clamp: inherit; -webkit-box-orient: vertical;}
     .event_right_blog_text  p  {height: 66px;}
 .cdk-overlay-transparent-backdrop, .cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {opacity: 0;display: none;
 }
@@ -168,7 +168,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-
+.event_blog .event_blog_top span {display: initial;}
     .eventpagination span{ display: inline-block; padding: 0 4px; position: relative;}
 
     .event_right_blog_text button{ float: none; display: block; margin: 0 auto; margin-top: 10px!important;}
