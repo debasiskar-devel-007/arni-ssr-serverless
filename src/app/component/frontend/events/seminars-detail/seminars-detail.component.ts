@@ -111,10 +111,6 @@ export class SeminarsDetailComponent implements OnInit {
   }
 
 
-  viewallbutton(){
-    this.router.navigateByUrl("/past-seminars");
-  }
-
 
 
   getForPastEvent(){

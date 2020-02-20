@@ -25,7 +25,7 @@ export class PastSeminarsComponent implements OnInit {
 
 
   public indexvalleft: any = 2;
-
+  public indexvalright:any=12
 
   public SeminarsListArry: any = []
   public dataformate: any;
@@ -35,9 +35,7 @@ export class PastSeminarsComponent implements OnInit {
   public profile: any;
   public upComingEvent:any=[];
   public pastEvent:any=[];
-  public detail:any;
   public eventsem:any;
-  public blogloadmore:any;
 
 
   constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public FB: FacebookService) { 
@@ -70,7 +68,7 @@ export class PastSeminarsComponent implements OnInit {
     this.activatedRoute.data.forEach(data => {
       // console.log('test',data);
       let result: any = {};
-      result = data.seminarsListData.res;
+      result = data.seminarsListData.past_events;
       // console.log('>>>>>>>', result);
 
       // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
@@ -84,28 +82,21 @@ export class PastSeminarsComponent implements OnInit {
       this.indexvalleftlengthlength = this.SeminarsListArry.length;
     })
 
-    
-    //past and upcoming event
-
-    let currentdate: Date;
-    currentdate = new Date();
-    let curdate = (this.datePipe.transform(currentdate, 'MM-dd-yyyy'));
-    let eventDate = moment(curdate).format('x');
-    // console.log('s d',eventDate);
-
-
-    for(let i in  this.SeminarsListArry){
-      // console.log('d', this.SeminarsListArry[i].date_unix)
-      if(this.SeminarsListArry[i].date_unix > eventDate){
-        // console.log('up',this.SeminarsListArry[i])
-        this.upComingEvent.push(this.SeminarsListArry[i]);
-      } else {
-        // console.log('past',this.SeminarsListArry[i])
-        this.pastEvent.push(this.SeminarsListArry[i]);
-      }
-    }
 
     
+  }
+
+  detail(val: any) {
+    // console.log(val)
+    this.title = val.title;
+    this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    // console.log(this.eventTitle)
+    this.router.navigateByUrl("/seminars-detail/" + this.eventTitle + '/' + val._id);
+  }
+
+
+  blogloadmore(){
+    this.indexvalright=this.indexvalright + 6
   }
 
 
