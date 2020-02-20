@@ -133,25 +133,26 @@ const routes: Routes = [
   { path: 'video-gallery', component: VideoGalleryComponent },
   { path: 'team', component: TeamComponent },
   { path: 'bio', component: BioComponent },
+
   { path: 'past-seminars', component: PastSeminarsComponent,
   resolve: { seminarsListData: ResolveService },
   data: {
-    requestcondition: { source: "events_view", condition: {type:"seminars"} },
-    endpoint: "datalistwithouttoken"
+    requestcondition: {  type:"seminars" },
+    endpoint: "pasteventdatalist"
   }
 },
   { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent,
   resolve: { speakerEngagementsListData: ResolveService },
   data: {
-    requestcondition: { source: "events_view", condition: {type:"speaker_engagement"} },
-    endpoint: "datalistwithouttoken"
+    requestcondition: {type:"speaker_engagement"},
+    endpoint: "pasteventdatalist"
   }
 },
   { path: 'past-workshops', component: PastWorkshopsComponent,
   resolve: { workshopsListData: ResolveService },
   data: {
-    requestcondition: { source: "events_view", condition: {type:"workshops"} },
-    endpoint: "datalistwithouttoken"
+    requestcondition: { type:"workshops" },
+    endpoint: "pasteventdatalist"
   }
  },
 

@@ -119,9 +119,7 @@ export class WorkshopDetailComponent implements OnInit {
   }
 
 
-  viewallbutton(){
-    this.router.navigateByUrl("/past-workshops");
-  }
+
 
 
 
