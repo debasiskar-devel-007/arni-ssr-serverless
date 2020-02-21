@@ -56,13 +56,11 @@ export class SeminarsDetailComponent implements OnInit {
     // });
 
 
-    let initParams: InitParams = {
-      xfbml: true,
-      appId: '2891915674224632',
+    fb.init({
+      appId: '2912281308815518',
       version: 'v2.9'
-    };
- 
-    fb.init(initParams);
+    });
+
 
   }
 
