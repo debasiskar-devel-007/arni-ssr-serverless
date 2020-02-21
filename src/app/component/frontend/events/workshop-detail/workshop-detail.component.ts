@@ -39,7 +39,7 @@ export class WorkshopDetailComponent implements OnInit {
 
 
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public fb:FacebookService ,public datePipe: DatePipe) {
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
     this.meta.setTag('twitter:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -54,7 +54,7 @@ export class WorkshopDetailComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
 
-    FB.init({
+    fb.init({
       appId: '2540470256228526',
       version: 'v2.9'
     });
@@ -145,7 +145,7 @@ viewallbutton(){
   //facebook share for event
 
   login() {
-    this.FB.login()
+    this.fb.login()
       .then((res: LoginResponse) => {
        
         this.getProfile();
@@ -153,7 +153,7 @@ viewallbutton(){
       .catch();
   }
   getProfile() {
-    this.FB.api('me/?fields=id,name,email,picture')
+    this.fb.api('me/?fields=id,name,email,picture')
       .then((res: any) => {
        
         this.profile = res;
@@ -177,7 +177,7 @@ viewallbutton(){
       method: 'share',
       quote: 'https://arniefonseca.influxiq.com/'
     };
-    this.FB.ui(params).then((res:UIResponse)=>{
+    this.fb.ui(params).then((res:UIResponse)=>{
     }).catch(facebook=>{
       // console.log(facebook)
     });
@@ -185,7 +185,7 @@ viewallbutton(){
 
   logoutWithFacebook(): void {
 
-    this.FB.logout().then();
+    this.fb.logout().then();
   }
 
 

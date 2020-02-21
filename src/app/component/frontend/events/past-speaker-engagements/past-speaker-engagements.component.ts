@@ -40,7 +40,7 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   public eventsem:any;
   public pasteventsem:any;
   
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) { 
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public fb:FacebookService ,public datePipe: DatePipe) { 
 
     this.meta.setTitle('Arnie Fonseca - Speaker Engagements');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');
@@ -56,6 +56,12 @@ export class PastSpeakerEngagementsComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
 
     this.dataformate = moment();
+
+
+    fb.init({
+      appId: '2891915674224632',
+      version: 'v2.9'
+    });
 
   }
 
@@ -133,7 +139,7 @@ export class PastSpeakerEngagementsComponent implements OnInit {
 //facebook share for event
 
 login() {
-  this.FB.login()
+  this.fb.login()
     .then((res: LoginResponse) => {
      
       this.getProfile();
@@ -141,7 +147,7 @@ login() {
     .catch();
 }
 getProfile() {
-  this.FB.api('me/?fields=id,name,email,picture')
+  this.fb.api('me/?fields=id,name,email,picture')
     .then((res: any) => {
      
       this.profile = res;
@@ -165,7 +171,7 @@ fbshare(val: any) {
     method: 'share',
     quote: 'https://arniefonseca.influxiq.com/'
   };
-  this.FB.ui(params).then((res:UIResponse)=>{
+  this.fb.ui(params).then((res:UIResponse)=>{
   }).catch(facebook=>{
     // console.log(facebook)
   });
@@ -173,7 +179,7 @@ fbshare(val: any) {
 
 logoutWithFacebook(): void {
 
-  this.FB.logout().then();
+  this.fb.logout().then();
 }
 
 

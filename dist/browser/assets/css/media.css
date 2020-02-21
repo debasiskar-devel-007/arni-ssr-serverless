@@ -89,7 +89,7 @@
   .vpheaderwrapper .mat-drawer-backdrop{position:inherit}
   .vpheaderwrapper.mat-card{padding:0!important}
   .vpheaderwrapper .mat-nav-list .mat-list-item{border-bottom:1px solid #333}
-  .innerpagebanner.mat-card{min-height:1px!important}
+  /* .innerpagebanner.mat-card{min-height:1px!important} */
   .rightsidelinks{width:47px}
   .bloglists .item_wrapper > .item{width:calc(1/1*100% - (1 - 1/1)*20px)}
   }
@@ -276,6 +276,7 @@
     
   }
 
+
   @media only screen and (max-width: 840px) {
     .carousalinfo h3 {font-size: 32px;line-height: normal; margin-left: auto;}
     .carousalinfo h1 {font-size: 50px!important;line-height: normal!important;margin-left: auto;text-align: center;}
@@ -284,7 +285,7 @@
 
   @media only screen and (max-width: 767px) {
     .innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 40px;}
-    .couplescounselingbg.mat-card, .innerpagebanner.mat-card {background-size: 210% !important;}
+    /* .couplescounselingbg.mat-card, .innerpagebanner.mat-card {background-size: 210% !important;} */
     .bloglistswrapper .mat-list-base{ display: inline-block;}
 
 .homeblock1contentlefttop h2{ text-align: center!important;}

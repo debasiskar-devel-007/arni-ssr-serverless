@@ -39,7 +39,7 @@ export class PastWorkshopsComponent implements OnInit {
   public eventsem:any;
   public pasteventsem:any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService,public datePipe: DatePipe) { 
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public fb:FacebookService,public datePipe: DatePipe) { 
 
     this.meta.setTitle('Arnie Fonseca - Workshops');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Workshops By Arnie Fonseca, and let Coach Arnie help you with your Personal Development at one of these Arnie Fonseca Workshops.');
@@ -54,6 +54,11 @@ export class PastWorkshopsComponent implements OnInit {
     this.meta.setTag('og:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
     this.meta.setTag('twitter:image', 'https://arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
+
+    fb.init({
+      appId: '2891915674224632',
+      version: 'v2.9'
+    });
 
   }
 
@@ -126,7 +131,7 @@ export class PastWorkshopsComponent implements OnInit {
 //facebook share for event
 
 login() {
-  this.FB.login()
+  this.fb.login()
     .then((res: LoginResponse) => {
      
       this.getProfile();
@@ -134,7 +139,7 @@ login() {
     .catch();
 }
 getProfile() {
-  this.FB.api('me/?fields=id,name,email,picture')
+  this.fb.api('me/?fields=id,name,email,picture')
     .then((res: any) => {
      
       this.profile = res;
@@ -158,7 +163,7 @@ fbshare(val: any) {
     method: 'share',
     quote: 'https://arniefonseca.influxiq.com/'
   };
-  this.FB.ui(params).then((res:UIResponse)=>{
+  this.fb.ui(params).then((res:UIResponse)=>{
   }).catch(facebook=>{
     // console.log(facebook)
   });
@@ -166,7 +171,7 @@ fbshare(val: any) {
 
 logoutWithFacebook(): void {
 
-  this.FB.logout().then();
+  this.fb.logout().then();
 }
 
 
