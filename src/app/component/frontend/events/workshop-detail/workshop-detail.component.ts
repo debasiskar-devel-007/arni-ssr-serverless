@@ -74,7 +74,7 @@ export class WorkshopDetailComponent implements OnInit {
 
 
     if (this.workshop != '') {
-      this.meta.setTitle('Arnie Fonseca- seminars-detail');
+      this.meta.setTitle('Arnie Fonseca- workshop-detail');
       this.meta.setTag('og:description', this.workshop.description);
       this.meta.setTag('twitter:description', this.workshop.description);
       this.meta.setTag("description", this.workshop.description)
@@ -85,7 +85,7 @@ export class WorkshopDetailComponent implements OnInit {
       this.meta.setTag('og:image:width', 'auto');
       this.meta.setTag('og:image:height', 'auto');
       this.meta.setTag('twitter:image', this.workshop.image);
-      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/workshop-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params._id);
 
 
     }
