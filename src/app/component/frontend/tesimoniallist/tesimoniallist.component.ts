@@ -38,7 +38,7 @@ export class TesimoniallistComponent implements OnInit {
     this.dataformate = moment();
 
     facebook.init({
-      appId: '2540470256228526',
+      appId: '2912281308815518',
       version: 'v2.9'
     });
   }

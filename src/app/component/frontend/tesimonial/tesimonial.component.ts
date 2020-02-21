@@ -72,10 +72,10 @@ export class TesimonialComponent implements OnInit {
 
   public TestimonialListArray: any = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, public dialog: MatDialog,private facebook:FacebookService) {
+  constructor(public apiService: ApiService,public facebook:FacebookService) {
 
     facebook.init({
-      appId: '2540470256228526',
+      appId: '2912281308815518',
       version: 'v2.9'
     });
 
