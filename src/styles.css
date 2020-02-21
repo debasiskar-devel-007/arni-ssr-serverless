@@ -199,6 +199,21 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .norecordfound span{color: #000; display:block;font-size: 32px;font-style: oblique;font-weight: 400;}
 .event_blog label a{color:#ff3f3a !important;}
 
+.bloglists .item_wrapper>.item .description {
+  color: #838383;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 18px;
+  min-height: 86px;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.mostviewedblogs .item_wrapper .item .blogsociallists{width: 100%;}
+.youmightalsolike .item_wrapper .item .blogsociallists{width: 100%;}
+/* .blogdetail .bottom_blog .item_wrapper .item .contentsection .blogsociallists{width: 300px;} */
+
 @media only screen and (max-width: 1199px) {
   .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}
 
