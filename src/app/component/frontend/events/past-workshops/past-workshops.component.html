@@ -68,8 +68,9 @@
         </span>
       </span>
 
-      <button *ngIf="indexvallength !=null && indexval < indexvallength" class="viewalleventbtn"
-      (click)="blogloadmore()">Load More</button>
+      <button *ngIf="searchLoadMore==false &&  indexvallength > indexval" class="viewalleventbtn"
+        (click)="blogloadmore()">Load More</button>
+
 
     </mat-card-content>
 

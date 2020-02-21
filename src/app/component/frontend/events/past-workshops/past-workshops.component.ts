@@ -14,7 +14,8 @@ import { DatePipe } from '@angular/common';
 })
 export class PastWorkshopsComponent implements OnInit {
 
-  public indexvallength: any=1;
+  public indexvallength: any;
+  public searchLoadMore:boolean=false;
 
 
   public indexval:any=12;
@@ -90,8 +91,25 @@ export class PastWorkshopsComponent implements OnInit {
 
   }
 
+  
   blogloadmore(){
-    this.indexval=this.indexval + 6
+    // this.indexvalright=this.indexvalright + 6;
+    let data:any;
+    data={
+      "type":"workshops",
+      "limit":10,
+      "skip":this.indexval
+    }
+    this.apiService.CustomRequest(data,'pasteventdatalist').subscribe(res=>{
+      let result:any=res;
+      console.log(result.past_events)
+      if(result.past_events.length>0){
+        this.WorkshopsListArry = this.WorkshopsListArry.concat(result.past_events);
+        this.indexval = this.indexval + 6;
+      }else{
+           this.searchLoadMore=true;
+      }
+    })
   }
   
   detail(val:any){

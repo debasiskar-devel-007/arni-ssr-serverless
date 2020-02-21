@@ -104,11 +104,7 @@ export class SpeakerEngagementsComponent implements OnInit {
 
 
     //***********load more view blog *************//
-    blogloadmore(){
-      // console.log('load more')
-      this.indexval=this.indexval+4;
-  
-    }
+ 
 
 
   blogloadmorenew(){

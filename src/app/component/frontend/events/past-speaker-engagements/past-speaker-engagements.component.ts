@@ -13,11 +13,12 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./past-speaker-engagements.component.css']
 })
 export class PastSpeakerEngagementsComponent implements OnInit {
-  public indexvallength: any=1;
+  public indexvallength: any;
 
 
   public indexvalright:any=12;
 
+  public searchLoadMore:boolean=false;
 
   public indexvalleftlengthlength: any=1;
 
@@ -110,9 +111,24 @@ export class PastSpeakerEngagementsComponent implements OnInit {
 
 
   blogloadmore(){
-    this.indexvalright=this.indexvalright + 6
+    // this.indexvalright=this.indexvalright + 6;
+    let data:any;
+    data={
+      "type":"speaker_engagement",
+      "limit":10,
+      "skip":this.indexvalright
+    }
+    this.apiService.CustomRequest(data,'pasteventdatalist').subscribe(res=>{
+      let result:any=res;
+      console.log(result.past_events)
+      if(result.past_events.length>0){
+        this.SpeakerListArry = this.SpeakerListArry.concat(result.past_events);
+        this.indexvalright = this.indexvalright + 6;
+      }else{
+           this.searchLoadMore=true;
+      }
+    })
   }
-  
 
 //facebook share for event
 
