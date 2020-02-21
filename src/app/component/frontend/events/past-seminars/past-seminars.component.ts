@@ -3,12 +3,8 @@ import { MetaService } from '@ngx-meta/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { getLocaleDateFormat } from '@angular/common';
-import { format } from 'url';
 import { DatePipe } from '@angular/common';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
-import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-past-seminars',
@@ -39,7 +35,7 @@ export class PastSeminarsComponent implements OnInit {
   public eventsem:any;
   public pasteventsem:any;
   public searchLoadMore:boolean=false;
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public fb: FacebookService) { 
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, public readonly meta: MetaService, public datePipe: DatePipe, public fb: FacebookService) { 
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');

@@ -40,7 +40,7 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   public eventsem:any;
   public pasteventsem:any;
   
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public fb:FacebookService ,public datePipe: DatePipe) { 
+  constructor(private activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService,public sanitizer: DomSanitizer,public fb:FacebookService ,public datePipe: DatePipe) { 
 
     this.meta.setTitle('Arnie Fonseca - Speaker Engagements');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');

@@ -25578,7 +25578,7 @@ function createRedirectDirectoryListener () {
 /* 144 */
 /***/ (function(module, exports) {
 
-module.exports = require("./server/main");
+module.exports = require("require(\"./server/main\")");
 
 /***/ })
 /******/ ]);

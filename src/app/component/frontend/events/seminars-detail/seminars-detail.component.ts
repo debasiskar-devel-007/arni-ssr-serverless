@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
-import { FacebookService, LoginResponse, UIParams, UIResponse,InitParams } from 'ngx-facebook';
+import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
 import { DatePipe } from '@angular/common';
 
 
@@ -32,7 +32,7 @@ export class SeminarsDetailComponent implements OnInit {
   public upComingEvent:any=[];
   public pastEvent:any=[];
 
-  constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,private fb:FacebookService, public datePipe: DatePipe,public router:Router) {
+  constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public fb:FacebookService, public datePipe: DatePipe,public router:Router) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
