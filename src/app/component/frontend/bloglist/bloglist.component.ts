@@ -27,7 +27,7 @@ export class FileNode{
 })
 export class BloglistComponent implements OnInit {
 
-  public blogList: any;
+  public blogList: any=[];
   public blogCategory:any;
   public blogcount:any;
   public blogcategorysearch:any;
@@ -35,13 +35,14 @@ export class BloglistComponent implements OnInit {
   public blogcat:any;
   public blogsubcategorycount:any;
   public count:any=0;
-  public indexval:any=2;
-  public bloglisting:any;
+  public indexval:any=4;
+  public bloglisting:any=[];
   public videourl:any='';
   public dataformate: any;
   public p_id: any;
   public profile: any;
   public url:"https://www.youtube.com/embed/"
+  public catBlogs:any=[];
 
   
   
@@ -69,7 +70,10 @@ export class BloglistComponent implements OnInit {
   /*------------TREE NESTEDDATA-----*/
 
   constructor(private readonly meta: MetaService, private readonly title: Title, private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,private sanitizer: DomSanitizer,public dialog:MatDialog, private facebook:FacebookService) {
-
+    facebook.init({
+      appId: '2912281308815518',
+      version: 'v2.9'
+    });
     this.meta.setTitle('Arnie Fonseca - Blogs');
     this.meta.setTag('og:description', 'Check out the latest blogs by “Coach Arnie” about everything that is happening in the Personal Development industry and learn of the best ways to improve your lives and achieve success.');
     this.meta.setTag('twitter:description', 'Check out the latest blogs by “Coach Arnie” about everything that is happening in the Personal Development industry and learn of the best ways to improve your lives and achieve success.');
@@ -122,7 +126,7 @@ panelOpenState = false;
 //***********blog list view in blog detail************//
   blogdetail(val:any){
     // console.log(val)
-    this.router.navigateByUrl('/blogdetail/' +val)
+    this.router.navigateByUrl('/blogdetail/' +val._id)
   }
   
 
@@ -131,8 +135,9 @@ panelOpenState = false;
     //**all blog category and blog list from resolve in routing**//
 
     this.activatedRoute.data.forEach((data: any) => {
+     
       this.blogList = data;
-      console.log('>>>>>>>>>>>>>>',this.blogList)
+      //console.log('>>>>>>>>>>>>>>',this.blogList)
 
     })
 
@@ -141,13 +146,13 @@ panelOpenState = false;
     
    //****total blog list****//
           this.bloglisting = this.blogList.blogCatList.blogs
-          //console.log('---------------',this.bloglisting)
+         // console.log('---------------',this.bloglisting)
         
           // console.log('++++++++++++++++++',this.blogcategory)
 
     /**api service for blog_catagory total count by uttam */  
           this.blogcategorycount = this.blogList.blogCatList.blog_category;
-          // console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
+          //console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
 }
 
 login() {
@@ -172,7 +177,7 @@ getProfile() {
 
 fbTestimonialShare(val:any){
   //console.log(val)
-  var url='https://arniefonseca.influxiq.com/blogdetail/'+ val._id;
+  var url='https://arniefonseca.influxiq.com/blog/'+ val._id;
   //console.log(url)
 
   let params: UIParams = {
@@ -186,18 +191,18 @@ fbTestimonialShare(val:any){
 }
 
 twitterTestimonialShare(val:any){
-  window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+  window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blog/'+ val._id);
 }
 
 
 linkedinTestimonialShare(val:any){
 
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blog/'+ val._id);
 
 }
 
 tumblrTestimonialShare(val:any){
-  window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+  window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blog/'+ val._id);
 
 }
 
@@ -249,11 +254,53 @@ titleSearchCategoryFilter(filterValue: string) {
 
 //***********load more view blog *************//
     blogloadmore(){
-      // console.log('load more')
-      this.indexval=this.indexval+2;
- 
+      let data: any = {};
+    // if(this.blogCat==''){
+    data={
+      "condition": {
+        "limit": 10,
+        "skip": this.indexval
+      }
     }
+  // }
+    // }else{
 
+    //   data={
+    //     endpoint: 'loadmoreblogdata',
+    //     "condition": {
+    //       "limit": 10,
+    //       "skip": this.indexval,
+    //       "catid":this.blogCat
+    //   }
+    // }
+
+    // }
+    this.apiService.CustomRequest(data,'loadmoreblogdata').subscribe((res:any)=>{
+      // if(res.blogs.length > 0){
+        //console.log(res);
+        this.bloglisting = this.bloglisting.concat(res.blogs);
+        // this.indexval = this.indexval + 10;
+      // }else{
+      //   this.highLoadMore=true;
+      // }
+      
+    })
+    }
+    getAllBlogs(val:any) {
+      // console.log("clicked",val);
+      let data: any = {
+        "blogcat":val
+      }
+  
+      this.apiService.CustomRequest(data,"getbloglistbycategoryid").subscribe((result: any) => {
+  
+        this.catBlogs = result.results.blogs;
+        // console.log("hiiitt",this.catBlogs.length);
+  
+        // this.bloglisting = result.res;
+        // console.log("yy",this.allBlogs);
+      });
+    }
     //**blog view from blog category list**//
     openblog(val:any){
       console.log(val)

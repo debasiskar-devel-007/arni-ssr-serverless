@@ -60,7 +60,7 @@
           
             <h3 class="norecordfound"  *ngIf="bloglisting =='' "><span>Oops!</span> No Record Found</h3>
 
-            <span class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
+            <span class="item" *ngFor="let item of bloglisting ;let i=index">
              
               <mat-card>
                 <span class="item_images" (click)="blogdetail(item._id)"><img [src]="item.blogs_image"></span>
@@ -159,7 +159,7 @@
               </span>
             </span>
           </span>
-          <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null && indexval < bloglisting.length" (click)="blogloadmore()">Load More</button>
+          <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null" (click)="blogloadmore()">Load More</button>
         </span>
         <span class="categorywrapper">
           <h2 class="blogtitle">Categories ({{blogcategorycount.length}})</h2>
@@ -187,13 +187,25 @@
                 </li>
             </mat-tree-node>
           </mat-tree> -->
-          <mat-accordion *ngFor="let d of blogcategorycount;let i=index; ">
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
+          <mat-accordion >
+            <mat-expansion-panel *ngFor="let d of blogcategorycount;let i=index; ">
+              <mat-expansion-panel-header (click)="getAllBlogs(d._id)">
                {{d.blogtitle}}
               </mat-expansion-panel-header>
-          
-            {{d.count_blogs}}
+              <ng-container *ngFor="let cat of catBlogs; let i=index;" >
+                <span >
+                  <div class="categorysub">
+                    <h5 class="inner_header" (click)="blogdetail(cat)">
+                      <span class="blogsubcattitle" (click)="blogdetail(cat)">{{ cat.blogtitle }}</span>
+                      <span class="buttominfocls">
+                        <span ><span class="labelcls">Date:</span>{{cat.date_added}}</span>
+                        <span ><span class="labelcls">By:</span>{{cat.author}}</span>
+                      </span>
+                    </h5>
+                  </div>
+                </span>
+               
+              </ng-container>
             </mat-expansion-panel>
           </mat-accordion>
           <!-- <span class="categorywrapper">  
