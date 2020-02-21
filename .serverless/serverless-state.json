@@ -162,7 +162,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/arni-ssr/production/1582025634278-2020-02-18T11:33:54.278Z/arni-ssr.zip"
+                "S3Key": "serverless/arni-ssr/production/1582100794852-2020-02-19T08:26:34.852Z/arni-ssr.zip"
               },
               "FunctionName": "arni-ssr-production-api",
               "Handler": "lambda.universal",
@@ -181,14 +181,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ApiLambdaVersionbMLzUpkpDo3G0NPp9Vk9lJrUamdW2pvhoXrNOQwLg": {
+          "ApiLambdaVersionbYGXCjOd9FmhFrfh2pZaiAcpsiTBrYlNKKnktudBWmg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "ZdBc/z+FpkvCBe1LPeresLpZTqItUtUyeW/FiCdS6VY="
+              "CodeSha256": "AGNiX0x5P0WqioWgf8SwbK39hCkjGmtfTUJ1X6T1alY="
             }
           },
           "ApiGatewayRestApi": {
@@ -307,7 +307,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1582025588441": {
+          "ApiGatewayDeployment1582100753904": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -367,7 +367,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionbMLzUpkpDo3G0NPp9Vk9lJrUamdW2pvhoXrNOQwLg"
+              "Ref": "ApiLambdaVersionbYGXCjOd9FmhFrfh2pZaiAcpsiTBrYlNKKnktudBWmg"
             }
           },
           "ServiceEndpoint": {
@@ -492,7 +492,7 @@
         "timeout": 10,
         "runtime": "nodejs10.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionbMLzUpkpDo3G0NPp9Vk9lJrUamdW2pvhoXrNOQwLg"
+        "versionLogicalId": "ApiLambdaVersionbYGXCjOd9FmhFrfh2pZaiAcpsiTBrYlNKKnktudBWmg"
       }
     },
     "serviceFilename": "serverless.yml",
@@ -501,7 +501,7 @@
     "artifact": "/home/influxiq-03/Downloads/arni-ssr-serverless/.serverless/arni-ssr.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/arni-ssr/production/1582025634278-2020-02-18T11:33:54.278Z",
+    "artifactDirectoryName": "serverless/arni-ssr/production/1582100794852-2020-02-19T08:26:34.852Z",
     "artifact": "arni-ssr.zip"
   }
 }
