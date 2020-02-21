@@ -33,6 +33,9 @@ import { CouplesCounselingComponent } from './component/frontend/services/couple
 import { PersonalDevelopmentCoachingComponent } from './component/frontend/services/personal-development-coaching/personal-development-coaching.component';
 import { HighPerformanceCoachingComponent } from './component/frontend/services/high-performance-coaching/high-performance-coaching.component';
 import { SpecialProgramsForYoungMenComponent } from './component/frontend/services/special-programs-for-young-men/special-programs-for-young-men.component';
+import { PastSeminarsComponent } from './component/frontend/events/past-seminars/past-seminars.component';
+import { PastSpeakerEngagementsComponent } from './component/frontend/events/past-speaker-engagements/past-speaker-engagements.component';
+import { PastWorkshopsComponent } from './component/frontend/events/past-workshops/past-workshops.component';
 
 const routes: Routes = [
   /**Frontend Routing**/
@@ -130,6 +133,28 @@ const routes: Routes = [
   { path: 'video-gallery', component: VideoGalleryComponent },
   { path: 'team', component: TeamComponent },
   { path: 'bio', component: BioComponent },
+
+  { path: 'past-seminars', component: PastSeminarsComponent,
+  resolve: { seminarsListData: ResolveService },
+  data: {
+    requestcondition: { source: "", condition: {} , type:"seminars","limit":14,"skip":0 },
+    endpoint: "pasteventdatalist"
+  }
+},
+  { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent,
+  resolve: { speakerEngagementsListData: ResolveService },
+  data: {
+    requestcondition: {source: "", condition: {} ,type:"speaker_engagement" ,"limit":14,skip:0},
+    endpoint: "pasteventdatalist"
+  }
+},
+  { path: 'past-workshops', component: PastWorkshopsComponent,
+  resolve: { workshopsListData: ResolveService },
+  data: {
+    requestcondition: { source: "", condition: {} , type:"workshops","limit":14,skip:0 },
+    endpoint: "pasteventdatalist"
+  }
+ },
 
 
 // ___________________event frontend__________________//

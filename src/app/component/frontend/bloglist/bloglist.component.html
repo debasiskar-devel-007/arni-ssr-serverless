@@ -1,5 +1,5 @@
 <app-header></app-header>
-<mat-card class="innerpagebanner blogbg">
+<mat-card class="innerpagebanner blogbg innercommonbannercls">
   <span class="mainwrappercontent">
     <mat-card-content>
       <span>
@@ -56,6 +56,10 @@
             </span>
           </span>
           <span class="item_wrapper">
+
+          
+            <h3 class="norecordfound"  *ngIf="bloglisting =='' "><span>Oops!</span> No Record Found</h3>
+
             <span class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
              
               <mat-card>
@@ -106,11 +110,24 @@
                                               </div>
                                             </div> -->
 
-
+   
 
                   <span class="sharelinkswrapper">
                     <span class="blogsociallists">
-                      <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
+
+                      <a class="sociallink fa fb" (click)="fbTestimonialShare(item)">
+                        <fa name="facebook" class="fa-facebook"></fa>
+                      </a>
+                      <a class="sociallink fa twi" (click)="twitterTestimonialShare(item)">
+                        <fa name="twitter" class="fa-twitter"></fa>
+                      </a>
+                      <a class="sociallink fa lin" (click)="linkedinTestimonialShare(item)">
+                        <fa name="linkedin" class="fa-linkedin"></fa>
+                      </a>
+                      <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(item)">
+                        <fa name="tumblr" class="fa-tumblr"></fa>
+                      </a>
+                      <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
                           <fa name="facebook" class="fa-facebook"></fa>
                         </a>
                         <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
@@ -121,7 +138,7 @@
                         </a>
                         <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
                           <fa name="linkedin" class="fa-linkedin"></fa>
-                        </a>
+                        </a>    -->
                         <!-- <a class="sociallink fa env">
                           <fa name="envelope" class="fa-envelope"></fa>
                         </a> -->

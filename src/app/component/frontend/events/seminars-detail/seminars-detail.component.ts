@@ -16,7 +16,8 @@ export class SeminarsDetailComponent implements OnInit {
   public indexvallength: any = 1;
 
 
- 
+  public indexvalright:any=4;
+
   public indexval: any = 6;
   // public seminer_img:any
   public seminer: any;
@@ -27,9 +28,10 @@ export class SeminarsDetailComponent implements OnInit {
   public title: any;
   public eventTitle: any;
   public seminerList:any='';
-
+  public item:any;
   public upComingEvent:any=[];
   public pastEvent:any=[];
+
   constructor(public activatedRoute: ActivatedRoute,  private readonly meta: MetaService,public FB:FacebookService, public datePipe: DatePipe,public router:Router) {
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
@@ -101,13 +103,14 @@ export class SeminarsDetailComponent implements OnInit {
       this.meta.setTag('og:image:width', 'auto');
       this.meta.setTag('og:image:height', 'auto');
       this.meta.setTag('twitter:image', this.seminer.image);
-      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params._id);
 
 
     }
 
 
   }
+
 
 
 
@@ -238,6 +241,8 @@ export class SeminarsDetailComponent implements OnInit {
 
   }
 
-
+  viewallbutton(){
+      this.router.navigateByUrl("/past-speaker-engagements");
+    }
 
 }

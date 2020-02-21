@@ -193,14 +193,24 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     padding: 0;
 }
 
+.event_right_blog .event_blog_top{display: flex;padding: 10px 0px 0px;justify-content: space-between;align-items: center;}
 
+.norecordfound{font-size: 26px;font-weight: 200;color: #d06666;padding: 0;margin: 0 0 7px;text-align: center;width: 100%;font-style: oblique;}
+.norecordfound span{color: #000; display:block;font-size: 32px;font-style: oblique;font-weight: 400;}
+.event_blog label a{color:#ff3f3a !important;}
 
 @media only screen and (max-width: 1199px) {
   .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}
 
- 
-
 }
+
+  @media only screen and (max-width: 991px) {
+    .cdk-overlay-connected-position-bounding-box{position: inherit;}
+    .cdk-overlay-connected-position-bounding-box[style]{left: 0;width: 100%;}
+    .cdk-overlay-pane[style]{display: initial;width: 100% !important;}
+    .mat-menu-panel{margin-left: 0;min-width: 100% !important;max-width: 100% !important;}
+  }
+
 
 @media only screen and (max-width: 580px) {
 

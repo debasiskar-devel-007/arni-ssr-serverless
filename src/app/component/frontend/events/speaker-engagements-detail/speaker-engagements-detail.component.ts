@@ -28,11 +28,12 @@ export class SpeakerEngagementsDetailComponent implements OnInit {
   public profile:any;
   public title: any;
   public eventTitle: any;
-public speakerList:any;
+  public speakerList:any;
+  public indexvalright:any=4;
 
-
-public upComingEvent:any=[];
-public pastEvent:any=[];
+  public upComingEvent:any=[];
+  public pastEvent:any=[]; 
+  public item:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
 
@@ -83,7 +84,7 @@ public pastEvent:any=[];
       this.meta.setTag('og:image:width', 'auto');
       this.meta.setTag('og:image:height', 'auto');
       this.meta.setTag('twitter:image', this.speaker.image);
-      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/speaker-engagements-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/speaker-engagements-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params._id);
 
 
     }
@@ -99,6 +100,10 @@ public pastEvent:any=[];
     // console.log('load more')
     this.indexval=this.indexval+1;
 
+  }
+
+  viewallbutton(){
+    this.router.navigateByUrl("/past-speaker-engagements");
   }
 
   getForPastEvent(){

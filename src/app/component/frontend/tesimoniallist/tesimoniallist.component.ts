@@ -155,7 +155,7 @@ export class TesimoniallistComponent implements OnInit {
 //********* end Video modal section***********//
 
 
-
+  
 
 //facebook share for event
 
@@ -197,7 +197,7 @@ getProfile() {
       // console.log(facebook)
     });
   }
-
+ 
   twitterTestimonialShare(val:any){
     window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
   }

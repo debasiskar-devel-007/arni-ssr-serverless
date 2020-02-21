@@ -28,9 +28,15 @@ export class WorkshopDetailComponent implements OnInit {
   public title: any;
   public eventTitle: any;
   public workshopList:any;
-
+  public item:any;
   public upComingEvent:any=[];
   public pastEvent:any=[];
+  // public indexvalleftlengthlength: any = 1;
+
+
+  // public indexvalleft: any = 2;
+  public indexvalright:any=4;
+
 
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) {
@@ -68,7 +74,7 @@ export class WorkshopDetailComponent implements OnInit {
 
 
     if (this.workshop != '') {
-      this.meta.setTitle('Arnie Fonseca- seminars-detail');
+      this.meta.setTitle('Arnie Fonseca- workshop-detail');
       this.meta.setTag('og:description', this.workshop.description);
       this.meta.setTag('twitter:description', this.workshop.description);
       this.meta.setTag("description", this.workshop.description)
@@ -79,7 +85,7 @@ export class WorkshopDetailComponent implements OnInit {
       this.meta.setTag('og:image:width', 'auto');
       this.meta.setTag('og:image:height', 'auto');
       this.meta.setTag('twitter:image', this.workshop.image);
-      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/seminars-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params.id);
+      this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/workshop-detail/' + this.activatedRoute.snapshot.params.title + '/' + this.activatedRoute.snapshot.params._id);
 
 
     }
@@ -113,6 +119,7 @@ export class WorkshopDetailComponent implements OnInit {
 
 
 
+
   //***********load more view blog *************//
   blogloadmore(){
     // console.log('load more')
@@ -132,7 +139,9 @@ export class WorkshopDetailComponent implements OnInit {
     // console.log('copyText');
   }
 
-
+viewallbutton(){
+    this.router.navigateByUrl("/past-workshops");
+  }
   //facebook share for event
 
   login() {

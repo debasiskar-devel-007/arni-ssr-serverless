@@ -25,6 +25,7 @@ export class SeminarsComponent implements OnInit {
 
 
   public indexvalleft: any = 2;
+  public indexvalright:any=4;
 
 
   public SeminarsListArry: any = []
@@ -35,6 +36,9 @@ export class SeminarsComponent implements OnInit {
   public profile: any;
   public upComingEvent:any=[];
   public pastEvent:any=[];
+  public eventsem:any;
+  public pasteventsem:any;
+
 
   constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public FB: FacebookService) {
 
@@ -100,20 +104,23 @@ export class SeminarsComponent implements OnInit {
       }
     }
 
+    console.log('>>>>>>pastEvent',this.pastEvent)
+
 
   }
 
 
   //***********load more view blog *************//
-  blogloadmore() {
-    // console.log('load more')
-    this.indexval = this.indexval + 1;
 
-  }
 
   blogloadmorenew() {
     // console.log('load more')
-    this.indexvalleft = this.indexvalleft + 1;
+    this.indexvalleft = this.indexvalleft + 4;
+  }
+
+
+  viewallbutton(){
+    this.router.navigateByUrl('/past-seminars');
   }
 
   detail(val: any) {

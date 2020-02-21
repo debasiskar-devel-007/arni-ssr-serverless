@@ -1,5 +1,5 @@
 <app-header></app-header>
-<mat-card class="innerpagebanner testimonialbg">
+<mat-card class="innerpagebanner testimonialbg innercommonbannercls">
   <span class="mainwrappercontent">
     <mat-card-content>
       <span>
@@ -63,7 +63,7 @@
               <a *ngIf="testmon.description != '' && testmon != '' && testmon.description.length >= 254 "
                 [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
             </span>
-
+  
           </mat-card-content>
 
         </mat-card>
