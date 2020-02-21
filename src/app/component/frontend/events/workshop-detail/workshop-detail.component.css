@@ -14,7 +14,15 @@
 
 .event_blog .event_blog_top{display: flex;padding: 10px;justify-content: space-between;align-items: center;}
 .event_blog .event_blog_top span {display: inherit;}
-.event_blog .event_blog_top label{display:inherit;font-family:"Helvetica-Regular";font-size:18px;color:#24252c;text-transform:uppercase;margin:0;padding:0;font-weight:700}
+.event_blog .event_blog_top label{    display: flex;
+    font-family: "Helvetica-Regular";
+    font-size: 14px;
+    color: #24252c;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    align-items: center;}
 .event_blog .event_blog_top label i{margin-right: 5px;color:#3ab9d9}
 .event_blog .event_blog_top p i{margin-right: 5px;color:#3ab9d9}
 .event_blog .event_blog_top  p{ display: inherit; margin: 0; padding: 0; font-size: 18px; color: #24252c;margin-left: 20px;text-transform: capitalize;}
