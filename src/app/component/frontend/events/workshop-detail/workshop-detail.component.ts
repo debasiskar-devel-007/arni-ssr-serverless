@@ -55,7 +55,7 @@ export class WorkshopDetailComponent implements OnInit {
     this.dataformate = moment();
 
     fb.init({
-      appId: '2540470256228526',
+      appId: '2891915674224632',
       version: 'v2.9'
     });
 
