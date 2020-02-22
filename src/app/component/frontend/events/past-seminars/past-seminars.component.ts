@@ -201,7 +201,7 @@ export class PastSeminarsComponent implements OnInit {
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
-    window.open('http://www.twitter.com/share?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    window.open('http://www.twitter.com/share?url=https://arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
 
   }
