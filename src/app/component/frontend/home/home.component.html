@@ -1,0 +1,208 @@
+<app-header></app-header>
+<!-- 
+<mat-card class="innerpagebanner homebanner">    
+        <mat-card-content>
+          <mat-list id="slides">
+            <mat-list-item class="slide showing">
+                <img src="../../../../assets/images/contactusbg.jpg">
+                <span class="mainwrappercontent">
+                    <h1>CONTACT US</h1>
+                </span>             
+            </mat-list-item>
+            <mat-list-item class="slide">
+                <img src="../../../../assets/images/contactusbg.jpg">
+                <span class="mainwrappercontent">
+                    <h1>CONTACT US 1</h1>
+                </span>              
+            </mat-list-item>
+            <mat-list-item class="slide">
+                <img src="../../../../assets/images/contactusbg.jpg">
+                <span class="mainwrappercontent">
+                    <h1>CONTACT US 2</h1>
+                </span>              
+            </mat-list-item>
+          </mat-list>
+          <button class="controls" id="previous"><mat-icon aria-hidden="false">arrow_back_ios</mat-icon></button>
+          <button class="controls" id="next"><mat-icon aria-hidden="false">arrow_forward_ios</mat-icon></button>          
+        </mat-card-content>    
+</mat-card> -->
+<mat-card class="homebanner generalcls" style="padding: 0 !important">    
+    <!-- <img src="../../../../assets/images/pro-home-block1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+    <!-- <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="primary" maxWidth="auto" proportion="25" slides="3" [loop]="true" [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="true" [useMouseWheel]="true" orientation="ltr" >
+      <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">  
+          <div class="carousalinfo">
+            <div class="carousalinfoinner">
+              <span class="slide1imgperson">
+                <img class="d-block w-100" src="../../assets/images/slide1img-person.jpg">
+              </span>
+              <span class="slide1info">
+                <h1>Arnie <br>Fonseca</h1>
+                <h3>Personal Development Mentor</h3>
+              </span>
+            </div>
+            <p>Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b></p>          
+            <button mat-flat-button class="btngray">View More</button>
+          </div>            
+          <img class="d-block w-100" src="../../assets/images/arnehome-slide1img.jpg">
+      </mat-carousel-slide>
+      <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">   
+          <div class="carousalinfo">
+            <div class="carousalinfoinner">
+              <span class="slide1imgperson">
+                <img class="d-block w-100" src="../../assets/images/slide1img-person.jpg">
+              </span>
+              <span class="slide1info">
+                <h1>Arnie<br> Fonseca</h1>
+                <h3>Personal Development Mentor</h3>
+              </span>
+            </div>
+            <p>Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b></p>           
+            <button mat-flat-button class="btngray">View More</button>
+          </div>
+          <img class="d-block w-100" src="../../assets/images/arnehome-slide1img.jpg">
+        </mat-carousel-slide>
+        <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">
+            <div class="carousalinfo">
+                  <div class="carousalinfoinner">
+                    <span class="slide1imgperson">
+                      <img class="d-block w-100" src="../../assets/images/slide1img-person.jpg">
+                    </span>
+                    <span class="slide1info">
+                      <h1>Arnie <br>Fonseca</h1>
+                      <h3>Personal Development Mentor</h3>
+                    </span>
+                  </div>
+                  <p>Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b></p>            
+                  <button mat-flat-button class="btngray">View More</button>
+            </div>
+            <img class="d-block w-100" src="../../assets/images/arnehome-slide1img.jpg">
+        </mat-carousel-slide>
+    </mat-carousel> -->
+
+    <owl-carousel [options]="carouselBannerOptions" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <div class="itemcls"  *ngFor="let item of slides">    
+          <img class="slide-image" [src]="item.img">
+          <img class="slide-image-mobile" [src]="item.imgmobile">
+            <div class="carousalinfo">
+              <div class="carousalinfoinner">
+                <span class="slide1imgperson">
+                  <img class="d-block w-100" [src]="item.slideimg">
+                </span>
+                <span class="slide1info">
+                  <h4 [innerHTML]="item.subtitle2"></h4>
+                  <h1 [innerHTML]="item.title"></h1>
+                  <h3 [innerHTML]="item.subtitle"></h3>
+                </span>           
+              </div>
+              <p class="description1" [innerHTML]="item.description"></p>
+              <p class="description3" [innerHTML]="item.description3"></p>
+              <p class="description2" [innerHTML]="item.description2"></p>
+            </div>
+      </div>
+    </owl-carousel>
+</mat-card>
+
+<!-- <mat-card class="generalcls ptb-40" style="background: #fff !important;">  
+    <span class="mainwrappercontent">
+      <img src="../../../../assets/images/pro-home-block2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+    </span>
+</mat-card> -->
+
+<mat-card class="generalcls ptb-40 homeblock1">  
+    <span class="mainwrappercontent">
+        <h2>Meet “Coach Arnie”</h2>
+        <span class="homeblock1content">
+            <span class="homeblock1contentleft">
+              <span class="homeblock1contentlefttop">
+                <h2>Don’t limit your challenges, Challenge your limits!”</h2>
+                <h3>— Jerry Dunn</h3>
+              </span>
+              <span class="homeblock1contentleftbottom">
+                <p>With a strong foundation in Education, I have been an educator, speaker, consultant, business owner and personality development coach, guiding countless people through physical, mental or emotional struggles in their personal, professional and social lives, successfully for close to the past four decades.<br><br> Apart from coaching individuals, couples and groups, as well as speaking at various events, I am also the founder of The Next Step Foundation — a 501c(3) organization that helps individuals, families — and other "Heart Centered" programs that aspire to my  “Hands Of Hope" vision. My methods are aimed at empowering you to fight all adversities in each area of your life, and achieve success at very high levels.</p>  
+              </span>
+            </span>
+            <span class="homeblock1contentright">
+              <mat-list>
+                <mat-list-item>
+                  <span class="meetcoacharenaimg">
+                    <img src="../../../../assets/images/meetcoacharena-img1.jpg" style="margin: 0; padding: 0;">
+                  </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span class="meetcoacharenaimg">
+                        <img src="../../../../assets/images/meetcoacharena-img2.jpg" style="margin: 0; padding: 0;">
+                      </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span class="meetcoacharenaimg">
+                        <img src="../../../../assets/images/meetcoacharena-img3.jpg" style="margin: 0; padding: 0;">
+                      </span>
+                </mat-list-item>
+              </mat-list>
+            </span>   
+        </span>                     
+      </span>
+</mat-card>
+
+<mat-card class="generalcls homeblock2 ptb-40" style="background: #f2f4f4 !important;"> 
+  <!-- <img src="../../../../assets/images/pro-home-block3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+  <span class="mainwrappercontent">
+    <mat-card-content class="blockheader">
+      <h2>Counselling Services On Offer</h2>
+      <p>Choose the ideal counselling and consulting services based on your needs from a <br>host of different services aimes towards offering varying benefits.</p>
+    </mat-card-content>
+    <mat-card-content class="blockcontent">
+      <app-service></app-service>
+      <button mat-button class="btnblue btnmiddle sim-button" [routerLink]="['/ourservices']">view more</button>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<!-- <mat-card class="generalcls"> 
+    <img src="../../../../assets/images/pro-home-block4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+</mat-card>     -->
+
+<mat-card class="generalcls getintouch ptb-40"> 
+  <span class="mainwrappercontent">
+    <mat-card-content class="blockheader">
+      <h2>A Mentorship Program That WORKS!!</h2>
+      <p>My methods and trainings are built to make immediate change and improvement in the attendees of my personal mentor programs and offered<br> events.  What I teach WORKS, and I have countless one-on-one and group success stories to prove it. The direct experience I have with<br> dynamic change in my students lives started with my strong and cultivating foundation in Education. The discipline of wellness and exercise<br> was an early career focus for me while earning a <span>Master’s in Science</span> from <span>Arizona State University</span></p>
+      <div class="getintouchmain">
+        <span class="getintouchicon">
+          <img src="../../../../assets/images/getintouchimgleft.png">
+        </span> 
+        <span class="getintouchiconcontent">
+          <h1>Get <span class="lowercase">in touch</span> <span class="uppercase">Today</span></h1>
+          <span class="small">to achieve Guaranteed results and witness massive personal and professional growth with the proven techniques of my high-value Mentorship program!</span>
+        </span>
+      </div>
+      <button mat-button class="btnblue btnmiddle sim-button newknowbtn" [routerLink]="['/contact']">know more</button>
+    </mat-card-content>    
+  </span>
+</mat-card>
+
+  <!-- <mat-card class="generalcls testimonial ptb-40" style="text-align: center;">  
+    <span class="mainwrappercontent">
+      <img src="../../../../assets/images/pro-home-block5.png" style="width: 100%; display: block; margin: 0; padding: 0;">
+      <button mat-button class="btnblue sim-button" [routerLink]="['/testimonial']">Learn More</button>
+    </span>
+  </mat-card> -->
+
+
+
+  
+<mat-card class="generalcls testimonial ptb-40" style="text-align: center;"> 
+  <!-- <img src="../../../../assets/images/pro-home-block3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+  <span class="mainwrappercontent">    
+    <mat-card-content class="blockheader">
+      <h2>TESTIMONIAL</h2>
+    </mat-card-content>
+    <mat-card-content class="blockcontent">  
+      <app-tesimonial></app-tesimonial>
+      <button mat-button class="btnblue sim-button" (click)="btnClick();">View More</button>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<app-footer></app-footer>

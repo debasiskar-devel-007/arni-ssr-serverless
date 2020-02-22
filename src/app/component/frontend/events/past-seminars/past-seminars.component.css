@@ -1,0 +1,64 @@
+.seminarsbg.mat-card{background:url(../../../../../assets/images/seminarsbannerbg.jpg) no-repeat top right;background-size:cover}
+.clear{display:block!important;overflow:hidden!important;clear:both!important}
+.event_wrapper{display:block!important;width:1668px!important;margin:38px auto!important;margin-bottom:0!important;border:none!important;box-shadow:none!important;background:none!important;padding:0!important}
+
+
+.event_wrapper .event_right{width:100%;margin-bottom:0!important;display: flex;align-items: stretch;justify-content: space-between;flex-wrap: wrap;}
+.event_wrapper .event_right h2{background:#292b33;text-transform:uppercase;padding:18px 18px 12px;text-align:left;font-size:22px!important;font-family:"Helvetica-Regular";color:#fff;font-weight:400}
+
+.event_share_block{padding: 0;margin-right: 0;}
+/* .event_share_block img{width:29px} */
+.event_text .spantext{display:block;max-height:122px;margin-bottom:15px;overflow:hidden}
+.eventpagination{overflow:hidden;background:#0fc47e;display:block;text-align:center;padding:30px 15px;font-family:"Helvetica-Regular";font-size:18px;color:#fefefe}
+.eventpagination span{display:inline-block;padding:0 6px;position:relative}
+.eventpagination .material-icons{top:-1px;left:-30px;position:absolute}
+.eventpagination span:last-of-type .material-icons{top:-1px;right:-110px;position:absolute}
+.event_right_blog{margin: 10px!important;overflow: hidden;box-shadow: 0 0 10px #ccc;flex: 1 1 31.33%;}
+.event_right_blog_wrapper{display:table;width:100%;border-collapse:separate;}
+.event_right_blog_wrapperrow{display:table-row}
+.event_right_blog_img{display:table-cell;width:28%;vertical-align:middle;overflow:hidden;border: 9px solid #fff;}
+.event_right_blog_img_wrapper{width: 100%;height: 152px;overflow: hidden;display: block;}
+.event_right_blog_img img{height: 100%!important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%!important;
+    width: auto;
+    height: auto;}
+.event_right_blog_text{display:table-cell;width:72%;padding:2%;background: #85c2d2;}
+.event_right_blog_text p{margin:8px 0;padding:0;font-size:18px;color:#24252c;font-family:"Helvetica-Regular";line-height:22px;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;min-height: 45px;}
+.event_right_blog_text label{display:inline-block;font-size:14px;color:#fff;font-family:"Helvetica-Regular";margin:2px 0 0}
+.event_right_blog_text button{display:block;float:right;width:110px;height:20px;background:#fff;box-shadow:0 0 10px #ccc;font-size:14px;font-family:"Helvetica-Regular";text-transform:uppercase;color:#000;border:none;cursor:pointer;line-height:24px;}
+.viewalleventbtn{display:block!important;background:#03aed4!important;border:none!important;font-size:16px!important;color:#fff!important;text-transform:uppercase;font-family:'HelveticaBold'!important;text-decoration:none!important;line-height:normal!important;text-align:center!important;margin:5px 0!important;border-radius:0;width:100%!important;text-decoration:none!important;box-shadow:none!important;padding:15px 5px 10px!important}
+@media only screen and (max-width: 1700px) {
+.event_wrapper{width:96%!important;padding:0!important}
+}
+
+@media only screen and (max-width: 1199px) {
+.event_img{height:auto!important}
+.event_wrapper .event_left{width:100%;float:none;margin-bottom:15px}
+.event_wrapper .event_right{width:100%;float:none;margin-bottom:45px!important}
+.event_right_blog_text p{font-size:18px;text-align:left;margin-top:0px;margin-bottom:0px;min-height: 45px;}
+.event_wrapper .event_right h2{text-align:center}
+.event_wrapper{margin-top:25px!important}
+.event_right_blog_text button{margin-top:0!important}
+.event_right_blog{flex: 1 1 47.33%;}
+}
+@media only screen and (max-width: 991px) {
+.event_right_blog_text p{height:66px}
+}
+@media only screen and (max-width: 800px) {
+.event_right_blog_img{display:block;width:inherit;float:none}
+.event_right_blog_text{display:block;width:auto;float:none;padding:15px}
+.event_right_blog_text p{margin:0;padding:0 0 15px;font-size:18px;font-family:"Helvetica-Regular";height:auto;overflow:inherit;line-height:22px;text-align:center}
+}
+@media only screen and (max-width:767px) {
+.event_right_blog {-webkit-box-flex: 1;flex: 1 1 46.33%;}
+}
+@media only screen and (max-width:540px) {
+.event_blog {width: calc(1/1*100% - (1 - 1/1)*20px) !important;}
+}
+@media only screen and (max-width: 480px) {
+.eventpagination span{display:inline-block;padding:0 4px;position:relative}
+.event_right_blog_text button{float:none;display:block;margin:0 auto;margin-top:10px!important}
+.event_right_blog_text label{float:none;display:block;text-align:center}
+}

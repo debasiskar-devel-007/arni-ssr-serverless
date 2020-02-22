@@ -1,0 +1,250 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner blogbg innercommonbannercls">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>Blogs</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="generalcls blog bloglists ptb-40" style="background: #fff !important;">
+  <mat-card-content>
+    <span class="mainwrappercontent bloghead">
+      <mat-card-content>
+        <h2>Blog</h2>
+        <p>The personal and professional development industry is an ever-changing and evolving one, with new
+          developments being made every day and new trends being set on a regular basis.. Keep updated with the latest
+          developments and news in the industry, and stay a step ahead when it comes to personal and professional
+          development in every area of your life.</p>
+      </mat-card-content>
+    </span>
+    <span class="mainwrappercontent pt-30">
+
+      <span class="bloglistinner">
+        <span class="bloglistswrapper">
+
+
+          <h2 class="blogtitle">Our Blogs </h2>
+          <span class="search-sec">
+            <span class="mat-search-bar">
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <span matPrefix></span>
+                  <input type="text" matInput placeholder="search by title, keyword"
+                    (keyup)="titleSearchblogListFilter($event.target.value)">
+                  <button mat-button>
+                    <i class="material-icons">
+                      search
+                    </i>
+                  </button>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <span matPrefix></span>
+                  <input type="text" matInput placeholder="search Category"
+                    (keyup)="titleSearchCategoryFilter($event.target.value)">
+                  <button mat-button>
+                    <i class="material-icons">
+                      search
+                    </i>
+                  </button>
+                </mat-form-field>
+              </form>
+            </span>
+          </span>
+          <span class="item_wrapper">
+
+          
+            <h3 class="norecordfound"  *ngIf="bloglisting =='' "><span>Oops!</span> No Record Found</h3>
+
+            <span class="item" *ngFor="let item of bloglisting ;let i=index">
+             
+              <mat-card>
+                <span class="item_images" (click)="blogdetail(item)"><img [src]="item.blogs_image"></span>
+                <mat-card-content>
+                      <span class="bnticons">
+                        <button *ngIf="item.video_url !='' && item.video_url !=null "
+                          (click)="openvideourl(item.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
+                      </span>
+                      <h2 (click)="blogdetail(item._id)">{{item.blogtitle}}</h2>
+                      <p class="description"><span [innerHtml]="item.description"></span></p>
+                      <a class="next_page" (click)="blogdetail(item._id)">read more</a>
+                </mat-card-content>
+                
+              </mat-card>
+              <span class="contentsection">
+                
+                <span class="bottom-blog-wrapper">
+                  <span class="date">{{item.date_added}}</span>
+                  <!-- <span class="likecomment">
+                                                <span class="like">
+                                                        <img src="../../../../assets/images/icon-like.png"> <span class="count"><span></span>12</span>
+                                                </span>
+                                                <span class="like">
+                                                    <img src="../../../../assets/images/icon-dislike.png"> <span class="count"><span></span>12</span>
+                                                </span>
+                                                <span class="comment">
+                                                        <img src="../../../../assets/images/icon-comment.png"> <span class="count"><span>6</span> comment</span>
+                                                </span>
+                                            </span> -->
+
+                                            <!-- <div class="sherelinkwrapper">
+                                              <div class="ascol ascol1">
+                                                <p>Share Link for Rep Sign Up</p>
+                                              </div>
+                                              <div class="ascol ascol2">
+                                                <div class="urllink">
+                                                  <a style="pointer-events: none;cursor: default;" href="https://www.betoparedes.com/sales-associate.php?affid={{userId}}">https://www.betoparedes.com/sales-associate.php?affid={{userId}}</a>
+                                                </div>
+                                                  <button class="urlcopybtn" (click)="copyText('https://www.betoparedes.com/sales-associate.php?affid='+userId)"><i class="fa fa-link" aria-hidden="true"></i></button>
+                                              </div>
+                                              <div class="ascol ascol3">
+                                                  <a target="_blank" href="https://www.facebook.com/sharer.php?url=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}" class="icon-button facebook"><i class="fa fa-facebook"></i></a>
+                                                 <a href="#" class="icon-button google-plus"><i class="fa fa-twitter"></i></a>   
+                                                  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}" target="_blank" class="icon-button linkedin"><i class="fa fa-linkedin"></i></a>
+                                                  <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}"  target="_blank" class="icon-button twitter"><i class="fa fa-twitter"></i></a>
+                                                  <a href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}" target="_blank" class="icon-button tumblr"><i class="fa fa-tumblr"></i></a>
+                                              </div>
+                                            </div> -->
+
+   
+
+                  <span class="sharelinkswrapper">
+                    <span class="blogsociallists">
+
+                      <a class="sociallink fa fb" (click)="fbTestimonialShare(item)">
+                        <fa name="facebook" class="fa-facebook"></fa>
+                      </a>
+                      <a class="sociallink fa twi" (click)="twitterTestimonialShare(item)">
+                        <fa name="twitter" class="fa-twitter"></fa>
+                      </a>
+                      <a class="sociallink fa lin" (click)="linkedinTestimonialShare(item)">
+                        <fa name="linkedin" class="fa-linkedin"></fa>
+                      </a>
+                      <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(item)">
+                        <fa name="tumblr" class="fa-tumblr"></fa>
+                      </a>
+                      <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
+                          <fa name="facebook" class="fa-facebook"></fa>
+                        </a>
+                        <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
+                          <fa name="twitter" class="fa-twitter"></fa>
+                        </a>
+                        <a class="sociallink fa tbl" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
+                          <fa name="tumblr" class="fa-tumblr"></fa>
+                        </a>
+                        <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
+                          <fa name="linkedin" class="fa-linkedin"></fa>
+                        </a>    -->
+                        <!-- <a class="sociallink fa env">
+                          <fa name="envelope" class="fa-envelope"></fa>
+                        </a> -->
+                        <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)">
+                          <fa name="share" class="fa-share"></fa>
+                        </a> -->
+                        <!-- <a class="sociallink fa link" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)"><fa name="link" class="fa-link"></fa></a> -->
+                        <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+item._id)">
+                          <fa name="share" class="fa-share"></fa>
+                        </a> -->
+                  </span>
+
+
+
+                   
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+          <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null" (click)="blogloadmore()">Load More</button>
+        </span>
+        <span class="categorywrapper">
+          <h2 class="blogtitle">Categories ({{blogcategorycount.length}})</h2>
+<!--           
+          <mat-tree [dataSource]="blogCategoryDataSource" [treeControl]="nestedTreeControl" class="example-tree">            
+            <mat-tree-node *matTreeNodeDef="let item" matTreeNodePadding>
+                <li class="mat-tree-node">
+                    <button mat-icon-button disabled></button>
+                    {{item.blogtitle}}
+                </li>               
+            </mat-tree-node>
+            <mat-tree-node *matTreeNodeDef="let item;when: hasNestedChild">
+                <li>
+                    <div class="mat-tree-node">
+                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + item.blogtitle">
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{nestedTreeControl.isExpanded(item) ? 'expand_more' : 'chevron_right'}}
+                            </mat-icon>
+                        </button>
+                        {{item.blogtitle}} ({{item.blogcount}})
+                    </div>
+                    <ul *ngFor="let item of bloglisting; let i = index" [class.example-tree-invisible]="!nestedTreeControl.isExpanded(item)">
+                        <ng-container matTreeNodeOutlet> {{ item.blogtitle }}</ng-container>
+                    </ul>
+                </li>
+            </mat-tree-node>
+          </mat-tree> -->
+          <mat-accordion >
+            <mat-expansion-panel *ngFor="let d of blogcategorycount;let i=index; ">
+              <mat-expansion-panel-header (click)="getAllBlogs(d._id)">
+               {{d.blogtitle}}
+              </mat-expansion-panel-header>
+              <ng-container *ngFor="let cat of catBlogs; let i=index;" >
+                <span >
+                  <div class="categorysub">
+                    <h5 class="inner_header" (click)="blogdetail(cat)">
+                      <span class="blogsubcattitle" (click)="blogdetail(cat)">{{ cat.blogtitle }}</span>
+                      <span class="buttominfocls">
+                        <span ><span class="labelcls">Date:</span>{{cat.date_added}}</span>
+                        <span ><span class="labelcls">By:</span>{{cat.author}}</span>
+                      </span>
+                    </h5>
+                  </div>
+                </span>
+               
+              </ng-container>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <!-- <span class="categorywrapper">  
+                        <h2 class="blogtitle">Categories ({{blogcategorycount}}) <button mat-raised-button (click)="openAll()">Open All</button></h2>            
+                        <button mat-raised-button (click)="closeAll()">close All</button> 
+                        <mat-accordion #myaccordion="matAccordion" multi="true" class="category">
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
+                                <mat-expansion-panel-header>
+                                <mat-panel-title (click)="openblog(item._id)">
+                                    {{item.blogtitle}} ({{item.blogcount}}) &nbsp;
+                                </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ng-container>
+                                    <span>
+                                        <div class="categorysub" (click)="blogdetail()" [ngClass]="{'active': blogcat }">
+                                        <h5 class="inner_header"></h5>
+                                        </div>
+                                    </span>
+                                </ng-container>
+                            </mat-expansion-panel>                          
+                        </mat-accordion> 
+                    </span>      -->
+        </span>
+        <!-- <button mat-button class="btnblue sim-button">Load More</button> -->
+      </span>
+    </span>
+  </mat-card-content>
+</mat-card>
+
+
+
+<!-- <mat-card class="ptb-40 generalcls blog bloglist">     
+    <span class="mainwrappercontent">
+        <app-blog></app-blog>
+    </span>
+</mat-card> -->
+
+
+
+
+
+<app-footer></app-footer>

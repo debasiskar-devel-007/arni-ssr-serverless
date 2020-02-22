@@ -1,0 +1,83 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner seminarsbg pasteventbanner innercommonbannercls">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>Past seminars</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="ptb-40 generalcls seminarswrapper" style="background: #f2f4f4 !important;">
+  <span class="mainwrappercontent bloghead">
+    <mat-card-content>
+      <h2>Past seminars</h2>
+      <p>
+        View the schedule for all upcoming Seminars and book your seat(s) in advance so that you don’t have to miss out
+        on an all-important event that<br> could have a life-changing impact. You can also contact me to speak at a
+        seminar in your community!
+      </p>
+    </mat-card-content>
+  </span>
+
+
+  <mat-card class="event_wrapper">
+
+    <mat-card-content class="event_right">
+      <!-- <h2>Past seminers</h2> -->
+
+
+      <span class="event_right_blog" *ngFor="let pasteventsem of SeminarsListArry | slice:0:indexvalright; let i=indexval">
+
+        <span class="event_right_blog_wrapper">
+
+          <span class="event_right_blog_wrapperrow">
+
+            <span class="event_right_blog_img">
+              <span class="event_right_blog_img_wrapper">
+                <img src="{{pasteventsem.image}}">
+              </span>
+            </span>
+            <span class="event_right_blog_text">
+
+              <p [innerHtml]="pasteventsem.title"></p>
+              <span class="event_blog_top">
+                <label>{{pasteventsem.event_date}}</label>
+                <button (click)="detail(pasteventsem)">Know more</button>
+              </span>              
+
+              <span class="clear"></span>
+
+              <span class="blogsociallists event_share_block">
+                <a class="sociallink fa fb" (click)="fbshare(pasteventsem)" target="_blank">
+                  <fa name="facebook" class="fa-facebook"></fa>
+                </a>
+                <a class="sociallink fa twi" (click)="twitterShare(pasteventsem)" target="_blank">
+                  <fa name="twitter" class="fa-twitter"></fa>
+                </a>
+                <a class="sociallink fa tumblr" (click)="tumblrShare(pasteventsem)" target="_blank">
+                  <fa name="tumblr" class="fa-tumblr"></fa>
+                </a>
+                <a class="sociallink fa lin" (click)="linkedinShare(pasteventsem)" target="_blank">
+                  <fa name="linkedin" class="fa-linkedin"></fa>
+                </a>
+              </span>
+            </span>            
+              <span class="clear"></span>
+          </span>
+        </span>
+
+      </span>
+
+      <button *ngIf="searchLoadMore==false &&  indexvallength > indexvalright" class="viewalleventbtn"
+        (click)="blogloadmore()">Load More</button>
+
+
+    </mat-card-content>
+
+  </mat-card>
+</mat-card>
+
+<app-footer></app-footer>

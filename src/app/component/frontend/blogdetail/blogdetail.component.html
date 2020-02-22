@@ -1,0 +1,510 @@
+<app-header></app-header>
+<mat-card *ngIf="blog_img != ''" class="innerpagebanner innercommonbannercls">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>Blogs Details</h1>
+      </mat-card-content>
+    </span>
+    <img  class="blogheaderimg">
+    <span class="blogheaderimgbg"></span>
+  </mat-card>
+
+  <mat-card class="ptb-40 generalcls blog bloglist blogdetail">
+    <span class="mainwrappercontent">
+      <span class="bloglistinner">
+        <span class="bloglistswrapper">
+          <mat-card-content class="bottom_blog">
+            <span class="item_wrapper">
+              <!-- <mat-card-content class="item"> -->
+              <mat-card-content class="item">
+                <span class="blogcategorycls" *ngFor="let item of blogcategory">
+                 {{item.blogtitle}}
+                </span>
+                <mat-card-title class="blogtitle">{{blog.blogtitle}}</mat-card-title>
+                <mat-card-content class="contentsection">
+                  <span class="author">                    
+                    <p class="date">on {{blog.date_added}}</p>
+                    <span class="authornmimg">                      
+                      <p class="authorName">by {{blog.author}}</p>
+                    </span>
+                  </span>
+  
+                  <span class="blogsociallists">
+
+                    <a class="sociallink fa fb" (click)="fbTestimonialShare(blog)">
+                      <fa name="facebook" class="fa-facebook"></fa>
+                    </a>
+                    <a class="sociallink fa twi" (click)="twitterTestimonialShare(blog)">
+                      <fa name="twitter" class="fa-twitter"></fa>
+                    </a>
+                    <a class="sociallink fa lin" (click)="linkedinTestimonialShare(blog)">
+                      <fa name="linkedin" class="fa-linkedin"></fa>
+                    </a>
+                    <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(blog)">
+                      <fa name="tumblr" class="fa-tumblr"></fa>
+                    </a>
+                    <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblogdetail%2F{{blog[0]._id}}" target="_blank">
+                      <fa name="facebook" class="fa-facebook"></fa>
+                    </a>
+                    <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblogdetail%2F{{blog[0]._id}}" target="_blank">
+                      <fa name="twitter" class="fa-twitter"></fa>
+                    </a>
+                    <a class="sociallink fa tumblr" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblogdetail%2F{{blog[0]._id}}" target="_blank">
+                      <fa name="tumblr" class="fa-tumblr"></fa>
+                    </a>
+                    <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblogdetail%2F{{blog[0]._id}}" target="_blank">
+                      <fa name="linkedin" class="fa-linkedin"></fa>
+                    </a> -->
+                    <!-- <a class="sociallink fa env">
+                      <fa name="envelope" class="fa-envelope"></fa>
+                    </a> -->
+                    <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blogdetail?affid='+blog[0]._id)">
+                      <fa name="share" class="fa-share"></fa>
+                    </a> -->
+                  </span>
+                </mat-card-content>
+                <span class="item_images">  
+                  <img [src]="blog.blogs_image[0].basepath+blog.blogs_image[0].image">
+                </span>
+  
+                <p class="description"><span [innerHtml]="blog.description_html"></span></p>
+              </mat-card-content>
+            </span>
+          </mat-card-content>
+          <!-- start gallery section -->
+          <mat-list class="photogallerylists">
+            <mat-list-item class="writer_image">
+              <span class="writer_image_wrapper">
+
+        
+                <img [src]="blog.blogs_image[0].basepath+blog.blogs_image[0].image">
+              </span>
+            </mat-list-item>
+          </mat-list>
+          <!-- end gallery section -->
+
+
+          <!-- <img src="https://www.youtube.com/embed/v-t3L7nWEbg"> -->
+        
+          <!-- start video section -->
+          <mat-list class="photogallerylists videoblocknew ">
+            <mat-list-item class="writer_image">
+              <span class="writer_image_wrapper" *ngIf="blog.video !='' && blog.video !=null ">
+               
+                  <button 
+                    (click)="openvideourl(blog.video)">
+                    <img src="//img.youtube.com/vi/{{blog.video[0].video_url}}/0.jpg">
+                  </button>
+                
+              </span>
+            </mat-list-item>
+          </mat-list>
+          <!-- end video section -->
+        </span>
+        <span class="categorywrapper">
+          <h2 class="blogtitle">Categories ({{blogcategorycount}})</h2>
+          
+          <mat-tree [dataSource]="blogCategoryDataSource" [treeControl]="nestedTreeControl" class="example-tree">            
+            <mat-tree-node *matTreeNodeDef="let item" matTreeNodePadding>
+                <li class="mat-tree-node">
+                    <button mat-icon-button disabled></button>
+                    {{item.blogtitle}}
+                </li>               
+            </mat-tree-node>
+            <mat-tree-node *matTreeNodeDef="let item;when: hasNestedChild">
+                <li>
+                    <div class="mat-tree-node">
+                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + item.blogtitle">
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{nestedTreeControl.isExpanded(item) ? 'expand_more' : 'chevron_right'}}
+                            </mat-icon>
+                        </button>
+                        {{item.blogtitle}} ({{item.blogcount}})
+                    </div>
+                    <ul *ngFor="let blogList of blogListing; let i = index" [class.example-tree-invisible]="!nestedTreeControl.isExpanded(item)">
+                        <ng-container matTreeNodeOutlet>{{ blogList.blogtitle }}</ng-container>
+                    </ul>
+                </li>
+            </mat-tree-node>
+          </mat-tree>
+        </span>
+      </span>
+      <span class="mostviewedblogs">
+          <h2>Most Viewed Blogs</h2>
+          <mat-card-content class="bottom_blog">
+              <span class="item_wrapper">
+
+                <mat-card-content class="item" *ngFor="let mvblog of MostViwedBlog">
+                  <span class="item_images">
+                    <img src="{{mvblog.blogs_image}}">
+                  </span>
+                  <mat-card-content class="contentsection">                  
+                    <mat-card-title class="inner_header">{{mvblog.blogtitle}}</mat-card-title>
+                    <span class="author">
+                       <span class="authornmimg">
+                        <!-- <span class="writer_image">
+                          <img src="../../../../assets/images/blog-icon.png">
+                        </span> -->
+                        <p class="authorName">{{mvblog.author}}</p>
+                      </span> 
+                      <p class="date">Date: {{mvblog.date_added}} </p>
+                    </span>
+                    <p class="description"><span>{{mvblog.description_html}}</span></p>
+                    <a class="next_page">read more</a>
+    
+                    <span class="blogsociallists absolute">
+
+                      <a class="sociallink fa fb" (click)="fbTestimonialShare(mvblog)">
+                        <fa name="facebook" class="fa-facebook"></fa>
+                      </a>
+                      <a class="sociallink fa twi" (click)="twitterTestimonialShare(mvblog)">
+                        <fa name="twitter" class="fa-twitter"></fa>
+                      </a>
+                      <a class="sociallink fa lin" (click)="linkedinTestimonialShare(mvblog)">
+                        <fa name="linkedin" class="fa-linkedin"></fa>
+                      </a>
+                      <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(mvblog)">
+                        <fa name="tumblr" class="fa-tumblr"></fa>
+                      </a>
+                      <!-- <a class="sociallink fa fb">
+                        <fa name="facebook" class="fa-facebook"></fa>
+                      </a>
+                      <a class="sociallink fa twi">
+                        <fa name="twitter" class="fa-twitter"></fa>
+                      </a>
+                      <a class="sociallink fa pin">
+                        <fa name="pinterest" class="fa-pinterest"></fa>
+                      </a>
+                      <a class="sociallink fa lin">
+                        <fa name="linkedin" class="fa-linkedin"></fa>
+                      </a>
+                      <a class="sociallink fa env">
+                        <fa name="envelope" class="fa-envelope"></fa>
+                      </a>
+                      <a class="sociallink fa share">
+                        <fa name="share" class="fa-share"></fa>
+                      </a> -->
+                    </span>
+                  </mat-card-content>
+                </mat-card-content>
+                
+                <!-- <mat-card-content class="item">
+                    <span class="item_images">
+                      <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
+                    </span>
+                    <mat-card-content class="contentsection">                   
+                      <mat-card-title class="inner_header">Popular Cute</mat-card-title>
+                      <span class="author">
+                        <span class="authornmimg">
+                          <span class="writer_image">
+                            <img src="../../../../assets/images/blog-icon.png">
+                          </span>
+                          <p class="authorName">Popular Cute author</p>
+                        </span>
+                        <p class="date">Date: 11-11-2019 </p>
+                      </span>
+                      <p class="description"><span>ACHIEVE YOUR HIGHEST SUCCESSAbout Jack Zufelt,Jack is a world renowned success expert. His book, The DNA of Success, catapulted him into the limelight as a celebrity keynote speaker, trainer and business consultant on the national and international </span></p>
+                      <a class="next_page">read more</a>
+      
+                      <span class="blogsociallists absolute">
+                        <a class="sociallink fa fb">
+                          <fa name="facebook" class="fa-facebook"></fa>
+                        </a>
+                        <a class="sociallink fa twi">
+                          <fa name="twitter" class="fa-twitter"></fa>
+                        </a>
+                        <a class="sociallink fa pin">
+                          <fa name="pinterest" class="fa-pinterest"></fa>
+                        </a>
+                        <a class="sociallink fa lin">
+                          <fa name="linkedin" class="fa-linkedin"></fa>
+                        </a>
+                        <a class="sociallink fa env">
+                          <fa name="envelope" class="fa-envelope"></fa>
+                        </a>
+                        <a class="sociallink fa share">
+                          <fa name="share" class="fa-share"></fa>
+                        </a>
+                      </span>
+                    </mat-card-content>
+                </mat-card-content>
+  
+                <mat-card-content class="item">
+                      <span class="item_images">
+                        <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
+                      </span>
+                      <mat-card-content class="contentsection">
+                        <mat-card-title class="inner_header">Popular Cute</mat-card-title>
+                        <span class="author">
+                          <span class="authornmimg">
+                            <span class="writer_image">
+                              <img src="../../../../assets/images/blog-icon.png">
+                            </span>
+                            <p class="authorName">Popular Cute author</p>
+                          </span>
+                          <p class="date">Date: 11-11-2019 </p>
+                        </span>
+                        <p class="description"><span>ACHIEVE YOUR HIGHEST SUCCESSAbout Jack Zufelt,Jack is a world renowned success expert. His book, The DNA of Success, catapulted him into the limelight as a celebrity keynote speaker, trainer and business consultant on the national and international </span></p>
+                        <a class="next_page">read more</a>
+        
+                        <span class="blogsociallists absolute">
+                          <a class="sociallink fa fb">
+                            <fa name="facebook" class="fa-facebook"></fa>
+                          </a>
+                          <a class="sociallink fa twi">
+                            <fa name="twitter" class="fa-twitter"></fa>
+                          </a>
+                          <a class="sociallink fa pin">
+                            <fa name="pinterest" class="fa-pinterest"></fa>
+                          </a>
+                          <a class="sociallink fa lin">
+                            <fa name="linkedin" class="fa-linkedin"></fa>
+                          </a>
+                          <a class="sociallink fa env">
+                            <fa name="envelope" class="fa-envelope"></fa>
+                          </a>
+                          <a class="sociallink fa share">
+                            <fa name="share" class="fa-share"></fa>
+                          </a>
+                        </span>
+                      </mat-card-content>
+                </mat-card-content> -->
+  
+                <!-- <mat-card-content class="item">
+                    <span class="item_images">
+                      
+                      <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
+                    </span>
+                    <mat-card-content class="contentsection">
+                      <mat-card-title class="inner_header">Popular Cute</mat-card-title>
+                      <span class="author">
+                        <span class="authornmimg">
+                          <span class="writer_image">
+                            <img src="../../../../assets/images/blog-icon.png">
+                          </span>
+                          <p class="authorName">Popular Cute author</p>
+                        </span>
+                        <p class="date">Date: 11-11-2019 </p>
+                      </span>
+                      <p class="description"><span>ACHIEVE YOUR HIGHEST SUCCESSAbout Jack Zufelt,Jack is a world renowned success expert. His book, The DNA of Success, catapulted him into the limelight as a celebrity keynote speaker, trainer and business consultant on the national and international </span></p>
+                      <a class="next_page">read more</a>
+      
+                      <span class="blogsociallists absolute">
+                        <a class="sociallink fa fb">
+                          <fa name="facebook" class="fa-facebook"></fa>
+                        </a>
+                        <a class="sociallink fa twi">
+                          <fa name="twitter" class="fa-twitter"></fa>
+                        </a>
+                        <a class="sociallink fa pin">
+                          <fa name="pinterest" class="fa-pinterest"></fa>
+                        </a>
+                        <a class="sociallink fa lin">
+                          <fa name="linkedin" class="fa-linkedin"></fa>
+                        </a>
+                        <a class="sociallink fa env">
+                          <fa name="envelope" class="fa-envelope"></fa>
+                        </a>
+                        <a class="sociallink fa share">
+                          <fa name="share" class="fa-share"></fa>
+                        </a>
+                      </span>
+                    </mat-card-content>
+                </mat-card-content> -->
+  
+              </span>
+              <button mat-button class="btnblue sim-button">Load More</button>
+            </mat-card-content>
+  
+      </span>
+      <span class="youmightalsolike">
+          <h2>You might also like</h2>
+          <mat-card-content class="bottom_blog" >
+              <span class="item_wrapper" >
+
+                <mat-card-content class="item" *ngFor="let smblog of similarBlogs">
+                  <span class="item_images">
+                    <img src="{{smblog.blogs_image}}">
+                  </span>
+                  <mat-card-content class="contentsection">                  
+                    <mat-card-title class="inner_header">{{smblog.blogtitle}}</mat-card-title>
+                    <span class="author">
+                       <span class="authornmimg">
+                        <!-- <span class="writer_image">
+                          <img src="../../../../assets/images/blog-icon.png">
+                        </span> -->
+                        <p class="authorName">{{smblog.author}}</p>
+                      </span> 
+                      <p class="date">Date: {{smblog.date_added}} </p>
+                    </span>
+                    <p class="description"><span>{{smblog.description_html}}</span></p>
+                    <a class="next_page">read more</a>
+    
+                    <span class="blogsociallists absolute">
+
+                      <a class="sociallink fa fb" (click)="fbTestimonialShare(smblog)">
+                        <fa name="facebook" class="fa-facebook"></fa>
+                      </a>
+                      <a class="sociallink fa twi" (click)="twitterTestimonialShare(smblog)">
+                        <fa name="twitter" class="fa-twitter"></fa>
+                      </a>
+                      <a class="sociallink fa lin" (click)="linkedinTestimonialShare(smblog)">
+                        <fa name="linkedin" class="fa-linkedin"></fa>
+                      </a>
+                      <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(smblog)">
+                        <fa name="tumblr" class="fa-tumblr"></fa>
+                      </a>
+                      <!-- <a class="sociallink fa fb">
+                        <fa name="facebook" class="fa-facebook"></fa>
+                      </a>
+                      <a class="sociallink fa twi">
+                        <fa name="twitter" class="fa-twitter"></fa>
+                      </a>
+                      <a class="sociallink fa pin">
+                        <fa name="pinterest" class="fa-pinterest"></fa>
+                      </a>
+                      <a class="sociallink fa lin">
+                        <fa name="linkedin" class="fa-linkedin"></fa>
+                      </a>
+                      <a class="sociallink fa env">
+                        <fa name="envelope" class="fa-envelope"></fa>
+                      </a>
+                      <a class="sociallink fa share">
+                        <fa name="share" class="fa-share"></fa>
+                      </a> -->
+                    </span>
+                  </mat-card-content>
+                </mat-card-content>
+                
+                <!-- <mat-card-content class="item">
+                    <span class="item_images">
+                      <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
+                    </span>
+                    <mat-card-content class="contentsection">                   
+                      <mat-card-title class="inner_header">Popular Cute</mat-card-title>
+                      <span class="author">
+                        <span class="authornmimg">
+                          <span class="writer_image">
+                            <img src="../../../../assets/images/blog-icon.png">
+                          </span>
+                          <p class="authorName">Popular Cute author</p>
+                        </span>
+                        <p class="date">Date: 11-11-2019 </p>
+                      </span>
+                      <p class="description"><span>ACHIEVE YOUR HIGHEST SUCCESSAbout Jack Zufelt,Jack is a world renowned success expert. His book, The DNA of Success, catapulted him into the limelight as a celebrity keynote speaker, trainer and business consultant on the national and international </span></p>
+                      <a class="next_page">read more</a>
+      
+                      <span class="blogsociallists absolute">
+                        <a class="sociallink fa fb">
+                          <fa name="facebook" class="fa-facebook"></fa>
+                        </a>
+                        <a class="sociallink fa twi">
+                          <fa name="twitter" class="fa-twitter"></fa>
+                        </a>
+                        <a class="sociallink fa pin">
+                          <fa name="pinterest" class="fa-pinterest"></fa>
+                        </a>
+                        <a class="sociallink fa lin">
+                          <fa name="linkedin" class="fa-linkedin"></fa>
+                        </a>
+                        <a class="sociallink fa env">
+                          <fa name="envelope" class="fa-envelope"></fa>
+                        </a>
+                        <a class="sociallink fa share">
+                          <fa name="share" class="fa-share"></fa>
+                        </a>
+                      </span>
+                    </mat-card-content>
+                </mat-card-content>
+  
+                <mat-card-content class="item">
+                      <span class="item_images">
+                        <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
+                      </span>
+                      <mat-card-content class="contentsection">
+                        <mat-card-title class="inner_header">Popular Cute</mat-card-title>
+                        <span class="author">
+                          <span class="authornmimg">
+                            <span class="writer_image">
+                              <img src="../../../../assets/images/blog-icon.png">
+                            </span>
+                            <p class="authorName">Popular Cute author</p>
+                          </span>
+                          <p class="date">Date: 11-11-2019 </p>
+                        </span>
+                        <p class="description"><span>ACHIEVE YOUR HIGHEST SUCCESSAbout Jack Zufelt,Jack is a world renowned success expert. His book, The DNA of Success, catapulted him into the limelight as a celebrity keynote speaker, trainer and business consultant on the national and international </span></p>
+                        <a class="next_page">read more</a>
+        
+                        <span class="blogsociallists absolute">
+                          <a class="sociallink fa fb">
+                            <fa name="facebook" class="fa-facebook"></fa>
+                          </a>
+                          <a class="sociallink fa twi">
+                            <fa name="twitter" class="fa-twitter"></fa>
+                          </a>
+                          <a class="sociallink fa pin">
+                            <fa name="pinterest" class="fa-pinterest"></fa>
+                          </a>
+                          <a class="sociallink fa lin">
+                            <fa name="linkedin" class="fa-linkedin"></fa>
+                          </a>
+                          <a class="sociallink fa env">
+                            <fa name="envelope" class="fa-envelope"></fa>
+                          </a>
+                          <a class="sociallink fa share">
+                            <fa name="share" class="fa-share"></fa>
+                          </a>
+                        </span>
+                      </mat-card-content>
+                </mat-card-content>
+  
+                <mat-card-content class="item">
+                    <span class="item_images">
+                      <img src="https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/blogs/blogs-image_-dreamstime_l_22985800-1573536807867.jpg">
+                    </span>
+                    <mat-card-content class="contentsection">
+                      <mat-card-title class="inner_header">Popular Cute</mat-card-title>
+                      <span class="author">
+                        <span class="authornmimg">
+                          <span class="writer_image">
+                            <img src="../../../../assets/images/blog-icon.png">
+                          </span>
+                          <p class="authorName">Popular Cute author</p>
+                        </span>
+                        <p class="date">Date: 11-11-2019 </p>
+                      </span>
+                      <p class="description"><span>ACHIEVE YOUR HIGHEST SUCCESSAbout Jack Zufelt,Jack is a world renowned success expert. His book, The DNA of Success, catapulted him into the limelight as a celebrity keynote speaker, trainer and business consultant on the national and international </span></p>
+                      <a class="next_page">read more</a>
+      
+                      <span class="blogsociallists absolute">
+                        <a class="sociallink fa fb">
+                          <fa name="facebook" class="fa-facebook"></fa>
+                        </a>
+                        <a class="sociallink fa twi">
+                          <fa name="twitter" class="fa-twitter"></fa>
+                        </a>
+                        <a class="sociallink fa pin">
+                          <fa name="pinterest" class="fa-pinterest"></fa>
+                        </a>
+                        <a class="sociallink fa lin">
+                          <fa name="linkedin" class="fa-linkedin"></fa>
+                        </a>
+                        <a class="sociallink fa env">
+                          <fa name="envelope" class="fa-envelope"></fa>
+                        </a>
+                        <a class="sociallink fa share">
+                          <fa name="share" class="fa-share"></fa>
+                        </a>
+                      </span>
+                    </mat-card-content> 
+                </mat-card-content>-->
+  
+              </span>
+              <button mat-button class="btnblue sim-button">Load More</button>
+            </mat-card-content>
+  
+      </span>
+    </span>
+  </mat-card>
+
+<app-footer></app-footer>

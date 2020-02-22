@@ -1,0 +1,288 @@
+<!-- <ng-container
+  *ngIf="router.url =='/' || router.url =='/home' || router.url =='/forget-password' || router.url =='/reset-password' || router.url =='/sign-up' || router.url == '/contact' || router.url == '/blog' || router.url == '/bloglist' || router.url == '/blogdetail' || router.url == '/testimonial' || router.url == '/employee-training' || router.url == '/couples-counseling' || router.url == '/personal-development-coaching' || router.url == '/high-performance-coaching' || router.url == '/special-programs-for-young-men' || router.url == '/ourservices' || router.url == '/image-gallery' || router.url == '/video-gallery' || router.url == '/seminars'  || router.url == '/seminars-detail' || router.url == '/workshops'  || router.url == '/workshops-detail' || router.url == '/speaker-engagements'  || router.url == '/speaker-engagements-detail' || activeroute.snapshot.routeConfig.path == 'blogdetail/:_id' || activeroute.snapshot.routeConfig.path == 'seminars-detail/:_id' || activeroute.snapshot.routeConfig.path == 'workshops-detail/:_id' || activeroute.snapshot.routeConfig.path == 'speaker-engagements-detail/:_id' || router.url == '/bio'">
+  <mat-card class="rightsidelinks">
+    <mat-card-content>
+      <span class="bg1"><a [routerLink]="['/admin-dashboard']"><span class="iconimg"><img
+              src="../../../assets/images/admin_dashboard1.png"> </span></a><span class="content">Admin
+          dashboard</span></span>
+      <span class="bg2"><a [routerLink]="['/affiliate-dashboard']"><span class="iconimg"><img
+              src="../../../assets/images/admin_dashboard2.png"> </span></a><span class="content">affiliate
+          dashboard</span></span>
+      <span class="bg3"><a [routerLink]="['/customer-dashboard']"><span class="iconimg"><img
+              src="../../../assets/images/admin_dashboard3.png"> </span></a><span class="content">Customer
+          dashboard</span></span>
+    </mat-card-content>
+  </mat-card>
+</ng-container> -->
+
+<ng-container *ngIf="
+  router.url == '/home' ||
+  router.url == '/forget-password' ||
+  router.url == '/reset-password' ||
+  router.url == '/sign-up' ||
+  router.url == '/contact' ||
+  router.url == '/blog' ||
+  router.url == '/bloglist' ||
+  router.url == '/blogdetail' ||activeroute.snapshot.routeConfig.path == 'blogdetail/:blogtitle/:_id' ||
+  router.url == '/testimonial' ||
+  router.url == '/employee-training' ||
+  router.url == '/couples-counseling' ||
+  router.url == '/personal-development-coaching' ||
+  router.url == '/high-performance-coaching' ||
+  router.url == '/special-programs-for-young-men' ||
+  router.url == '/ourservices' ||
+  router.url == '/image-gallery' ||
+  router.url == '/video-gallery' ||
+  router.url == '/team' || 
+  router.url == '/seminars'  || 
+  router.url == '/seminars-detail' ||
+  activeroute.snapshot.routeConfig.path =='testimonial/:id'||
+
+  activeroute.snapshot.routeConfig.path == 'seminars-detail/:title/:_id' ||
+  router.url == '/workshops'  || 
+  router.url == '/workshops-detail' ||
+  activeroute.snapshot.routeConfig.path == 'workshop-detail/:title/:_id' ||
+  router.url == '/speaker-engagements'  || 
+  router.url == '/speaker-engagements-detail' ||
+  activeroute.snapshot.routeConfig.path == 'speaker-engagements-detail/:title/:_id' ||
+  activeroute.snapshot.routeConfig.path == 'blogdetail/:_id' ||
+  router.url ==='/add-edit-newsletter'|| 
+  router.url == '/bio' || 
+  router.url ==='/past-seminars'||
+  router.url ==='/past-speaker-engagements'||
+  router.url ==='/past-workshops'">
+  <mat-card class="rightsocialsidelinks">
+    <mat-card-content>
+      <span class="bg1"><a [routerLink]="['/']"><span class="iconimg"><img
+              src="../../../assets/images/icon-facebook.png"> </span></a></span>
+      <span class="bg2"><a [routerLink]="['/']"><span class="iconimg"><img
+              src="../../../assets/images/icon-twitter.png"> </span></a></span>
+      <span class="bg3"><a [routerLink]="['/']"><span class="iconimg"><img
+              src="../../../assets/images/icon-instagram.png"> </span></a></span>
+      <span class="bg4"><a [routerLink]="['/']"><span class="iconimg"><img
+              src="../../../assets/images/icon-linkedin.png"> </span></a></span>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-container *ngIf="router.url == '/' ||
+  router.url == '/home' ||
+  router.url == '/forget-password' ||
+  router.url == '/reset-password' ||
+  router.url == '/sign-up' ||
+  router.url == '/contact' ||
+  router.url == '/blog' ||
+  router.url == '/bloglist' ||
+  router.url == '/blogdetail' ||activeroute.snapshot.routeConfig.path == 'blogdetail/:blogtitle/:_id' ||
+  router.url == '/testimonial' ||
+  router.url == '/employee-training' ||
+  router.url == '/couples-counseling' ||
+  router.url == '/personal-development-coaching' ||
+  router.url == '/high-performance-coaching' ||
+  router.url == '/special-programs-for-young-men' ||
+  router.url == '/ourservices' ||
+  router.url == '/image-gallery' ||
+  router.url == '/video-gallery' ||
+  router.url == '/team' || 
+  router.url == '/seminars'  || 
+  router.url == '/seminars-detail' ||
+  activeroute.snapshot.routeConfig.path == 'seminars-detail/:title/:_id' ||
+  router.url == '/workshops'  || 
+  router.url == '/workshops-detail' ||
+  activeroute.snapshot.routeConfig.path == 'workshop-detail/:title/:_id' ||
+  router.url == '/speaker-engagements'  || 
+  router.url == '/speaker-engagements-detail' ||
+  activeroute.snapshot.routeConfig.path == 'speaker-engagements-detail/:title/:_id' ||
+  activeroute.snapshot.routeConfig.path == 'blogdetail/:_id' ||
+  activeroute.snapshot.routeConfig.path =='testimonial/:id'||
+  router.url ==='/add-edit-newsletter'|| 
+  router.url == '/bio' ||
+  router.url ==='/past-seminars'||
+  router.url ==='/past-speaker-engagements'||
+  router.url ==='/past-workshops'">
+  <mat-card class="headertop">
+    <span class="mainwrappercontent">
+      <mat-card-content class="headertopwrapper">
+        <span class="infoblock infoblockleft">
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <span class="txtcap"><a [routerLink]="['/']"> Have any questions? </a></span>
+              <span><a href="tel:000-000-0000"><img src="../../assets/images/phoneiconheader.png"> +00 000 000
+                  0000</a></span>
+            </mat-list-item>
+          </mat-list>
+        </span>
+        <span class="infoblock">
+          <mat-list role="list">
+            <mat-list-item role="listitem" class="activedropmenu">
+              <span><a target="_blank" href="https://arniefonseca-backend.influxiq.com"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a></span>
+              <!-- <span><a  (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></span> -->
+              
+              <!-- <span><a *ngIf="cookieService.get('jwtToken')==''" [routerLink]="['/login']"><img
+                    src="../../assets/images/loginicon.png"> login</a></span>
+              <span><a *ngIf="cookieService.get('jwtToken')!=''" (click)="logOut()">logout</a></span> -->
+            </mat-list-item>
+            <!-- <mat-list-item role="listitem" class="activedropmenu">
+              <span><a *ngIf="cookieService.get('jwtToken')==''" [routerLink]="['/sign-up']">Register</a></span>
+            </mat-list-item> -->
+          </mat-list>
+        </span>
+      </mat-card-content>
+    </span>
+  </mat-card>
+
+  <mat-card class="headerbottom vpheaderwrapper">
+    <span class="mainwrappercontent">
+      <span class="homemain">
+        <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <span class="topmenuiconlogo">
+              <span class="logowrappersml" fxFlex><a [routerLink]="['/']"><img src="../../assets/images/logomain.png"
+                    class="landinglogoblock1"></a></span>
+              <button mat-icon-button (click)="toggleNavbar()" fxShow="true" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+              </button>
+              <span class="menu-spacer"></span>
+            </span>
+
+            <span fxShow="true" class="smlmenudiv" [ngClass]="{ 'show': navbarOpen }">
+              <mat-nav-list fxLayout>
+                <span class="pagelogowrapper" fxFlex><a [routerLink]="['/']"><img src="../../assets/images/logo.png"
+                      class="landinglogoblock1"></a></span>
+                <span class="menuwrapper">
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/home']">Home</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/blog']">Blog</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu1">Service</a>
+                    <mat-menu #menu1="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/ourservices']">our services</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/employee-training']">Employee
+                        Training</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/couples-counseling']">Couples
+                        Counseling</a>
+                      <a mat-menu-item routerLinkActive="activemenu"
+                        [routerLink]="['/personal-development-coaching']">Personal Development Coaching</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/high-performance-coaching']">High
+                        Performance Coaching</a>
+                      <a mat-menu-item routerLinkActive="activemenu"
+                        [routerLink]="['/special-programs-for-young-men']">Special Programs For Young Men</a>
+                    </mat-menu>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu2">Gallery</a>
+                    <mat-menu #menu2="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/image-gallery']">Image gallery</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/video-gallery']">Video gallery</a>
+                    </mat-menu>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu3">Events</a>
+
+                    <!-- <a [matMenuTriggerFor]="menu3">Events</a> -->
+                    <mat-menu #menu3="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/seminars']">Seminars</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/workshops']">Workshops</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/speaker-engagements']">Speaker
+                        Engagements</a>
+                    </mat-menu>
+                  </mat-list-item>
+                  <!-- <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/team']">Team</a>
+                  </mat-list-item> -->
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/bio']">Bio</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/testimonial']">Testimonial</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/contact']">Contact</a>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="userCookies != null && userCookies.type == 'admin'" fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/admin-dashboard']">Dashboard</a>
+                  </mat-list-item>
+                  <!-- <mat-list-item *ngIf="userCookies != null && userCookies.type == 'affiliate'" fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/affiliate-dashboard']">Dashboard</a>
+                  </mat-list-item> -->
+                </span>
+              </mat-nav-list>
+            </span>
+
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </span>
+    </span>
+  </mat-card>
+
+</ng-container>
+
+
+<ng-container class="adminheaderleftdiv" *ngIf="
+  router.url === '/admin-dashboard' || 
+  router.url === '/customer-dashboard' ||
+  router.url === '/affiliate-dashboard' ||
+  router.url === '/commission-report' ||
+  router.url === '/customer-list-admin' ||
+  router.url === '/manage-availability' ||
+  router.url === '/my-appointment-admin' ||
+    router.url === '/affiliate-admin' ||
+    router.url === '/blog-management' ||
+    router.url === '/add-edit-blogs' ||
+    router.url === '/add-edit-blogcat' ||
+    router.url === '/blogs/add' ||
+    router.url === '/blog-category/add' ||
+    router.url === '/manage-commission' ||
+    router.url === '/testimonial/add' ||
+    router.url === '/testimonial/list' ||
+    router.url === '/social-advo-admin' ||
+    router.url ==='/newsletter-list' || 
+    router.url ==='/newsletter/add' || 
+    router.url ==='/subscriber/add' || 
+    router.url ==='/subscriber-group/add' || 
+    router.url ==='/sender/add' || 
+    router.url ==='/test/add' ||
+    router.url === '/manage-commission-affiliate' ||
+    router.url === '/social-advo-affiliate' ||
+    router.url === '/book-an-appointment-user' ||
+    router.url === '/my-appointment-user' ||
+    router.url === '/booking-report' || 
+    router.url ==='/manage-event-listing' || 
+    router.url ==='/manage-event/add' || 
+    router.url === '/my-customers' ||
+    router.url === '/booked-events' ||
+    router.url === '/past-event-user' ||
+    router.url === '/upcoming-event-user' ||
+    router.url === '/events' || 
+    router.url === '/image-gallery/category-management/add' || 
+    router.url === '/image-gallery/category-management/list' || 
+    router.url ==='/service/add' || 
+    router.url ==='/service/list' ||
+    router.url ==='/image-gallery/add' ||
+    router.url ==='/image-gallery/list' ||
+    router.url ==='/video-category/add' ||
+    router.url ==='/video-category/list' ||
+    router.url ==='/video-library-management/add' ||
+    router.url ==='/video-library-management/list' ||
+    activeroute.snapshot.routeConfig.path == 'test/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == 'sender/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == 'subscriber-group/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == 'subscriber/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == 'newsletter/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == 'blogs/edit/:_id' ||    
+    activeroute.snapshot.routeConfig.path == 'manage-event/edit/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'testimonial/edit/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'service/edit/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'image-gallery/category-management/edit/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'image-gallery/edit/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'video-category/edit/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'video-library-management/edit/:_id'
+    ">
+  <div class="admcls">
+    <app-bk-header></app-bk-header>
+    <app-bk-leftdiv></app-bk-leftdiv>
+  </div>
+</ng-container>

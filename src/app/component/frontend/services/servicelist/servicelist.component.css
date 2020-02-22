@@ -1,0 +1,10 @@
+.servicebg.mat-card{background:url(../../../../../assets/images/servicelistbg.jpg) no-repeat right top;background-size: cover;}
+
+.homeblock2servimg {position:relative;}
+.sharelinkswrapper{position: absolute;right: 1px;bottom: -60px; background: white; margin: 0; padding: 2px; display: block; transition: all 0.3s;}  
+.sociallink fa{display: block;}
+.blogsociallists {margin-top: 0;}
+.blogsociallists a{padding: 0 1px;}
+.homeblock2servimg:hover .sharelinkswrapper{bottom: 1px;}
+
+

@@ -1,0 +1,254 @@
+<mat-card style="padding: 0" class="footerwrapper" *ngIf="
+    router.url == '/' ||
+    router.url == '/home' ||
+    router.url == '/forget-password' ||
+    router.url == '/reset-password' ||
+    router.url == '/sign-up' ||
+    router.url == '/contact' ||
+    router.url == '/blog' ||
+    router.url == '/bloglist' ||
+    router.url == '/blogdetail' ||
+    router.url == '/testimonial' ||
+    router.url == '/employee-training' ||
+    router.url == '/couples-counseling' ||
+    router.url == '/personal-development-coaching' ||
+    router.url == '/high-performance-coaching' ||
+    router.url == '/special-programs-for-young-men' ||
+    router.url == '/ourservices' ||
+    router.url == '/image-gallery' ||
+    router.url == '/video-gallery' ||
+    router.url == '/team' || 
+    router.url == '/seminars'  || 
+    router.url == '/seminars-detail' ||
+    activeroute.snapshot.routeConfig.path == 'seminars-detail/:_id' ||
+    router.url == '/workshops'  || 
+    router.url == '/workshops-detail' ||
+    activeroute.snapshot.routeConfig.path == 'workshops-detail/:_id' ||
+    router.url == '/speaker-engagements'  || 
+    router.url == '/speaker-engagements-detail' ||
+    activeroute.snapshot.routeConfig.path == 'speaker-engagements-detail/:_id' ||
+    activeroute.snapshot.routeConfig.path == 'blogdetail/:_id' ||
+    router.url ==='/add-edit-newsletter'|| 
+    router.url == '/bio' ||
+    router.url ==='/past-seminars'||
+    router.url ==='/past-speaker-engagements'||
+    router.url ==='/past-workshops'
+  ">
+  <span class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+    <a (click)="scrollToTop()">
+      <mat-icon aria-hidden="false">keyboard_arrow_up</mat-icon>
+    </a>
+  </span>
+  <span class="footerwrappercontent">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <span class="newsletterwrapper">
+          <h3>Newsletter</h3>
+          <span class="newslettermain">
+            <h4>Subscribe to our newsletter</h4>
+            <div class="example-container">
+
+              <form [formGroup]="myform" name="myform" (ngSubmit)="doSubmit()">
+                <span>
+                  <mat-form-field>
+                    <input matInput placeholder="Email Address" id="newsEmail" [formControl]="myform.controls['email']" (blur)="inputUntouch(myform,'email')" >
+                  </mat-form-field>
+                  <button mat-raised-button ><img src="../../assets/images/newlettericon.png"></button>
+
+                </span>
+                <mat-error *ngIf="myform.controls['email'].touched && !myform.controls['email'].valid
+           && myform.controls['email'].errors.required">
+                  Email field can not be blank</mat-error>
+                <mat-error *ngIf="myform.controls['email'].touched && !myform.controls['email'].valid
+                && myform.controls['email'].errors.pattern">
+
+                  Email is not Valid</mat-error>
+
+
+
+              </form>
+            </div>
+            <h5>We’ll never share your email address</h5>
+          </span>
+
+        </span>
+        <span class="footertopwrapper footernavlist footerborder">
+          <h3>Navigation</h3>
+          <mat-nav-list fxLayout>
+            <span class="menuwrapper">
+              <span class="bdr">
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/home']">Home</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/blog']">Blog</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [matMenuTriggerFor]="menu1">Service</a>
+                  <mat-menu #menu1="matMenu" class="activedropmenu">
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/ourservices']">our services</a>
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/employee-training']">Employee
+                      Training</a>
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/couples-counseling']">Couples
+                      Counseling</a>
+                    <a mat-menu-item routerLinkActive="activemenu"
+                      [routerLink]="['/personal-development-coaching']">Personal Development Coaching</a>
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/high-performance-coaching']">High
+                      Performance Coaching</a>
+                    <a mat-menu-item routerLinkActive="activemenu"
+                      [routerLink]="['/special-programs-for-young-men']">Special Programs For Young Men</a>
+                  </mat-menu>
+                </mat-list-item>
+              </span>
+              <span class="bdr">
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [matMenuTriggerFor]="menu2">Gallery</a>
+                  <mat-menu #menu2="matMenu" class="activedropmenu">
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/image-gallery']">Image gallery</a>
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/video-gallery']">Video gallery</a>
+                  </mat-menu>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a (click)="openDialogfooter()">Events</a>
+
+                  <!-- <a [matMenuTriggerFor]="menu3">Events</a> -->
+                  <mat-menu #menu3="matMenu" class="activedropmenu">
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/seminars']">Seminars</a>
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/workshops']">Workshops</a>
+                    <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/speaker-engagements']">Speaker
+                      Engagements</a>
+                  </mat-menu>
+                </mat-list-item>
+                <!-- <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/team']">Team</a>
+                </mat-list-item> -->
+              </span>
+              <span class="bdr">
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/testimonial']">Testimonial</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/contact']">Contact</a>
+                </mat-list-item>
+              </span>
+            </span>
+          </mat-nav-list>
+        </span>
+        <span class="footerddress">
+          <span class="footerddressinner">
+            <span class="logowrapper" fxFlex>
+              <a [routerLink]="['/home']"><img src="../../assets/images/logomain.png" class="landinglogoblock1" /></a>
+            </span>
+            <p>© 2019 Arnie Fonseca. All rights reserved.</p>
+          </span>
+        </span>
+      </mat-card-content>
+    </span>
+  </span>
+
+  <!-- <img src="../../../assets/images/pro-home-block8-ft.jpg" style="padding: 0; margin: 0; display: block; width: 100%;"> -->
+  <span class="footerbottom">
+    <h3>
+      <a mat-raised-button (click)="termscondition()">terms of service</a> |
+      <a mat-raised-button (click)="privacypolicy()">privacy policy</a>
+    </h3>
+  </span>
+
+  <!-- <span class="mainwrappercontent">
+     <mat-card-content>
+       <span class="footertopwrapper footernavlist">
+            <mat-nav-list>
+              <span class="menuwrapper">
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/home']">Home</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/pre-owned']">Pre-Owned</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu1">Inventory Search</a>
+                    <mat-menu #menu1="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory-search']">Basic Inventory Search</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory-search']">Advance Inventory Search</a>
+                    </mat-menu>
+                  </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [matMenuTriggerFor]="menu">Join Probid</a>
+                  <mat-menu #menu="matMenu" class="activedropmenu">
+                    <a mat-menu-item routerLinkActive="activemenu" href="https://www.probidautomotive.com/" target="_blank">Sign up as Sales Rep</a>
+                    <a mat-menu-item routerLinkActive="activemenu" href="https://www.probidautomotive.com/salesrepsignup/" target="_blank">Sign up as Customer</a>
+                  </mat-menu>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/aboutus']">About Us</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/service']">Service</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/testimonial']">Testimonials</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/blog']">Blog</a>
+                </mat-list-item>
+                <mat-list-item fxFlex routerLinkActive="activemenu">
+                  <a [routerLink]="['/contactus']">Contact Us</a>
+                </mat-list-item>
+              </span>
+          </mat-nav-list>
+          <p>© 2019 ProBidAuto. All Rights Reserved</p>
+        </span>
+        <span class="footerddress">
+          <span class="logowrapper" fxFlex><a [routerLink]="['/home']"><img src="../../assets/images/logomain.png" class="landinglogoblock1"></a></span>
+        </span>
+     </mat-card-content>
+  </span> -->
+</mat-card>
+
+<mat-card class="adminheaderleftdiv footerbg" *ngIf="
+    router.url === '/admin-dashboard' ||
+    router.url === '/customer-dashboard' ||
+    router.url === '/affiliate-dashboard' ||
+    router.url === '/commission-report' ||
+    router.url === '/customer-list-admin' ||
+    router.url === '/manage-availability' ||
+    router.url === '/my-appointment-admin' ||
+    router.url === '/affiliate-admin' ||
+    router.url === '/blog-management' ||
+    router.url === '/add-edit-blogs' ||
+    router.url === '/add-edit-blogcat' ||
+    router.url === '/blogs/add' ||
+    router.url === '/blog-category/add' ||
+    router.url === '/manage-commission' ||
+    router.url === '/testimonial/list' ||
+    router.url === '/social-advo-admin' ||
+    router.url ==='/newsletter-list' || 
+    router.url ==='/newsletter/add' || 
+    router.url ==='/subscriber/add' || 
+    router.url ==='/subscriber-group/add' || 
+    router.url ==='/sender/add' || 
+    router.url ==='/test/add' ||
+    router.url === '/manage-commission-affiliate' ||
+    router.url === '/social-advo-affiliate' ||
+    router.url === '/book-an-appointment-user' ||
+    router.url === '/my-appointment-user' ||
+    router.url === '/booking-report' || 
+    router.url ==='/manage-event-listing' || 
+    router.url ==='/manage-event/add' || 
+    router.url === '/my-customers' ||
+    router.url === '/booked-events' ||
+    router.url === '/past-event-user' ||
+    router.url === '/upcoming-event-user' ||
+    router.url === '/events' || 
+    activeroute.snapshot.routeConfig.path == '/test/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == '/sender/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == '/subscriber-group/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == '/subscriber/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == '/newsletter/edit/:_id' || 
+    activeroute.snapshot.routeConfig.path == '/blogs/edit/:_id' ||    
+    activeroute.snapshot.routeConfig.path == '/manage-event/edit/:_id' ||
+    router.url == '/bio' || router.url ==='/service/add' || router.url ==='/service/list' || activeroute.snapshot.routeConfig.path == '/service/edit/:_id'">
+  <mat-card-content>
+    <app-bk-footer></app-bk-footer>
+  </mat-card-content>
+</mat-card>

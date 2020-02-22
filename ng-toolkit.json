@@ -1,0 +1,31 @@
+{
+  "universal": {
+    "clientProject": "arni-ssr",
+    "directory": ".",
+    "skipInstall": false,
+    "http": true,
+    "appId": "serverApp",
+    "main": "main.server.ts",
+    "serverFileName": "server.ts",
+    "serverPort": 4000,
+    "tsconfigFileName": "tsconfig.server",
+    "testTsconfigFileName": "tsconfig.spec",
+    "appDir": "app",
+    "rootModuleFileName": "app.server.module.ts",
+    "rootModuleClassName": "AppServerModule",
+    "skipServer": false,
+    "skipUniversal": false,
+    "webpack": true
+  },
+  "serverless": {
+    "provider": "aws",
+    "project": "arni-ssr",
+    "skipInstall": false,
+    "directory": ".",
+    "clientProject": "arni-ssr",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

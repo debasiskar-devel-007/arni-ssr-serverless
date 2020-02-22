@@ -1,0 +1,40 @@
+
+
+    <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <!----START SINGLE TESTIMONIAL-->
+
+        <div *ngFor="let image of TestimonialListArray;let i= index">
+          <span class="slide-image-wrapper">
+            <span class="slide-image-wrapper-main"> 
+                <img class="slide-image" src="{{image.testimonial_img}}" >
+            </span>            
+          </span>
+          <span class="slide-text" (click)="showBut()">
+              <p class="quatation demo cursor">
+                <!-- <span [innerHtml]="image.testimonial"></span> -->
+                <img class="quotestarticon" src="../../../../assets/images/quotestart-icon-yellow.png"><span [innerHtml]="image.description"></span>
+              </p>    
+          </span>
+          <h3 class="title1"> -- {{image.name}}</h3>
+          <span class="homeblogsociallistswrapper">
+            <span class="blogsociallists">
+              <a class="sociallink fa fb" (click)="fbTestimonialShare(image)"><fa name="facebook" class="fa-facebook"></fa></a>
+              <a class="sociallink fa twi" (click)="twitterTestimonialShare(image)"><fa name="twitter" class="fa-twitter"></fa></a>
+              <a class="sociallink fa lin" (click)="linkedinTestimonialShare(image)"><fa name="linkedin" class="fa-linkedin"></fa></a>
+              <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(image)"><fa name="tumblr" class="fa-tumblr"></fa></a>
+
+              <!-- <a class="sociallink fa fb" (click)="comingSoonDialogTestimonhome()"><fa name="facebook" class="fa-facebook"></fa></a>
+              <a class="sociallink fa twi" (click)="comingSoonDialogTestimonhome()"><fa name="twitter" class="fa-twitter"></fa></a>
+              <a class="sociallink fa lin" (click)="comingSoonDialogTestimonhome()"><fa name="linkedin" class="fa-linkedin"></fa></a>
+              <a class="sociallink fa tumblr" (click)="comingSoonDialogTestimonhome()"><fa name="tumblr" class="fa-tumblr"></fa></a> -->
+              <!-- <fa class="sociallink fa share" (click)="comingSoonDialogTestimonhome()"><fa name="share" class="fa-share"></fa></a> -->
+            </span>
+          </span>
+        </div>  
+        <!----END SINGLE TESTIMONIAL-->
+
+
+        
+        
+      </owl-carousel>
+

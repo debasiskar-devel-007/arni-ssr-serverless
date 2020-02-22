@@ -1,0 +1,85 @@
+<!-- 
+<mat-card class="ptb-35 generalcls servicewrapper" style="padding: 0 !important;">     
+    <img src="../../../../assets/images/service_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+     <span class="mainwrappercontent">
+      <mat-card-title>Look Our Best Services</mat-card-title>
+      <mat-card-content class="titlesmldesc">Here you can learn more about each service we provide, and select which one fits you. After you selected the service, feel free to contact us for further details.</mat-card-content>
+    </span>
+    <span class="servicewrappertransparentbg"></span>
+</mat-card>
+
+<mat-card class="ptb-35 generalcls servicewrappercontent">
+    <span class="mainwrappercontent">
+      <mat-list role="list">          
+                <mat-list-item role="listitem" class="singleservice" *ngFor="let srv of ServiceListArray | slice:0:6; let i=index">
+                    <mat-card>
+                      <img src="{{srv.image}}" class="iconcls">
+                      <mat-card-title>{{srv.name}}</mat-card-title>
+                      <mat-card-content>{{srv.description}}</mat-card-content>
+                    </mat-card>
+                </mat-list-item>
+          
+      </mat-list>
+      <button mat-stroked-button class="btngeneral btngray" (click)="btnClick();">View More</button>
+    </span>
+  </mat-card>  -->
+
+
+  <mat-list>
+    <mat-list-item class="homeblock2listssingleitem" *ngFor="let item of serviceListConfig">
+      <span class="homeblock2servimg">
+        <img src="{{item.service_img}}">
+
+        <span class="sharelinkswrapper">
+            <span class="blogsociallists">
+              <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
+              <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
+              <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
+              <a class="sociallink fa tumblr"><fa name="tumblr" class="fa-tumblr"></fa></a>
+            </span>
+         </span>
+
+      </span>
+      <span class="homeblock2servcontent">
+        <h2><span class="homeblock2icon">
+          <!-- <img src="{{additional_img}}"> -->
+        </span>
+           <span class="homeblock2iconcontent">{{item.service_title}} <span class="small">(Revenue through Attitude)</span></span></h2>
+        <p> <span [innerHtml]="item.description"></span></p>
+          <button mat-button class="btntransparent sim-button">view more</button>
+      </span>
+    </mat-list-item>
+    <!-- <mat-list-item class="homeblock2listssingleitem">
+      <span class="homeblock2servimg">
+        <img src="../../../../assets/images/homeblock2itemimg2.jpg">
+      </span>
+      <span class="homeblock2servcontent">
+        <h2><span class="homeblock2icon"><img src="../../../../assets/images/homeblock2icon2.png"></span> <span class="homeblock2iconcontent">Couples Counseling</span></h2>
+        <p>Iron out the disturbances and troubles in your relationship with your partner, with expert counselling and guidance, and enjoy the benefits and happiness of a fruitful Couples Counselling. An improved relationship with your partner will help you focus better on other areas of your life with a peaceful mind.</p>
+        <button mat-button class="btntransparent sim-button">view more</button>
+      </span>
+    </mat-list-item>
+    <mat-list-item class="homeblock2listssingleitem">
+      <span class="homeblock2servimg">
+        <img src="../../../../assets/images/homeblock2itemimg3.jpg">
+      </span>
+      <span class="homeblock2servcontent">
+        <h2><span class="homeblock2icon"><img src="../../../../assets/images/homeblock2icon3.png"></span> <span class="homeblock2iconcontent">Personal Development Coaching<span class="small">(one on one)</span></span></h2>
+        <p>Discuss the challenges faced in all areas of your life, and seek expert advice on how to overcome them. Enjoy personal and professional growth and evolution through One-on-One sessions, and maintain utmost privacy of all things discussed. You will be able to achieve anything you desire with incredible success.</p>
+        <button mat-button class="btntransparent sim-button">view more</button>
+      </span>
+    </mat-list-item>
+    <mat-list-item class="homeblock2listssingleitem">
+      <span class="homeblock2servimg">
+        <img src="../../../../assets/images/homeblock2itemimg4.jpg">
+      </span>
+      <span class="homeblock2servcontent">
+        <h2><span class="homeblock2icon"><img src="../../../../assets/images/homeblock2icon4.png"></span> <span class="homeblock2iconcontent">High Performance Coaching<span class="small"> (business professionals)</span></span></h2>
+        <p>Get rid of all the inadequacies and limitations that stop you from performing at the top level, and take your business to unprecedented heights. Learn new and innovative ways to deal with challenges and come up with creative ideas to take your business forward. Realize your business goals with expert coaching.</p>
+        <button mat-button class="btntransparent sim-button">view more</button>
+      </span>
+    </mat-list-item> -->
+  </mat-list>
+
+
+

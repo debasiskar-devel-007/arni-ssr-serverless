@@ -1,0 +1,123 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner testimonialbg innercommonbannercls">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>testimonial</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="ptb-40 generalcls testimonialwrapper" style="text-align: center;">
+  <span class="mainwrappercontent bloghead">
+    <mat-card-content>
+      <h2>testimonial</h2>
+      <p>
+        I have been a part of the Personal Coaching Industry for close to forty years now, and I have been very
+        fortunate to make numerous friends and lifelong relationships along the way, not to mention the countless number
+        of students, clients, and other people whose lives I have been able to help improve. Find out what they have to
+        say about me and my programs, and you will see that I always deliver results!
+      </p>
+    </mat-card-content>
+  </span>
+  <span class="mainwrappercontent pt-30">
+
+    <mat-list role="list">
+      <!----START SINGLE TESTIMONIAL-->
+
+      <mat-list-item role="listitem" class="testimonialserv"
+        *ngFor="let testmon of TestimonialListArray | slice:0:indexval; let i=index">
+        <mat-card>
+          <span class="testiimgwarpper">
+            <span class="testiimgwarpper-main">
+              <img [src]="testmon.testimonial_img" class="iconcls" (click)="detailsView(testmon)">
+            </span>
+            <span class="bnticons">
+              <button *ngIf="testmon.video_url !='' && testmon.video_url !=null "
+                (click)="openvideourl(testmon.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
+              <!-- <button *ngIf="testmon.audio_url !='' && testmon.audio_url !=null " (click)="openaudiourl(testmon.audio_url)"><img src="../../../../assets/images/audioicon.png"></button> -->
+            </span>
+          </span>
+          <mat-card-content class="testicontent">
+
+
+            <!-- <span class="bnticons" *ngFor="let vurl of item.credentials">
+                                <button *ngIf="vurl.video_url !='' && vurl.video_url !=null " (click)="openvideourl(vurl.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
+                                <button *ngIf="vurl.audio_url !='' && vurl.audio_url !=null " (click)="openaudiourl(vurl.audio_url)"><img src="../../../../assets/images/audioicon.png"></button>
+                            </span>                             -->
+            <span class="testibottomcontent">
+              <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
+            </span>
+
+            <span class="quatation">
+              <img class="quotestarticon" src="../../../../assets/images/quotestart-icon.png">
+              <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">
+
+                <span [innerHtml]="testmon.description"></span>
+
+              </p>
+              <img class="quoteendicon" src="../../../../assets/images/quoteend-icon.png">
+
+              <a *ngIf="testmon.description != '' && testmon != '' && testmon.description.length >= 254 "
+                [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
+            </span>
+  
+          </mat-card-content>
+
+        </mat-card>
+        <span class="contentsection absolute">
+          <span class="blogsociallists">
+            <a class="sociallink fa fb" (click)="fbTestimonialShare(testmon)">
+              <fa name="facebook" class="fa-facebook"></fa>
+            </a>
+            <a class="sociallink fa twi" (click)="twitterTestimonialShare(testmon)">
+              <fa name="twitter" class="fa-twitter"></fa>
+            </a>
+            <a class="sociallink fa lin" (click)="linkedinTestimonialShare(testmon)">
+              <fa name="linkedin" class="fa-linkedin"></fa>
+            </a>
+            <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(testmon)">
+              <fa name="tumblr" class="fa-tumblr"></fa>
+            </a>
+
+            <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
+                                    <fa name="facebook" class="fa-facebook"></fa>
+                                  </a>
+                                  <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
+                                    <fa name="twitter" class="fa-twitter"></fa>
+                                  </a>
+                                  <a class="sociallink fa tbl" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
+                                    <fa name="tumblr" class="fa-tumblr"></fa>
+                                  </a>
+                                  <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
+                                    <fa name="linkedin" class="fa-linkedin"></fa>
+            </a>
+           <a class="sociallink fa env">
+                                    <fa name="envelope" class="fa-envelope"></fa>
+                                  </a>
+           <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)">
+                                    <fa name="share" class="fa-share"></fa>
+                                  </a>
+           <a class="sociallink fa link" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)"><fa name="link" class="fa-link"></fa></a> -->
+          </span>
+          <span class="author">
+            <p class="date">Date: {{testmon.date_added}}</p>
+          </span>
+        </span>
+      </mat-list-item>
+      <!----END SINGLE TESTIMONIAL-->
+
+      <!--<button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button class="btngeneral btngray">Load more</button> -->
+
+    </mat-list>
+
+    <button mat-button class="btnblue sim-button"
+      *ngIf="TestimonialListArray !=null && indexval < TestimonialListArray.length" (click)="testimonialloadmore()">Load
+      More</button>
+
+  </span>
+</mat-card>
+
+<app-footer></app-footer>

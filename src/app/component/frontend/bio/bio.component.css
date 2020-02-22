@@ -1,0 +1,30 @@
+.biobg{background:url(../../../../assets/images/biobanner1.png) no-repeat top right;background-size:cover}
+.innerpagebanner.mat-card .mat-card-content span{padding-left:0}
+.imgwrapper{background:#fff;width:208px;height:auto;float:left;padding:6px;box-shadow:0 2px 5px #ddd;margin-right:25px;margin-bottom:9px}
+.imgwrapper img{max-width:100%}
+.textwrapper h2{font-family:'HelveticaBold';font-size:36px;color:#24252c;padding-bottom:10px}
+.textwrapper h3{font-family:'HelveticaBold';font-size:20px;color:#24252c;text-transform:uppercase;padding:10px 0;text-align:left;padding-right:30%;line-height:31px}
+.textwrapper p{font-family:'Helvetica';font-size:20px;color:#24252c;padding:10px 0;text-align:left;padding-right:34%}
+.textwrapper p span{color:#14bfcf}
+.textwrapper p strong{font-family:'HelveticaBold'}
+.mainwrappercontent{width:1671px}
+.textwrapper{padding:35px;background-color:#f2f4f4;box-shadow:0 2px 10px #b6b6b6;background-image:url(../../../../assets/images/biobanner2.png)!important;background-position:right bottom;background-repeat:no-repeat;margin:0}
+.textwrapper .subtitle{padding-right:0}
+.bioblock2{background-image:url(../../../../assets/images/biobanner3.png)!important;background-repeat:no-repeat!important;background-position:center top!important;padding:65px 0}
+@media only screen and (max-width: 1700px) {
+.mainwrappercontent{width:96%}
+}
+@media only screen and (max-width: 1560px) {
+.textwrapper p{padding-right:44%}
+}
+@media only screen and (max-width: 1400px) {
+.textwrapper h3{padding-right:8%}
+}
+@media only screen and (max-width: 1199px) {
+.imgwrapper{float:none;display:block;margin:0 auto;margin-bottom:30px}
+.imgwrapper img{display:block}
+.textwrapper h2{text-align:center}
+.textwrapper h3{text-align:center;padding-right:0}
+.textwrapper p{text-align:center;padding-right:0}
+.textwrapper{background:#f2f4f4;background-image:inherit!important}
+}
