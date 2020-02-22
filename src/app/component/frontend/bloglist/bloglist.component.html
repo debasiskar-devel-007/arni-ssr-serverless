@@ -69,9 +69,9 @@
                         <button *ngIf="item.video_url !='' && item.video_url !=null "
                           (click)="openvideourl(item.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
                       </span>
-                      <h2 (click)="blogdetail(item._id)">{{item.blogtitle}}</h2>
+                      <h2 (click)="blogdetail(item)">{{item.blogtitle}}</h2>
                       <p class="description"><span [innerHtml]="item.description"></span></p>
-                      <a class="next_page" (click)="blogdetail(item._id)">read more</a>
+                      <a class="next_page" (click)="blogdetail(item)">read more</a>
                 </mat-card-content>
                 
               </mat-card>

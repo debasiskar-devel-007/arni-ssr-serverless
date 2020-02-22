@@ -309,19 +309,19 @@ export class BlogdetailComponent implements OnInit {
   
   twitterTestimonialShare(val:any){
     window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
-    console.log('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    //console.log('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   
   
   linkedinTestimonialShare(val:any){
   
     window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
-    console.log('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    //console.log('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   
   tumblrTestimonialShare(val:any){
     window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
-  console.log('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+  //console.log('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   openvideourl(val: any){
     //console.log('openvideourl',val)

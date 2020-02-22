@@ -147,7 +147,7 @@ panelOpenState = false;
     
    //****total blog list****//
           this.bloglisting = this.blogList.blogCatList.blogs
-         // console.log('---------------',this.bloglisting)
+         console.log('---------------',this.bloglisting)
         
           // console.log('++++++++++++++++++',this.blogcategory)
 
