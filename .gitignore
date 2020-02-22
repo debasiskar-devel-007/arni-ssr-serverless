@@ -9,6 +9,11 @@
 
 # dependencies
 /node_modules
+/.serverless
+/serverless
+.serverless
+./serverless
+./.serverless
 
 # profiling files
 chrome-profiler-events*.json
@@ -44,3 +49,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+

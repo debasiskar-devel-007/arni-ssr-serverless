@@ -90,17 +90,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'blogdetail/:_id', component: BlogdetailComponent,
+    path: 'blogdetail/:blogtitle/:_id', component: BlogdetailComponent,
     resolve: {
       blogCatList: ResolveService
     },
-    data:
-    {
-      requestcondition:
-      {
-        source: 'blogs_view', condition: {}
-      }, endpoint: 'datalistwithouttoken'
-    }
+    data:{requestcondition:{condition: {_id:"_id"} },endpoint: 'blogdetailsdatabyid'}
   },
 
   //  static path

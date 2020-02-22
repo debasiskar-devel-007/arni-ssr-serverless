@@ -45,7 +45,7 @@ export class BlogdetailComponent implements OnInit {
   public blog_img:any;
   public blog_image:any;
   public image:any;
-
+  public blogtitle:any;
   public blogcategorysearch:any;
   public blogcategory:any;
   public blogcategorycount:any;
@@ -76,21 +76,10 @@ export class BlogdetailComponent implements OnInit {
   }
 
   constructor(private readonly meta: MetaService, private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,private sanitizer: DomSanitizer,public dialog:MatDialog, private facebook:FacebookService) { 
-    
-    this.meta.setTitle('Arnie Fonseca - Blogs');
-    this.meta.setTag('og:description', 'Check out the latest blogs by “Coach Arnie” about everything that is happening in the Personal Development industry and learn of the best ways to improve your lives and achieve success.');
-    this.meta.setTag('twitter:description', 'Check out the latest blogs by “Coach Arnie” about everything that is happening in the Personal Development industry and learn of the best ways to improve your lives and achieve success.');
-
-    this.meta.setTag('og:keyword', 'Arnie Fonseca Blogs, Personal Development Blogs, Blogs on Personal Development');
-    this.meta.setTag('twitter:keyword', 'Arnie Fonseca Blogs, Personal Development Blogs, Blogs on Personal Development');
-
-    this.meta.setTag('og:title', 'Arnie Fonseca - Blogs');
-    this.meta.setTag('twitter:title', 'Arnie Fonseca - Blogs');
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-    this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-
-
+    facebook.init({
+      appId: '2912281308815518',
+      version: 'v2.9'
+    });
 
     this.nestedTreeControl = new NestedTreeControl<FileNode> (this._getChildren);
     this.blogCategoryDataSource = new MatTreeNestedDataSource();
@@ -99,16 +88,28 @@ export class BlogdetailComponent implements OnInit {
 
   
     this.activatedRoute.data.forEach((data: any) => {
-      this.blog = data.blogCatList.res;
-      //console.warn('>>>>>>>kb>>>>>>>',this.blog[0])  
-      this.blog_img=this.blog[0].blogs_image[0];
-      
+
+      this.blog = data.blogCatList.blogs[0];
+      this.blogtitle=this.blog.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+      this.meta.setTitle(this.blog.blogtitle);
+      this.meta.setTag('og:description', this.blog.description_html);
+      this.meta.setTag('twitter:description', this.blog.description_html);
+      this.meta.setTag('og:url', 'http://arniefonseca.influxiq.com/blogdetail/'+this.activatedRoute.snapshot.params.blogtitle+'/'+this.blog._id);
+      this.meta.setTag('og:keyword', this.blog.author);
+      this.meta.setTag('twitter:keyword', this.blog.author);
+
+      this.meta.setTag('og:title', this.blog.blogtitle);
+      this.meta.setTag('twitter:title', this.blog.blogtitle);
+      this.meta.setTag('og:type', 'website');
+      this.meta.setTag('og:image', this.blog.blogs_image[0].basepath + this.blog.blogs_image.image);
+      this.meta.setTag('twitter:image', this.blog.blogs_image[0].basepath + this.blog.blogs_image.image);
+      //console.warn('>>>>>>>kb>>>>>>>',this.blog,this.blogtitle)  
     })
      /**fetch user api and store by sourav*/
     let dat:any;
     dat={
     
-      "blogid":this.blog[0]._id
+      "blogid":this.blog._id
     }
     this.apiService.CustomRequest(dat,'apiforip').subscribe(resc=>{
     //console.log(resc)
@@ -116,7 +117,7 @@ export class BlogdetailComponent implements OnInit {
  
      /*------------Most Viewed Blogs List and popular blog list by sourav-----*/
      let data: any = {
-       condition: {"_id":this.blog[0].blogcat}
+       condition: {"_id":this.blog.blogcat}
      }
  
      this.apiService.CustomRequest(data,"popularsimilarblogs").subscribe((result: any) => {
@@ -293,8 +294,8 @@ export class BlogdetailComponent implements OnInit {
   
   fbTestimonialShare(val:any){
     //console.log(val)
-    var url='https://arniefonseca.influxiq.com/blogdetail/'+ val._id;
-    //console.log(url)
+    var url='https://arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id;
+    console.log(url)
   
     let params: UIParams = {
       href: url,
@@ -307,26 +308,27 @@ export class BlogdetailComponent implements OnInit {
   }
   
   twitterTestimonialShare(val:any){
-    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    console.log('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   
   
   linkedinTestimonialShare(val:any){
   
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
-  
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    console.log('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   
   tumblrTestimonialShare(val:any){
-    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
-  
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+  console.log('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   openvideourl(val: any){
-    //console.log(val)
+    //console.log('openvideourl',val)
     let url:any;
      url="https://www.youtube.com/embed/";
       //console.log('video url....>',url+val);
-      this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
+      this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val[0].video_url);
       
       //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
       const dialogRef = this.dialog.open(VideoModalComponent, {

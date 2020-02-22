@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/arni-ssr/production/1582263333264-2020-02-21T05:35:33.264Z/arni-ssr.zip"
+          "S3Key": "serverless/arni-ssr/production/1582293033796-2020-02-21T13:50:33.796Z/arni-ssr.zip"
         },
         "FunctionName": "arni-ssr-production-api",
         "Handler": "lambda.universal",
@@ -165,14 +165,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersion6NnD59LNj3b4UOqKlgcBkzVdglfcV9p7apk3ESkGVw": {
+    "ApiLambdaVersionFgTNTfBv0EO5786pyjGCK2LQ1OP8o3Sm8IUUNaGv2Y": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "I/scnDvze8w+gyW8QDVDELRd3S7yOrM8rC33q1vNq/I="
+        "CodeSha256": "+sduZ9lZfHJ9byAq6wqRw0NTr/ZPGtTWQmKiTpyZ+Z8="
       }
     },
     "ApiGatewayRestApi": {
@@ -291,7 +291,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1582263295123": {
+    "ApiGatewayDeployment1582292994545": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -351,7 +351,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersion6NnD59LNj3b4UOqKlgcBkzVdglfcV9p7apk3ESkGVw"
+        "Ref": "ApiLambdaVersionFgTNTfBv0EO5786pyjGCK2LQ1OP8o3Sm8IUUNaGv2Y"
       }
     },
     "ServiceEndpoint": {

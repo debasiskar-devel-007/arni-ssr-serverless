@@ -5,7 +5,7 @@
         <h1>Blogs Details</h1>
       </mat-card-content>
     </span>
-    <img [src]="image" class="blogheaderimg">
+    <img  class="blogheaderimg">
     <span class="blogheaderimgbg"></span>
   </mat-card>
 
@@ -20,27 +20,27 @@
                 <span class="blogcategorycls" *ngFor="let item of blogcategory">
                  {{item.blogtitle}}
                 </span>
-                <mat-card-title class="blogtitle">{{blog[0].blogtitle}}</mat-card-title>
+                <mat-card-title class="blogtitle">{{blog.blogtitle}}</mat-card-title>
                 <mat-card-content class="contentsection">
                   <span class="author">                    
-                    <p class="date">on {{blog[0].date_added}}</p>
+                    <p class="date">on {{blog.date_added}}</p>
                     <span class="authornmimg">                      
-                      <p class="authorName">by {{blog[0].author}}</p>
+                      <p class="authorName">by {{blog.author}}</p>
                     </span>
                   </span>
   
                   <span class="blogsociallists">
 
-                    <a class="sociallink fa fb" (click)="fbTestimonialShare(blog[0])">
+                    <a class="sociallink fa fb" (click)="fbTestimonialShare(blog)">
                       <fa name="facebook" class="fa-facebook"></fa>
                     </a>
-                    <a class="sociallink fa twi" (click)="twitterTestimonialShare(blog[0])">
+                    <a class="sociallink fa twi" (click)="twitterTestimonialShare(blog)">
                       <fa name="twitter" class="fa-twitter"></fa>
                     </a>
-                    <a class="sociallink fa lin" (click)="linkedinTestimonialShare(blog[0])">
+                    <a class="sociallink fa lin" (click)="linkedinTestimonialShare(blog)">
                       <fa name="linkedin" class="fa-linkedin"></fa>
                     </a>
-                    <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(blog[0])">
+                    <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(blog)">
                       <fa name="tumblr" class="fa-tumblr"></fa>
                     </a>
                     <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblogdetail%2F{{blog[0]._id}}" target="_blank">
@@ -64,10 +64,10 @@
                   </span>
                 </mat-card-content>
                 <span class="item_images">  
-                  <img [src]="blog[0].image">
+                  <img [src]="blog.blogs_image[0].basepath+blog.blogs_image[0].image">
                 </span>
   
-                <p class="description"><span [innerHtml]="blog[0].description"></span></p>
+                <p class="description"><span [innerHtml]="blog.description_html"></span></p>
               </mat-card-content>
             </span>
           </mat-card-content>
@@ -77,7 +77,7 @@
               <span class="writer_image_wrapper">
 
         
-                <img [src]="blog[0].image">
+                <img [src]="blog.blogs_image[0].basepath+blog.blogs_image[0].image">
               </span>
             </mat-list-item>
           </mat-list>
@@ -89,11 +89,11 @@
           <!-- start video section -->
           <mat-list class="photogallerylists videoblocknew ">
             <mat-list-item class="writer_image">
-              <span class="writer_image_wrapper" *ngIf="blog[0].video !='' && blog[0].video !=null ">
+              <span class="writer_image_wrapper" *ngIf="blog.video !='' && blog.video !=null ">
                
                   <button 
-                    (click)="openvideourl(blog[0].video)">
-                    <img src="//img.youtube.com/vi/{{blog[0].video}}/0.jpg">
+                    (click)="openvideourl(blog.video)">
+                    <img src="//img.youtube.com/vi/{{blog.video[0].video_url}}/0.jpg">
                   </button>
                 
               </span>

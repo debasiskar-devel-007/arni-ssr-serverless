@@ -63,7 +63,7 @@
             <span class="item" *ngFor="let item of bloglisting ;let i=index">
              
               <mat-card>
-                <span class="item_images" (click)="blogdetail(item._id)"><img [src]="item.blogs_image"></span>
+                <span class="item_images" (click)="blogdetail(item)"><img [src]="item.blogs_image"></span>
                 <mat-card-content>
                       <span class="bnticons">
                         <button *ngIf="item.video_url !='' && item.video_url !=null "

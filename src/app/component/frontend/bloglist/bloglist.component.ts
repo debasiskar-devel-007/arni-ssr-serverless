@@ -125,8 +125,9 @@ panelOpenState = false;
 
 //***********blog list view in blog detail************//
   blogdetail(val:any){
-    // console.log(val)
-    this.router.navigateByUrl('/blogdetail/' +val._id)
+    //console.log(val)
+    let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    this.router.navigateByUrl('/blogdetail/'+title+'/'+val._id)
   }
   
 
