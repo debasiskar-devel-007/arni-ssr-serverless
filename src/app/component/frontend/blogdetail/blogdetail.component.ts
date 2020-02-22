@@ -308,8 +308,8 @@ export class BlogdetailComponent implements OnInit {
   }
   
   twitterTestimonialShare(val:any){
-    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
-    console.log('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    console.log('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   
   

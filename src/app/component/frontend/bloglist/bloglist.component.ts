@@ -192,7 +192,7 @@ fbTestimonialShare(val:any){
 }
 
 twitterTestimonialShare(val:any){
-  window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/blog/'+ val._id);
+  window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/blog/'+ val._id);
 }
 
 
