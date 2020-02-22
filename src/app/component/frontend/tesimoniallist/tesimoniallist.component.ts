@@ -37,6 +37,7 @@ export class TesimoniallistComponent implements OnInit {
 
     this.dataformate = moment();
 
+  
     facebook.init({
       appId: '2912281308815518',
       version: 'v2.9'
@@ -95,6 +96,7 @@ export class TesimoniallistComponent implements OnInit {
           this.meta.setTag('og:description', this.TestimonialListArray[item].description);
           this.meta.setTag('twitter:description', this.TestimonialListArray[item].description);  
           this.meta.setTag('og:url', 'http://arniefonseca.influxiq.com/testimonial/'+  this.TestimonialListArray[item]._id);
+          this.meta.setTag('twitter:url', 'http://arniefonseca.influxiq.com/testimonial/'+  this.TestimonialListArray[item]._id);
         }
       }
     }
@@ -199,7 +201,7 @@ getProfile() {
   }
  
   twitterTestimonialShare(val:any){
-    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/testimonial/'+ val._id);
   }
 
 
