@@ -191,7 +191,7 @@ linkedinShare(val:any){
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   // console.log(this.eventTitle)
 
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }
@@ -205,7 +205,7 @@ linkedinShare(val:any){
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   // console.log(this.eventTitle)
 
-  window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }

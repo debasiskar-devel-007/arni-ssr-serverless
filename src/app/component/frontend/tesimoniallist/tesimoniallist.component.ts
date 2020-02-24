@@ -207,12 +207,12 @@ getProfile() {
 
   linkedinTestimonialShare(val:any){
 
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/testimonial/'+ val._id);
 
   }
 
 tumblrTestimonialShare(val:any){
-    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/testimonial/'+ val._id);
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/testimonial/'+ val._id);
 
 }
 

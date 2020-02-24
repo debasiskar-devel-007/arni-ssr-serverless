@@ -315,12 +315,12 @@ export class BlogdetailComponent implements OnInit {
   
   linkedinTestimonialShare(val:any){
   
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
     //console.log('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   
   tumblrTestimonialShare(val:any){
-    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   //console.log('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+this.blogtitle+'/'+ val._id);
   }
   openvideourl(val: any){

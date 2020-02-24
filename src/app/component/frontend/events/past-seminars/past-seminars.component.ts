@@ -212,7 +212,7 @@ export class PastSeminarsComponent implements OnInit {
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
 
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)
 
   }
@@ -226,7 +226,7 @@ export class PastSeminarsComponent implements OnInit {
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
 
-    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)
 
   }
