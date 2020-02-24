@@ -43,7 +43,11 @@ export class BloglistComponent implements OnInit {
   public profile: any;
   public url:"https://www.youtube.com/embed/"
   public catBlogs:any=[];
-
+  public highLoadMore:boolean=false;
+  public searchLoadMore:boolean=false;
+  public keyword_search:any='';
+  public blogCat:any;
+  
   
   
   safeSrc: SafeResourceUrl;
@@ -147,7 +151,7 @@ panelOpenState = false;
     
    //****total blog list****//
           this.bloglisting = this.blogList.blogCatList.blogs
-         console.log('---------------',this.bloglisting)
+         //console.log('---------------',this.bloglisting)
         
           // console.log('++++++++++++++++++',this.blogcategory)
 
@@ -256,7 +260,7 @@ titleSearchCategoryFilter(filterValue: string) {
 //***********load more view blog *************//
     blogloadmore(){
       let data: any = {};
-    // if(this.blogCat==''){
+    if(this.blogCat==''){
     data={
       "condition": {
         "limit": 10,
@@ -264,26 +268,25 @@ titleSearchCategoryFilter(filterValue: string) {
       }
     }
   // }
-    // }else{
+    }else{
 
-    //   data={
-    //     endpoint: 'loadmoreblogdata',
-    //     "condition": {
-    //       "limit": 10,
-    //       "skip": this.indexval,
-    //       "catid":this.blogCat
-    //   }
-    // }
-
+      data={
+        "condition": {
+           "limit": 10,
+          "skip": this.indexval,
+          "catid":this.blogCat
+      }
+     }
+    }
     // }
     this.apiService.CustomRequest(data,'loadmoreblogdata').subscribe((res:any)=>{
-      // if(res.blogs.length > 0){
+       if(res.blogs.length > 0){
         //console.log(res);
         this.bloglisting = this.bloglisting.concat(res.blogs);
-        // this.indexval = this.indexval + 10;
-      // }else{
-      //   this.highLoadMore=true;
-      // }
+         this.indexval = this.indexval + 10;
+       }else{
+         this.highLoadMore=true;
+      }
       
     })
     }
@@ -306,6 +309,61 @@ titleSearchCategoryFilter(filterValue: string) {
     openblog(val:any){
       console.log(val)
     }
+
+    keywordSearchFunction(){
+      this.blogCat = ''; 
+      let data:any={};
+        if(this.keyword_search!=null && this.keyword_search!=""){
+          data={
+              "condition":{
+                "limit":2,
+                "skip":0
+              },
+              "searchstring":this.keyword_search
+            }
+           this.apiService.CustomRequest(data,'blogsearch').subscribe((response:any)=>{
+             //console.warn(response);
+            this.bloglisting = response.blogs;
+        })
+      }else{
+  
+      }
+    }
+    /**search by category */
+    blogCatSearch(val:any){
+      this.keyword_search = "";
+      // console.log(val)
+      let data: any = {
+        "blogcat":val
+        
+      }
+  
+      this.apiService.CustomRequest(data,"getbloglistbycategoryid").subscribe((result: any) => {
+        //console.warn(result);
+        this.bloglisting = result.results.blogs;
+  
+    })
+  }
+  searchblogloadmore(){
+    let data:any={
+      endpoint : "blogsearch",
+      "condition":{
+        "limit": 10,
+        "skip": this.indexval,
+      },
+      "searchstring":this.keyword_search
+    }
+    this.apiService.getDatalist(data).subscribe((res:any)=>{
+      console.log("results",res);
+      if(res.blogs.length>0){
+        this.bloglisting = this.bloglisting.concat(res.blogs);
+        this.indexval = this.indexval + 10;
+      }else{
+           this.searchLoadMore=true;
+      }
+      
+    })
+  }
 }
 
 
