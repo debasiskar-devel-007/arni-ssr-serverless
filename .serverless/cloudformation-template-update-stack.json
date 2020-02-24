@@ -99,7 +99,8 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "logs:CreateLogStream"
+                    "logs:CreateLogStream",
+                    "logs:CreateLogGroup"
                   ],
                   "Resource": [
                     {
@@ -145,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/arni-ssr/production/1582379667252-2020-02-22T13:54:27.252Z/arni-ssr.zip"
+          "S3Key": "serverless/arni-ssr/production/1582542065815-2020-02-24T11:01:05.815Z/arni-ssr.zip"
         },
         "FunctionName": "arni-ssr-production-api",
         "Handler": "lambda.universal",
@@ -164,14 +165,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersionfnu5DqJVJeoCRyMrSvDwr3X6yP9WVtnV1W7m1PboSY": {
+    "ApiLambdaVersionzbCXrcHBKHCMYiJTE69sAJtWj238YYuaMBUGFJ9Rk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "AhoiXBFOX7uZShmJ9SOHy1WaFiOSEjycqumHK/kvLmA="
+        "CodeSha256": "fgjN5OFAu2jbyM0tRn0KKgvsu1WUmNDNb/JzXw8VCJQ="
       }
     },
     "ApiGatewayRestApi": {
@@ -182,7 +183,8 @@
           "Types": [
             "EDGE"
           ]
-        }
+        },
+        "Policy": ""
       }
     },
     "ApiGatewayResourceProxyVar": {
@@ -289,7 +291,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1582379565047": {
+    "ApiGatewayDeployment1582542002248": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -349,7 +351,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionfnu5DqJVJeoCRyMrSvDwr3X6yP9WVtnV1W7m1PboSY"
+        "Ref": "ApiLambdaVersionzbCXrcHBKHCMYiJTE69sAJtWj238YYuaMBUGFJ9Rk"
       }
     },
     "ServiceEndpoint": {

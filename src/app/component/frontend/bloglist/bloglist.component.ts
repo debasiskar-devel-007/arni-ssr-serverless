@@ -31,7 +31,7 @@ export class BloglistComponent implements OnInit {
   public blogCategory:any;
   public blogcount:any;
   public blogcategorysearch:any;
-  public blogcategorycount:any;
+  public blogcategorycount:any={};
   public blogcat:any;
   public blogsubcategorycount:any;
   public count:any=0;
@@ -131,7 +131,7 @@ panelOpenState = false;
   blogdetail(val:any){
     //console.log(val)
     let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
-    this.router.navigateByUrl('/blogdetail/'+title+'/'+val._id)
+    this.router.navigateByUrl('/blog/'+title+'/'+val._id)
   }
   
 
@@ -182,7 +182,8 @@ getProfile() {
 
 fbTestimonialShare(val:any){
   //console.log(val)
-  var url='https://arniefonseca.influxiq.com/blog/'+ val._id;
+  let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  var url='https://arniefonseca.influxiq.com/blog/'+title+'/'+ val._id;
   //console.log(url)
 
   let params: UIParams = {
@@ -196,18 +197,20 @@ fbTestimonialShare(val:any){
 }
 
 twitterTestimonialShare(val:any){
-  window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/blog/'+ val._id);
+  let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/blog/'+title+'/'+val._id);
 }
 
 
 linkedinTestimonialShare(val:any){
-
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/blog/'+ val._id);
+  let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/blog/'+title+'/'+val._id);
 
 }
 
 tumblrTestimonialShare(val:any){
-  window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/blog/'+ val._id);
+  let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/blog/'+title+'/'+val._id);
 
 }
 
@@ -354,7 +357,7 @@ titleSearchCategoryFilter(filterValue: string) {
       "searchstring":this.keyword_search
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
-      console.log("results",res);
+      //console.log("results",res);
       if(res.blogs.length>0){
         this.bloglisting = this.bloglisting.concat(res.blogs);
         this.indexval = this.indexval + 10;
@@ -364,6 +367,12 @@ titleSearchCategoryFilter(filterValue: string) {
       
     })
   }
+  /**reset search string */
+  reset(){
+    this.keyword_search='';
+    this.blogCat='';
+    this.bloglisting = this.blogList.blogCatList.blogs
+}
 }
 
 
