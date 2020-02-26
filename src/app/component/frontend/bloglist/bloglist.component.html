@@ -122,6 +122,7 @@
             <mat-expansion-panel *ngFor="let d of blogcategorycount;let i=index; ">
               <mat-expansion-panel-header (click)="getAllBlogs(d._id)">
                {{d.blogtitle}}
+               <h5>( {{d.count_blogs}} )</h5>
               </mat-expansion-panel-header>
               <ng-container *ngFor="let cat of catBlogs; let i=index;" >
                 <span >
@@ -137,6 +138,7 @@
                 </span>
                
               </ng-container>
+              <button mat-button class="btnblue sim-button" type="button" *ngIf="catBlogs !=null && catBlogs.length >3"  (click)="viewAllCatBlogs(d)">View All</button>
             </mat-expansion-panel>
           </mat-accordion>
           <!-- <span class="categorywrapper">  

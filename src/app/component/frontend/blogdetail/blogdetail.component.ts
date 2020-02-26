@@ -292,7 +292,12 @@ export class BlogdetailComponent implements OnInit {
     });
 
   }
-
+  viewAllCatBlogs(val){
+    //console.log('Hiiiitttt',val)
+    
+    this.router.navigateByUrl('/blog/'+ val._id);
+    
+    }
 }
 
 @Component({

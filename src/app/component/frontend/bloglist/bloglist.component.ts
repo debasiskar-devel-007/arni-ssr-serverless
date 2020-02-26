@@ -373,6 +373,14 @@ titleSearchCategoryFilter(filterValue: string) {
     this.blogCat='';
     this.bloglisting = this.blogList.blogCatList.blogs
 }
+viewAllCatBlogs(val){
+  //console.log('Hiiiitttt',val)
+  
+  this.router.navigateByUrl('/blog/'+ val._id);
+  
+  }
+
+  
 }
 
 
