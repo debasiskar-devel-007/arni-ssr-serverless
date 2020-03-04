@@ -4,6 +4,7 @@ import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
 export interface DialogData {
   errorMsg: string;
@@ -21,6 +22,7 @@ export interface DialogData {
 export class TesimonialComponent implements OnInit {
 
   public name: string;
+  safeSrc: SafeResourceUrl;
   
   carouselOptions = {
     margin: 5,
@@ -72,7 +74,7 @@ export class TesimonialComponent implements OnInit {
 
   public TestimonialListArray: any = [];
 
-  constructor(public apiService: ApiService,public facebook:FacebookService) {
+  constructor(public apiService: ApiService,public facebook:FacebookService,public sanitizer: DomSanitizer) {
 
     facebook.init({
       appId: '2912281308815518',
@@ -93,6 +95,17 @@ export class TesimonialComponent implements OnInit {
       if(res.status == 'success') {
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
           this.TestimonialListArray = res2.res;
+          for(let i in this.TestimonialListArray){
+            if(this.TestimonialListArray[i].video_url!='' && this.TestimonialListArray[i].video_url!=null){
+              this.TestimonialListArray[i].video_full=''
+              let url:any;
+              url="https://www.youtube.com/embed/";
+               // console.log('video url....>',url+val);
+               this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + this.TestimonialListArray[i].video_url);
+               this.TestimonialListArray[i].video_full=this.safeSrc
+
+            }
+          }
           console.log(this.TestimonialListArray);
         });
       }
@@ -105,11 +118,6 @@ export class TesimonialComponent implements OnInit {
   }
 
 
-  
-
-  showBut() {
-    console.log('show button')
-  }
 
 
   //*********** Coming Soon ************//

@@ -99,7 +99,8 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "logs:CreateLogStream"
+                    "logs:CreateLogStream",
+                    "logs:CreateLogGroup"
                   ],
                   "Resource": [
                     {
@@ -145,7 +146,11 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
+<<<<<<< HEAD
           "S3Key": "serverless/arni-ssr/production/1582520801636-2020-02-24T05:06:41.636Z/arni-ssr.zip"
+=======
+          "S3Key": "serverless/arni-ssr/production/1582542065815-2020-02-24T11:01:05.815Z/arni-ssr.zip"
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
         },
         "FunctionName": "arni-ssr-production-api",
         "Handler": "lambda.universal",
@@ -164,14 +169,22 @@
         "IamRoleLambdaExecution"
       ]
     },
+<<<<<<< HEAD
     "ApiLambdaVersionXpqbgXuE9ue5Ye3w0D5BxkUJGDRL9X5RLFr7K4KKk": {
+=======
+    "ApiLambdaVersionzbCXrcHBKHCMYiJTE69sAJtWj238YYuaMBUGFJ9Rk": {
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
+<<<<<<< HEAD
         "CodeSha256": "L9dV+XWDNtx+4pyhigfryvbOYHQHHGXFakK6nhayq3A="
+=======
+        "CodeSha256": "fgjN5OFAu2jbyM0tRn0KKgvsu1WUmNDNb/JzXw8VCJQ="
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       }
     },
     "ApiGatewayRestApi": {
@@ -182,7 +195,8 @@
           "Types": [
             "EDGE"
           ]
-        }
+        },
+        "Policy": ""
       }
     },
     "ApiGatewayResourceProxyVar": {
@@ -289,7 +303,11 @@
         "MethodResponses": []
       }
     },
+<<<<<<< HEAD
     "ApiGatewayDeployment1582520696508": {
+=======
+    "ApiGatewayDeployment1582542002248": {
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -349,7 +367,11 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
+<<<<<<< HEAD
         "Ref": "ApiLambdaVersionXpqbgXuE9ue5Ye3w0D5BxkUJGDRL9X5RLFr7K4KKk"
+=======
+        "Ref": "ApiLambdaVersionzbCXrcHBKHCMYiJTE69sAJtWj238YYuaMBUGFJ9Rk"
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       }
     },
     "ServiceEndpoint": {

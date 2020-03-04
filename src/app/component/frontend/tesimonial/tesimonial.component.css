@@ -13,6 +13,8 @@
     width: 260px;
   }
   
+.slide-audio-wrapper-main{ display: block; margin: 0 0 20px 0;}
+
   @media (max-width: 1000px) {
     .demo-one {
       height: auto !important;
