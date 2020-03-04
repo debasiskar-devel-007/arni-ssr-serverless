@@ -30,7 +30,8 @@
             <mat-list class="gallaryimgvideo">
 
                     <mat-list-item class="item"  *ngFor="let item of videoDataList">
-                            <span class="singlecolgallarycontent">
+                      
+                            <span class="singlecolgallarycontent" (click)="openVideoModal(item.video)">
                             <h2>{{item.title}} </h2>
                             <p>{{item.description_html}}<a><span>Read more...</span></a> </p>  
                             <span class="contentsection absolute">
@@ -46,16 +47,15 @@
                                     </span>                                  
                                 </span>    
                         </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" 
-                                [src]="sanitizer.bypassSecurityTrustResourceUrl(video_url + item.video)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe (click)="openVideoModal(item.video)" frameborder="0" width="100%" marginheight="0" marginwidth="0" 
+                                [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </mat-list-item>
-
-
                        
                 </mat-list>
 
         
     </span> 
 </mat-card>
+
 
 <app-footer></app-footer>

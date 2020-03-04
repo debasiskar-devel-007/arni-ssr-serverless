@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
-import {ActivatedRoute,Route} from '@angular/router'
+import { ActivatedRoute, Route } from '@angular/router'
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
+
+export interface DialogData {
+  data: any;
+}
+
+
 // declare var $:any;
 // var iframe           = $('iframe:first');
 // var iframe_src       = iframe.attr('src');
@@ -13,22 +20,22 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./video-gallery.component.css']
 })
 export class VideoGalleryComponent implements OnInit {
-  
-// videoshow(){
-//   if (youtube_video_id.length == 11) {
-//     var video_thumbnail = $('<img src="//img.youtube.com/vi/'+youtube_video_id+'/0.jpg">');
-//     $('body').append(video_thumbnail);
-  
-//     $('img:first').click(function() {
-//         $('iframe:first').fadeToggle('400');
-//     });
-//   }
-// }
-public videoDataList:any;
-public video_url:any='https://www.youtube.com/embed/';
-public safeUrl:any;
 
-  constructor(private readonly meta: MetaService,public activatedRoute:ActivatedRoute,public sanitizer:DomSanitizer) {
+  // videoshow(){
+  //   if (youtube_video_id.length == 11) {
+  //     var video_thumbnail = $('<img src="//img.youtube.com/vi/'+youtube_video_id+'/0.jpg">');
+  //     $('body').append(video_thumbnail);
+
+  //     $('img:first').click(function() {
+  //         $('iframe:first').fadeToggle('400');
+  //     });
+  //   }
+  // }
+  public videoDataList: any;
+  public video_url: any = 'https://www.youtube.com/embed/';
+  public safeUrl: any;
+  public safeSrc: any;
+  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog) {
     this.meta.setTitle('Arnie Fonseca - Video Gallery');
     this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
     this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
@@ -41,35 +48,70 @@ public safeUrl:any;
     this.meta.setTag('og:type', 'website');
     this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-   }
+  }
 
   ngOnInit() {
-    this.activatedRoute.data.forEach(res=>{
-      let result:any;
-      result=res;
-      this.videoDataList=res.videoGallery.res;
-      // console.log(this.videoDataList)
-      
+    this.activatedRoute.data.forEach(res => {
+      let result: any;
+      result = res;
+      this.videoDataList = res.videoGallery.res;
+      // console.log(this.videoDataList, '+++++')
+
 
     })
 
 
-    // for(let i in this.videoDataList){
-    //   let result:any;
-    //  result=this.videoDataList[i].video;
-    //   console.log('  this.safeUrl',  result);
-    //   this.safeUrl=this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result)
-    //   console.log('  this.safeUrl',  this.safeUrl);
+    for (let i in this.videoDataList) {
+      let result: any;
+      result = this.videoDataList[i].video;
+      // console.log('  this.safeUrl', result);
+      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+      this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+      // console.log('  this.safeUrl', this.safeUrl);
 
 
-    // }
+    }
 
 
   }
-  // safeurlval(val){
-  //  return this.sanitizer.bypassSecurityTrustResourceUrl(val)
-  // }
+
+  openVideoModal(val: any) {
+    // console.log('>>>>', val)
+
+    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + val);
+
+    //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+    const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
+      // panelClass:['modal-md','success-modal'],
+      panelClass: 'blogdetail_videomodal',
+      // width:'450px',
+      data: this.safeSrc,
+
+
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+
+  }
+
 
 }
 
-    
+
+
+
+
+//video modal
+@Component({
+  selector: 'app-videoModal',
+  templateUrl: './videoModal.html'
+})
+export class VideoGalleryModalComponent {
+  constructor(public dialogRef: MatDialogRef<VideoGalleryModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  }
+}
+
