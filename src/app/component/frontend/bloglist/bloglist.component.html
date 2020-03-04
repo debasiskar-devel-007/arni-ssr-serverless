@@ -70,7 +70,7 @@
                           (click)="openvideourl(item.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
                       </span>
                       <h2 (click)="blogdetail(item._id)">{{item.blogtitle}}</h2>
-                      <p class="description"><span [innerHtml]="item.description"></span></p>
+                      <span class="description" [innerHtml]="item.description"></span>
                       <a class="next_page" (click)="blogdetail(item._id)">read more</a>
                 </mat-card-content>
                 
