@@ -123,8 +123,23 @@ const routes: Routes = [
   { path: 'personal-development-coaching', component: PersonalDevelopmentCoachingComponent },
   { path: 'high-performance-coaching', component: HighPerformanceCoachingComponent },
   { path: 'special-programs-for-young-men', component: SpecialProgramsForYoungMenComponent },
-  { path: 'image-gallery', component: ImageGalleryComponent },
-  { path: 'video-gallery', component: VideoGalleryComponent },
+
+  { path: 'image-gallery', component: ImageGalleryComponent,
+  resolve: { imageGallery: ResolveService },
+  data: {
+    requestcondition: {source: "imageGallery_management_view", condition: {} },
+    endpoint: "datalistwithouttoken"
+  }
+  },
+
+  { path: 'video-gallery', component: VideoGalleryComponent,
+  resolve: { videoGallery: ResolveService },
+  data: {
+    requestcondition: {source: "video_management_view", condition: {} },
+    endpoint: "datalistwithouttoken"
+  }
+  },
+
   { path: 'team', component: TeamComponent },
   { path: 'bio', component: BioComponent },
 

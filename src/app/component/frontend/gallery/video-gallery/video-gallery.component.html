@@ -28,210 +28,29 @@
         
         <!-- <img src="../../../../assets/images/videogallery_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
             <mat-list class="gallaryimgvideo">
-                    <mat-list-item class="item" style="">
+
+                    <mat-list-item class="item"  *ngFor="let item of videoDataList">
                             <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
+                            <h2>{{item.title}} </h2>
+                            <p>{{item.description_html}}<a><span>Read more...</span></a> </p>  
                             <span class="contentsection absolute">
                                     <span class="blogsociallists">
                                         <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
                                         <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
+                                        <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
                                         <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
+                                        <a class="sociallink fa tumblr"><fa name="tumblr" class="fa-tumblr"></fa></a>
+
+                                        <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a> -->
+                                        <!-- <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
                                     </span>                                  
                                 </span>    
                         </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/RxF3_jOHwQk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" 
+                                [src]="sanitizer.bypassSecurityTrustResourceUrl(video_url + item.video)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
-                    <mat-list-item class="item" style="">
-                            <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                                <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/B3MDJsggfDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                    </mat-list-item>
+
+
                        
                 </mat-list>
 

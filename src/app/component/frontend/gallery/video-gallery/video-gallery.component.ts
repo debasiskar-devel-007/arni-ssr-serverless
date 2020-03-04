@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
-
+import {ActivatedRoute,Route} from '@angular/router'
+import { DomSanitizer } from '@angular/platform-browser';
 // declare var $:any;
 // var iframe           = $('iframe:first');
 // var iframe_src       = iframe.attr('src');
@@ -23,9 +24,11 @@ export class VideoGalleryComponent implements OnInit {
 //     });
 //   }
 // }
+public videoDataList:any;
+public video_url:any='https://www.youtube.com/embed/';
+public safeUrl:any;
 
-
-  constructor(private readonly meta: MetaService) {
+  constructor(private readonly meta: MetaService,public activatedRoute:ActivatedRoute,public sanitizer:DomSanitizer) {
     this.meta.setTitle('Arnie Fonseca - Video Gallery');
     this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
     this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
@@ -40,7 +43,32 @@ export class VideoGalleryComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.activatedRoute.data.forEach(res=>{
+      let result:any;
+      result=res;
+      this.videoDataList=res.videoGallery.res;
+      // console.log(this.videoDataList)
+      
+
+    })
+
+
+    // for(let i in this.videoDataList){
+    //   let result:any;
+    //  result=this.videoDataList[i].video;
+    //   console.log('  this.safeUrl',  result);
+    //   this.safeUrl=this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result)
+    //   console.log('  this.safeUrl',  this.safeUrl);
+
+
+    // }
+
+
+  }
+  // safeurlval(val){
+  //  return this.sanitizer.bypassSecurityTrustResourceUrl(val)
+  // }
 
 }
 
