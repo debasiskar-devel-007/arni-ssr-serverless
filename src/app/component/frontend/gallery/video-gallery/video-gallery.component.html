@@ -33,7 +33,7 @@
                       
                             <span class="singlecolgallarycontent" (click)="openVideoModal(item.video)">
                             <h2>{{item.title}} </h2>
-                            <p>{{item.description_html}}<a><span>Read more...</span></a> </p>  
+                            <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p>  
                             <span class="contentsection absolute">
                                     <span class="blogsociallists">
                                         <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
