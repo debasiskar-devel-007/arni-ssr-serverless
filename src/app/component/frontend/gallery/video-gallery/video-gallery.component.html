@@ -31,21 +31,26 @@
 
                     <mat-list-item class="item"  *ngFor="let item of videoDataList">
                       
-                            <span class="singlecolgallarycontent" (click)="openVideoModal(item.video)">
-                            <h2>{{item.title}} </h2>
+                            <span class="singlecolgallarycontent" >
+                            <h2 (click)="openVideoModal(item.video)">{{item.title}} </h2>
                             <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p>  
                             <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa tumblr"><fa name="tumblr" class="fa-tumblr"></fa></a>
-
-                                        <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a> -->
-                                        <!-- <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
-                                    </span>                                  
-                                </span>    
+                                <span class="blogsociallists">
+        
+                                    <a class="sociallink fa fb" (click)="fbShare(item)"><fa name="facebook" class="fa-facebook"></fa></a>
+        
+                                    <a class="sociallink fa twi" (click)="twitterShare(item)"><fa name="twitter" class="fa-twitter"></fa></a>
+        
+                                    <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
+                                    <a class="sociallink fa lin" (click)="linkedinShare(item)"><fa name="linkedin" class="fa-linkedin"></fa></a>
+        
+                                    <a class="sociallink fa tumblr" (click)="tumblrShare(item)"><fa name="tumblr" class="fa-tumblr"></fa></a>
+        
+                                  
+                                    <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+                                    <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
+                                </span>                                  
+                            </span>     
                         </span>
                                 <iframe (click)="openVideoModal(item.video)" frameborder="0" width="100%" marginheight="0" marginwidth="0" 
                                 [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
