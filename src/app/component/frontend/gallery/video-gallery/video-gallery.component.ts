@@ -9,6 +9,9 @@ export interface DialogData {
 
   data: any;
   data1: any;
+  fulldata:any;
+  url:any;
+  flag:any;
 }
 
 
@@ -105,14 +108,12 @@ export class VideoGalleryComponent implements OnInit {
         this.videoDataList = res.videoGallery.video_list;
         // console.log(this.videoDataList, '+++++')
       })
-      for (let i in this.videoDataList) {
-        let result: any;
-        result = this.videoDataList[i].video;
-        // console.log('  this.safeUrl', result);
-        this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
-        this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
-        // console.log('  this.safeUrl', this.safeUrl);
-      }
+      // for (let i in this.videoDataList) {
+      //   let result: any;
+      //   result = this.videoDataList[i].video;
+      //   this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+      //   this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+      // }
 
       for (let i in this.videoDataList) {
         if (this.activatedRoute.snapshot.params.id == this.videoDataList[i]._id) {
@@ -125,37 +126,69 @@ export class VideoGalleryComponent implements OnInit {
           this.meta.setTag('og:title', this.videoDataList[i].title);
           this.meta.setTag('twitter:title', this.videoDataList[i].title);
           this.meta.setTag('og:type', 'website');
-          this.meta.setTag('og:image', this.video_url + this.videoDataList[i].video + '/0.jpg');
-          this.meta.setTag('twitter:image', this.video_url + this.videoDataList[i].video)
+          // this.meta.setTag('og:image', this.video_url + this.videoDataList[i].video + '/0.jpg');
+          // console.log('img src','img.youtube.com/vi/'+ this.videoDataList[i].video+ '/0.jpg')
+          this.meta.setTag('og:image', 'img.youtube.com/vi/'+ this.videoDataList[i].video+ '/0.jpg');
+
+          this.meta.setTag('twitter:image',  'img.youtube.com/vi/'+ this.videoDataList[i].video+ '/0.jpg')
           this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
         }
       }
     }
+//img.youtube.com/vi/{{item.video}}/0.jpg"
 
 
   }
 
-  openVideoModal(val: any) {
+  openVideoModal(val: any,flag:any) {
 
-    let videourl: any;
-    videourl = this.video_url + val.video + '?autoplay=1';
-    console.log('>>', videourl)
+    if(flag == 1){
+      console.log(val,flag)
 
-    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videourl);
+      let videourl: any;
+      videourl = this.video_url + val.video + '?autoplay=1';
+      console.log('>>', videourl)
+  
+      this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videourl);
+  
+      //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+      const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
+        // panelClass:['modal-md','success-modal'],
+        panelClass: 'blogdetail_videomodal',
+        // width:'450px',
+        data: { url: this.safeSrc, fulldata: val ,flag:flag}
+  
+  
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+  
+      });
 
-    //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
-    const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
-      // panelClass:['modal-md','success-modal'],
-      panelClass: 'blogdetail_videomodal',
-      // width:'450px',
-      data: { url: this.safeSrc, fulldata: val }
+    } else {
+      console.log(val,flag)
+
+      // let videourl: any;
+      // videourl = this.video_url + val.video + '?autoplay=1';
+      // console.log('>>', videourl)
+  
+      this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + val.video);
+  
+      //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+      const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
+        // panelClass:['modal-md','success-modal'],
+        panelClass: 'blogdetail_videomodal',
+        // width:'450px',
+        data: { url: this.safeSrc, fulldata: val,flag:flag }
+        
+      });
+     
+      dialogRef.afterClosed().subscribe(result => {
+  
+      });
+    }
 
 
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-
-    });
   }
 
 
@@ -239,6 +272,7 @@ export class VideoGalleryComponent implements OnInit {
 })
 export class VideoGalleryModalComponent {
   public profile: any;
+  public fulldata:any;
   constructor(public dialogRef: MatDialogRef<VideoGalleryModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, public facebook: FacebookService) {
     facebook.init({
