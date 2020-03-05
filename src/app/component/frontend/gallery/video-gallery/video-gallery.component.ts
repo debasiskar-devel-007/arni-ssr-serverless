@@ -117,7 +117,13 @@ export class VideoGalleryComponent implements OnInit {
 
       for (let i in this.videoDataList) {
         if (this.activatedRoute.snapshot.params.id == this.videoDataList[i]._id) {
-          console.log(this.videoDataList[i])
+          console.log(this.videoDataList[i]);
+          let val:any;
+          val=this.videoDataList[i];
+          let flag:any;
+          flag=1;
+
+          this.openVideoModal(val,flag);
 
           this.meta.setTitle('Arnie Fonseca - Video Gallery', this.videoDataList[i].title);
           this.meta.setTag('og:description', this.videoDataList[i].description_html);
@@ -132,6 +138,7 @@ export class VideoGalleryComponent implements OnInit {
 
           this.meta.setTag('twitter:image',  'img.youtube.com/vi/'+ this.videoDataList[i].video+ '/0.jpg')
           this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
+          
         }
       }
     }

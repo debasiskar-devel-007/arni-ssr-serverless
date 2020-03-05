@@ -27,7 +27,7 @@
             <!-- <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p> -->
             <p class="readmoredesc">
               <span class="readmoredesc">{{item.description_html}}</span>
-              <a><span (click)="openVideoModal(item)" *ngIf="item.videoTextLength > 60">Read More</span></a>
+              <a><span (click)="openVideoModal(item,0)" *ngIf="item.videoTextLength > 60">Read More</span></a>
             </p>
             <p class="dtcls">Date :<span>{{item.date_added}}</span></p>
             <span class="contentsection absolute">
