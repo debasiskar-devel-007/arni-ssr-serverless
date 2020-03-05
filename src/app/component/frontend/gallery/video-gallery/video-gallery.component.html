@@ -1,66 +1,63 @@
-
 <app-header></app-header>
 <mat-card class="innerpagebanner videogallerybg innercommonbannercls">
-    <span class="mainwrappercontent">
-        <mat-card-content>
-            <span>
-                <h1>video gallery</h1>
-                <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods that will make immediate improvements in your lives.</p>
-            </span>
-        </mat-card-content>
-    </span>
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <span>
+        <h1>video gallery</h1>
+        <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
+          that will make immediate improvements in your lives.</p>
+      </span>
+    </mat-card-content>
+  </span>
 </mat-card>
-<!-- <mat-card class="innerpagetitle">
-        <span class="mainwrappercontent">
-            <mat-card-content>
-                <h2>service lists</h2>
-            </mat-card-content>
-        </span>
-</mat-card> --> 
-<mat-card class="ptb-40 generalcls videogallerywrapper" style="background: #fff !important;">  
-    <span class="mainwrappercontent bloghead">
-        <mat-card-content>
-            <h2>Video gallery</h2>
-            <p>Check out some videos from my past seminars, workshops and other speaking engagements. This Video gallery is updated <br>regularly. So, you can always come back to check out the videos from my latest events.</p>
-        </mat-card-content>
-    </span>
-    <span class="mainwrappercontent pt-30">    
-        
-        <!-- <img src="../../../../assets/images/videogallery_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-            <mat-list class="gallaryimgvideo">
+<mat-card class="ptb-40 generalcls videogallerywrapper" style="background: #fff !important;">
+  <span class="mainwrappercontent bloghead">
+    <mat-card-content>
+      <h2>Video gallery</h2>
+      <p>Check out some videos from my past seminars, workshops and other speaking engagements. This Video gallery is
+        updated <br>regularly. So, you can always come back to check out the videos from my latest events.</p>
+    </mat-card-content>
+  </span>
+  <span class="mainwrappercontent pt-30">
+    <mat-list class="gallaryvideo">
+      <mat-list-item *ngFor="let item of videoDataList">
+        <div class="video-responsive">
+          <span class="singlecolgallarycontent">
+            <h2>{{item.title}} </h2>
+            <!-- <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p> -->
+            <p class="readmoredesc">
+              <span class="readmoredesc">{{item.description_html}}</span>
+              <a><span (click)="viewDetails(item)">Read More</span></a> 
+            </p>
+            <span class="contentsection absolute">
+                <span class="blogsociallists">
 
-                    <mat-list-item class="item"  *ngFor="let item of videoDataList">
-                      
-                            <span class="singlecolgallarycontent" >
-                            <h2 (click)="openVideoModal(item.video)">{{item.title}} </h2>
-                            <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                <span class="blogsociallists">
-        
-                                    <a class="sociallink fa fb" (click)="fbShare(item)"><fa name="facebook" class="fa-facebook"></fa></a>
-        
-                                    <a class="sociallink fa twi" (click)="twitterShare(item)"><fa name="twitter" class="fa-twitter"></fa></a>
-        
-                                    <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
-                                    <a class="sociallink fa lin" (click)="linkedinShare(item)"><fa name="linkedin" class="fa-linkedin"></fa></a>
-        
-                                    <a class="sociallink fa tumblr" (click)="tumblrShare(item)"><fa name="tumblr" class="fa-tumblr"></fa></a>
-        
-                                  
-                                    <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                    <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
-                                </span>                                  
-                            </span>     
-                        </span>
-                                <iframe (click)="openVideoModal(item.video)" frameborder="0" width="100%" marginheight="0" marginwidth="0" 
-                                [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </mat-list-item>
-                       
-                </mat-list>
+                    <a class="sociallink fa fb" (click)="fbShare(item)"><fa name="facebook" class="fa-facebook"></fa></a>
 
+                    <a class="sociallink fa twi" (click)="twitterShare(item)"><fa name="twitter" class="fa-twitter"></fa></a>
+
+                    <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
+                    <a class="sociallink fa lin" (click)="linkedinShare(item)"><fa name="linkedin" class="fa-linkedin"></fa></a>
+
+                    <a class="sociallink fa tumblr" (click)="tumblrShare(item)"><fa name="tumblr" class="fa-tumblr"></fa></a>
+
+                  
+                    <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+                    <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
+                </span>                                  
+            </span> 
+          </span>
         
-    </span> 
+            <div class="img_icon video_icon" style="opacity: 1; transition-duration: 1s;" (click)="openVideoModal(item.video)"></div>
+            <img src="//img.youtube.com/vi/{{item.video}}/0.jpg">     
+            
+          <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen></iframe>   
+
+          
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </span>
 </mat-card>
-
 
 <app-footer></app-footer>

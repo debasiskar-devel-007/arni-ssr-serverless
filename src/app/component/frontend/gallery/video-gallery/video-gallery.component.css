@@ -1,1 +1,24 @@
-.videogallerybg.mat-card{background:url(../../../../../assets/images/videogallerybg.jpg) no-repeat top right;background-size: cover;}
+.videogallerybg.mat-card{background:url(../../../../../assets/images/videogallerybg.jpg) no-repeat top right;background-size:cover}
+.video-responsive{overflow:hidden;padding-bottom:56.25%;position:relative;height:0}
+.video-responsive iframe{left:0;top:0;height:100%;width:100%;position:absolute;z-index: 9;}
+
+.video_icon {
+    background-image: url(../../../../../assets/images/video_icon.png);
+}
+.img_icon {
+    position: absolute;
+    opacity: 0;
+    width: 60px;
+    height: 60px;
+    background-position: center center !important;
+    background-repeat: no-repeat;    
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.video-responsive img{
+    position: absolute;
+    z-index: 99;
+}
