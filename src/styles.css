@@ -153,12 +153,9 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     font-size: 30px!important;
     line-height: 36px!important;     color: #21c4e1 !important; margin: 0; padding:15px 0 10px 0;}
 
-.footewrmoadbox  .generalmodalcls h2{ text-align: left; font-family: 'HelveticaBold';
-    font-size: 28px!important;
-    line-height: 30px!important;   margin: 0; padding: 10px 0;   color: #333 !important;}
+.footewrmoadbox  .generalmodalcls h2{ text-align: left; font-family: 'HelveticaBold';font-size: 28px!important;line-height: 30px!important;   margin: 0; padding: 10px 0;   color: #333 !important;}
 
-.footewrmoadbox  .generalmodalcls p{ text-align: left; font-family: 'Helvetica-Normal';
-    font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;}
+.footewrmoadbox  .generalmodalcls p{ text-align: left; font-family: 'Helvetica-Normal';font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;}
 
 .blogdetail_videomodal iframe{ width: 100%; border: none;}
 
@@ -174,6 +171,11 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
   overflow: auto;}
 
 
+  .blogdetail_videomodal .vid-desc{padding: 10px 10px 0px;}
+  .blogdetail_videomodal .vid-desc h2{text-align: left; font-family: 'HelveticaBold';font-size: 24px!important;line-height: 24px!important;   margin: 0; padding: 0;color: #333 !important;text-transform: uppercase;display: flex;align-items: center;justify-content: space-between;white-space: normal;word-break: break-word;}
+  .blogdetail_videomodal .vid-desc span{color:#0fd183;font-size: 16px!important;line-height: 18px!important;}
+  .blogdetail_videomodal .vid-desc p{text-align: left; font-family: 'Helvetica-Normal';font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;white-space: normal;
+    word-break: break-word;}
 
   .blogdetail_videomodal .video-responsive{
     overflow:hidden;
@@ -181,7 +183,7 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     position:relative;
     height:0;
 }
-.blogdetail_videomodal .video-responsive iframe{
+.blogdetail_videomodal .video-responsive iframe,.blogdetail_videomodal .video-responsive object{
     left:0;
     top:0;
     height:100%;
@@ -228,11 +230,18 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 
 
 @media only screen and (max-width: 580px) {
-
+  .blogdetail_videomodal .vid-desc h2 {
+    font-size: 20px!important;
+    line-height: 20px!important;
+  }
   .blogdetail_videomodal .mat-dialog-container{ width:90%!Important}
 
   .blogdetail_videomodal .mat-dialog-container{
     min-width: 220px!important;}
+    .blogdetail_videomodal .vid-desc p {
+      font-size: 14px;
+  }
+  .blogdetail_videomodal .contentsection {padding: 5px;}
 }
 
 

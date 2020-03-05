@@ -12,11 +12,10 @@
       <button mat-button class="nextbtn" [mat-dialog-close]="data" cdkFocusInitial >Okay!</button>
     </mat-dialog-actions> -->
 
-    <div>
-      <span>Title:<h2>{{data.fulldata.title}}</h2></span>
-      <span>Description:<h2>{{data.fulldata.description_html}}</h2></span>
-      <span>Date:<h2>{{data.fulldata.date_added}}</h2></span>
-
+    <div class="vid-desc">
+      <h2>{{data.fulldata.title}}</h2>
+      <p>{{data.fulldata.description_html}}</p>
+      <span>Date: {{data.fulldata.date_added}}</span>
     </div>
 
     <span class="contentsection absolute">
