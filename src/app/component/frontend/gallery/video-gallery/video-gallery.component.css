@@ -22,3 +22,6 @@
     position: absolute;
     z-index: 99;
 }
+
+.readmoredesc{display: flex; align-items: center; justify-content: space-between;}
+/* .readmoredesc span{margin-left: 10px;} */
