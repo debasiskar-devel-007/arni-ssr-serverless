@@ -1,1 +1,7 @@
 .imageallerybg.mat-card{background:url(../../../../../assets/images/imagegallerybg.jpg) no-repeat top right;background-size: cover;}
+
+.imagegallerywrapper .mainwrappercontent.pt-30{
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+}
