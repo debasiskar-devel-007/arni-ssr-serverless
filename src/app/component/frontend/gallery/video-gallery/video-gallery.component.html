@@ -27,7 +27,8 @@
             <!-- <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p> -->
             <p class="readmoredesc">
               <span class="readmoredesc">{{item.description_html}}</span>
-              <a><span (click)="viewDetails(item)">Read More</span></a> 
+              <a><span (click)="openVideoModal(item)" *ngIf="item.videoTextLength > 60">Read More</span></a><br>
+              <a>Date :<span >{{item.date_added}}</span></a> 
             </p>
             <span class="contentsection absolute">
                 <span class="blogsociallists">
@@ -48,7 +49,8 @@
             </span> 
           </span>
         
-            <div class="img_icon video_icon" style="opacity: 1; transition-duration: 1s;" (click)="openVideoModal(item.video)"></div>
+            <div class="img_icon video_icon" style="opacity: 1; transition-duration: 1s;"
+             (click)="openVideoModal(item)"></div>
             <img src="//img.youtube.com/vi/{{item.video}}/0.jpg">     
             
           <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen></iframe>   

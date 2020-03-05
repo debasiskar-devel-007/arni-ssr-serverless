@@ -6,7 +6,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 
 export interface DialogData {
+  
   data: any;
+  data1:any;
 }
 
 
@@ -37,6 +39,7 @@ export class VideoGalleryComponent implements OnInit {
   public safeUrl: any;
   public safeSrc: any;
   public profile :any;
+  public videoTextLength:any;
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog,public router:Router,public facebook:FacebookService) {
     // this.meta.setTitle('Arnie Fonseca - Video Gallery');
     // this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
@@ -72,7 +75,11 @@ export class VideoGalleryComponent implements OnInit {
       // console.log('  this.safeUrl', result);
       this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
       this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+      
       // console.log('  this.safeUrl', this.safeUrl);
+      this.videoDataList[i].videoTextLength=this.videoDataList[i].description_html.length;
+      console.log('  this.videoTextLength', this.videoDataList[i].videoTextLength);
+
     }
     this.meta.setTitle('Arnie Fonseca - Video Gallery');
     this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
@@ -129,26 +136,31 @@ export class VideoGalleryComponent implements OnInit {
   }
 
   openVideoModal(val: any) {
-    // console.log('>>>>', val)
 
-    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + val);
+    let videourl:any;
+      videourl= this.video_url+val.video+'?autoplay=1';
+      console.log('>>',videourl)
+
+    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videourl);
 
     //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
     const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
       // panelClass:['modal-md','success-modal'],
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
-      data: this.safeSrc,
-
-
+      data: {url:this.safeSrc,fulldata:val}
+      
 
     });
 
     dialogRef.afterClosed().subscribe(result => {
 
     });
-
   }
+
+ 
+
+
 
   viewDetails(val:any){
     this.router.navigateByUrl('/video-gallery/'+val._id)
@@ -229,5 +241,8 @@ export class VideoGalleryModalComponent {
   constructor(public dialogRef: MatDialogRef<VideoGalleryModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }
+
+
+
 }
 
