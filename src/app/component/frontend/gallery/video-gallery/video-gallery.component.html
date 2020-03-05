@@ -10,13 +10,6 @@
     </mat-card-content>
   </span>
 </mat-card>
-<!-- <mat-card class="innerpagetitle">
-        <span class="mainwrappercontent">
-            <mat-card-content>
-                <h2>service lists</h2>
-            </mat-card-content>
-        </span>
-</mat-card> -->
 <mat-card class="ptb-40 generalcls videogallerywrapper" style="background: #fff !important;">
   <span class="mainwrappercontent bloghead">
     <mat-card-content>
@@ -26,36 +19,43 @@
     </mat-card-content>
   </span>
   <span class="mainwrappercontent pt-30">
-    <!-- <img src="../../../../assets/images/videogallery_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
     <mat-list class="gallaryvideo">
-      <mat-list-item class="item" *ngFor="let item of videoDataList">
-        <span class="singlecolgallarycontent" (click)="openVideoModal(item.video)">
-          <h2>{{item.title}} </h2>
-          <p>{{item.description_html}}<a><span>Read more...</span></a> </p>
-          <span class="contentsection absolute">
-            <span class="blogsociallists">
-              <a class="sociallink fa fb">
-                <fa name="facebook" class="fa-facebook"></fa>
-              </a>
-              <a class="sociallink fa twi">
-                <fa name="twitter" class="fa-twitter"></fa>
-              </a>
-              <a class="sociallink fa lin">
-                <fa name="linkedin" class="fa-linkedin"></fa>
-              </a>
-              <a class="sociallink fa tumblr">
-                <fa name="tumblr" class="fa-tumblr"></fa>
-              </a>
+      <mat-list-item *ngFor="let item of videoDataList">
+        <div class="video-responsive">
+          <span class="singlecolgallarycontent">
+            <h2>{{item.title}} </h2>
+            <!-- <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p> -->
+            <p>{{item.description_html}}<a><span (click)="viewDetails(item)">Read more...</span></a> </p>
+            <span class="contentsection absolute">
+              <span class="blogsociallists">
+                <a class="sociallink fa fb">
+                  <fa name="facebook" class="fa-facebook"></fa>
+                </a>
+                <a class="sociallink fa twi">
+                  <fa name="twitter" class="fa-twitter"></fa>
+                </a>
+                <a class="sociallink fa lin">
+                  <fa name="linkedin" class="fa-linkedin"></fa>
+                </a>
+                <a class="sociallink fa tumblr">
+                  <fa name="tumblr" class="fa-tumblr"></fa>
+                </a>
+              </span>
             </span>
           </span>
-        </span>
-        <div class="video-responsive">
-            <iframe (click)="openVideoModal(item.video)" frameborder="0" width="100%" marginheight="0" marginwidth="0" [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>        
+        
+        <!-- <div class="img_desc" style="background-color: rgba(0, 0, 0, 0.3); color: rgb(255, 255, 255); opacity: 0; transition-duration: 1s;">
+          <div class="img_desc_padding">
+            <strong>YouTUBE Video</strong><br>You can add Youtube videos to be opened in a lightbox window
+          </div>
+        </div> -->
+        
+          <div class="img_icon video_icon" style="opacity: 1; transition-duration: 1s;" (click)="openVideoModal(item.video)"></div>
+          <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen></iframe>
+        </div>
       </mat-list-item>
     </mat-list>
   </span>
 </mat-card>
-
 
 <app-footer></app-footer>

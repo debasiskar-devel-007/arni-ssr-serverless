@@ -136,11 +136,30 @@ const routes: Routes = [
   }
   },
 
+  { path: 'image-gallery/:id', component: ImageGalleryComponent,
+  resolve: { imageGallery: ResolveService },
+  data: {
+    requestcondition: {source: "", condition: {} },
+    endpoint: "imagegallerydata"
+  }
+  },
+
+
   { path: 'video-gallery', component: VideoGalleryComponent,
   resolve: { videoGallery: ResolveService },
   data: {
     requestcondition: {source: "video_management_view", condition: {} },
     endpoint: "datalistwithouttoken"
+  }
+  },
+
+
+
+  { path: 'video-gallery/:id', component: VideoGalleryComponent,
+  resolve: { videoGallery: ResolveService },
+  data: {
+    requestcondition: {source: "", condition: {} },
+    endpoint: "videogallerydata"
   }
   },
 

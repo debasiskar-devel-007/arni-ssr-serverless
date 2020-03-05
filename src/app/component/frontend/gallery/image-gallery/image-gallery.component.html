@@ -34,7 +34,7 @@
             <mat-list-item class="item"  *ngFor="let item of imageDataList">
                 <span class="singlecolgallarycontent">
                     <h2>{{item.title}} </h2>
-                    <p>{{item.decription}} <a><span>Read more...</span></a> </p>  
+                    <p>{{item.decription}} <a><span (click)="viewDetails(item)">Read more...</span></a> </p>  
                     <span class="contentsection absolute">
                         <span class="blogsociallists">
 
