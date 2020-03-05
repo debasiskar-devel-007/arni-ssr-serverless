@@ -32,7 +32,7 @@ a{cursor:pointer;outline:none}
 .generalcls .mat-card-header-text{margin:0!important;width:100%}
 .generalcls .mat-card-title{font-family:'HelveticaBold';font-size:48px!important;line-height:48px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:30px!important;color:#2a2b2c;display:flex;width:100%;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;justify-content:center}
 .generalcls .mat-card-title span span{font-family:'HelveticaBold';padding-left:10px}
-.generalcls p{font-family:'Helvetica-Normal';font-size:18px;color:#24252c;margin:0;padding:0;line-height:25px;font-weight:400}
+.generalcls p{font-family:'Helvetica-Normal';font-size:18px;color:#24252c;margin:0;padding:0;line-height:22px;font-weight:400}
 .generalcls p strong{text-transform:uppercase;font-family:'HelveticaBold'}
 .generalcls{padding:40px 0!important}
 .generalcls .is-table-row{direction:rtl}
@@ -227,7 +227,7 @@ a{cursor:pointer;outline:none}
 .generalcls.blog .mat-card-title{font-size:24px!important;line-height:normal!important;justify-content:space-between;margin-bottom:15px!important;margin-top:15px!important;text-transform:capitalize;white-space:normal;word-break:break-word}
 .bloglists .item_wrapper{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;margin-top:20px}
 .bloglists .item_wrapper > .item{box-sizing:border-box;margin-bottom:20px;width:calc(1/2*100% - (1 - 1/2)*20px);background:#d8dde2}
-.bloglists .item_wrapper > .item .item_images{width:100%;display:flex;justify-content:center;align-items:center;height:174px;overflow:hidden}
+.bloglists .item_wrapper > .item .item_images{width:100%;cursor: pointer; display:flex;justify-content:center;align-items:center;height:174px;overflow:hidden}
 .bloglists .item_wrapper > .item .item_images img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto}
 .bloglists .item_wrapper > .item .contentsection{align-items:stretch;height:56%}
 .bloglists .bloglistinner{display:flex;align-items:stretch;justify-content:space-between}
@@ -242,10 +242,11 @@ a{cursor:pointer;outline:none}
 .generalcls.bloglists .mat-card-content{padding:20px;height:70%}
 .generalcls.bloglists > .mat-card-content{padding:0px;}
 .generalcls.bloglists .bloghead .mat-card-content{padding:0px;}
-.generalcls.bloglists .item .mat-card-content h2{font-family:'Helvetica-Normal';font-size:24px!important;line-height:30px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:10px;margin-top:0;color:#06a2b8;white-space:normal!important;text-align:left}
+.generalcls.bloglists .item .mat-card-content h2{font-family:'Helvetica-Normal';cursor: pointer;
+  font-size:24px!important;line-height:30px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:10px;margin-top:0;color:#06a2b8;white-space:normal!important;text-align:left}
 .generalcls .categorywrapper h2.blogtitle,.generalcls .bloglistswrapper h2.blogtitle{font-family:'Helvetica-Normal';font-size:24px!important;line-height:26px!important;text-transform:uppercase;margin:0!important;padding:10px;color:#fff;white-space:normal!important;text-align:left;background-color:#06a2b8;display:flex;align-items:center;justify-content:space-between}
 .generalcls.bloglists .bloglistswrapper h2.blogtitle{width:100%}
-.bloglistswrapper .item .mat-card-content a{margin-top:0;display:block;color:#06a2b8;text-transform:capitalize}
+.bloglistswrapper .item .mat-card-content a{margin-top:6px;display:block;color:#06a2b8;text-transform:capitalize}
 .categorywrapper h2 .mat-raised-button{color:rgba(0,0,0,.87);background-color:transparent;box-shadow:none!important;color:#00505c!important;line-height:normal}
 .categorywrapper .mat-expansion-panel-header,.categorywrapper .mat-expansion-panel-header:hover{background-color:#d4d4d4!important;border-radius:0!important}
 .categorywrapper .mat-expansion-panel-header-description,.categorywrapper .mat-expansion-panel-header-title{display:flex;flex-grow:1;margin-right:16px;text-transform:uppercase}
@@ -630,3 +631,4 @@ a{cursor:pointer;outline:none}
 }
 
 
+.bloglists .item_wrapper>.item .description img{ display: none!Important;}

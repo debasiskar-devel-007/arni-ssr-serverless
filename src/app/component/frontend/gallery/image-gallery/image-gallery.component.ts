@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
-
+import {ActivatedRoute,Route} from '@angular/router'
 @Component({
   selector: 'app-image-gallery',
   templateUrl: './image-gallery.component.html',
@@ -8,7 +8,9 @@ import { MetaService } from '@ngx-meta/core';
 })
 export class ImageGalleryComponent implements OnInit {
 
-  constructor(private readonly meta: MetaService) { 
+  public imageDataList:any;
+
+  constructor(private readonly meta: MetaService,public activatedRoute:ActivatedRoute) { 
     this.meta.setTitle('Arnie Fonseca - Image Gallery');
     this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
     this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
@@ -24,6 +26,16 @@ export class ImageGalleryComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activatedRoute.data.forEach(res=>{
+      let result:any;
+      result=res;
+      this.imageDataList=res.imageGallery.res;
+      console.log(this.imageDataList)
+      
+
+
+    })
+    
   }
 
 }

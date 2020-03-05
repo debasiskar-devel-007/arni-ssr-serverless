@@ -31,211 +31,33 @@
         <mat-list class="gallaryimgvideo">
             
 
-            <mat-list-item class="item" style="">
+            <mat-list-item class="item"  *ngFor="let item of imageDataList">
                 <span class="singlecolgallarycontent">
-                    <h2>Lorem Ipsum </h2>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
+                    <h2>{{item.title}} </h2>
+                    <p>{{item.decription}} <a><span>Read more...</span></a> </p>  
                     <span class="contentsection absolute">
                         <span class="blogsociallists">
+
                             <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
+
                             <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                            <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
+
+                            <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
                             <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                            <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                            <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
+
+                            <a class="sociallink fa tumblr"><fa name="tumblr" class="fa-tumblr"></fa></a>
+
+                          
+                            <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+                            <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
                         </span>                                  
                     </span>    
                 </span>
-                <img src="../../../../assets/images/gallery-img1.jpg">
+                <img [src]="item.image">
             </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                    <img src="../../../../assets/images/gallery-img2.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img3.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img4.jpg">
-                
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img5.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img6.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img7.jpg">
-            </mat-list-item>        
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img8.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img9.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>    
-                        </span>
-                        <img src="../../../../assets/images/gallery-img10.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>   
-                        </span>
-                        <img src="../../../../assets/images/gallery-img11.jpg">
-            </mat-list-item>
-            <mat-list-item class="item" style="">
-                    <span class="singlecolgallarycontent">
-                            <h2>Lorem Ipsum </h2>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of over   <a><span>Read more...</span></a> </p>  
-                            <span class="contentsection absolute">
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
-                                        <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
-                                        <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
-                                        <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
-                                        <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
-                                        <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                                    </span>                                  
-                                </span>
-                        </span>
-                        <img src="../../../../assets/images/gallery-img12.jpg">
-            </mat-list-item> 
+
+            
+  
              <!-- <mat-list-item class="item break" style=""></mat-list-item>   
             <mat-list-item class="item break" style=""></mat-list-item>   
             <mat-list-item class="item break" style=""></mat-list-item>    -->

@@ -31,47 +31,53 @@
           <h2 class="blogtitle">Our Blogs </h2>
           <span class="search-sec">
             <span class="mat-search-bar">
-              <form class="example-form">
+              <span class="example-form">
                 <mat-form-field class="example-full-width">
                   <span matPrefix></span>
-                  <input type="text" matInput placeholder="search by title, keyword"
-                    (keyup)="titleSearchblogListFilter($event.target.value)">
-                  <button mat-button>
+
+                  <input type="text" matInput placeholder="Search by Title, Keyword"
+                    [(ngModel)]='keyword_search'>
+                  <button mat-button (click)="keywordSearchFunction()">
                     <i class="material-icons">
                       search
                     </i>
                   </button>
+
                 </mat-form-field>
+                <span matPrefix></span>
                 <mat-form-field class="example-full-width">
-                  <span matPrefix></span>
-                  <input type="text" matInput placeholder="search Category"
-                    (keyup)="titleSearchCategoryFilter($event.target.value)">
-                  <button mat-button>
-                    <i class="material-icons">
-                      search
-                    </i>
-                  </button>
+                  
+                  <mat-label>Search By Category</mat-label>
+                          <mat-select [(ngModel)]="blogCat" name="blogCat" >
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let category of blogcategorycount" [value]="category._id" 
+                            (click)="blogCatSearch(category._id)"   >
+                              {{category.blogtitle}}
+                            </mat-option>
+                          </mat-select>
                 </mat-form-field>
-              </form>
+              </span>
             </span>
+            <button  mat-button color="primary" type="button" (click)="reset()">Reset</button>
           </span>
           <span class="item_wrapper">
 
           
             <h3 class="norecordfound"  *ngIf="bloglisting =='' "><span>Oops!</span> No Record Found</h3>
 
-            <span class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
+            <span class="item" *ngFor="let item of bloglisting ;let i=index">
              
               <mat-card>
-                <span class="item_images" (click)="blogdetail(item._id)"><img [src]="item.blogs_image"></span>
+                <span class="item_images" (click)="blogdetail(item)"><img [src]="item.blogs_image"></span>
                 <mat-card-content>
                       <span class="bnticons">
                         <button *ngIf="item.video_url !='' && item.video_url !=null "
                           (click)="openvideourl(item.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
                       </span>
-                      <h2 (click)="blogdetail(item._id)">{{item.blogtitle}}</h2>
-                      <span class="description" [innerHtml]="item.description"></span>
-                      <a class="next_page" (click)="blogdetail(item._id)">read more</a>
+
+                      <h2 (click)="blogdetail(item)">{{item.blogtitle}}</h2>
+                      <p class="description"><span [innerHtml]="item.description"></span></p>
+                      <a class="next_page" (click)="blogdetail(item)">read more</a>
                 </mat-card-content>
                 
               </mat-card>
@@ -79,37 +85,6 @@
                 
                 <span class="bottom-blog-wrapper">
                   <span class="date">{{item.date_added}}</span>
-                  <!-- <span class="likecomment">
-                                                <span class="like">
-                                                        <img src="../../../../assets/images/icon-like.png"> <span class="count"><span></span>12</span>
-                                                </span>
-                                                <span class="like">
-                                                    <img src="../../../../assets/images/icon-dislike.png"> <span class="count"><span></span>12</span>
-                                                </span>
-                                                <span class="comment">
-                                                        <img src="../../../../assets/images/icon-comment.png"> <span class="count"><span>6</span> comment</span>
-                                                </span>
-                                            </span> -->
-
-                                            <!-- <div class="sherelinkwrapper">
-                                              <div class="ascol ascol1">
-                                                <p>Share Link for Rep Sign Up</p>
-                                              </div>
-                                              <div class="ascol ascol2">
-                                                <div class="urllink">
-                                                  <a style="pointer-events: none;cursor: default;" href="https://www.betoparedes.com/sales-associate.php?affid={{userId}}">https://www.betoparedes.com/sales-associate.php?affid={{userId}}</a>
-                                                </div>
-                                                  <button class="urlcopybtn" (click)="copyText('https://www.betoparedes.com/sales-associate.php?affid='+userId)"><i class="fa fa-link" aria-hidden="true"></i></button>
-                                              </div>
-                                              <div class="ascol ascol3">
-                                                  <a target="_blank" href="https://www.facebook.com/sharer.php?url=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}" class="icon-button facebook"><i class="fa fa-facebook"></i></a>
-                                                 <a href="#" class="icon-button google-plus"><i class="fa fa-twitter"></i></a>   
-                                                  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}" target="_blank" class="icon-button linkedin"><i class="fa fa-linkedin"></i></a>
-                                                  <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}"  target="_blank" class="icon-button twitter"><i class="fa fa-twitter"></i></a>
-                                                  <a href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fwww.betoparedes.com%2Fsales-associate.php%3Faffid%3D{{userId}}" target="_blank" class="icon-button tumblr"><i class="fa fa-tumblr"></i></a>
-                                              </div>
-                                            </div> -->
-
    
 
                   <span class="sharelinkswrapper">
@@ -127,28 +102,6 @@
                       <a class="sociallink fa tumblr" (click)="tumblrTestimonialShare(item)">
                         <fa name="tumblr" class="fa-tumblr"></fa>
                       </a>
-                      <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
-                          <fa name="facebook" class="fa-facebook"></fa>
-                        </a>
-                        <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
-                          <fa name="twitter" class="fa-twitter"></fa>
-                        </a>
-                        <a class="sociallink fa tbl" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
-                          <fa name="tumblr" class="fa-tumblr"></fa>
-                        </a>
-                        <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Fblog%2F{{item._id}}" target="_blank">
-                          <fa name="linkedin" class="fa-linkedin"></fa>
-                        </a>    -->
-                        <!-- <a class="sociallink fa env">
-                          <fa name="envelope" class="fa-envelope"></fa>
-                        </a> -->
-                        <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)">
-                          <fa name="share" class="fa-share"></fa>
-                        </a> -->
-                        <!-- <a class="sociallink fa link" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)"><fa name="link" class="fa-link"></fa></a> -->
-                        <!-- <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+item._id)">
-                          <fa name="share" class="fa-share"></fa>
-                        </a> -->
                   </span>
 
 
@@ -159,41 +112,34 @@
               </span>
             </span>
           </span>
-          <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null && indexval < bloglisting.length" (click)="blogloadmore()">Load More</button>
+          <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null && highLoadMore == false && bloglisting.length > 3 && keyword_search==''" (click)="blogloadmore()">Load More</button>
+          <button mat-button class="btnblue sim-button" *ngIf="searchLoadMore==false && keyword_search.length>3 && keyword_search!=''"
+            (click)="searchblogloadmore()">Load More</button>
         </span>
         <span class="categorywrapper">
           <h2 class="blogtitle">Categories ({{blogcategorycount.length}})</h2>
-<!--           
-          <mat-tree [dataSource]="blogCategoryDataSource" [treeControl]="nestedTreeControl" class="example-tree">            
-            <mat-tree-node *matTreeNodeDef="let item" matTreeNodePadding>
-                <li class="mat-tree-node">
-                    <button mat-icon-button disabled></button>
-                    {{item.blogtitle}}
-                </li>               
-            </mat-tree-node>
-            <mat-tree-node *matTreeNodeDef="let item;when: hasNestedChild">
-                <li>
-                    <div class="mat-tree-node">
-                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + item.blogtitle">
-                            <mat-icon class="mat-icon-rtl-mirror">
-                                {{nestedTreeControl.isExpanded(item) ? 'expand_more' : 'chevron_right'}}
-                            </mat-icon>
-                        </button>
-                        {{item.blogtitle}} ({{item.blogcount}})
-                    </div>
-                    <ul *ngFor="let item of bloglisting; let i = index" [class.example-tree-invisible]="!nestedTreeControl.isExpanded(item)">
-                        <ng-container matTreeNodeOutlet> {{ item.blogtitle }}</ng-container>
-                    </ul>
-                </li>
-            </mat-tree-node>
-          </mat-tree> -->
-          <mat-accordion *ngFor="let d of blogcategorycount;let i=index; ">
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
+
+          <mat-accordion >
+            <mat-expansion-panel *ngFor="let d of blogcategorycount;let i=index; ">
+              <mat-expansion-panel-header (click)="getAllBlogs(d._id)">
                {{d.blogtitle}}
+               <h5>( {{d.count_blogs}} )</h5>
               </mat-expansion-panel-header>
-          
-            {{d.count_blogs}}
+              <ng-container *ngFor="let cat of catBlogs; let i=index;" >
+                <span >
+                  <div class="categorysub">
+                    <h5 class="inner_header" (click)="blogdetail(cat)">
+                      <span class="blogsubcattitle" (click)="blogdetail(cat)">{{ cat.blogtitle }}</span>
+                      <span class="buttominfocls">
+                        <span ><span class="labelcls">Date:</span>{{cat.date_added}}</span>
+                        <span ><span class="labelcls">By:</span>{{cat.author}}</span>
+                      </span>
+                    </h5>
+                  </div>
+                </span>
+               
+              </ng-container>
+              <button mat-button class="btnblue sim-button" type="button" *ngIf="catBlogs !=null && catBlogs.length >3"  (click)="viewAllCatBlogs(d)">View All</button>
             </mat-expansion-panel>
           </mat-accordion>
           <!-- <span class="categorywrapper">  

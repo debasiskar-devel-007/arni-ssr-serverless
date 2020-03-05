@@ -146,7 +146,11 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/arni-ssr/production/1582263333264-2020-02-21T05:35:33.264Z/arni-ssr.zip"
+<<<<<<< HEAD
+          "S3Key": "serverless/arni-ssr/production/1582520801636-2020-02-24T05:06:41.636Z/arni-ssr.zip"
+=======
+          "S3Key": "serverless/arni-ssr/production/1582542065815-2020-02-24T11:01:05.815Z/arni-ssr.zip"
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
         },
         "FunctionName": "arni-ssr-production-api",
         "Handler": "lambda.universal",
@@ -165,14 +169,22 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersion6NnD59LNj3b4UOqKlgcBkzVdglfcV9p7apk3ESkGVw": {
+<<<<<<< HEAD
+    "ApiLambdaVersionXpqbgXuE9ue5Ye3w0D5BxkUJGDRL9X5RLFr7K4KKk": {
+=======
+    "ApiLambdaVersionzbCXrcHBKHCMYiJTE69sAJtWj238YYuaMBUGFJ9Rk": {
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "I/scnDvze8w+gyW8QDVDELRd3S7yOrM8rC33q1vNq/I="
+<<<<<<< HEAD
+        "CodeSha256": "L9dV+XWDNtx+4pyhigfryvbOYHQHHGXFakK6nhayq3A="
+=======
+        "CodeSha256": "fgjN5OFAu2jbyM0tRn0KKgvsu1WUmNDNb/JzXw8VCJQ="
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       }
     },
     "ApiGatewayRestApi": {
@@ -291,7 +303,11 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1582263295123": {
+<<<<<<< HEAD
+    "ApiGatewayDeployment1582520696508": {
+=======
+    "ApiGatewayDeployment1582542002248": {
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -351,7 +367,11 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersion6NnD59LNj3b4UOqKlgcBkzVdglfcV9p7apk3ESkGVw"
+<<<<<<< HEAD
+        "Ref": "ApiLambdaVersionXpqbgXuE9ue5Ye3w0D5BxkUJGDRL9X5RLFr7K4KKk"
+=======
+        "Ref": "ApiLambdaVersionzbCXrcHBKHCMYiJTE69sAJtWj238YYuaMBUGFJ9Rk"
+>>>>>>> f3826b657f559891e603005230d009ada7b2cd62
       }
     },
     "ServiceEndpoint": {

@@ -3,12 +3,8 @@ import { MetaService } from '@ngx-meta/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ApiService } from '../../../../api.service';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { getLocaleDateFormat } from '@angular/common';
-import { format } from 'url';
 import { DatePipe } from '@angular/common';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
-import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-past-seminars',
@@ -39,7 +35,7 @@ export class PastSeminarsComponent implements OnInit {
   public eventsem:any;
   public pasteventsem:any;
   public searchLoadMore:boolean=false;
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService, public datePipe: DatePipe, public FB: FacebookService) { 
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, public readonly meta: MetaService, public datePipe: DatePipe, public fb: FacebookService) { 
 
     this.meta.setTitle('Arnie Fonseca - Seminars');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Seminars By Arnie Fonseca, and book your seats to Seminars By Coach Arnie near you. Attend Arnie Fonseca Seminars to help improve your life.');
@@ -55,8 +51,8 @@ export class PastSeminarsComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
     this.dataformate = moment();
 
-    FB.init({
-      appId: '2540470256228526',
+    fb.init({
+      appId: '2912281308815518',
       version: 'v2.9'
     });
 
@@ -156,7 +152,7 @@ export class PastSeminarsComponent implements OnInit {
   //facebook share for event
 
   login() {
-    this.FB.login()
+    this.fb.login()
       .then((res: LoginResponse) => {
 
         this.getProfile();
@@ -164,7 +160,7 @@ export class PastSeminarsComponent implements OnInit {
       .catch();
   }
   getProfile() {
-    this.FB.api('me/?fields=id,name,email,picture')
+    this.fb.api('me/?fields=id,name,email,picture')
       .then((res: any) => {
 
         this.profile = res;
@@ -188,7 +184,7 @@ export class PastSeminarsComponent implements OnInit {
       method: 'share',
       quote: 'https://arniefonseca.influxiq.com/'
     };
-    this.FB.ui(params).then((res: UIResponse) => {
+    this.fb.ui(params).then((res: UIResponse) => {
     }).catch(facebook => {
       // console.log(facebook)
     });
@@ -196,7 +192,7 @@ export class PastSeminarsComponent implements OnInit {
 
   logoutWithFacebook(): void {
 
-    this.FB.logout().then();
+    this.fb.logout().then();
   }
 
 
@@ -205,7 +201,7 @@ export class PastSeminarsComponent implements OnInit {
     this.title = val.title;
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
-    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    window.open('http://www.twitter.com/share?url=https://arniefonseca.influxiq.com/workshop-detail/'+this.eventTitle+'/'+ val._id);
     // console.log(url)
 
   }
@@ -216,7 +212,7 @@ export class PastSeminarsComponent implements OnInit {
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
 
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)
 
   }
@@ -230,7 +226,7 @@ export class PastSeminarsComponent implements OnInit {
     this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
     // console.log(this.eventTitle)
 
-    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/seminars-detail/' + this.eventTitle + '/' + val._id);
     // console.log(url)
 
   }

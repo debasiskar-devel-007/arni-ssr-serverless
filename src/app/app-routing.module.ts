@@ -88,19 +88,17 @@ const routes: Routes = [
     path: 'blog', component: BloglistComponent, resolve: { blogCatList: ResolveService },
     data: { requestcondition: { condition: { "limit": 4, "skip": 0 } }, endpoint: 'blogdata' }
   },
-
   {
-    path: 'blogdetail/:_id', component: BlogdetailComponent,
+    path: 'blog/:_id', component: BloglistComponent, resolve: { blogCatList: ResolveService },
+    data: { requestcondition: { condition: {blogcat:"_id","limit": 4, "skip": 0} }, 
+    endpoint: 'bloglistbycategory' }
+  },
+  {
+    path: 'blog/:blogtitle/:_id', component: BlogdetailComponent,
     resolve: {
       blogCatList: ResolveService
     },
-    data:
-    {
-      requestcondition:
-      {
-        source: 'blogs_view', condition: {}
-      }, endpoint: 'datalistwithouttoken'
-    }
+    data:{requestcondition:{condition: {_id:"_id"} },endpoint: 'blogdetailsdatabyid'}
   },
 
   //  static path
@@ -129,8 +127,23 @@ const routes: Routes = [
   { path: 'personal-development-coaching', component: PersonalDevelopmentCoachingComponent },
   { path: 'high-performance-coaching', component: HighPerformanceCoachingComponent },
   { path: 'special-programs-for-young-men', component: SpecialProgramsForYoungMenComponent },
-  { path: 'image-gallery', component: ImageGalleryComponent },
-  { path: 'video-gallery', component: VideoGalleryComponent },
+
+  { path: 'image-gallery', component: ImageGalleryComponent,
+  resolve: { imageGallery: ResolveService },
+  data: {
+    requestcondition: {source: "imageGallery_management_view", condition: {} },
+    endpoint: "datalistwithouttoken"
+  }
+  },
+
+  { path: 'video-gallery', component: VideoGalleryComponent,
+  resolve: { videoGallery: ResolveService },
+  data: {
+    requestcondition: {source: "video_management_view", condition: {} },
+    endpoint: "datalistwithouttoken"
+  }
+  },
+
   { path: 'team', component: TeamComponent },
   { path: 'bio', component: BioComponent },
 
