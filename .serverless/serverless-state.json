@@ -161,7 +161,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/arni-ssr/production/1583407830486-2020-03-05T11:30:30.486Z/arni-ssr.zip"
+                "S3Key": "serverless/arni-ssr/production/1583415353764-2020-03-05T13:35:53.764Z/arni-ssr.zip"
               },
               "FunctionName": "arni-ssr-production-api",
               "Handler": "lambda.universal",
@@ -180,14 +180,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ApiLambdaVersionahcOI4B8XEekD3hUsEPiJEcVO8jqOADfL1TcjRM": {
+          "ApiLambdaVersionAXZcUXV761vfPC1pUo9kWNGF6doucxjZ4AXo3tRi4K4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "jTpBG0TZvZ6jqhg6Ctwujn1BVbf1DyDnKZ/q7ZTZUCQ="
+              "CodeSha256": "qMVtJcKioMLBj+zHUqnfqfWZ2uvVdQXd+n8HcCi/n1M="
             }
           },
           "ApiGatewayRestApi": {
@@ -305,7 +305,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1583407795993": {
+          "ApiGatewayDeployment1583415319708": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -365,7 +365,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionahcOI4B8XEekD3hUsEPiJEcVO8jqOADfL1TcjRM"
+              "Ref": "ApiLambdaVersionAXZcUXV761vfPC1pUo9kWNGF6doucxjZ4AXo3tRi4K4"
             }
           },
           "ServiceEndpoint": {
@@ -497,7 +497,7 @@
     "artifact": "/home/uttam/Documents/uttam/project/arni-ssr-serverless/.serverless/arni-ssr.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/arni-ssr/production/1583407830486-2020-03-05T11:30:30.486Z",
+    "artifactDirectoryName": "serverless/arni-ssr/production/1583415353764-2020-03-05T13:35:53.764Z",
     "artifact": "arni-ssr.zip"
   }
 }

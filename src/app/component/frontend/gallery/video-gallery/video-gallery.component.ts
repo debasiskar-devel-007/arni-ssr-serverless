@@ -126,7 +126,7 @@ export class VideoGalleryComponent implements OnInit {
           this.openVideoModal(val,flag);
 
           let videoimg:any;
-          videoimg='img.youtube.com/vi/'+ this.videoDataList[i].video + '/0.jpg';
+          videoimg='https://img.youtube.com/vi/'+ this.videoDataList[i].video + '/0.jpg';
           console.log('>>>>>>>>>>>>>',videoimg)
 
           this.meta.setTitle('Arnie Fonseca - Video Gallery', this.videoDataList[i].title);
