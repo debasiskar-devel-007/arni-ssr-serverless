@@ -6,9 +6,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 
 export interface DialogData {
-  
+
   data: any;
-  data1:any;
+  data1: any;
 }
 
 
@@ -38,9 +38,9 @@ export class VideoGalleryComponent implements OnInit {
   public video_url: any = 'https://www.youtube.com/embed/';
   public safeUrl: any;
   public safeSrc: any;
-  public profile :any;
-  public videoTextLength:any;
-  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog,public router:Router,public facebook:FacebookService) {
+  public profile: any;
+  public videoTextLength: any;
+  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog, public router: Router, public facebook: FacebookService) {
     // this.meta.setTitle('Arnie Fonseca - Video Gallery');
     // this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
     // this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
@@ -61,44 +61,44 @@ export class VideoGalleryComponent implements OnInit {
 
   ngOnInit() {
 
-    if(this.activatedRoute.snapshot.params.id == null){
-    this.activatedRoute.data.forEach(res => {
-      let result: any;
-      result = res;
-      this.videoDataList = res.videoGallery.res;
-      // console.log(this.videoDataList, '+++++')
-    })
+    if (this.activatedRoute.snapshot.params.id == null) {
+      this.activatedRoute.data.forEach(res => {
+        let result: any;
+        result = res;
+        this.videoDataList = res.videoGallery.res;
+        // console.log(this.videoDataList, '+++++')
+      })
 
-    for (let i in this.videoDataList) {
-      let result: any;
-      result = this.videoDataList[i].video;
-      // console.log('  this.safeUrl', result);
-      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
-      this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
-      
-      // console.log('  this.safeUrl', this.safeUrl);
-      this.videoDataList[i].videoTextLength=this.videoDataList[i].description_html.length;
-      console.log('  this.videoTextLength', this.videoDataList[i].videoTextLength);
+      for (let i in this.videoDataList) {
+        let result: any;
+        result = this.videoDataList[i].video;
+        // console.log('  this.safeUrl', result);
+        this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+        this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
 
+        // console.log('  this.safeUrl', this.safeUrl);
+        this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
+        console.log('  this.videoTextLength', this.videoDataList[i].videoTextLength);
+
+      }
+      this.meta.setTitle('Arnie Fonseca - Video Gallery');
+      this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
+      this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
+
+      this.meta.setTag('og:keyword', 'Arnie Fonseca Videos, Arnie Fonseca Event Videos, Videos Of Arnie Fonseca');
+      this.meta.setTag('twitter:keyword', 'Arnie Fonseca Videos, Arnie Fonseca Event Videos, Videos Of Arnie Fonseca');
+
+      this.meta.setTag('og:title', 'Arnie Fonseca - Video Gallery');
+      this.meta.setTag('twitter:title', 'Arnie Fonseca - Video Gallery');
+      this.meta.setTag('og:type', 'website');
+      this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
+      this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png')
     }
-    this.meta.setTitle('Arnie Fonseca - Video Gallery');
-    this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
-    this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
-
-    this.meta.setTag('og:keyword', 'Arnie Fonseca Videos, Arnie Fonseca Event Videos, Videos Of Arnie Fonseca');
-    this.meta.setTag('twitter:keyword', 'Arnie Fonseca Videos, Arnie Fonseca Event Videos, Videos Of Arnie Fonseca');
-
-    this.meta.setTag('og:title', 'Arnie Fonseca - Video Gallery');
-    this.meta.setTag('twitter:title', 'Arnie Fonseca - Video Gallery');
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-    this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png')
-  }
 
 
 
 
-    if(this.activatedRoute.snapshot.params.id != null){
+    if (this.activatedRoute.snapshot.params.id != null) {
       this.activatedRoute.data.forEach(res => {
         let result: any;
         result = res;
@@ -114,20 +114,20 @@ export class VideoGalleryComponent implements OnInit {
         // console.log('  this.safeUrl', this.safeUrl);
       }
 
-      for(let i in this.videoDataList){
-        if(this.activatedRoute.snapshot.params.id == this.videoDataList[i]._id){
+      for (let i in this.videoDataList) {
+        if (this.activatedRoute.snapshot.params.id == this.videoDataList[i]._id) {
           console.log(this.videoDataList[i])
-        
-        this.meta.setTitle('Arnie Fonseca - Video Gallery',this.videoDataList[i].title);
-    this.meta.setTag('og:description',this.videoDataList[i].description_html);
-    this.meta.setTag('twitter:description', this.videoDataList[i].description_html);
-    this.meta.setTag('og:url','https://arniefonseca.influxiq.com/video-gallery/'+this.videoDataList[i]._id);
-    this.meta.setTag('og:title',this.videoDataList[i].title);
-    this.meta.setTag('twitter:title',this.videoDataList[i].title);
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image',this.video_url + this.videoDataList[i].video );
-    this.meta.setTag('twitter:image', this.video_url + this.videoDataList[i].video)
-    this.meta.setTag('twitter:url','https://arniefonseca.influxiq.com/video-gallery/'+this.videoDataList[i]._id);
+
+          this.meta.setTitle('Arnie Fonseca - Video Gallery', this.videoDataList[i].title);
+          this.meta.setTag('og:description', this.videoDataList[i].description_html);
+          this.meta.setTag('twitter:description', this.videoDataList[i].description_html);
+          this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
+          this.meta.setTag('og:title', this.videoDataList[i].title);
+          this.meta.setTag('twitter:title', this.videoDataList[i].title);
+          this.meta.setTag('og:type', 'website');
+          this.meta.setTag('og:image', this.video_url + this.videoDataList[i].video + '/0.jpg');
+          this.meta.setTag('twitter:image', this.video_url + this.videoDataList[i].video)
+          this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
         }
       }
     }
@@ -137,9 +137,9 @@ export class VideoGalleryComponent implements OnInit {
 
   openVideoModal(val: any) {
 
-    let videourl:any;
-      videourl= this.video_url+val.video+'?autoplay=1';
-      console.log('>>',videourl)
+    let videourl: any;
+    videourl = this.video_url + val.video + '?autoplay=1';
+    console.log('>>', videourl)
 
     this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videourl);
 
@@ -148,8 +148,8 @@ export class VideoGalleryComponent implements OnInit {
       // panelClass:['modal-md','success-modal'],
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
-      data: {url:this.safeSrc,fulldata:val}
-      
+      data: { url: this.safeSrc, fulldata: val }
+
 
     });
 
@@ -158,20 +158,20 @@ export class VideoGalleryComponent implements OnInit {
     });
   }
 
- 
 
 
 
-  viewDetails(val:any){
-    this.router.navigateByUrl('/video-gallery/'+val._id)
+
+  viewDetails(val: any) {
+    this.router.navigateByUrl('/video-gallery/' + val._id)
   }
 
-   // fb share section 
+  // fb share section 
 
-   login() {
+  login() {
     this.facebook.login()
       .then((res: LoginResponse) => {
-       
+
         this.getProfile();
       })
       .catch();
@@ -179,50 +179,50 @@ export class VideoGalleryComponent implements OnInit {
   getProfile() {
     this.facebook.api('me/?fields=id,name,email,picture')
       .then((res: any) => {
-       
+
         this.profile = res;
-        
+
       })
       .catch((error: any) => {
-  
+
       });
   }
-  
 
-  fbShare(val:any){
+
+  fbShare(val: any) {
     // console.log(val)
-    var url='https://arniefonseca.influxiq.com/video-gallery/'+ val._id;
+    var url = 'https://arniefonseca.influxiq.com/video-gallery/' + val._id;
     //console.log(url)
 
     let params: UIParams = {
       href: url,
       method: 'share'
     };
-    this.facebook.ui(params).then((res:UIResponse)=>{
-    }).catch(facebook=>{
+    this.facebook.ui(params).then((res: UIResponse) => {
+    }).catch(facebook => {
       // console.log(facebook)
     });
   }
 
   // twitter share 
 
-  twitterShare(val:any){
+  twitterShare(val: any) {
     // console.log(val)
-    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/video-gallery/'+ val._id);
+    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/video-gallery/' + val._id);
   }
 
   // linkedin share 
 
-  linkedinShare(val:any){
+  linkedinShare(val: any) {
     // console.log(val)
-    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/video-gallery/'+ val._id);
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/video-gallery/' + val._id);
   }
 
   // tumblr share 
 
-  tumblrShare(val:any){
+  tumblrShare(val: any) {
     // console.log(val)
-    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/video-gallery/'+ val._id);
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/video-gallery/' + val._id);
   }
 
 
@@ -238,8 +238,72 @@ export class VideoGalleryComponent implements OnInit {
   templateUrl: './videoModal.html'
 })
 export class VideoGalleryModalComponent {
+  public profile: any;
   constructor(public dialogRef: MatDialogRef<VideoGalleryModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, public facebook: FacebookService) {
+    facebook.init({
+      appId: '2912281308815518',
+      version: 'v2.9'
+    });
+  }
+
+  // fb share section 
+
+  login() {
+    this.facebook.login()
+      .then((res: LoginResponse) => {
+
+        this.getProfile();
+      })
+      .catch();
+  }
+  getProfile() {
+    this.facebook.api('me/?fields=id,name,email,picture')
+      .then((res: any) => {
+
+        this.profile = res;
+
+      })
+      .catch((error: any) => {
+
+      });
+  }
+
+
+  fbShare(val: any) {
+    console.log(val)
+    var url = 'https://arniefonseca.influxiq.com/video-gallery/' + val._id;
+    //console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res: UIResponse) => {
+    }).catch(facebook => {
+      // console.log(facebook)
+    });
+  }
+
+  // twitter share 
+
+  twitterShare(val: any) {
+    console.log(val)
+    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/video-gallery/' + val._id);
+  }
+
+  // linkedin share 
+
+  linkedinShare(val: any) {
+    // console.log(val)
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/video-gallery/' + val._id);
+  }
+
+  // tumblr share 
+
+  tumblrShare(val: any) {
+    // console.log(val)
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/video-gallery/' + val._id);
   }
 
 
