@@ -88,19 +88,17 @@ const routes: Routes = [
     path: 'blog', component: BloglistComponent, resolve: { blogCatList: ResolveService },
     data: { requestcondition: { condition: { "limit": 4, "skip": 0 } }, endpoint: 'blogdata' }
   },
-
   {
-    path: 'blogdetail/:_id', component: BlogdetailComponent,
+    path: 'blog/:_id', component: BloglistComponent, resolve: { blogCatList: ResolveService },
+    data: { requestcondition: { condition: {blogcat:"_id","limit": 4, "skip": 0} }, 
+    endpoint: 'bloglistbycategory' }
+  },
+  {
+    path: 'blog/:blogtitle/:_id', component: BlogdetailComponent,
     resolve: {
       blogCatList: ResolveService
     },
-    data:
-    {
-      requestcondition:
-      {
-        source: 'blogs_view', condition: {}
-      }, endpoint: 'datalistwithouttoken'
-    }
+    data:{requestcondition:{condition: {_id:"_id"} },endpoint: 'blogdetailsdatabyid'}
   },
 
   //  static path
@@ -129,19 +127,66 @@ const routes: Routes = [
   { path: 'personal-development-coaching', component: PersonalDevelopmentCoachingComponent },
   { path: 'high-performance-coaching', component: HighPerformanceCoachingComponent },
   { path: 'special-programs-for-young-men', component: SpecialProgramsForYoungMenComponent },
-  { path: 'image-gallery', component: ImageGalleryComponent },
-  { path: 'video-gallery', component: VideoGalleryComponent },
+
+  { path: 'image-gallery', component: ImageGalleryComponent,
+  resolve: { imageGallery: ResolveService },
+  data: {
+    requestcondition: {source: "imageGallery_management_view", condition: {} },
+    endpoint: "datalistwithouttoken"
+  }
+  },
+
+  { path: 'image-gallery/:id', component: ImageGalleryComponent,
+  resolve: { imageGallery: ResolveService },
+  data: {
+    requestcondition: {source: "", condition: {} },
+    endpoint: "imagegallerydata"
+  }
+  },
+
+
+  { path: 'video-gallery', component: VideoGalleryComponent,
+  resolve: { videoGallery: ResolveService },
+  data: {
+    requestcondition: {source: "video_management_view", condition: {} },
+    endpoint: "datalistwithouttoken"
+  }
+  },
+
+
+
+  { path: 'video-gallery/:id', component: VideoGalleryComponent,
+  resolve: { videoGallery: ResolveService },
+  data: {
+    requestcondition: {source: "", condition: {} },
+    endpoint: "videogallerydata"
+  }
+  },
+
   { path: 'team', component: TeamComponent },
   { path: 'bio', component: BioComponent },
+
   { path: 'past-seminars', component: PastSeminarsComponent,
   resolve: { seminarsListData: ResolveService },
   data: {
-    requestcondition: { source: "events_view", condition: {type:"seminars"} },
-    endpoint: "datalistwithouttoken"
+    requestcondition: { source: "", condition: {} , type:"seminars","limit":14,"skip":0 },
+    endpoint: "pasteventdatalist"
   }
 },
-  { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent },
-  { path: 'past-workshops', component: PastWorkshopsComponent },
+  { path: 'past-speaker-engagements', component: PastSpeakerEngagementsComponent,
+  resolve: { speakerEngagementsListData: ResolveService },
+  data: {
+    requestcondition: {source: "", condition: {} ,type:"speaker_engagement" ,"limit":14,skip:0},
+    endpoint: "pasteventdatalist"
+  }
+},
+  { path: 'past-workshops', component: PastWorkshopsComponent,
+  resolve: { workshopsListData: ResolveService },
+  data: {
+    requestcondition: { source: "", condition: {} , type:"workshops","limit":14,skip:0 },
+    endpoint: "pasteventdatalist"
+  }
+ },
 
 
 // ___________________event frontend__________________//

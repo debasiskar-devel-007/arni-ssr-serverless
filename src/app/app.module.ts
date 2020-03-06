@@ -39,7 +39,7 @@ import { PersonalDevelopmentCoachingComponent } from './component/frontend/servi
 import { HighPerformanceCoachingComponent } from './component/frontend/services/high-performance-coaching/high-performance-coaching.component';
 import { SpecialProgramsForYoungMenComponent } from './component/frontend/services/special-programs-for-young-men/special-programs-for-young-men.component';
 import { ImageGalleryComponent } from './component/frontend/gallery/image-gallery/image-gallery.component';
-import { VideoGalleryComponent } from './component/frontend/gallery/video-gallery/video-gallery.component';
+import { VideoGalleryComponent, VideoGalleryModalComponent } from './component/frontend/gallery/video-gallery/video-gallery.component';
 import { TeamComponent } from './component/frontend/team/team.component';
 import { SeminarsComponent } from './component/frontend/events/seminars/seminars.component';
 import { SeminarsDetailComponent } from './component/frontend/events/seminars-detail/seminars-detail.component';
@@ -114,7 +114,7 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
     PastSpeakerEngagementsComponent,
 
     PastWorkshopsComponent,
-
+    VideoGalleryModalComponent
 
   ],
   imports: [
@@ -136,6 +136,6 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent]
+  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent]
 })
 export class AppModule { }

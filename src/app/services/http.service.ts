@@ -145,4 +145,19 @@ export class HttpService {
     return result;
   }
 
+  getDatalistForResolve(requestdata: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.accesstoken
+      })
+    };
+    // console.log(requestdata)
+    
+    var result = this._http.post(this.baseUrl + requestdata.endpoint, JSON.stringify(requestdata.requestcondition), httpOptions).pipe(map(res => res));
+    return result;
+  
+  
+  }
+
 }

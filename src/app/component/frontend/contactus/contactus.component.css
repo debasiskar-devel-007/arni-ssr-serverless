@@ -1,4 +1,4 @@
-.contactusbg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat center center!important;background-size:cover!important}
+.contactusbg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat top right;background-size:cover}
 .contactuswrapper.mat-card{background:url(../../../../assets/images/contactuswrapperbg.png) no-repeat center center #fff!important;background-size:cover!important}
 .contactusimgwrap{position:absolute;bottom:-80px;left:2%;width:40%}
 .contactusblockinner{display:flex!important;justify-content:space-between;align-items:stretch}

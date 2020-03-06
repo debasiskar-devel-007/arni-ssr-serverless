@@ -65,8 +65,8 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .testimonialwrapper .contentsection{display:flex;align-items:flex-end;justify-content:space-between;padding:20px 5px;flex-wrap:wrap;flex-direction:row;width:100%}
 .quatation a{float:left;color:#1bbef7;text-transform:capitalize;font-size:16px}
 .testimonialwrapper .mat-list .mat-list-item.testimonialserv .mat-list-item-content{padding:0;display:flex;position:initial!important;height:100%;align-items:flex-start;flex-wrap:wrap}
-.singlecolgallarycontent .absolute{position:relative!important;bottom:0!important;left:0!important;margin-top:15px!important}
-.singlecolgallarycontent .contentsection .blogsociallists{margin-top:0;display:inline-block;padding:8px 5px;background:#fff}
+.singlecolgallarycontent .absolute{position:relative!important;bottom:0!important;left:0!important;margin-top: 5px!important;background: transparent;padding: 3px 2px;}
+.singlecolgallarycontent .contentsection .blogsociallists{margin-top:0;display:inline-block;padding:3px;}
 .singlecolgallarycontent .contentsection .blogsociallists .sociallink fa{font-size:16px}
 .formspan .example-container .files-view{background-repeat:no-repeat;background-size:100px;background-position:center;height:auto!important;width:280px!important;margin:0 auto 20px;border-radius:10px}
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{background-color:#0fd183}
@@ -153,12 +153,9 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     font-size: 30px!important;
     line-height: 36px!important;     color: #21c4e1 !important; margin: 0; padding:15px 0 10px 0;}
 
-.footewrmoadbox  .generalmodalcls h2{ text-align: left; font-family: 'HelveticaBold';
-    font-size: 28px!important;
-    line-height: 30px!important;   margin: 0; padding: 10px 0;   color: #333 !important;}
+.footewrmoadbox  .generalmodalcls h2{ text-align: left; font-family: 'HelveticaBold';font-size: 28px!important;line-height: 30px!important;   margin: 0; padding: 10px 0;   color: #333 !important;}
 
-.footewrmoadbox  .generalmodalcls p{ text-align: left; font-family: 'Helvetica-Normal';
-    font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;}
+.footewrmoadbox  .generalmodalcls p{ text-align: left; font-family: 'Helvetica-Normal';font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;}
 
 .blogdetail_videomodal iframe{ width: 100%; border: none;}
 
@@ -174,6 +171,11 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
   overflow: auto;}
 
 
+  .blogdetail_videomodal .vid-desc{padding: 10px 10px 0px;}
+  .blogdetail_videomodal .vid-desc h2{text-align: left; font-family: 'HelveticaBold';font-size: 24px!important;line-height: 24px!important;   margin: 0; padding: 0;color: #333 !important;text-transform: uppercase;display: flex;align-items: center;justify-content: space-between;white-space: normal;word-break: break-word;}
+  .blogdetail_videomodal .vid-desc span{color:#0fd183;font-size: 16px!important;line-height: 18px!important;}
+  .blogdetail_videomodal .vid-desc p{text-align: left; font-family: 'Helvetica-Normal';font-size: 18px;  color: #333 !important; margin: 0; padding: 10px 0;white-space: normal;
+    word-break: break-word;}
 
   .blogdetail_videomodal .video-responsive{
     overflow:hidden;
@@ -181,7 +183,7 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     position:relative;
     height:0;
 }
-.blogdetail_videomodal .video-responsive iframe{
+.blogdetail_videomodal .video-responsive iframe,.blogdetail_videomodal .video-responsive object{
     left:0;
     top:0;
     height:100%;
@@ -193,21 +195,53 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     padding: 0;
 }
 
+.event_right_blog .event_blog_top{display: flex;padding: 10px 0px 0px;justify-content: space-between;align-items: center;}
 
+.norecordfound{font-size: 26px;font-weight: 200;color: #d06666;padding: 0;margin: 0 0 7px;text-align: center;width: 100%;font-style: oblique;}
+.norecordfound span{color: #000; display:block;font-size: 32px;font-style: oblique;font-weight: 400;}
+.event_blog label a{color:#ff3f3a !important;}
+
+.bloglists .item_wrapper>.item .description {
+  color: #838383;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 18px;
+  min-height: 86px;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.mostviewedblogs .item_wrapper .item .blogsociallists{width: 100%;}
+.youmightalsolike .item_wrapper .item .blogsociallists{width: 100%;}
+/* .blogdetail .bottom_blog .item_wrapper .item .contentsection .blogsociallists{width: 300px;} */
 
 @media only screen and (max-width: 1199px) {
   .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}
 
- 
-
 }
 
-@media only screen and (max-width: 580px) {
+  @media only screen and (max-width: 991px) {
+    .cdk-overlay-connected-position-bounding-box{position: inherit;}
+    .cdk-overlay-connected-position-bounding-box[style]{left: 0;width: 100%;}
+    .cdk-overlay-pane[style]{display: initial;}
+    .mat-menu-panel{margin-left: 0;min-width: 100% !important;max-width: 100% !important;}
+  }
 
+
+@media only screen and (max-width: 580px) {
+  .blogdetail_videomodal .vid-desc h2 {
+    font-size: 20px!important;
+    line-height: 20px!important;
+  }
   .blogdetail_videomodal .mat-dialog-container{ width:90%!Important}
 
   .blogdetail_videomodal .mat-dialog-container{
     min-width: 220px!important;}
+    .blogdetail_videomodal .vid-desc p {
+      font-size: 14px;
+  }
+  .blogdetail_videomodal .contentsection {padding: 5px;}
 }
 
 
@@ -310,4 +344,6 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .spinner.windcatcher .blade:nth-child(6) { -webkit-animation-delay: 1.25s; animation-delay: 1.25s; }
 .spinner.windcatcher .blade:nth-child(7) { -webkit-animation-delay: 1.5s; animation-delay: 1.5s; }
 .spinner.windcatcher .blade:nth-child(8) { -webkit-animation-delay: 1.75s; animation-delay: 1.75s; }
+
+.cdk-overlay-transparent-backdrop, .cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {display: none;}
 

@@ -95,6 +95,8 @@ THE SOFTWARE.
 
 @angular/material/checkbox
 
+@angular/material/chips
+
 @angular/material/core
 
 @angular/material/datepicker
@@ -126,8 +128,6 @@ THE SOFTWARE.
 @angular/material/toolbar
 
 @angular/material/tooltip
-
-@angular/material/tree
 
 @angular/platform-browser
 MIT

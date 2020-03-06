@@ -1,4 +1,4 @@
-.contactusbg{background:url(../../../../assets/images/biobanner1.png)!important;background-position:right top;background-size:cover!important}
+.biobg{background:url(../../../../assets/images/biobanner1.png) no-repeat top right;background-size:cover}
 .innerpagebanner.mat-card .mat-card-content span{padding-left:0}
 .imgwrapper{background:#fff;width:208px;height:auto;float:left;padding:6px;box-shadow:0 2px 5px #ddd;margin-right:25px;margin-bottom:9px}
 .imgwrapper img{max-width:100%}

@@ -1,4 +1,4 @@
-.couplescounselingbg.mat-card {background:url(../../../../../assets/images/couplesbanner1.png) no-repeat center center;background-size: cover ;}
+.couplescounselingbg.mat-card {background:url(../../../../../assets/images/couplesbanner1.png) no-repeat top right;background-size: cover ;}
 .innerpagebanner.mat-card .mat-card-content span {padding-left: 0;}
 .bolock2container {display: flex;justify-content: space-between;}
 .bolock2container .mat-list-item img {max-width: 100%; min-height: 100%; object-fit: cover}

@@ -13,11 +13,12 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./past-speaker-engagements.component.css']
 })
 export class PastSpeakerEngagementsComponent implements OnInit {
-  public indexvallength: any=1;
+  public indexvallength: any;
 
 
-  public indexval:any=6;
+  public indexvalright:any=12;
 
+  public searchLoadMore:boolean=false;
 
   public indexvalleftlengthlength: any=1;
 
@@ -35,9 +36,11 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   public profile:any;
 
   public upComingEvent:any=[];
-  public pastEvent:any=[];
-
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService,private sanitizer: DomSanitizer,public FB:FacebookService ,public datePipe: DatePipe) { 
+  public pastEvent:any=[];  
+  public eventsem:any;
+  public pasteventsem:any;
+  
+  constructor(private activatedRoute: ActivatedRoute, public router: Router, public apiService: ApiService, private readonly meta: MetaService,public sanitizer: DomSanitizer,public fb:FacebookService ,public datePipe: DatePipe) { 
 
     this.meta.setTitle('Arnie Fonseca - Speaker Engagements');
     this.meta.setTag('og:description', 'Check out the dates and locations of upcoming Arnie Fonseca Speaker Engagements, and hear Coach Arnie speak. Attend one of these Speaker Engagements By Coach Arnie so that he can help you achieve all you want.');
@@ -54,9 +57,30 @@ export class PastSpeakerEngagementsComponent implements OnInit {
 
     this.dataformate = moment();
 
+
+    fb.init({
+      appId: '2912281308815518',
+      version: 'v2.9'
+    });
+
   }
 
   ngOnInit() {
+
+    this.activatedRoute.data.forEach(data => {
+      let result: any = {};
+      result = data.speakerEngagementsListData.past_events;
+      // console.warn(result);
+
+      // this.eventImage=result.event_image[0].basepath[0]+result.event_image[0].image[0];
+      // console.log('+++++>>>>>>>>>>>>', this.eventImage)
+      // console.log('>>>>>>>>>>>>>>>>',result);
+      this.SpeakerListArry = result;
+
+      this.indexvallength = this.SpeakerListArry.length;
+
+      this.indexvalleftlengthlength = this.SpeakerListArry.length;
+    })
 
     //past and upcoming event
 
@@ -92,13 +116,30 @@ export class PastSpeakerEngagementsComponent implements OnInit {
   }
 
 
-
-  
+  blogloadmore(){
+    // this.indexvalright=this.indexvalright + 6;
+    let data:any;
+    data={
+      "type":"speaker_engagement",
+      "limit":10,
+      "skip":this.indexvalright
+    }
+    this.apiService.CustomRequest(data,'pasteventdatalist').subscribe(res=>{
+      let result:any=res;
+      console.log(result.past_events)
+      if(result.past_events.length>0){
+        this.SpeakerListArry = this.SpeakerListArry.concat(result.past_events);
+        this.indexvalright = this.indexvalright + 6;
+      }else{
+           this.searchLoadMore=true;
+      }
+    })
+  }
 
 //facebook share for event
 
 login() {
-  this.FB.login()
+  this.fb.login()
     .then((res: LoginResponse) => {
      
       this.getProfile();
@@ -106,7 +147,7 @@ login() {
     .catch();
 }
 getProfile() {
-  this.FB.api('me/?fields=id,name,email,picture')
+  this.fb.api('me/?fields=id,name,email,picture')
     .then((res: any) => {
      
       this.profile = res;
@@ -130,7 +171,7 @@ fbshare(val: any) {
     method: 'share',
     quote: 'https://arniefonseca.influxiq.com/'
   };
-  this.FB.ui(params).then((res:UIResponse)=>{
+  this.fb.ui(params).then((res:UIResponse)=>{
   }).catch(facebook=>{
     // console.log(facebook)
   });
@@ -138,7 +179,7 @@ fbshare(val: any) {
 
 logoutWithFacebook(): void {
 
-  this.FB.logout().then();
+  this.fb.logout().then();
 }
 
 
@@ -147,7 +188,7 @@ twitterShare(val:any){
   this.title = val.title;
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   // console.log(this.eventTitle)
-  window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('http://www.twitter.com/share?url=https://arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }
@@ -158,7 +199,7 @@ linkedinShare(val:any){
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   // console.log(this.eventTitle)
 
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }
@@ -172,7 +213,7 @@ linkedinShare(val:any){
   this.eventTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
   // console.log(this.eventTitle)
 
-  window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
+  window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/speaker-engagements-detail/'+this.eventTitle+'/'+ val._id);
   // console.log(url)
 
 }

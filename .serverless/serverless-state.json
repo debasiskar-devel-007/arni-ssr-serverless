@@ -115,8 +115,7 @@
                       {
                         "Effect": "Allow",
                         "Action": [
-                          "logs:CreateLogStream",
-                          "logs:CreateLogGroup"
+                          "logs:CreateLogStream"
                         ],
                         "Resource": [
                           {
@@ -162,7 +161,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/arni-ssr/production/1582025634278-2020-02-18T11:33:54.278Z/arni-ssr.zip"
+                "S3Key": "serverless/arni-ssr/production/1583415353764-2020-03-05T13:35:53.764Z/arni-ssr.zip"
               },
               "FunctionName": "arni-ssr-production-api",
               "Handler": "lambda.universal",
@@ -181,14 +180,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ApiLambdaVersionbMLzUpkpDo3G0NPp9Vk9lJrUamdW2pvhoXrNOQwLg": {
+          "ApiLambdaVersionAXZcUXV761vfPC1pUo9kWNGF6doucxjZ4AXo3tRi4K4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "ZdBc/z+FpkvCBe1LPeresLpZTqItUtUyeW/FiCdS6VY="
+              "CodeSha256": "qMVtJcKioMLBj+zHUqnfqfWZ2uvVdQXd+n8HcCi/n1M="
             }
           },
           "ApiGatewayRestApi": {
@@ -199,8 +198,7 @@
                 "Types": [
                   "EDGE"
                 ]
-              },
-              "Policy": ""
+              }
             }
           },
           "ApiGatewayResourceProxyVar": {
@@ -307,7 +305,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1582025588441": {
+          "ApiGatewayDeployment1583415319708": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -367,7 +365,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionbMLzUpkpDo3G0NPp9Vk9lJrUamdW2pvhoXrNOQwLg"
+              "Ref": "ApiLambdaVersionAXZcUXV761vfPC1pUo9kWNGF6doucxjZ4AXo3tRi4K4"
             }
           },
           "ServiceEndpoint": {
@@ -491,17 +489,15 @@
         "memory": 192,
         "timeout": 10,
         "runtime": "nodejs10.x",
-        "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionbMLzUpkpDo3G0NPp9Vk9lJrUamdW2pvhoXrNOQwLg"
+        "vpc": {}
       }
     },
     "serviceFilename": "serverless.yml",
     "layers": {},
-    "isDashboardMonitoringPreconfigured": false,
-    "artifact": "/home/influxiq-03/Downloads/arni-ssr-serverless/.serverless/arni-ssr.zip"
+    "artifact": "/home/uttam/Documents/uttam/project/arni-ssr-serverless/.serverless/arni-ssr.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/arni-ssr/production/1582025634278-2020-02-18T11:33:54.278Z",
+    "artifactDirectoryName": "serverless/arni-ssr/production/1583415353764-2020-03-05T13:35:53.764Z",
     "artifact": "arni-ssr.zip"
   }
 }

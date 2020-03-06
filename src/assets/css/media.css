@@ -3,11 +3,11 @@
   .maincontainer{width:96%}
   }
 
-  @media only screen and (max-width: 1428px) {
+  /* @media only screen and (max-width: 1428px) {
 
     .blogdetail .bottom_blog .item_wrapper .item .author{ display: block;}
 
-  }
+  } */
   @media only screen and (max-width: 1366px) {
   .probidhomeblock1.mat-card .mat-tab-header{width:100%}
   .homemain .mat-nav-list{width:100%;width:96%;align-items:center}
@@ -22,7 +22,7 @@
   }
   @media only screen and (max-width: 1199px) {
 
-    .bottom_blog .item_wrapper{ display: block!important;}
+    /* .bottom_blog .item_wrapper{ display: block!important;} */
     .blogdetail .bottom_blog .item_wrapper  .item  {
       width: 49%!important;
       float: left!important;
@@ -89,7 +89,7 @@
   .vpheaderwrapper .mat-drawer-backdrop{position:inherit}
   .vpheaderwrapper.mat-card{padding:0!important}
   .vpheaderwrapper .mat-nav-list .mat-list-item{border-bottom:1px solid #333}
-  .innerpagebanner.mat-card{min-height:1px!important}
+  /* .innerpagebanner.mat-card{min-height:1px!important} */
   .rightsidelinks{width:47px}
   .bloglists .item_wrapper > .item{width:calc(1/1*100% - (1 - 1/1)*20px)}
   }
@@ -211,6 +211,7 @@
   }
 
   @media only screen and (max-width: 1199px) {
+    .innerpagebanner.mat-card p br{display:none;}
       .carousalinfo h1 {font-size: 90px!important;line-height: normal!important;}
       .carousalinfo h3 {font-size: 50px;line-height: normal;}
   }
@@ -275,6 +276,7 @@
     
   }
 
+
   @media only screen and (max-width: 840px) {
     .carousalinfo h3 {font-size: 32px;line-height: normal; margin-left: auto;}
     .carousalinfo h1 {font-size: 50px!important;line-height: normal!important;margin-left: auto;text-align: center;}
@@ -282,7 +284,8 @@
 
 
   @media only screen and (max-width: 767px) {
-
+    .innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 40px;}
+    /* .couplescounselingbg.mat-card, .innerpagebanner.mat-card {background-size: 210% !important;} */
     .bloglistswrapper .mat-list-base{ display: inline-block;}
 
 .homeblock1contentlefttop h2{ text-align: center!important;}
@@ -365,12 +368,13 @@
 
 .bottom_blog .item_wrapper .item .next_page{ text-align: center;}
 
-.blogdetail .blogsociallists{ display: block;}
+/* .blogdetail .blogsociallists{ display: block;} */
 }
 
 
   
   @media only screen and (max-width: 520px) {
+    .innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 32px;}
     .blogdetail .bottom_blog .item_wrapper .item{width: 99%!important;}
     .carousalinfo h1 {font-size: 36px!important; line-height: normal!important;margin-left: auto;text-align: center;margin-bottom: 10px;}
     .carousalinfo h3 {font-size: 24px;}

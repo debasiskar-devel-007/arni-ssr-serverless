@@ -203,9 +203,10 @@
 .footerddress{margin-top: 20px;}
 }
 
-@media (max-width: 767px) {.footerwrapper .mainwrappercontent .mat-card-content {display: flex;flex-wrap: wrap;text-align: center;justify-content: center;}
+@media (max-width: 767px) {
+    .footerwrapper .mainwrappercontent .mat-card-content {display: flex;flex-wrap: wrap;text-align: center;justify-content: center;}
 .footerddress {margin-top: 10px;}
-.footerwrapper {padding: 10px;}
+.footerwrapper {padding: 10px; display: inherit;}
 }
 
 @media only screen and (max-width: 640px) {
