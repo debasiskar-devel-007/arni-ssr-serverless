@@ -122,11 +122,11 @@
         <span class="item_wrapper">
 
           <mat-card-content class="item" *ngFor="let mvblog of MostViwedBlog|  slice:0:indexVal">
-            <span class="item_images">
+            <span class="item_images" (click)="blogdetail(mvblog)">
               <img src="{{mvblog.blogs_image}}">
             </span>
             <mat-card-content class="contentsection">
-              <mat-card-title class="inner_header">{{mvblog.blogtitle}}</mat-card-title>
+              <mat-card-title class="inner_header" (click)="blogdetail(mvblog)">{{mvblog.blogtitle}}</mat-card-title>
               <span class="author">
                 <span class="authornmimg">
                   <!-- <span class="writer_image">
