@@ -106,7 +106,7 @@ export class TesimonialComponent implements OnInit {
 
             }
           }
-          console.log(this.TestimonialListArray);
+          //console.log(this.TestimonialListArray);
         });
       }
     });
