@@ -38,21 +38,6 @@ export class BlogdetailComponent implements OnInit {
 
 
 
-<<<<<<< HEAD
-  public blogCategory:any;
-  public blogDetail:any;
-  public blog:any = '';
-  public blogList:any;
-  public blog_img:any;
-  public blog_image:any;
-  public image:any;
-  public indexval:any=3;
-  public blogcategorysearch:any;
-  public blogcategory:any;
-  public blogcategorycount:any;
-  public blogcat:any;
-  public blogCount:any;
-=======
   public blogCategory: any;
   public blogDetail: any;
   public blog: any = '';
@@ -69,7 +54,6 @@ export class BlogdetailComponent implements OnInit {
   public blogcategorycount: any=[];
   public blogcat: any;
   public blogCount: any;
->>>>>>> 7adc59b4f55a97879adb59906a42b106a2c03345
   public resc: any;
   public blogListing: any;
   public catBlogs:any;
@@ -280,36 +264,6 @@ export class BlogdetailComponent implements OnInit {
     window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://arniefonseca.influxiq.com/blog/' + this.blogtitle + '/' + val._id);
     //console.log('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/blog/'+this.blogtitle+'/'+ val._id);
   }
-<<<<<<< HEAD
-
-  blogloadmore(){
-    // console.log('load more')
-    this.indexval=this.indexval+2;
-
-  }
-  openvideourl(val: any){
-    //console.log(val)
-    let url:any;
-     url="https://www.youtube.com/embed/";
-      //console.log('video url....>',url+val);
-      this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
-      
-      //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
-      const dialogRef = this.dialog.open(VideoModalComponent, {
-        // panelClass:['modal-md','success-modal'],
-        panelClass:'blogdetail_videomodal',
-        // width:'450px',
-        data:this.safeSrc,
-      
-        
-  
-      });
-  
-      dialogRef.afterClosed().subscribe(result => {
-        
-      });
-=======
->>>>>>> 7adc59b4f55a97879adb59906a42b106a2c03345
 
   tumblrTestimonialShare(val: any) {
     window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/blog/' + this.blogtitle + '/' + val._id);

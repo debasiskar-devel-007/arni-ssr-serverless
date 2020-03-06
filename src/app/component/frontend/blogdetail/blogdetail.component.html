@@ -101,7 +101,7 @@
               <span >
                 <div class="categorysub">
                   <h5 class="inner_header" (click)="blogdetail(cat)">
-                    <span class="blogsubcattitle" (click)="blogdetail(cat)">{{ cat.blogtitle }}</span>
+                    <span class="blogsubcattitle " (click)="blogdetail(cat)">{{ cat.blogtitle }}</span>
                     <span class="buttominfocls">
                       <span ><span class="labelcls">Date:</span>{{cat.date_added}}</span>
                       <span ><span class="labelcls">By:</span>{{cat.author}}</span>
@@ -121,17 +121,6 @@
       <mat-card-content class="bottom_blog">
         <span class="item_wrapper">
 
-<<<<<<< HEAD
-                <mat-card-content class="item" *ngFor="let mvblog of MostViwedBlog | slice:0:indexval ; let i=index">
-                  <span class="item_images">
-                    <img src="{{mvblog.blogs_image}}">
-                  </span>
-                  <mat-card-content class="contentsection">                  
-                    <mat-card-title class="inner_header">{{mvblog.blogtitle}}</mat-card-title>
-                    <span class="author">
-                       <span class="authornmimg">
-                        <!-- <span class="writer_image">
-=======
           <mat-card-content class="item" *ngFor="let mvblog of MostViwedBlog|  slice:0:indexVal">
             <span class="item_images">
               <img src="{{mvblog.blogs_image}}">
@@ -141,7 +130,6 @@
               <span class="author">
                 <span class="authornmimg">
                   <!-- <span class="writer_image">
->>>>>>> 7adc59b4f55a97879adb59906a42b106a2c03345
                           <img src="../../../../assets/images/blog-icon.png">
                         </span> -->
                   <p class="authorName">{{mvblog.author}}</p>
@@ -166,10 +154,6 @@
                   <fa name="tumblr" class="fa-tumblr"></fa>
                 </a>
               </span>
-<<<<<<< HEAD
-              <button mat-button class="btnblue sim-button" *ngIf="MostViwedBlog !=null && indexval < MostViwedBlog.length" (click)="blogloadmore()">Load More</button>
-=======
->>>>>>> 7adc59b4f55a97879adb59906a42b106a2c03345
             </mat-card-content>
           </mat-card-content>
         </span>
@@ -177,17 +161,6 @@
           *ngIf="MostViwedBlog!=null && indexVal < MostViwedBlog.length">Load More</button>
       </mat-card-content>
 
-<<<<<<< HEAD
-                <mat-card-content class="item" *ngFor="let smblog of similarBlogs | slice:0:indexval ; let i=index">
-                  <span class="item_images">
-                    <img src="{{smblog.blogs_image}}">
-                  </span>
-                  <mat-card-content class="contentsection">                  
-                    <mat-card-title class="inner_header">{{smblog.blogtitle}}</mat-card-title>
-                    <span class="author">
-                       <span class="authornmimg">
-                        <!-- <span class="writer_image">
-=======
     </span>
     <span class="youmightalsolike">
       <h2>You might also like</h2>
@@ -203,7 +176,6 @@
               <span class="author">
                 <span class="authornmimg">
                   <!-- <span class="writer_image">
->>>>>>> 7adc59b4f55a97879adb59906a42b106a2c03345
                           <img src="../../../../assets/images/blog-icon.png">
                         </span> -->
                   <p class="authorName">{{smblog.author}}</p>
@@ -228,12 +200,6 @@
                   <fa name="tumblr" class="fa-tumblr"></fa>
                 </a>
               </span>
-<<<<<<< HEAD
-            
-
-              <button mat-button class="btnblue sim-button" *ngIf="similarBlogs !=null && indexval < similarBlogs.length" (click)="blogloadmore()">Load More</button>
-=======
->>>>>>> 7adc59b4f55a97879adb59906a42b106a2c03345
             </mat-card-content>
           </mat-card-content>
 

@@ -20,13 +20,30 @@
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;}
 
-    .bloglists .item_wrapper>.item .description{   overflow: hidden;
-      text-overflow: ellipsis;
+    .bloglists .item_wrapper>.item .description{   text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 2; /* number of lines to show */
-      -webkit-box-orient: vertical;}
+     
+      min-height: 54px!important;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;     overflow: hidden;
+    }
+
 
       /* .description p img{ display: none!important;} */
+
+      .exampleformnew{ height: 46px;}
+
+      .exampleformnew .mat-select{ height: 32px;}
+
+     .reset_btn{   min-width: 30px;
+      line-height: 36px;
+      padding: 6px 20px;
+      border-radius: 0;
+      overflow: visible;
+      background: #333;
+      color: #fff;
+      margin: 18px 5px 0 5px;
+  }
 
   @media only screen and (max-width: 600px) {
     .search-sec .example-full-width:nth-of-type(1){ margin-right:0px;}
