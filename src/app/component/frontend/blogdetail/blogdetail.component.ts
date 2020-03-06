@@ -45,7 +45,7 @@ export class BlogdetailComponent implements OnInit {
   public blog_img:any;
   public blog_image:any;
   public image:any;
-
+  public indexval:any=3;
   public blogcategorysearch:any;
   public blogcategory:any;
   public blogcategorycount:any;
@@ -320,6 +320,12 @@ export class BlogdetailComponent implements OnInit {
   tumblrTestimonialShare(val:any){
     window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/blogdetail/'+ val._id);
   
+  }
+
+  blogloadmore(){
+    // console.log('load more')
+    this.indexval=this.indexval+2;
+
   }
   openvideourl(val: any){
     //console.log(val)

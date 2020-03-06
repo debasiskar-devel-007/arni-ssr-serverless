@@ -134,7 +134,7 @@
           <mat-card-content class="bottom_blog">
               <span class="item_wrapper">
 
-                <mat-card-content class="item" *ngFor="let mvblog of MostViwedBlog">
+                <mat-card-content class="item" *ngFor="let mvblog of MostViwedBlog | slice:0:indexval ; let i=index">
                   <span class="item_images">
                     <img src="{{mvblog.blogs_image}}">
                   </span>
@@ -313,7 +313,7 @@
                 </mat-card-content> -->
   
               </span>
-              <button mat-button class="btnblue sim-button">Load More</button>
+              <button mat-button class="btnblue sim-button" *ngIf="MostViwedBlog !=null && indexval < MostViwedBlog.length" (click)="blogloadmore()">Load More</button>
             </mat-card-content>
   
       </span>
@@ -322,7 +322,7 @@
           <mat-card-content class="bottom_blog" >
               <span class="item_wrapper" >
 
-                <mat-card-content class="item" *ngFor="let smblog of similarBlogs">
+                <mat-card-content class="item" *ngFor="let smblog of similarBlogs | slice:0:indexval ; let i=index">
                   <span class="item_images">
                     <img src="{{smblog.blogs_image}}">
                   </span>
@@ -500,7 +500,9 @@
                 </mat-card-content>-->
   
               </span>
-              <button mat-button class="btnblue sim-button">Load More</button>
+            
+
+              <button mat-button class="btnblue sim-button" *ngIf="similarBlogs !=null && indexval < similarBlogs.length" (click)="blogloadmore()">Load More</button>
             </mat-card-content>
   
       </span>
