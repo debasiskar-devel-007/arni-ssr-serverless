@@ -62,6 +62,7 @@ export class VideoGalleryComponent implements OnInit {
     });
   }
 
+  
   ngOnInit() {
 
     if (this.activatedRoute.snapshot.params.id == null) {
