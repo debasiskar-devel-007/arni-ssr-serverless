@@ -183,7 +183,7 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
     position:relative;
     height:0;
 }
-.blogdetail_videomodal .video-responsive iframe,.blogdetail_videomodal .video-responsive object{
+.blogdetail_videomodal .video-responsive iframe,.blogdetail_videomodal .video-responsive object, .blogdetail_videomodal .video-responsive img{
     left:0;
     top:0;
     height:100%;
