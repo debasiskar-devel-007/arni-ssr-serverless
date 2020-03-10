@@ -121,6 +121,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   }
  @media only screen and (max-width: 1300px) {
 .titlewrapper p{width: 100%;}
+
+.block4subwrapper {background-position: right -430px bottom; padding: 47px 478px 47px 47px;}
  }
  @media only screen and (max-width: 1199px) {
 .titlewrapper.block4titlewrapper2 p {width: 100% !important;}
@@ -144,6 +146,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .block5subwrapper mat-list {padding-left: 0;}
 .block5subwrapper .textwrapper p {padding-left: 0;}
 .lstabimg{position: inherit; width: 100%; left: 0;}
+
+.block4subwrapper.textwrapper h3{ margin-bottom: 0px;}
  }
  @media only screen and (max-width: 991px) {
 .couplescounselingwrapper .titlewrapper p {width: 100%;}
