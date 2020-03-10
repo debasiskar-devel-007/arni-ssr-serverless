@@ -87,13 +87,9 @@ export class TesimonialComponent implements OnInit {
   ngOnInit() {
     var data: any = {};
     data = {
-      source:"testimonial_view",
-      endpoint: "datalist"
+      source:"testimonial_view"
     }
-
-    this.apiService.getTempToken().subscribe((res:any)=>{      
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
+        this.apiService.addDataWithoutToken(data, "datalistwithouttoken").subscribe((res2:any)=>{
           this.TestimonialListArray = res2.res;
           for(let i in this.TestimonialListArray){
             if(this.TestimonialListArray[i].video_url!='' && this.TestimonialListArray[i].video_url!=null){
@@ -106,15 +102,8 @@ export class TesimonialComponent implements OnInit {
 
             }
           }
-          //console.log(this.TestimonialListArray);
+         
         });
-      }
-    });
-    // this.activatedRoute.data.forEach((data:any)=>{
-    //   this.TestimonialListArray=data.testimonialListData;
-    //   //console.log('>>>>>>koushik testimonial>>>>>>>>>',this.TestimonialListArray)
-    // })
-
   }
 
 
