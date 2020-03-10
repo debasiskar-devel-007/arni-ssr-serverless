@@ -86,7 +86,9 @@
 
 
 
-
+.couplescounselingwrapper  .mainwrappercontent  .titlewrapper h2 {
+  text-transform: uppercase;
+}
 
 
 
@@ -162,6 +164,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .titlewrapper p{width: 100%;}
  }
  @media only screen and (max-width: 1199px) {
+
+  .block4subwrapper.textwrapper h3 { margin-bottom: 0px;}
+
   .couplescounselingbg.mat-card, .innerpagebanner.mat-card{padding-top: 39% !important;}
   .block5subwrapper .textwrapper p {
     margin-left: 0;

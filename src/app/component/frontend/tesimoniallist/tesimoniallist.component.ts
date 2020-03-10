@@ -159,8 +159,10 @@ export class TesimoniallistComponent implements OnInit {
 openAudioUrl(aud:any){
  // console.log(aud.testimonial_audio);
   const dialogRef = this.dialog.open(CommonTestimonialAudioModalComponent, {
-    panelClass:'testimonial_audiomodal',
+    
+    panelClass:'blogdetail_audiomodal',
      data:aud.testimonial_audio, 
+     
    });
    dialogRef.afterClosed().subscribe(result => {  
    });

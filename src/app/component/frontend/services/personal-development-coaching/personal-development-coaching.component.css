@@ -53,6 +53,10 @@
 .block5subwrapper .textwrapper p {padding-left: 390px}
 .generalcls .titlewrapper h2 {text-transform: inherit}
 .generalcls .titlewrapper.titlewrapper1 h2 {text-transform: uppercase}
+
+.couplescounselingwrapper  .mainwrappercontent  .titlewrapper  {
+    padding-top: 0!important;
+}
 @media only screen and (max-width: 1920px) {
 .block5subwrapper mat-list {padding-left: 463px;}
 .block5subwrapper .textwrapper p {padding-left: 590px;}

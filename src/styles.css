@@ -82,7 +82,7 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .formspan .example-container .files-view .mat-card{width:100%!important}
 .success-modal{min-width:450px;max-width:96%;margin:0 auto;width:600px!important}
 .cdk-overlay-pane[style]{width:auto!important}
-.cdk-overlay-pane .mat-dialog-container{min-width:450px;max-width:96%;margin:0 auto;width:600px!important}
+.cdk-overlay-pane .mat-dialog-container{min-width:450px;max-width:96%;margin:0 auto;width:600px!important;  }
 .cdk-global-scrollblock{top:0!important}
 .cdk-overlay-dark-backdrop{background:rgba(0,0,0,.60)}
 .generalmodalcls .videoWrapper{position:relative;padding-bottom:56.25%;padding-top:25px;height:0}
@@ -218,6 +218,13 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 
 @media only screen and (max-width: 1199px) {
   .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}
+
+  .blogdetail_audiomodal { width: 90%!Important}
+ 
+  .blogdetail_audiomodal .mat-dialog-container{ width: 80%!Important;     min-width: 100%!important;}
+
+  .blogdetail_audiomodal {
+    padding: 15px 15px!Important;}
 
 }
 
