@@ -137,7 +137,7 @@ export class TesimoniallistComponent implements OnInit {
   //*********view Video modal section***********//
 
   openvideourl(val:any){
-
+    //console.warn(val);
     let url:any;
     url="https://www.youtube.com/embed/";
      // console.log('video url....>',url+val);
@@ -155,8 +155,16 @@ export class TesimoniallistComponent implements OnInit {
    }
 
 //********* end Video modal section***********//
-
-
+/**audio modal */
+openAudioUrl(aud:any){
+ // console.log(aud.testimonial_audio);
+  const dialogRef = this.dialog.open(CommonTestimonialAudioModalComponent, {
+    panelClass:'testimonial_audiomodal',
+     data:aud.testimonial_audio, 
+   });
+   dialogRef.afterClosed().subscribe(result => {  
+   });
+}
   
 
 //facebook share for event
@@ -228,5 +236,18 @@ tumblrTestimonialShare(val:any){
 export class CommonTestimonialVideoModalComponent {
   constructor( public dialogRef: MatDialogRef<CommonTestimonialVideoModalComponent>,
                @Inject(MAT_DIALOG_DATA) public data: DialogData){
+  }
+}
+
+//**********Audio modal component************//
+
+@Component({
+  selector:'app-commontestimonialaudiomodal',
+  templateUrl:'./commontestimonialaudiomodal.html'
+})
+export class CommonTestimonialAudioModalComponent {
+  constructor( public dialogRef: MatDialogRef<CommonTestimonialAudioModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData){
+                 console.log(data);
   }
 }
