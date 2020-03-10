@@ -36,8 +36,10 @@
                     <h2 (click)="viewDetails(item)">{{item.title}} </h2>
                     <p class="readmoredesc">
                         <span class="readmoredesc">{{item.decription}}</span>
-                        <a><span (click)="viewDetails(item)" *ngIf="item.imageTextLength > 60">Read More</span></a>
+                        <a><span (click)="openVideoModal(item)" *ngIf="item.imageTextLength > 60">Read More</span></a>
                     </p> 
+                    <p class="dtcls">Date :<span>{{item.date_added}}</span></p>
+
                     <span class="contentsection absolute">
                         <span class="blogsociallists">
 
@@ -56,7 +58,7 @@
                         </span>                                  
                     </span>    
                 </span>
-                <img [src]="item.image">
+                <img (click)="openVideoModal(item)" [src]="item.image" >
             </mat-list-item>
 
             
