@@ -137,7 +137,7 @@ export class TesimoniallistComponent implements OnInit {
   //*********view Video modal section***********//
 
   openvideourl(val:any){
-
+    console.warn(val);
     let url:any;
     url="https://www.youtube.com/embed/";
      // console.log('video url....>',url+val);

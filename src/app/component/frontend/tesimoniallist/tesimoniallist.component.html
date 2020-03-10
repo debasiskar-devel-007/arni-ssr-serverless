@@ -34,19 +34,15 @@
             <span class="testiimgwarpper-main">
               <img [src]="testmon.testimonial_img" class="iconcls" (click)="detailsView(testmon)">
             </span>
-            <span class="bnticons">
-              <button *ngIf="testmon.video_url !='' && testmon.video_url !=null "
-                (click)="openvideourl(testmon.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
+            <span class="bnticons" (click)="openvideourl(testmon.video_url)">
+              <button *ngIf="testmon.video_url !='' && testmon.video_url !=null"><img src="../../../../assets/images/videoicon.png"></button>
               <!-- <button *ngIf="testmon.audio_url !='' && testmon.audio_url !=null " (click)="openaudiourl(testmon.audio_url)"><img src="../../../../assets/images/audioicon.png"></button> -->
             </span>
           </span>
           <mat-card-content class="testicontent">
 
 
-            <!-- <span class="bnticons" *ngFor="let vurl of item.credentials">
-                                <button *ngIf="vurl.video_url !='' && vurl.video_url !=null " (click)="openvideourl(vurl.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
-                                <button *ngIf="vurl.audio_url !='' && vurl.audio_url !=null " (click)="openaudiourl(vurl.audio_url)"><img src="../../../../assets/images/audioicon.png"></button>
-                            </span>                             -->
+                                 
             <span class="testibottomcontent">
               <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
             </span>
@@ -82,34 +78,13 @@
               <fa name="tumblr" class="fa-tumblr"></fa>
             </a>
 
-            <!-- <a class="sociallink fa fb" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
-                                    <fa name="facebook" class="fa-facebook"></fa>
-                                  </a>
-                                  <a class="sociallink fa twi" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
-                                    <fa name="twitter" class="fa-twitter"></fa>
-                                  </a>
-                                  <a class="sociallink fa tbl" href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
-                                    <fa name="tumblr" class="fa-tumblr"></fa>
-                                  </a>
-                                  <a class="sociallink fa lin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.arniefonseca.influxiq.com%2Ftestimonial%2F{{testmon._id}}" target="_blank">
-                                    <fa name="linkedin" class="fa-linkedin"></fa>
-            </a>
-           <a class="sociallink fa env">
-                                    <fa name="envelope" class="fa-envelope"></fa>
-                                  </a>
-           <a class="sociallink fa share" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)">
-                                    <fa name="share" class="fa-share"></fa>
-                                  </a>
-           <a class="sociallink fa link" (click)="copyText('https://dev.arniefonseca.influxiq.com/blog%2F?affid='+testmon._id)"><fa name="link" class="fa-link"></fa></a> -->
+           
           </span>
           <span class="author">
             <p class="date">Date: {{testmon.date_added}}</p>
           </span>
         </span>
       </mat-list-item>
-      <!----END SINGLE TESTIMONIAL-->
-
-      <!--<button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button class="btngeneral btngray">Load more</button> -->
 
     </mat-list>
 
