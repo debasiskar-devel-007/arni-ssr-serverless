@@ -1,6 +1,6 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
-import {ActivatedRoute,Route,Router} from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
 
@@ -11,7 +11,7 @@ export interface DialogData {
 
   data: any;
   img: any;
-  fulldata:any;
+  fulldata: any;
 }
 
 
@@ -22,10 +22,12 @@ export interface DialogData {
 })
 export class ImageGalleryComponent implements OnInit {
 
-  public imageDataList:any;
-  public profile:any;
+  public imageDataList: any;
+  public profile: any;
+  public aspectratio:any;
+  public croppedfiles:any;
 
-  constructor(private readonly meta: MetaService,public activatedRoute:ActivatedRoute,public router:Router,public facebook:FacebookService,public dialog:MatDialog) { 
+  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
     // this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
     // this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
@@ -47,79 +49,87 @@ export class ImageGalleryComponent implements OnInit {
 
   ngOnInit() {
 
-    if(this.activatedRoute.snapshot.params.id == null){
-      this.activatedRoute.data.forEach(res=>{
-        let result:any;
-        result=res;
-        this.imageDataList=res.imageGallery.res;
+    if (this.activatedRoute.snapshot.params.id == null) {
+      this.activatedRoute.data.forEach(res => {
+        let result: any;
+        result = res;
+        this.imageDataList = res.imageGallery.res;
         // console.log(this.imageDataList)
 
-        for(let i in this.imageDataList){
-          let result:any;
-          result=this.imageDataList[i].decription.length;
-          this.imageDataList[i].imageTextLength=result;
+        for (let i in this.imageDataList) {
+          let result: any;
+          result = this.imageDataList[i].decription.length;
+          this.imageDataList[i].imageTextLength = result;
           // console.log( this.imageDataList[i].imageTextLength)
+
+
+          this.aspectratio= this.imageDataList[i].aspectratio;
+          console.log( 'aaspectratio==',this.aspectratio)
+
+          this.croppedfiles= this.imageDataList[i].croppedfiles;
+          console.log('croppedfiles==',this.croppedfiles)
+
         }
-  
+
       })
 
       this.meta.setTitle('Arnie Fonseca - Image Gallery');
-    this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
-    this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
+      this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
+      this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
 
-    this.meta.setTag('og:keyword', 'Arnie Fonseca Images, Arnie Fonseca Event Pictures, Arnie Fonseca Pictures');
-    this.meta.setTag('twitter:keyword', 'Arnie Fonseca Images, Arnie Fonseca Event Pictures, Arnie Fonseca Pictures');
+      this.meta.setTag('og:keyword', 'Arnie Fonseca Images, Arnie Fonseca Event Pictures, Arnie Fonseca Pictures');
+      this.meta.setTag('twitter:keyword', 'Arnie Fonseca Images, Arnie Fonseca Event Pictures, Arnie Fonseca Pictures');
 
-    this.meta.setTag('og:title', 'Arnie Fonseca - Image Gallery');
-    this.meta.setTag('twitter:title', 'Arnie Fonseca - Image Gallery');
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-    this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png')
-    } 
+      this.meta.setTag('og:title', 'Arnie Fonseca - Image Gallery');
+      this.meta.setTag('twitter:title', 'Arnie Fonseca - Image Gallery');
+      this.meta.setTag('og:type', 'website');
+      this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
+      this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png')
+    }
 
-    if(this.activatedRoute.snapshot.params.id != null) {
-      this.activatedRoute.data.forEach(res=>{
-        let result:any;
-        result=res;
-        this.imageDataList=res.imageGallery.image_list;
+    if (this.activatedRoute.snapshot.params.id != null) {
+      this.activatedRoute.data.forEach(res => {
+        let result: any;
+        result = res;
+        this.imageDataList = res.imageGallery.image_list;
         // console.log(this.imageDataList)
-  
+
       })
-      for(let i in this.imageDataList){
-        if(this.activatedRoute.snapshot.params.id == this.imageDataList[i]._id){
+      for (let i in this.imageDataList) {
+        if (this.activatedRoute.snapshot.params.id == this.imageDataList[i]._id) {
 
 
-          let result:any;
-          result=this.imageDataList[i].decription.length;
-          this.imageDataList[i].imageTextLength=result;
+          let result: any;
+          result = this.imageDataList[i].decription.length;
+          this.imageDataList[i].imageTextLength = result;
 
-          let val:any;
-          val=this.imageDataList[i];
+          let val: any;
+          val = this.imageDataList[i];
 
           this.openVideoModal(val)
           // console.log('id',this.imageDataList[i]._id)
-        
-      
-    this.meta.setTitle('Arnie Fonseca - Image Gallery',this.imageDataList[i].title);
-    this.meta.setTag('og:description', this.imageDataList[i].decription);
-    this.meta.setTag('twitter:description', this.imageDataList[i].decription);
-    this.meta.setTag('og:url','https://arniefonseca.influxiq.com/image-gallery/'+this.imageDataList[i]._id);
- 
-    this.meta.setTag('og:title', this.imageDataList[i].title);
-    this.meta.setTag('twitter:title', this.imageDataList[i].title);
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', this.imageDataList[i].image);
-    this.meta.setTag('twitter:image', this.imageDataList[i].image)
-    this.meta.setTag('twitter:url','https://arniefonseca.influxiq.com/image-gallery/'+this.imageDataList[i]._id);
+
+
+          this.meta.setTitle('Arnie Fonseca - Image Gallery', this.imageDataList[i].title);
+          this.meta.setTag('og:description', this.imageDataList[i].decription);
+          this.meta.setTag('twitter:description', this.imageDataList[i].decription);
+          this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/image-gallery/' + this.imageDataList[i]._id);
+
+          this.meta.setTag('og:title', this.imageDataList[i].title);
+          this.meta.setTag('twitter:title', this.imageDataList[i].title);
+          this.meta.setTag('og:type', 'website');
+          this.meta.setTag('og:image', this.imageDataList[i].image);
+          this.meta.setTag('twitter:image', this.imageDataList[i].image)
+          this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/image-gallery/' + this.imageDataList[i]._id);
+        }
+      }
     }
-    }
-    }
-    
+
   }
 
 
-  viewDetails(val:any){
-    this.router.navigateByUrl('/image-gallery/'+val._id)
+  viewDetails(val: any) {
+    this.router.navigateByUrl('/image-gallery/' + val._id)
   }
 
   // fb share section 
@@ -127,7 +137,7 @@ export class ImageGalleryComponent implements OnInit {
   login() {
     this.facebook.login()
       .then((res: LoginResponse) => {
-       
+
         this.getProfile();
       })
       .catch();
@@ -135,61 +145,61 @@ export class ImageGalleryComponent implements OnInit {
   getProfile() {
     this.facebook.api('me/?fields=id,name,email,picture')
       .then((res: any) => {
-       
+
         this.profile = res;
-        
+
       })
       .catch((error: any) => {
-  
+
       });
   }
-  
 
-  fbShare(val:any){
+
+  fbShare(val: any) {
     // console.log(val)
-    var url='https://arniefonseca.influxiq.com/image-gallery/'+ val._id;
+    var url = 'https://arniefonseca.influxiq.com/image-gallery/' + val._id;
     //console.log(url)
 
     let params: UIParams = {
       href: url,
       method: 'share'
     };
-    this.facebook.ui(params).then((res:UIResponse)=>{
-    }).catch(facebook=>{
+    this.facebook.ui(params).then((res: UIResponse) => {
+    }).catch(facebook => {
       // console.log(facebook)
     });
   }
 
   // twitter share 
 
-  twitterShare(val:any){
+  twitterShare(val: any) {
     // console.log(val)
-    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/image-gallery/'+ val._id);
+    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
   }
 
   // linkedin share 
 
-  linkedinShare(val:any){
+  linkedinShare(val: any) {
     // console.log(val)
-    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/image-gallery/'+ val._id);
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
   }
 
   // tumblr share 
 
-  tumblrShare(val:any){
+  tumblrShare(val: any) {
     // console.log(val)
-    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/image-gallery/'+ val._id);
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
   }
 
 
 
-  openVideoModal(val:any){
+  openVideoModal(val: any) {
     console.log(val)
     const dialogRef = this.dialog.open(ImageGalleryModalComponent, {
       // panelClass:['modal-md','success-modal'],
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
-      data: { img:val.image,fulldata:val}
+      data: { img: val.image, fulldata: val }
 
 
     });
@@ -199,7 +209,7 @@ export class ImageGalleryComponent implements OnInit {
     });
   }
 
-  
+
 
 }
 
@@ -217,7 +227,7 @@ export class ImageGalleryComponent implements OnInit {
 })
 export class ImageGalleryModalComponent {
   public profile: any;
-  public fulldata:any;
+  public fulldata: any;
   constructor(public dialogRef: MatDialogRef<ImageGalleryModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, public facebook: FacebookService) {
     facebook.init({
@@ -225,9 +235,9 @@ export class ImageGalleryModalComponent {
       version: 'v2.9'
     });
   }
-   // fb share section 
+  // fb share section 
 
-   login() {
+  login() {
     this.facebook.login()
       .then((res: LoginResponse) => {
 
