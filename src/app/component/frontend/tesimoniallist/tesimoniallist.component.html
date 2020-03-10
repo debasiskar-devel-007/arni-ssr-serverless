@@ -38,10 +38,12 @@
               <button *ngIf="testmon.video_url !='' && testmon.video_url !=null"><img src="../../../../assets/images/videoicon.png"></button>
               <!-- <button *ngIf="testmon.audio_url !='' && testmon.audio_url !=null " (click)="openaudiourl(testmon.audio_url)"><img src="../../../../assets/images/audioicon.png"></button> -->
             </span>
+            <!-- audio -->
+            <span class="bnticons" *ngIf="testmon.video_url ==null">
+              <button (click)="openAudioUrl(testmon)"><img src="../../../../assets/images/audioicon.png"></button>
+            </span>
           </span>
           <mat-card-content class="testicontent">
-
-
                                  
             <span class="testibottomcontent">
               <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
