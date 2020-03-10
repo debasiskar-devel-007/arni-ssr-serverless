@@ -4,6 +4,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
 
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -26,8 +27,9 @@ export class ImageGalleryComponent implements OnInit {
   public profile: any;
   public aspectratio:any;
   public croppedfiles:any;
+  public crimage:any;
 
-  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog) {
+  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog,public sanitizer:DomSanitizer) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
     // this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
     // this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
@@ -66,8 +68,16 @@ export class ImageGalleryComponent implements OnInit {
           this.aspectratio= this.imageDataList[i].aspectratio;
           console.log( 'aaspectratio==',this.aspectratio)
 
+
           this.croppedfiles= this.imageDataList[i].croppedfiles;
           console.log('croppedfiles==',this.croppedfiles)
+
+          for(let j in  this.croppedfiles){
+            this.crimage='data:image/png;base64,'+(this.sanitizer.bypassSecurityTrustStyle(this.croppedfiles[j]) as any).changingThisBreaksApplicationSecurity;
+            console.log('>>>>',this.crimage);
+
+           
+          }
 
         }
 
@@ -296,3 +306,21 @@ export class ImageGalleryModalComponent {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
