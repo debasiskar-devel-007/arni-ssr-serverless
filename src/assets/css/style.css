@@ -353,35 +353,37 @@ a{cursor:pointer;outline:none}
 }
 .
 .gallaryimgvideo .item:nth-child(n){display: unset;}
-.gallaryimgvideo.mat-list-base{display: block;}
+.gallaryimgvideo.mat-list-base{display: block;padding: 0 !important;}
 /* .gallaryimgvideo:hover .item{opacity: 0.8;-webkit-filter: blur(5px);filter: blur(5px);} */
 /* .gallaryimgvideo:hover .item:hover{opacity: 1;transform: scale(1.09);-webkit-filter: blur(0);filter: blur(0);} */
 .gallaryimgvideo .item img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto}
 .gallaryimgvideo .item .mat-list-item-content{padding:0!important;display:block!important}
 
-.gallaryimgvideo .item:nth-child(1n){height:640px!important}
+.gallaryimgvideo.mat-list-base {margin-top: 0px;}
+
+.gallaryimgvideo .item:nth-child(1n){height:638px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(1n) iframe{height:640px!important} */
-.gallaryimgvideo .item:nth-child(2n){height:465px!important}
+.gallaryimgvideo .item:nth-child(2n){height:467px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(2n) iframe{height:465px!important} */
-.gallaryimgvideo .item:nth-child(3n){height:359px!important}
+.gallaryimgvideo .item:nth-child(3n){height:467px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(3n) iframe{height:359px!important} */
-.gallaryimgvideo .item:nth-child(4n){height:469px!important}
+.gallaryimgvideo .item:nth-child(4n){height:638px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(4n) iframe{height:469px!important} */
-.gallaryimgvideo .item:nth-child(5n){height:635px!important}
+.gallaryimgvideo .item:nth-child(5n){height:638px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(5n) iframe{height:635px!important} */
-.gallaryimgvideo .item:nth-child(6n){height:361px!important}
+.gallaryimgvideo .item:nth-child(6n){height:467px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(6n) iframe{height:361px!important} */
-.gallaryimgvideo .item:nth-child(7n){height:361px!important}
+.gallaryimgvideo .item:nth-child(7n){height:467px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(7n) iframe{height:361px!important} */
-.gallaryimgvideo .item:nth-child(8n){height:358px!important}
+.gallaryimgvideo .item:nth-child(8n){height:638px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(8n) iframe{height:358px!important} */
-.gallaryimgvideo .item:nth-child(9n){height:745px!important}
+/* .gallaryimgvideo .item:nth-child(9n){height:745px!important} */
 /* .gallaryimgvideo .item:nth-child(9n) iframe{height:745px!important} */
-.gallaryimgvideo .item:nth-child(10n){height:643px!important}
+/* .gallaryimgvideo .item:nth-child(10n){height:643px!important} */
 /* .gallaryimgvideo .item:nth-child(10n) iframe{height:643px!important} */
-.gallaryimgvideo .item:nth-child(11n){height:356px!important}
+/* .gallaryimgvideo .item:nth-child(11n){height:356px!important} */
 /* .gallaryimgvideo .item:nth-child(11n) iframe{height:356px!important} */
-.gallaryimgvideo .item:nth-child(12n){height:465px!important}
+/* .gallaryimgvideo .item:nth-child(12n){height:465px!important} */
 /* .gallaryimgvideo .item:nth-child(12n) iframe{height:465px!important} */
 
 /* .gallaryvideo{} */
@@ -611,7 +613,7 @@ a{cursor:pointer;outline:none}
 .generalcls .testicontent .quatation .truncate.truncateopen p{height:auto!important}
 .testimonial .owl-carousel.owl-drag .owl-item .title1{font-size:20px!important;margin-top:20px!important;color:#03aed4}
 .testimonialserv .testiimgwarpper{position:relative}
-.testimonialserv .testiimgwarpper .bnticons{position:absolute;right:-38px;top:50%;display:flex;flex-wrap:wrap;width:47px;transform:translateY(-50%)}
+.testimonialserv .testiimgwarpper .bnticons{position:absolute;right:-38px;top:50%;display:flex;flex-wrap:wrap;width:47px;transform:translateY(-50%); z-index: 9;}
 .testimonialserv .testiimgwarpper .bnticons button{cursor:pointer;outline:none;border:none;background:transparent;margin-left:0;flex:1 1 100%}
 .testimonialserv .testiimgwarpper .bnticons button img{max-width:100%}
 .home_event_list .mat-toolbar-row{display:none!important}
