@@ -248,6 +248,6 @@ export class CommonTestimonialVideoModalComponent {
 export class CommonTestimonialAudioModalComponent {
   constructor( public dialogRef: MatDialogRef<CommonTestimonialAudioModalComponent>,
                @Inject(MAT_DIALOG_DATA) public data: DialogData){
-                 console.log(data);
+                 //console.log(data);
   }
 }

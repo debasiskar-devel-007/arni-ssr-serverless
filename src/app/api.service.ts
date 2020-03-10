@@ -306,8 +306,11 @@ getDatalistWithToken(requestdata: any, newdata: any){
         'Authorization': newdata.token
       })
     };
+    //console.log(requestdata,newdata);
     var result = this._http.post(this.serverUrl + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    console.log(result);
     return result;
+
 }
 
 getTempToken() {
