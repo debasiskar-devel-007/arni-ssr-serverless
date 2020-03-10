@@ -15,13 +15,10 @@ export class ServiceComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router,  public apiservice: ApiService) {
     let data: any = {
-      source:"service_view",
-      endpoint: "datalistwithouttoken"
-      // token: this.cookieService.get('jwtToken')
-
+      source:"service_view"
     }
-    this.apiservice.getDatalist(data).subscribe((result: any)=>{
-      //console.log(result.res);
+    this.apiservice.addDataWithoutToken(data,"datalistwithouttoken").subscribe((result: any)=>{
+      console.log('service',result.res);
       this.serviceListConfig= result.res;
       //console.log('service list', this.serviceListConfig.datasource);
     });
