@@ -22,6 +22,96 @@
   }
   @media only screen and (max-width: 1199px) {
 
+
+ 
+
+.innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 40px;}
+/* .couplescounselingbg.mat-card, .innerpagebanner.mat-card {background-size: 210% !important;} */
+.bloglistswrapper .mat-list-base{ display: inline-block;}
+
+.homeblock1contentlefttop h2{ text-align: center!important;}
+
+.homeblock1contentlefttop  h3{ text-align: center!important;}
+
+.generalcls p{ text-align: center!important;}
+
+.homeblock2listssingleitem  p{ text-align: left!important;}
+
+
+.bloglists .bloglistinner{ display: block;}
+
+.bloglistswrapper {
+
+display: block;
+flex-wrap: inherit;
+-webkit-box-flex: 1;
+flex: inherit;
+width: 100%;
+margin-right: auto;
+}
+
+.categorywrapper {
+width: 100%;
+background-color: #f5f5f5;
+display: block;
+}
+.generalcls.bloglists .item .mat-card-content h2{ text-align: center;}
+
+.bloglists .bloglistinner span {
+-webkit-box-flex: inherit;
+flex: inherit;
+margin-right: auto;
+display: block;     -webkit-box-pack: inherit;
+justify-content: inherit;
+}
+
+.bloglists .item_wrapper > .item .contentsection{ display: block!important; -webkit-box-align: end;
+align-items: inherit;
+-webkit-box-pack: inherit;
+justify-content: inherit;
+padding: 0;
+flex-wrap: inherit;
+-webkit-box-orient: inherit;
+-webkit-box-direction: normal;
+flex-direction: inherit;
+height: auto!important;}
+
+.bloglists .item_wrapper > .item {
+width: 100%!important; display: block!important;
+}
+
+.bloglists .mat-card {
+display: block;
+-webkit-box-align: inherit;
+align-items: inherit;
+-webkit-box-pack: inherit;
+justify-content: inherit;
+padding: 0;
+flex-wrap: inherit;
+background: transparent!important;
+height: auto;
+}
+
+.bloglists .item_wrapper > .item .item_images{ display:block; height: auto;}
+
+.generalcls.bloglists .mat-card-content {
+padding: 20px;
+height: auto;
+}
+
+.bloglistinner .blogsociallists{ padding: 10px 0 0 0;}
+
+.generalcls.bloglists .mat-card-content{ padding-bottom: 10px;}
+.innerpagebanner.mat-card .mat-card-content span {
+padding-left: 0;
+}
+
+.generalcls.bloglists .bloglistswrapper h2.blogtitle {
+width: auto;
+}
+
+.bottom_blog .item_wrapper .item .next_page{ text-align: center;}
+
     /* .bottom_blog .item_wrapper{ display: block!important;} */
     .blogdetail .bottom_blog .item_wrapper  .item  {
       width: 49%!important;
@@ -103,7 +193,9 @@
   .homeblock2listssingleitem .mat-list-item-content{flex-wrap:wrap}
   .homeblock2listssingleitem span{flex:1 1 100%!important}
   .homeblock2servcontent h2{margin-top:10px!important;padding-left:0!important;padding-right:0!important;text-align:center}
-  .homeblock2servcontent p{padding:0!important;text-align:center!important}
+  .homeblock2servcontent p{ text-align:center!important}
+
+  .homeblock2servcontent p p{ padding: 0px!important;}
   .homeblock2servcontent h2 span.homeblock2iconcontent{text-align:center!important;margin-left:auto!important}
   .homeblock2servcontent button{float:none!important;margin:10px 15px!important}
   }

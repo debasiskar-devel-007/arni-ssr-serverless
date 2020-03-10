@@ -22,7 +22,8 @@
 .block3content {padding-bottom: 40px; display: block; position: relative}
 .block4subwrapper.textwrapper h3 {font-family: 'Helvetica';font-size: 24px;color: #282828;margin: 0;margin-bottom: 26px;font-weight: normal;border-bottom: 1px solid #ddd;padding-bottom: 10px;}
 .block4subwrapper.textwrapper .mat-list {-webkit-column-count: 2; /* Chrome, Safari, Opera */-moz-column-count: 2; /* Firefox */column-count: 2;padding-bottom: 20px;display: block;width: 100%;padding-left: 30px;}
-.block4subwrapper.textwrapper .mat-list .mat-list-item {height: auto;background-image: url(../../../../../assets/images/employeetrainingicon.png);background-repeat: no-repeat;font-family: 'Helvetica';font-size: 18px;background-position: left top 2px;padding-left: 20px;padding-bottom: 30px;}
+.block4subwrapper.textwrapper .mat-list .mat-list-item {height: auto;background-image: url(../../../../../assets/images/employeetrainingicon.png);
+   background-repeat: no-repeat;font-family: 'Helvetica';font-size: 18px;background-position: left top 2px;padding-left: 26px;padding-bottom: 30px;}
 .titlewrapper.block4titlewrapper2 p {width: 590px !important;}
 .block5subwrapper .mat-list {display: flex; justify-content: center; width: 100%; flex-wrap: wrap}
 .block5subwrapper .mat-list .mat-list-item {width: 19.5%;border: 1px solid #fff;height: auto !important;text-align: center;margin: 1px;align-items: center; display: flex;min-height: 150px;}

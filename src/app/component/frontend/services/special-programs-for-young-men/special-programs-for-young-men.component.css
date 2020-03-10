@@ -86,7 +86,9 @@
 
 
 
-
+.couplescounselingwrapper  .mainwrappercontent  .titlewrapper h2 {
+  text-transform: uppercase;
+}
 
 
 
@@ -101,15 +103,21 @@
 .mainwrappercontent {width: 96%;}
 }
 @media only screen and (max-width: 1670px) {
-.block4subwrapper {padding: 47px 672px 47px 47px;}
+.block4subwrapper {padding: 47px 672px 47px 47px; background-position: -380px bottom;}
  }
  @media only screen and (max-width: 1600px) {
 .bolock2container .mat-list-item {width: 47%;}
+.block4subwrapper {padding: 47px 672px 47px 47px; background-position: -500px bottom;}
   }
   @media only screen and (max-width: 1560px) {
 .couplescounselingbg.mat-card {
 background-position: right -62px top;
 }
+.block4subwrapper {padding: 47px 672px 47px 47px; background-position: -660px bottom;}
+  }
+
+  @media only screen and (max-width: 1540px) {
+    .block4subwrapper {padding: 47px 672px 47px 47px; background-position: -570px bottom;}
   }
   @media only screen and (max-width: 1520px) {
 /* .lstabimg {width: 61%; left: -80px;} */
@@ -118,7 +126,7 @@ background-position: right -62px top;
 .bolock2container .mat-list-item {width: 41%;}
   }
   @media only screen and (max-width: 1500px) {
-.block4subwrapper {background-position: right -120px bottom;}
+.block4subwrapper {background-position: right -190px bottom;}
 .block4subwrapper.textwrapper h3{position: relative;z-index: 9;}
 .block4subwrapper.textwrapper .mat-list {position: relative;z-index: 9;}
 .textwrapper p{position: relative;z-index: 9;}
@@ -162,6 +170,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .titlewrapper p{width: 100%;}
  }
  @media only screen and (max-width: 1199px) {
+
+  .block4subwrapper.textwrapper h3 { margin-bottom: 0px;}
+
   .couplescounselingbg.mat-card, .innerpagebanner.mat-card{padding-top: 39% !important;}
   .block5subwrapper .textwrapper p {
     margin-left: 0;

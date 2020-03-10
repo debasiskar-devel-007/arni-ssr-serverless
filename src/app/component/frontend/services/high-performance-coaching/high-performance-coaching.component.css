@@ -34,7 +34,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ddff', end
 .block4 {background-color: #f2f4f4 !important; width: 100%; position: relative;}
 .block4 .mainwrappercontent{position: relative; z-index: 9;}
 .block4content{padding-bottom: 50px;display: block;}
-.block4subwrapper{ padding: 47px 677px 27px 47px; display: block; background-color: #fff; background-image: url(../../../../../assets/images/hp_banner3.png); box-shadow: 0 2px 10px rgba(0,0,0,.15); background-repeat: no-repeat; background-size: cover; border: 1px solid #dedede; background-position: right bottom;}
+.block4subwrapper{ padding: 47px 677px 27px 47px; display: block; background-color: #fff; background-image: url(../../../../../assets/images/hp_banner3.png); box-shadow: 0 2px 10px rgba(0,0,0,.15); background-repeat: no-repeat; background-size: cover; border: 1px solid #dedede; background-position: 0 bottom;}
 .block3content{padding-bottom: 40px; display: block; position: relative;}
 .block4subwrapper.textwrapper h3 {font-family: 'Helvetica'; font-size: 24px; color: #282828; margin: 0; margin-bottom: 26px; font-weight: normal; border-bottom: 1px solid #ddd; padding-bottom: 10px;}
 .block4subwrapper.textwrapper .mat-list {padding-bottom: 20px; display: inline-block; padding-right: 95px; padding-left: 0px; height: auto;}
@@ -71,21 +71,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ddff', end
  @media only screen and (max-width: 1600px) {
 .lstabimg { width: 58%; }
 .bolock2container .mat-list-item {width: 47%;}
+
+.block4subwrapper{  background-position:-130px bottom;}
   }
   @media only screen and (max-width: 1560px) {
 .couplescounselingbg.mat-card {
 background-position: right -62px top;
 }
+
+.block4subwrapper{  background-position:-220px bottom;}
   }
   @media only screen and (max-width: 1520px) {
 .lstabimg {width: 61%; left: -80px;}
 .block5subwrapper .textwrapper p {padding-left: 550px;}
-.block4subwrapper {padding: 47px 552px 47px 47px;background-position: right -170px top;}
+.block4subwrapper{  background-position:-240px bottom;}
 .block3 .textwrapper{width: 715px;}
 .bolock2container .mat-list-item {width: 41%;}
   }
   @media only screen and (max-width: 1500px) {
-.block4subwrapper {background-position: right -120px bottom;}
+    .block4subwrapper{  background-position:-350px bottom;}
 .block4subwrapper.textwrapper h3{position: relative;z-index: 9;}
 .block4subwrapper.textwrapper .mat-list {position: relative;z-index: 9;}
 .textwrapper p{position: relative;z-index: 9;}
@@ -93,7 +97,9 @@ background-position: right -62px top;
   @media only screen and (max-width: 1480px) {
 .couplescounselingbg.mat-card {background-position: right -122px top;}
 .block4subwrapper.textwrapper .mat-list mat-list-item {height: auto; padding: 5px 0;}
-.block4subwrapper {background-position: right -120px bottom; padding: 47px 478px 47px 47px;}
+.block4subwrapper { padding: 47px 478px 47px 47px;}
+
+.block4subwrapper{  background-position:0px bottom;}
   }
   @media only screen and (max-width: 1400px) {
     .couplescounselingbg.mat-card {background-position: right -200px top;}
@@ -116,11 +122,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     .couplescounselingbg.mat-card {background-position: right -370px top;}
   }
   @media only screen and (max-width: 1360px) {
-.block4subwrapper {background-position: right -199px bottom; padding: 47px 478px 47px 47px;}
+.block4subwrapper {background-position: -160px bottom; padding: 47px 478px 47px 47px;}
 .block5subwrapper .textwrapper p {padding-left: 460px;}
   }
  @media only screen and (max-width: 1300px) {
 .titlewrapper p{width: 100%;}
+
+.block4subwrapper {background-position: right -430px bottom; padding: 47px 478px 47px 47px;}
  }
  @media only screen and (max-width: 1199px) {
 .titlewrapper.block4titlewrapper2 p {width: 100% !important;}
@@ -144,6 +152,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .block5subwrapper mat-list {padding-left: 0;}
 .block5subwrapper .textwrapper p {padding-left: 0;}
 .lstabimg{position: inherit; width: 100%; left: 0;}
+
+.block4subwrapper.textwrapper h3{ margin-bottom: 0px;}
  }
  @media only screen and (max-width: 991px) {
 .couplescounselingwrapper .titlewrapper p {width: 100%;}
