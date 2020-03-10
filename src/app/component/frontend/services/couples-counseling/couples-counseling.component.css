@@ -68,7 +68,14 @@
 .block4subwrapper.textwrapper .mat-list .mat-list-item {background-position: center top;padding-left: 0;padding-bottom: 30px;text-align: center;padding-top: 27px;}
 .block4subwrapper:after {display: none}
 .block5subwrapper .mat-list .mat-list-item {width: 32.5%}
+
+.titlewrapper.block4titlewrapper2 p {width: auto !important;}
  }
  @media only screen and (max-width: 991px) {
- .block5subwrapper .mat-list .mat-list-item {width: 49.5%;}
+ .block5subwrapper .mat-list .mat-list-item {width: 350px; text-align:center;}
  }
+
+
+ @media only screen and (max-width: 400px) {
+    .block5subwrapper .mat-list .mat-list-item {width:100%; text-align:center;}
+    }

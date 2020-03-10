@@ -613,7 +613,7 @@ a{cursor:pointer;outline:none}
 .generalcls .testicontent .quatation .truncate.truncateopen p{height:auto!important}
 .testimonial .owl-carousel.owl-drag .owl-item .title1{font-size:20px!important;margin-top:20px!important;color:#03aed4}
 .testimonialserv .testiimgwarpper{position:relative}
-.testimonialserv .testiimgwarpper .bnticons{position:absolute;right:-38px;top:50%;display:flex;flex-wrap:wrap;width:47px;transform:translateY(-50%)}
+.testimonialserv .testiimgwarpper .bnticons{position:absolute;right:-38px;top:50%;display:flex;flex-wrap:wrap;width:47px;transform:translateY(-50%); z-index: 9;}
 .testimonialserv .testiimgwarpper .bnticons button{cursor:pointer;outline:none;border:none;background:transparent;margin-left:0;flex:1 1 100%}
 .testimonialserv .testiimgwarpper .bnticons button img{max-width:100%}
 .home_event_list .mat-toolbar-row{display:none!important}
