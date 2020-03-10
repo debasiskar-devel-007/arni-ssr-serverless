@@ -24,6 +24,8 @@ export class ImageGalleryComponent implements OnInit {
 
   public imageDataList: any;
   public profile: any;
+  public aspectratio:any;
+  public croppedfiles:any;
 
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
@@ -59,6 +61,14 @@ export class ImageGalleryComponent implements OnInit {
           result = this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength = result;
           // console.log( this.imageDataList[i].imageTextLength)
+
+
+          this.aspectratio= this.imageDataList[i].aspectratio;
+          console.log( 'aaspectratio==',this.aspectratio)
+
+          this.croppedfiles= this.imageDataList[i].croppedfiles;
+          console.log('croppedfiles==',this.croppedfiles)
+
         }
 
       })
