@@ -1,7 +1,47 @@
 .imageallerybg.mat-card{background:url(../../../../../assets/images/imagegallerybg.jpg) no-repeat top right;background-size: cover;}
 
 .imagegallerywrapper .mainwrappercontent.pt-30{
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+}
+
+
+.readmoredesc{display: flex; align-items: center; justify-content: space-between;}
+.singlecolgallarycontent p .readmoredesc {
+    font-family: 'Helvetica-Normal';
+    font-size: 14px;
+    line-height: normal;
+    color: #fff;
+    display: block;
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 1199px) {
+    .imagegallerywrapper .mainwrappercontent.pt-30{
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (max-width: 991px) {
+    .imagegallerywrapper .mainwrappercontent.pt-30{
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .imagegallerywrapper .mainwrappercontent.pt-30{
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
 }
