@@ -33,8 +33,11 @@
 
             <mat-list-item class="item"  *ngFor="let item of imageDataList">
                 <span class="singlecolgallarycontent">
-                    <h2>{{item.title}} </h2>
-                    <p>{{item.decription}} <a><span (click)="viewDetails(item)">Read more...</span></a> </p>  
+                    <h2 (click)="viewDetails(item)">{{item.title}} </h2>
+                    <p class="readmoredesc">
+                        <span class="readmoredesc">{{item.decription}}</span>
+                        <a><span (click)="viewDetails(item)" *ngIf="item.imageTextLength > 60">Read More</span></a>
+                    </p> 
                     <span class="contentsection absolute">
                         <span class="blogsociallists">
 
