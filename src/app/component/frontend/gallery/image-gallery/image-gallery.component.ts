@@ -41,6 +41,13 @@ export class ImageGalleryComponent implements OnInit {
         result=res;
         this.imageDataList=res.imageGallery.res;
         // console.log(this.imageDataList)
+
+        for(let i in this.imageDataList){
+          let result:any;
+          result=this.imageDataList[i].decription.length;
+          this.imageDataList[i].imageTextLength=result;
+          console.log( this.imageDataList[i].imageTextLength)
+        }
   
       })
 
@@ -63,7 +70,7 @@ export class ImageGalleryComponent implements OnInit {
         let result:any;
         result=res;
         this.imageDataList=res.imageGallery.image_list;
-        // console.log(this.imageDataList)
+        console.log(this.imageDataList)
   
       })
       for(let i in this.imageDataList){
@@ -153,3 +160,12 @@ export class ImageGalleryComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+//image modal
