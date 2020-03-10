@@ -62,16 +62,7 @@ export class BlogdetailComponent implements OnInit {
   public similarBlogs: any = [];
 
   public dataformate: any;
-  // public p_id: any;
   public profile: any;
-  // @ViewChild('myaccordion') myPanels: MatAccordion;
-
-  // openAll(){
-  //   this.myPanels.openAll();
-  // }
-  // closeAll(){
-  //   this.myPanels.closeAll();
-  // }
 
   safeSrc: SafeResourceUrl;
 
@@ -171,12 +162,7 @@ export class BlogdetailComponent implements OnInit {
 
     })
 
-    // this.blogListing = this.blogList.blogCatList.blogs
-    // console.log('---------------',this.blogListing)
-
-
-
-
+    
     /**api service for blog_catagory total count by uttam */
     let data: any = {
       source: "blog_category_view"
@@ -282,8 +268,6 @@ export class BlogdetailComponent implements OnInit {
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
       data: this.safeSrc,
-
-
 
     });
 
