@@ -1,0 +1,36 @@
+<span>    
+    <div mat-dialog-content>
+     
+  <div class="video-responsive">
+      <img [src]="data.img" >
+    </div>
+    </div>
+     <!-- <mat-dialog-actions >
+      <button mat-button class="nextbtn" [mat-dialog-close]="data" cdkFocusInitial >Okay!</button>
+    </mat-dialog-actions> -->
+
+    <div class="vid-desc">
+      <h2>{{data.fulldata.title}}</h2>
+      <p>{{data.fulldata.decription}}</p>
+      <span>Date: {{data.fulldata.date_added}}</span>
+    </div>
+
+    <span class="contentsection absolute">
+      <span class="blogsociallists">
+
+          <a class="sociallink fa fb" (click)="fbShare(data.fulldata)"><fa name="facebook" class="fa-facebook"></fa></a>
+
+          <a class="sociallink fa twi" (click)="twitterShare(data.fulldata)"><fa name="twitter" class="fa-twitter"></fa></a>
+
+          <!-- <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a> -->
+          <a class="sociallink fa lin" (click)="linkedinShare(data.fulldata)"><fa name="linkedin" class="fa-linkedin"></fa></a>
+
+          <a class="sociallink fa tumblr" (click)="tumblrShare(data.fulldata)"><fa name="tumblr" class="fa-tumblr"></fa></a>
+
+        
+          <!-- <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+          <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a> -->
+      </span>                                  
+  </span> 
+  </span>
+  

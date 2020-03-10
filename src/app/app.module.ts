@@ -32,13 +32,13 @@ import { AboutusComponent } from './component/frontend/aboutus/aboutus.component
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/services/servicelist/servicelist.component';
 import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.component';
-import { TesimoniallistComponent, CommonTestimonialVideoModalComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
+import { TesimoniallistComponent, CommonTestimonialAudioModalComponent,CommonTestimonialVideoModalComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 import { EmployeeTrainingComponent } from './component/frontend/services/employee-training/employee-training.component';
 import { CouplesCounselingComponent } from './component/frontend/services/couples-counseling/couples-counseling.component';
 import { PersonalDevelopmentCoachingComponent } from './component/frontend/services/personal-development-coaching/personal-development-coaching.component';
 import { HighPerformanceCoachingComponent } from './component/frontend/services/high-performance-coaching/high-performance-coaching.component';
 import { SpecialProgramsForYoungMenComponent } from './component/frontend/services/special-programs-for-young-men/special-programs-for-young-men.component';
-import { ImageGalleryComponent } from './component/frontend/gallery/image-gallery/image-gallery.component';
+import { ImageGalleryComponent, ImageGalleryModalComponent } from './component/frontend/gallery/image-gallery/image-gallery.component';
 import { VideoGalleryComponent, VideoGalleryModalComponent } from './component/frontend/gallery/video-gallery/video-gallery.component';
 import { TeamComponent } from './component/frontend/team/team.component';
 import { SeminarsComponent } from './component/frontend/events/seminars/seminars.component';
@@ -106,7 +106,7 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
     CommonVideoModalComponent,
     VideoModalComponent,
     CommonTestimonialVideoModalComponent,
-
+    CommonTestimonialAudioModalComponent,
     HttpLoaderComponent,
 
     PastSeminarsComponent,
@@ -114,7 +114,8 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
     PastSpeakerEngagementsComponent,
 
     PastWorkshopsComponent,
-    VideoGalleryModalComponent
+    VideoGalleryModalComponent,
+    ImageGalleryModalComponent
 
   ],
   imports: [
@@ -136,6 +137,6 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent]
+  entryComponents: [,CommonTestimonialAudioModalComponent,comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent,ImageGalleryModalComponent]
 })
 export class AppModule { }

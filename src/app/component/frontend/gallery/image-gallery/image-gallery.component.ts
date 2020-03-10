@@ -1,7 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import {ActivatedRoute,Route,Router} from '@angular/router';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
+
+
+
+
+export interface DialogData {
+
+  data: any;
+  img: any;
+  fulldata:any;
+}
+
 
 @Component({
   selector: 'app-image-gallery',
@@ -13,7 +25,7 @@ export class ImageGalleryComponent implements OnInit {
   public imageDataList:any;
   public profile:any;
 
-  constructor(private readonly meta: MetaService,public activatedRoute:ActivatedRoute,public router:Router,public facebook:FacebookService) { 
+  constructor(private readonly meta: MetaService,public activatedRoute:ActivatedRoute,public router:Router,public facebook:FacebookService,public dialog:MatDialog) { 
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
     // this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
     // this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
@@ -46,7 +58,7 @@ export class ImageGalleryComponent implements OnInit {
           let result:any;
           result=this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength=result;
-          console.log( this.imageDataList[i].imageTextLength)
+          // console.log( this.imageDataList[i].imageTextLength)
         }
   
       })
@@ -70,12 +82,22 @@ export class ImageGalleryComponent implements OnInit {
         let result:any;
         result=res;
         this.imageDataList=res.imageGallery.image_list;
-        console.log(this.imageDataList)
+        // console.log(this.imageDataList)
   
       })
       for(let i in this.imageDataList){
         if(this.activatedRoute.snapshot.params.id == this.imageDataList[i]._id){
-          console.log('id',this.imageDataList[i]._id)
+
+
+          let result:any;
+          result=this.imageDataList[i].decription.length;
+          this.imageDataList[i].imageTextLength=result;
+
+          let val:any;
+          val=this.imageDataList[i];
+
+          this.openVideoModal(val)
+          // console.log('id',this.imageDataList[i]._id)
         
       
     this.meta.setTitle('Arnie Fonseca - Image Gallery',this.imageDataList[i].title);
@@ -159,6 +181,26 @@ export class ImageGalleryComponent implements OnInit {
     window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/image-gallery/'+ val._id);
   }
 
+
+
+  openVideoModal(val:any){
+    console.log(val)
+    const dialogRef = this.dialog.open(ImageGalleryModalComponent, {
+      // panelClass:['modal-md','success-modal'],
+      panelClass: 'blogdetail_videomodal',
+      // width:'450px',
+      data: { img:val.image,fulldata:val}
+
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
+
+  
+
 }
 
 
@@ -169,3 +211,78 @@ export class ImageGalleryComponent implements OnInit {
 
 
 //image modal
+@Component({
+  selector: 'app-imageModal',
+  templateUrl: './imageModal.html'
+})
+export class ImageGalleryModalComponent {
+  public profile: any;
+  public fulldata:any;
+  constructor(public dialogRef: MatDialogRef<ImageGalleryModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, public facebook: FacebookService) {
+    facebook.init({
+      appId: '2912281308815518',
+      version: 'v2.9'
+    });
+  }
+   // fb share section 
+
+   login() {
+    this.facebook.login()
+      .then((res: LoginResponse) => {
+
+        this.getProfile();
+      })
+      .catch();
+  }
+  getProfile() {
+    this.facebook.api('me/?fields=id,name,email,picture')
+      .then((res: any) => {
+
+        this.profile = res;
+
+      })
+      .catch((error: any) => {
+
+      });
+  }
+
+
+  fbShare(val: any) {
+    console.log(val)
+    var url = 'https://arniefonseca.influxiq.com/image-gallery/' + val._id;
+    //console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res: UIResponse) => {
+    }).catch(facebook => {
+      // console.log(facebook)
+    });
+  }
+
+  // twitter share 
+
+  twitterShare(val: any) {
+    console.log(val)
+    window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
+  }
+
+  // linkedin share 
+
+  linkedinShare(val: any) {
+    // console.log(val)
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
+  }
+
+  // tumblr share 
+
+  tumblrShare(val: any) {
+    // console.log(val)
+    window.open('http://www.tumblr.com/share?url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
+  }
+
+
+}
