@@ -85,7 +85,7 @@ export class TesimonialComponent implements OnInit {
    }
 
   ngOnInit() {
-    var data: any = {};
+    let data: any = {};
     data = {
       source:"testimonial_view"
     }
