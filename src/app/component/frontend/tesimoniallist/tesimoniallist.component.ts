@@ -6,6 +6,7 @@ import { MetaService } from '@ngx-meta/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
+import { FormControl, FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 
 export interface DialogData { data: any; }
 
@@ -172,7 +173,7 @@ export class TesimoniallistComponent implements OnInit {
     // console.log(aud.testimonial_audio);
     const dialogRef = this.dialog.open(timonialreviewmodal, {
 
-     
+      disableClose: true
     
 
     });
@@ -277,8 +278,41 @@ export class CommonTestimonialAudioModalComponent {
   templateUrl: './timonialreviewmodal.html'
 })
 export class timonialreviewmodal {
-  constructor(public dialogRef: MatDialogRef<timonialreviewmodal>,
+  public testimonialReviewForm: FormGroup;
+  public configData: any = {
+    baseUrl: "https://fileupload.influxhostserver.com/",
+    endpoint: "uploads",
+    size: "51200", // kb
+    format: ["jpg", "jpeg", "png"], // use all small font
+    type: "testimonial-review-image",
+    path: "testimonial",
+    prefix: "testimonial-review_",
+    formSubmit: false,
+    conversionNeeded: 0,
+    bucketName: "crmfiles.influxhostserver"
+  }
+  constructor(public formBuilder: FormBuilder,public dialogRef: MatDialogRef<timonialreviewmodal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     //console.log(data);
+    this.testimonialReviewForm=this.formBuilder.group({
+      name:[null,[Validators.required]],
+      email:[null,[Validators.required]],
+      phone:[null,[Validators.required]],
+      review:[null,[Validators.required]],
+      review_img:[null],
+      status:0
+    });
+  }
+  /**submit Function */
+  submitfunction(){
+    console.warn(this.testimonialReviewForm.value)
+
+    for (let x in this.testimonialReviewForm.controls) {
+      this.testimonialReviewForm.controls[x].markAsTouched();
+    }
+  }
+  /** blur function **/
+  inputBlur(val: any) {
+    this.testimonialReviewForm.controls[val].markAsUntouched();
   }
 }

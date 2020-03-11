@@ -11,6 +11,8 @@ import { DemoMaterialModule } from "../material-module";
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUploadModule } from 'file-upload-lib-influxiq';
+
 import { OwlModule } from 'ngx-owl-carousel';
 import { LoginModule } from 'login-lib-influxiq';
 import { ContactusModule } from 'contactus-lib-influxiq';
@@ -133,7 +135,8 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
     ReactiveFormsModule,
     OwlModule,
     LoginModule,
-    ContactusModule
+    ContactusModule,
+    FileUploadModule
   ],
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
