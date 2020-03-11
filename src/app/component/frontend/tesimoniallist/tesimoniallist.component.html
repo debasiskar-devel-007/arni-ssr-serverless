@@ -2,10 +2,13 @@
 <mat-card class="innerpagebanner testimonialbg innercommonbannercls">
   <span class="mainwrappercontent">
     <mat-card-content>
-      <span>
+      <span class="testimonial_ext">
         <h1>testimonial</h1>
         <p>Invite your audience to be mentored by me at your event, and learn some simple, <br> but powerful methods
           that will make immediate improvements in your lives.</p>
+
+
+          <button class="review_btn"  (click)="openReviewUrl()">Submit Review</button>
       </span>
     </mat-card-content>
   </span>
@@ -96,5 +99,32 @@
 
   </span>
 </mat-card>
+
+
+<span class="new_footer_bannerblock">
+
+  <span class="new_footer_bannerblock_wrapper">
+
+    <span class="new_footer_bannerblock_row">
+
+      <span class="new_footer_bannerblock_td1">
+
+<h2>I welcome you to send in your thoughts and views on my programs, and I also ask you to review any areas 
+  that you would like me to improve</h2>
+      </span>
+
+      <span class="new_footer_bannerblock_td2">
+
+        <button class="review_btn2"  (click)="openReviewUrl()">Submit Review</button>
+      </span>
+
+    </span>
+
+
+  </span>
+
+
+
+</span>
 
 <app-footer></app-footer>
