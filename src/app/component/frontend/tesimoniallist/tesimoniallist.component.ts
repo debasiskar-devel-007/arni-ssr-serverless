@@ -167,6 +167,20 @@ export class TesimoniallistComponent implements OnInit {
   }
 
 
+  /**Submit Review modal */
+  openReviewUrl(aud: any) {
+    // console.log(aud.testimonial_audio);
+    const dialogRef = this.dialog.open(timonialreviewmodal, {
+
+     
+    
+
+    });
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+
   //facebook share for event
 
   login() {
@@ -247,6 +261,23 @@ export class CommonTestimonialVideoModalComponent {
 })
 export class CommonTestimonialAudioModalComponent {
   constructor(public dialogRef: MatDialogRef<CommonTestimonialAudioModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    //console.log(data);
+  }
+}
+
+
+
+
+
+//********** Submit Review modal component************//
+
+@Component({
+  selector: 'timonialreviewmodal',
+  templateUrl: './timonialreviewmodal.html'
+})
+export class timonialreviewmodal {
+  constructor(public dialogRef: MatDialogRef<timonialreviewmodal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     //console.log(data);
   }

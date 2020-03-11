@@ -1,0 +1,37 @@
+
+<mat-card class="newsletter_modal">
+    <h2 class="reviewmodalh2">Submit your review here</h2>
+
+    <form [formGroup]="timonialreviewform" (submit)="doreviewForm()">
+
+        <mat-form-field>
+        <input matInput placeholder="Name" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" >
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Phone no." >
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Your Review " >
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Your Image " >
+        </mat-form-field>
+       
+          <button class="Record_subbtn">Record Video </button>
+        <button class="Record_subbtn">Record Audio </button>
+
+<span class="clearboth"></span>
+        
+        <button mat-button >Submit</button>
+
+        <button mat-button  class="Record_Cancel">Cancel</button>
+
+    </form>
+
+</mat-card>
