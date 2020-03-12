@@ -30,7 +30,7 @@ export class ImageGalleryComponent implements OnInit {
   public crimage:any;
   public image_0:any;
   public image_1:any;
-
+  // public img:any;
 
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog,public sanitizer:DomSanitizer) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
@@ -66,7 +66,10 @@ export class ImageGalleryComponent implements OnInit {
           let result: any;
           result = this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength = result;
-          // console.log( this.imageDataList[i].imageTextLength)
+          // this.img=i;
+          // console.log('>>>',this.img)
+
+    
 
 
           // this.aspectratio= this.imageDataList[i].aspectratio;
@@ -81,12 +84,10 @@ export class ImageGalleryComponent implements OnInit {
           //   console.log('>>>>',this.crimage);
 
           // }
-          this.image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
-          this.image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
-           console.log('>>>>img0',this.image_0)
-           console.log('>>>>img1',this.image_1)
-
-    
+          this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+          this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
+           console.log('>>>>img0',this.imageDataList[i].image_0)
+           console.log('>>>>img1',this.imageDataList[i].image_1)
 
 
         }
