@@ -359,7 +359,7 @@ a{cursor:pointer;outline:none}
 .gallaryimgvideo .item img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto}
 .gallaryimgvideo .item .mat-list-item-content{padding:0!important;display:block!important}
 
-.gallaryimgvideo.mat-list-base {margin-top: 0px;}
+.gallaryimgvideo.mat-list-base {margin-top: 0px;padding-top: 0;}
 
 .gallaryimgvideo .item:nth-child(1n){height:638px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(1n) iframe{height:640px!important} */
