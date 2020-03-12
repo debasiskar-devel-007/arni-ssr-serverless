@@ -169,7 +169,7 @@ export class TesimoniallistComponent implements OnInit {
 
 
   /**Submit Review modal */
-  openReviewUrl(aud: any) {
+  openReviewUrl() {
     // console.log(aud.testimonial_audio);
     const dialogRef = this.dialog.open(timonialreviewmodal, {
 
@@ -299,9 +299,9 @@ export class timonialreviewmodal {
       email:[null,[Validators.required]],
       phone:[null,[Validators.required]],
       review:[null,[Validators.required]],
-      review_img:[],
+      testimonial_img:[],
       priority:0,
-      status:0
+      status:3
     });
   }
   /**submit Function */
@@ -311,10 +311,10 @@ export class timonialreviewmodal {
     for (let x in this.testimonialReviewForm.controls) {
       this.testimonialReviewForm.controls[x].markAsTouched();
     }
-    
+    if(this.testimonialReviewForm.valid){
        // Image File Upload Works 
        if (this.configData.files) {
-        this.testimonialReviewForm.value.review_img=
+        this.testimonialReviewForm.value.testimonial_img=
         {
           "basepath": this.configData.files[0].upload.data.basepath + '/' + this.configData.path + '/',
           "image": this.configData.files[0].upload.data.data.fileservername,
@@ -324,12 +324,12 @@ export class timonialreviewmodal {
       } 
       //api submit function
       let postData:any={
-       "source":'testimonial_review',
+       "source":'testimonial',
        "data":this.testimonialReviewForm.value
       }
       //console.warn(postData);
-      this.api.CustomRequest(postData,'testimonialreview').subscribe((res:any)=>{
-        console.warn(res);
+      this.api.CustomRequest(postData,'testimonialaddandreview').subscribe((res:any)=>{
+        //console.warn(res);
         if(res.status=="success"){
           this.testimonialReviewForm.reset();
         this._snackBar.open('Review Submitted Successfully', '', {
@@ -338,6 +338,7 @@ export class timonialreviewmodal {
         this.dialogRef.close();
       }
       })
+    }
   }
   /** blur function **/
   inputBlur(val: any) {

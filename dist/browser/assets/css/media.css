@@ -24,7 +24,8 @@
 
 
  
-
+    .cdk-overlay-pane .mat-dialog-container {
+      min-width: inherit!important;}
 .innerpagebanner.pasteventbanner.mat-card h1 {text-align: center;font-size: 40px;}
 /* .couplescounselingbg.mat-card, .innerpagebanner.mat-card {background-size: 210% !important;} */
 .bloglistswrapper .mat-list-base{ display: inline-block;}
