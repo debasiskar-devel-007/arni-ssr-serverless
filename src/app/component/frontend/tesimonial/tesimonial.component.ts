@@ -130,7 +130,7 @@ export class TesimonialComponent implements OnInit {
   // testimonial share 
 
   fbTestimonialShare(val:any){
-    console.log(val)
+    //console.log(val)
     var url='https://arniefonseca.influxiq.com/testimonial/'+ val._id;
     console.log(url)
 

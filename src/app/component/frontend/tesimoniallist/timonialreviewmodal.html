@@ -1,0 +1,55 @@
+
+<mat-card class="newsletter_modal">
+    <h2 class="reviewmodalh2">Submit your review here</h2>
+
+    <form [formGroup]="testimonialReviewForm">
+
+        <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" (blur)="inputBlur('name')">
+        <mat-error *ngIf="!testimonialReviewForm.controls['name'].valid
+                                && testimonialReviewForm.controls['name'].errors.required">Name is
+                          required.
+                        </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" (blur)="inputBlur('email')">
+            <mat-error *ngIf="!testimonialReviewForm.controls['email'].valid
+                                && testimonialReviewForm.controls['email'].errors.required">Email is
+                          required.
+                        </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Phone no." formControlName="phone" (blur)="inputBlur('phone')">
+            <mat-error *ngIf="!testimonialReviewForm.controls['phone'].valid
+            && testimonialReviewForm.controls['phone'].errors.required">Phone is
+      required.
+    </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Your Review " formControlName="review" (blur)="inputBlur('review')">
+            <mat-error *ngIf="!testimonialReviewForm.controls['review'].valid
+            && testimonialReviewForm.controls['review'].errors.required">Review is
+      required.
+    </mat-error>
+        </mat-form-field>
+
+        <span>
+            <h3>Image</h3>
+           <lib-file-upload  [config]="configData"></lib-file-upload>
+        </span> 
+       
+          <button type="button" class="Record_subbtn">Record Video </button>
+        <button type="button" class="Record_subbtn">Record Audio </button>
+
+<span class="clearboth"></span>
+        
+        <button mat-button (click)="submitfunction();">Submit</button>
+
+        <button mat-button   [mat-dialog-close]="data" cdkFocusInitial class="Record_Cancel">Cancel</button>
+
+    </form>
+
+</mat-card>

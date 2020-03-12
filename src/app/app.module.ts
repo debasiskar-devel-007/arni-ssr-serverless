@@ -11,6 +11,8 @@ import { DemoMaterialModule } from "../material-module";
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUploadModule } from 'file-upload-lib-influxiq';
+
 import { OwlModule } from 'ngx-owl-carousel';
 import { LoginModule } from 'login-lib-influxiq';
 import { ContactusModule } from 'contactus-lib-influxiq';
@@ -32,7 +34,7 @@ import { AboutusComponent } from './component/frontend/aboutus/aboutus.component
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/services/servicelist/servicelist.component';
 import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.component';
-import { TesimoniallistComponent,CommonTestimonialVideoModalComponent ,CommonTestimonialAudioModalComponent} from './component/frontend/tesimoniallist/tesimoniallist.component';
+import { TesimoniallistComponent,CommonTestimonialVideoModalComponent ,CommonTestimonialAudioModalComponent,timonialreviewmodal} from './component/frontend/tesimoniallist/tesimoniallist.component';
 import { EmployeeTrainingComponent } from './component/frontend/services/employee-training/employee-training.component';
 import { CouplesCounselingComponent } from './component/frontend/services/couples-counseling/couples-counseling.component';
 import { PersonalDevelopmentCoachingComponent } from './component/frontend/services/personal-development-coaching/personal-development-coaching.component';
@@ -115,7 +117,8 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
 
     PastWorkshopsComponent,
     VideoGalleryModalComponent,
-    ImageGalleryModalComponent
+    ImageGalleryModalComponent,
+    timonialreviewmodal
 
   ],
   imports: [
@@ -132,11 +135,12 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
     ReactiveFormsModule,
     OwlModule,
     LoginModule,
-    ContactusModule
+    ContactusModule,
+    FileUploadModule
   ],
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonTestimonialAudioModalComponent,comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent,ImageGalleryModalComponent]
+  entryComponents: [timonialreviewmodal,CommonTestimonialAudioModalComponent,comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent,ImageGalleryModalComponent]
 })
 export class AppModule { }

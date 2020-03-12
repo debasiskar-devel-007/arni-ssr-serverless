@@ -6,7 +6,8 @@ import { MetaService } from '@ngx-meta/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
-
+import { FormControl, FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 export interface DialogData { data: any; }
 
 @Component({
@@ -30,7 +31,7 @@ export class TesimoniallistComponent implements OnInit {
     //console.log('copyText');
   }
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, private sanitizer: DomSanitizer, public dialog: MatDialog, private facebook: FacebookService) {
+  constructor(public _snackBar: MatSnackBar,private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, private sanitizer: DomSanitizer, public dialog: MatDialog, private facebook: FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Testimonials');
 
@@ -167,6 +168,20 @@ export class TesimoniallistComponent implements OnInit {
   }
 
 
+  /**Submit Review modal */
+  openReviewUrl(aud: any) {
+    // console.log(aud.testimonial_audio);
+    const dialogRef = this.dialog.open(timonialreviewmodal, {
+
+      disableClose: true
+    
+
+    });
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+
   //facebook share for event
 
   login() {
@@ -249,5 +264,86 @@ export class CommonTestimonialAudioModalComponent {
   constructor(public dialogRef: MatDialogRef<CommonTestimonialAudioModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     //console.log(data);
+  }
+}
+
+
+
+
+
+//********** Submit Review modal component************//
+
+@Component({
+  selector: 'timonialreviewmodal',
+  templateUrl: './timonialreviewmodal.html'
+})
+export class timonialreviewmodal {
+  public testimonialReviewForm: FormGroup;
+  public configData: any = {
+    baseUrl: "https://fileupload.influxhostserver.com/",
+    endpoint: "uploads",
+    size: "51200", // kb
+    format: ["jpg", "jpeg", "png"], // use all small font
+    type: "testimonial-review-image",
+    path: "testimonial",
+    prefix: "testimonial-review_",
+    formSubmit: false,
+    conversionNeeded: 0,
+    bucketName: "crmfiles.influxhostserver"
+  }
+  constructor(public _snackBar: MatSnackBar,public formBuilder: FormBuilder,public api:ApiService,public dialogRef: MatDialogRef<timonialreviewmodal>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    //console.log(data);
+    this.testimonialReviewForm=this.formBuilder.group({
+      name:[null,[Validators.required]],
+      email:[null,[Validators.required]],
+      phone:[null,[Validators.required]],
+      review:[null,[Validators.required]],
+      review_img:[],
+      priority:0,
+      status:0
+    });
+  }
+  /**submit Function */
+  submitfunction(){
+    //console.warn(this.testimonialReviewForm.value)
+
+    for (let x in this.testimonialReviewForm.controls) {
+      this.testimonialReviewForm.controls[x].markAsTouched();
+    }
+    
+       // Image File Upload Works 
+       if (this.configData.files) {
+        this.testimonialReviewForm.value.review_img=
+        {
+          "basepath": this.configData.files[0].upload.data.basepath + '/' + this.configData.path + '/',
+          "image": this.configData.files[0].upload.data.data.fileservername,
+          "name": this.configData.files[0].name,
+          "type": this.configData.files[0].type
+        };
+      } 
+      //api submit function
+      let postData:any={
+       "source":'testimonial_review',
+       "data":this.testimonialReviewForm.value
+      }
+      //console.warn(postData);
+      this.api.CustomRequest(postData,'testimonialreview').subscribe((res:any)=>{
+        console.warn(res);
+        if(res.status=="success"){
+          this.testimonialReviewForm.reset();
+        this._snackBar.open('Review Submitted Successfully', '', {
+          duration: 2000,
+        });
+        this.dialogRef.close();
+      }
+      })
+  }
+  /** blur function **/
+  inputBlur(val: any) {
+    this.testimonialReviewForm.controls[val].markAsUntouched();
+  }
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

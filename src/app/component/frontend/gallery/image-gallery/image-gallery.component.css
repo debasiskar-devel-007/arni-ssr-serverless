@@ -1,9 +1,20 @@
 .imageallerybg.mat-card{background:url(../../../../../assets/images/imagegallerybg.jpg) no-repeat top right;background-size: cover;}
 
 .imagegallerywrapper .mainwrappercontent.pt-30{
+    /* -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4; */
+    padding: 0;
+    border: 0!important;
+    border-radius: 0!important;
+    box-shadow: none!important;
+    min-height: 1px;
     -moz-column-count: 4;
     -webkit-column-count: 4;
     column-count: 4;
+    -moz-column-gap: 54px;
+    -webkit-column-gap: 54px;
+    column-gap: 18px;
 }
 
 
