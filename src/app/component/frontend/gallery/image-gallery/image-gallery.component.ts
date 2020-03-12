@@ -28,6 +28,9 @@ export class ImageGalleryComponent implements OnInit {
   public aspectratio:any;
   public croppedfiles:any;
   public crimage:any;
+  public image_0:any;
+  public image_1:any;
+
 
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog,public sanitizer:DomSanitizer) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
@@ -56,8 +59,9 @@ export class ImageGalleryComponent implements OnInit {
         let result: any;
         result = res;
         this.imageDataList = res.imageGallery.res;
-        // console.log(this.imageDataList)
+        console.log(this.imageDataList)
 
+        
         for (let i in this.imageDataList) {
           let result: any;
           result = this.imageDataList[i].decription.length;
@@ -65,19 +69,25 @@ export class ImageGalleryComponent implements OnInit {
           // console.log( this.imageDataList[i].imageTextLength)
 
 
-          this.aspectratio= this.imageDataList[i].aspectratio;
-          console.log( 'aaspectratio==',this.aspectratio)
+          // this.aspectratio= this.imageDataList[i].aspectratio;
+          // console.log( 'aaspectratio==',this.aspectratio)
 
 
-          this.croppedfiles= this.imageDataList[i].croppedfiles;
-          console.log('croppedfiles==',this.croppedfiles)
+          // this.croppedfiles= this.imageDataList[i].croppedfiles;
+          // console.log('croppedfiles==',this.croppedfiles)
 
-          for(let j in  this.croppedfiles){
-            this.crimage='data:image/png;base64,'+(this.sanitizer.bypassSecurityTrustStyle(this.croppedfiles[j]) as any).changingThisBreaksApplicationSecurity;
-            console.log('>>>>',this.crimage);
+          // for(let j in  this.croppedfiles){
+          //   this.crimage='data:image/png;base64,'+(this.sanitizer.bypassSecurityTrustStyle(this.croppedfiles[j]) as any).changingThisBreaksApplicationSecurity;
+          //   console.log('>>>>',this.crimage);
 
-           
-          }
+          // }
+          this.image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+          this.image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
+           console.log('>>>>img0',this.image_0)
+           console.log('>>>>img1',this.image_1)
+
+    
+
 
         }
 
