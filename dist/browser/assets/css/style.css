@@ -1,12 +1,12 @@
-@font-face{font-family:"MyriadPro-Bold";src:url(../fonts/MyriadPro-Bold_gdi.eot);src:url(../fonts/MyriadPro-Bold_gdi.eot?#iefix) format("embedded-opentype"),url(../fonts/MyriadPro-Bold_gdi.woff) format("woff"),url(../fonts/MyriadPro-Bold_gdi.ttf) format("truetype"),url(../fonts/MyriadPro-Bold_gdi.svg#MyriadPro-Bold) format("svg");font-weight:700;font-style:normal;font-stretch:normal;unicode-range:U+0020-25CA}
-@font-face{font-family:"MyriadPro-Semibold";src:url(../fonts/MyriadPro-Semibold_gdi.eot);src:url(../fonts/MyriadPro-Semibold_gdi.eot?#iefix) format("embedded-opentype"),url(../fonts/MyriadPro-Semibold_gdi.woff) format("woff"),url(../fonts/MyriadPro-Semibold_gdi.ttf) format("truetype"),url(../fonts/MyriadPro-Semibold_gdi.svg#MyriadPro-Semibold) format("svg");font-weight:600;font-style:normal;font-stretch:normal;unicode-range:U+0020-25CA}
-@font-face{font-family:"MyriadPro-Regular";src:url(../fonts/MyriadPro-Regular_gdi.eot);src:url(../fonts/MyriadPro-Regular_gdi.eot?#iefix) format("embedded-opentype"),url(../fonts/MyriadPro-Regular_gdi.woff) format("woff"),url(../fonts/MyriadPro-Regular_gdi.ttf) format("truetype"),url(../fonts/MyriadPro-Regular_gdi.svg#MyriadPro-Regular) format("svg");font-weight:400;font-style:normal;font-stretch:normal;unicode-range:U+0020-25CA}
-@font-face{font-family:"open_sanssemibold";src:url(../fonts/opensans-semibold-webfont.eot);src:url(../fonts/opensans-semibold-webfont.eot?#iefix) format("embedded-opentype"),url(../fonts/opensans-semibold-webfont.woff2) format("woff2"),url(../fonts/opensans-semibold-webfont.woff) format("woff"),url(../fonts/opensans-semibold-webfont.ttf) format("truetype"),url(../fonts/opensans-semibold-webfont.svg#open_sanssemibold) format("svg");font-weight:400;font-style:normal}
-@font-face{font-family:"open_sansregular";src:url(../fonts/opensans-regular-webfont.eot);src:url(../fonts/opensans-regular-webfont.eot?#iefix) format("embedded-opentype"),url(../fonts/opensans-regular-webfont.woff2) format("woff2"),url(../fonts/opensans-regular-webfont.woff) format("woff"),url(../fonts/opensans-regular-webfont.ttf) format("truetype"),url(../fonts/opensans-regular-webfont.svg#open_sansregular) format("svg");font-weight:400;font-style:normal}
-@font-face{font-family:"Helvetica-Regular";src:url(../fonts/Helvetica-Normal.eot);src:url(../fonts/Helvetica-Normal.eot?#iefix) format("embedded-opentype"),url(../fonts/Helvetica-Normal.woff2) format("woff2"),url(../fonts/Helvetica-Normal.woff) format("woff"),url(../fonts/Helvetica-Normal.ttf) format("truetype"),url(../fonts/Helvetica-Normal.svg#Helvetica-Normal) format("svg");font-weight:400;font-style:normal}
-@font-face{font-family:"OrbitronBold";src:url(../fonts/Orbitron-Bold.eot);src:url(../fonts/Orbitron-Bold.eot?#iefix) format("embedded-opentype"),url(../fonts/Orbitron-Bold.woff2) format("woff2"),url(../fonts/Orbitron-Bold.woff) format("woff"),url(../fonts/Orbitron-Bold.ttf) format("truetype"),url(../fonts/Orbitron-Bold.svg#Orbitron-Bold) format("svg");font-weight:700;font-style:normal}
-@font-face{font-family:'HelveticaBold';src:url(../fonts/Helvetica-Bold.eot);src:url(../fonts/Helvetica-Bold.eot?#iefix) format("embedded-opentype"),url(../fonts/Helvetica-Bold.woff2) format("woff2"),url(../fonts/Helvetica-Bold.woff) format("woff"),url(../fonts/Helvetica-Bold.ttf) format("truetype"),url(../fonts/Helvetica-Bold.svg#Helvetica-Bold) format("svg");font-weight:700;font-style:normal}
-@font-face{font-family:'Helvetica-Normal';src:url(../fonts/Helvetica-Normal.eot);src:url(../fonts/Helvetica-Normal.eot?#iefix) format("embedded-opentype"),url(../fonts/Helvetica-Normal.woff2) format("woff2"),url(../fonts/Helvetica-Normal.woff) format("woff"),url(../fonts/Helvetica-Normal.ttf) format("truetype"),url(../fonts/Helvetica-Normal.svg#Helvetica-Normal) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:"MyriadPro-Bold";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Bold_gdi.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Bold_gdi.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Bold_gdi.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Bold_gdi.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Bold_gdi.svg#MyriadPro-Bold) format("svg");font-weight:700;font-style:normal;font-stretch:normal;unicode-range:U+0020-25CA}
+@font-face{font-family:"MyriadPro-Semibold";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Semibold_gdi.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Semibold_gdi.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Semibold_gdi.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Semibold_gdi.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Semibold_gdi.svg#MyriadPro-Semibold) format("svg");font-weight:600;font-style:normal;font-stretch:normal;unicode-range:U+0020-25CA}
+@font-face{font-family:"MyriadPro-Regular";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Regular_gdi.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Regular_gdi.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Regular_gdi.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Regular_gdi.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/MyriadPro-Regular_gdi.svg#MyriadPro-Regular) format("svg");font-weight:400;font-style:normal;font-stretch:normal;unicode-range:U+0020-25CA}
+@font-face{font-family:"open_sanssemibold";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-semibold-webfont.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-semibold-webfont.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-semibold-webfont.woff2) format("woff2"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-semibold-webfont.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-semibold-webfont.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-semibold-webfont.svg#open_sanssemibold) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:"open_sansregular";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-regular-webfont.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-regular-webfont.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-regular-webfont.woff2) format("woff2"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-regular-webfont.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-regular-webfont.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/opensans-regular-webfont.svg#open_sansregular) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:"Helvetica-Regular";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.woff2) format("woff2"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.ttf) format("truetype"),url(../fonts/Helvetica-Normal.svg#Helvetica-Normal) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:"OrbitronBold";src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Orbitron-Bold.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Orbitron-Bold.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Orbitron-Bold.woff2) format("woff2"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Orbitron-Bold.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Orbitron-Bold.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Orbitron-Bold.svg#Orbitron-Bold) format("svg");font-weight:700;font-style:normal}
+@font-face{font-family:'HelveticaBold';src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Bold.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Bold.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Bold.woff2) format("woff2"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Bold.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Bold.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Bold.svg#Helvetica-Bold) format("svg");font-weight:700;font-style:normal}
+@font-face{font-family:'Helvetica-Normal';src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.eot);src:url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.eot?#iefix) format("embedded-opentype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.woff2) format("woff2"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.woff) format("woff"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.ttf) format("truetype"),url(https://all-frontend-assets.s3.amazonaws.com/arnie-assets/assets/fonts/Helvetica-Normal.svg#Helvetica-Normal) format("svg");font-weight:400;font-style:normal}
 html,body{height:100%;background:#fff}
 h1,h2,h3,h4,h5,h6{padding:0;margin:0}
 ul.list-inline{margin:0!important;padding:0!important;width:100%}
@@ -20,7 +20,7 @@ a:focus{text-decoration:none;outline:none}
 a:visited{text-decoration:none;outline:none}
 body{background:#fff;font-size:14px;color:#010101;margin:0;padding:0;overflow-x:hidden}
 *{margin:0;padding:0}
-.clear{clear:both}
+.clear{clear:both} 
 a{text-decoration:none;outline:none}
 a,a:visited{text-decoration:none}
 a:hover,a:focus{text-decoration:none}
@@ -352,14 +352,14 @@ a{cursor:pointer;outline:none}
 .gallaryimgvideo .item{display:inline-block;background:#fff;padding:0;margin:0 0 10px;width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-shadow:0 1px 1px 0 rgba(0,0,0,0.18);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;position:relative;overflow:hidden;
 } 
  
-.gallaryimgvideo .item:nth-child(n){display: unset;}
-.gallaryimgvideo.mat-list-base{display: block;padding: 0 !important;}
+/* .gallaryimgvideo .item:nth-child(n){display: unset;} */
+/* .gallaryimgvideo.mat-list-base{display: block;padding: 0 !important;} */
 /* .gallaryimgvideo:hover .item{opacity: 0.8;-webkit-filter: blur(5px);filter: blur(5px);} */
 /* .gallaryimgvideo:hover .item:hover{opacity: 1;transform: scale(1.09);-webkit-filter: blur(0);filter: blur(0);} */
 .gallaryimgvideo .item img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto}
 .gallaryimgvideo .item .mat-list-item-content{padding:0!important;display:block!important}
 
-.gallaryimgvideo.mat-list-base {margin-top: 0px;}
+.gallaryimgvideo.mat-list-base {margin-top: 0px;padding-top: 0;}
 
 .gallaryimgvideo .item:nth-child(1n){height:638px!important;float: none;}
 /* .gallaryimgvideo .item:nth-child(1n) iframe{height:640px!important} */
@@ -731,3 +731,37 @@ a{cursor:pointer;outline:none}
       box-shadow: inset 0 0 10px #000 inset;
       border: solid 1px #ddd;
   }
+
+  .newsletter_modal .reviewmodalh2{ padding-bottom: 8px; padding-top: 5px; text-transform: uppercase;}
+
+  .newsletter_modal .Record_subbtn{ background: rgba(0,173,253,1)!important;
+    background: -moz-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,173,253,1)), color-stop(100%, rgba(0,133,216,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adfd', endColorstr='#0085d8', GradientType=0 )!important;
+    
+    font-size: 20px!important; border: none!important;
+    color: #fff!important;
+    text-transform: uppercase;
+    font-family: 'HelveticaBold'!important; margin: 2px 2px 0 0;}
+
+    .clearboth{clear:both; display: block; overflow: hidden;}
+
+    .newsletter_modal .Record_Cancel{  
+      background: rgba(28,107,138,1)!important;
+      background: -moz-linear-gradient(top, rgba(28,107,138,1) 0%, rgba(16,79,102,1) 100%)!important;
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(28,107,138,1)), color-stop(100%, rgba(16,79,102,1)))!important;
+      background: -webkit-linear-gradient(top, rgba(28,107,138,1) 0%, rgba(16,79,102,1) 100%)!important;
+      background: -o-linear-gradient(top, rgba(28,107,138,1) 0%, rgba(16,79,102,1) 100%)!important;
+      background: -ms-linear-gradient(top, rgba(28,107,138,1) 0%, rgba(16,79,102,1) 100%)!important;
+      background: linear-gradient(to bottom, rgba(28,107,138,1) 0%, rgba(16,79,102,1) 100%)!important;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c6b8a', endColorstr='#104f66', GradientType=0 )!important; color: #fff!important;
+    
+    }
+
+
+    .newsletter_modal button{ margin-right: 10px!important;}
+   

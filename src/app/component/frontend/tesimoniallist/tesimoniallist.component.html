@@ -42,7 +42,7 @@
               <!-- <button *ngIf="testmon.audio_url !='' && testmon.audio_url !=null " (click)="openaudiourl(testmon.audio_url)"><img src="../../../../assets/images/audioicon.png"></button> -->
             </span>
             <!-- audio -->
-            <span class="bnticons" *ngIf="testmon.video_url ==null">
+            <span class="bnticons" *ngIf="testmon.video_url ==null && testmon.testimonial_audio!=null">
               <button (click)="openAudioUrl(testmon)"><img src="../../../../assets/images/audioicon.png"></button>
             </span>
           </span>
@@ -52,7 +52,7 @@
               <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
             </span>
 
-            <span class="quatation">
+            <span class="quatation" *ngIf="testmon.description != '' && testmon != '' && testmon.description !=null">
               <img class="quotestarticon" src="../../../../assets/images/quotestart-icon.png">
               <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">
 
