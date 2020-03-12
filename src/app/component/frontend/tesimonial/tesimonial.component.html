@@ -19,7 +19,7 @@
 
           </span>  
 
-            <span class="slide-audio-wrapper-main"> 
+            <span class="slide-audio-wrapper-main" *ngIf="image.testimonial_audio!=null && image.testimonial_audio!=''"> 
               <audio controls controlsList="nodownload">
                 <source src="{{ image.testimonial_audio }}" type="audio/ogg">
                 <source src="{{ image.testimonial_audio }}" type="audio/mpeg">
