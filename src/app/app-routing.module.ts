@@ -131,7 +131,7 @@ const routes: Routes = [
   { path: 'image-gallery', component: ImageGalleryComponent,
   resolve: { imageGallery: ResolveService },
   data: {
-    requestcondition: {source: "", condition: {},"limit":10,"skip":0 },
+    requestcondition: {source: "", condition: {},"limit":8,"skip":0 },
     endpoint: "imagegallerydata"
   }
   },
@@ -139,7 +139,7 @@ const routes: Routes = [
   { path: 'image-gallery/:id', component: ImageGalleryComponent,
   resolve: { imageGallery: ResolveService },
   data: {
-    requestcondition: {source: "", condition: {},"limit":10,"skip":0 },
+    requestcondition: {source: "", condition: {},"limit":8,"skip":0 },
     endpoint: "imagegallerydata"
   }
   },

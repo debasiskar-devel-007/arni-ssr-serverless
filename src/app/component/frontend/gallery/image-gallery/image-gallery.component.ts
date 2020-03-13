@@ -246,16 +246,29 @@ export class ImageGalleryComponent implements OnInit {
     let data:any;
 
       data={
-      "limit":10,
+      "limit":8,
        "skip":this.indexVal
      }
      this.apiService.CustomRequest(data,'imagegallerydata').subscribe(res=>{
       let result:any=res;
       console.log(result.image_list)
+      
       this.indexvallength=result.image_list.length;
 
+      for (let i in result.image_list) {
+        this.imageData=result.image_list;
+        
+        this.imageData[i].imageTextLength =  this.indexvallength;
+       
+        this.imageData[i].image_0=this.imageData[i].basepath+this.imageData[i].aspectratio[0]+"_"+this.imageData[i].imagepath;
+        this.imageData[i].image_1=this.imageData[i].basepath+this.imageData[i].aspectratio[1]+"_"+this.imageData[i].imagepath;
+        //  console.log('>>>>img0',this.imageDataList[i].image_0)
+        //  console.log('>>>>img1',this.imageDataList[i].image_1)
+      }
+
+
       if(result.image_list.length>0){
-              this.imageDataList = this.imageDataList.concat(result.image_list);
+              this.imageDataList = this.imageDataList.concat(this.imageData);
               this.indexVal = this.indexVal + 8;
             }else{
                  this.searchLoadMore=true;
