@@ -4,6 +4,8 @@
 
 .video_icon {
     background-image: url(../../../../../assets/images/video_icon.png);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100px;
 }
 .img_icon {
     position: absolute;
@@ -25,3 +27,23 @@
 
 .readmoredesc{display: flex; align-items: center; justify-content: space-between;}
 /* .readmoredesc span{margin-left: 10px;} */
+
+
+.viewalleventbtn {
+    display: block!important;
+    background: #03aed4!important;
+    border: none!important;
+    font-size: 16px!important;
+    color: #fff!important;
+    text-transform: uppercase;
+    font-family: 'HelveticaBold'!important;
+    text-decoration: none!important;
+    line-height: normal!important;
+    text-align: center!important;
+    margin: 5px 0!important;
+    border-radius: 0;
+    width: 100%!important;
+    text-decoration: none!important;
+    box-shadow: none!important;
+    padding: 15px 5px 10px!important;
+}

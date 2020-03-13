@@ -238,7 +238,7 @@ export class ImageGalleryComponent implements OnInit {
     let data:any;
 
       data={
-      "limit":8,
+      "limit":16,
        "skip":this.indexVal
      }
      this.apiService.CustomRequest(data,'imagegallerydata').subscribe(res=>{
@@ -261,7 +261,7 @@ export class ImageGalleryComponent implements OnInit {
 
       if(result.image_list.length>0){
               this.imageDataList = this.imageDataList.concat(this.imageData);
-              this.indexVal = this.indexVal + 8;
+              this.indexVal = this.indexVal + 16;
             }else{
                  this.searchLoadMore=true;
             }

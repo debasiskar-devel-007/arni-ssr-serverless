@@ -14,7 +14,7 @@
     column-count: 4;
     -moz-column-gap: 54px;
     -webkit-column-gap: 54px;
-    column-gap: 18px;
+    column-gap: 10px;
 }
 
 
@@ -34,6 +34,25 @@
 }
 .singlecolgallarycontent p.dtcls span {
     color: #30ffaf;
+}
+
+.viewalleventbtn {
+    display: block!important;
+    background: #03aed4!important;
+    border: none!important;
+    font-size: 16px!important;
+    color: #fff!important;
+    text-transform: uppercase;
+    font-family: 'HelveticaBold'!important;
+    text-decoration: none!important;
+    line-height: normal!important;
+    text-align: center!important;
+    margin: 5px 0!important;
+    border-radius: 0;
+    width: 100%!important;
+    text-decoration: none!important;
+    box-shadow: none!important;
+    padding: 15px 5px 10px!important;
 }
 
 @media (max-width: 1199px) {
