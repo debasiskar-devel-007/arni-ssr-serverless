@@ -61,8 +61,6 @@ export class TesimoniallistComponent implements OnInit {
 
 
 
-
-
       this.meta.setTag('og:description', 'Check out what Coach Arnie’s students, clients and other people from the Personal Development Industry have to say about him and the many programs that he offers.');
       this.meta.setTag('twitter:description', 'Check out what Coach Arnie’s students, clients and other people from the Personal Development Industry have to say about him and the many programs that he offers.');
 
@@ -305,7 +303,7 @@ export class timonialreviewmodal {
     format: ["jpg", "jpeg", "png"], // use all small font
     type: "testimonial-review-image",
     path: "testimonial",
-    prefix: "testimonial-review_",
+    prefix: "tesindexvaltimonial-review_",
     formSubmit: false,
     conversionNeeded: 0,
     bucketName: "crmfiles.influxhostserver"
