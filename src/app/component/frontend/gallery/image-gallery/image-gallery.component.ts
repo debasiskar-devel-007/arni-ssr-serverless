@@ -230,7 +230,7 @@ export class ImageGalleryComponent implements OnInit {
       // panelClass:['modal-md','success-modal'],
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
-      data: { img: val.basepath+val.aspectratio[1]+"_"+val.imagepath, fulldata: val }
+      data: { img: val.image, fulldata: val }
     });
 
     dialogRef.afterClosed().subscribe(result => {
