@@ -32,6 +32,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.singlecolgallarycontent p.dtcls span {
+    color: #30ffaf;
+}
 
 @media (max-width: 1199px) {
     .imagegallerywrapper .mainwrappercontent.pt-30{

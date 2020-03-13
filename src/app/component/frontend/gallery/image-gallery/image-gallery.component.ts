@@ -28,6 +28,9 @@ export class ImageGalleryComponent implements OnInit {
   public aspectratio:any;
   public croppedfiles:any;
   public crimage:any;
+  public image_0:any;
+  public image_1:any;
+  // public img:any;
 
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog,public sanitizer:DomSanitizer) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
@@ -58,26 +61,34 @@ export class ImageGalleryComponent implements OnInit {
         this.imageDataList = res.imageGallery.res;
         // console.log(this.imageDataList)
 
+        
         for (let i in this.imageDataList) {
           let result: any;
           result = this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength = result;
-          // console.log( this.imageDataList[i].imageTextLength)
+          // this.img=i;
+          // console.log('>>>',this.img)
+
+    
 
 
-          this.aspectratio= this.imageDataList[i].aspectratio;
-          console.log( 'aaspectratio==',this.aspectratio)
+          // this.aspectratio= this.imageDataList[i].aspectratio;
+          // console.log( 'aaspectratio==',this.aspectratio)
 
 
-          this.croppedfiles= this.imageDataList[i].croppedfiles;
-          console.log('croppedfiles==',this.croppedfiles)
+          // this.croppedfiles= this.imageDataList[i].croppedfiles;
+          // console.log('croppedfiles==',this.croppedfiles)
 
-          for(let j in  this.croppedfiles){
-            this.crimage='data:image/png;base64,'+(this.sanitizer.bypassSecurityTrustStyle(this.croppedfiles[j]) as any).changingThisBreaksApplicationSecurity;
-            console.log('>>>>',this.crimage);
+          // for(let j in  this.croppedfiles){
+          //   this.crimage='data:image/png;base64,'+(this.sanitizer.bypassSecurityTrustStyle(this.croppedfiles[j]) as any).changingThisBreaksApplicationSecurity;
+          //   console.log('>>>>',this.crimage);
 
-           
-          }
+          // }
+          this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+          this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
+          //  console.log('>>>>img0',this.imageDataList[i].image_0)
+          //  console.log('>>>>img1',this.imageDataList[i].image_1)
+
 
         }
 
@@ -109,9 +120,13 @@ export class ImageGalleryComponent implements OnInit {
         if (this.activatedRoute.snapshot.params.id == this.imageDataList[i]._id) {
 
 
+
           let result: any;
           result = this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength = result;
+
+          this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+          this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
 
           let val: any;
           val = this.imageDataList[i];
@@ -202,16 +217,13 @@ export class ImageGalleryComponent implements OnInit {
   }
 
 
-
   openVideoModal(val: any) {
     console.log(val)
     const dialogRef = this.dialog.open(ImageGalleryModalComponent, {
       // panelClass:['modal-md','success-modal'],
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
-      data: { img: val.image, fulldata: val }
-
-
+      data: { img: val.basepath+val.aspectratio[1]+"_"+val.imagepath, fulldata: val }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -269,7 +281,7 @@ export class ImageGalleryModalComponent {
 
 
   fbShare(val: any) {
-    console.log(val)
+    // console.log(val)
     var url = 'https://arniefonseca.influxiq.com/image-gallery/' + val._id;
     //console.log(url)
 
@@ -286,7 +298,7 @@ export class ImageGalleryModalComponent {
   // twitter share 
 
   twitterShare(val: any) {
-    console.log(val)
+    // console.log(val)
     window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
   }
 
