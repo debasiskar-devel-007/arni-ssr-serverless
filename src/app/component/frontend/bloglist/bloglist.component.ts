@@ -375,9 +375,25 @@ titleSearchCategoryFilter(filterValue: string) {
 }
 viewAllCatBlogs(val){
   //console.log('Hiiiitttt',val)
-  
-  this.router.navigateByUrl('/blog/'+ val._id);
-  
+  // this.router.navigateByUrl('/blog/'+ val._id);
+  this.blogCat=val._id;
+  let data: any = {
+   condition: {
+    "blogcat":val._id,
+    "limit":10,
+    "skip":0
+   },
+  }
+
+  this.apiService.CustomRequest(data,'bloglistbycategory').subscribe((result: any) => {
+    console.warn(result);
+    this.bloglisting=[];
+    this.blogcategorycount=[];
+    this.bloglisting = result.blogs;
+
+    this.blogcategorycount=result.blog_category;
+
+});
   }
 
   
