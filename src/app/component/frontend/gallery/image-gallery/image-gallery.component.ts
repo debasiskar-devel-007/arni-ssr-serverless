@@ -59,7 +59,7 @@ export class ImageGalleryComponent implements OnInit {
         let result: any;
         result = res;
         this.imageDataList = res.imageGallery.res;
-        console.log(this.imageDataList)
+        // console.log(this.imageDataList)
 
         
         for (let i in this.imageDataList) {
@@ -86,8 +86,8 @@ export class ImageGalleryComponent implements OnInit {
           // }
           this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
           this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
-           console.log('>>>>img0',this.imageDataList[i].image_0)
-           console.log('>>>>img1',this.imageDataList[i].image_1)
+          //  console.log('>>>>img0',this.imageDataList[i].image_0)
+          //  console.log('>>>>img1',this.imageDataList[i].image_1)
 
 
         }
@@ -120,9 +120,13 @@ export class ImageGalleryComponent implements OnInit {
         if (this.activatedRoute.snapshot.params.id == this.imageDataList[i]._id) {
 
 
+
           let result: any;
           result = this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength = result;
+
+          this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+          this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
 
           let val: any;
           val = this.imageDataList[i];
@@ -213,16 +217,13 @@ export class ImageGalleryComponent implements OnInit {
   }
 
 
-
   openVideoModal(val: any) {
     console.log(val)
     const dialogRef = this.dialog.open(ImageGalleryModalComponent, {
       // panelClass:['modal-md','success-modal'],
       panelClass: 'blogdetail_videomodal',
       // width:'450px',
-      data: { img: val.image, fulldata: val }
-
-
+      data: { img: val.basepath+val.aspectratio[1]+"_"+val.imagepath, fulldata: val }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -280,7 +281,7 @@ export class ImageGalleryModalComponent {
 
 
   fbShare(val: any) {
-    console.log(val)
+    // console.log(val)
     var url = 'https://arniefonseca.influxiq.com/image-gallery/' + val._id;
     //console.log(url)
 
@@ -297,7 +298,7 @@ export class ImageGalleryModalComponent {
   // twitter share 
 
   twitterShare(val: any) {
-    console.log(val)
+    // console.log(val)
     window.open('https://twitter.com/intent/tweet?url=https://arniefonseca.influxiq.com/image-gallery/' + val._id);
   }
 
