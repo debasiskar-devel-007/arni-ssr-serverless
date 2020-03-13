@@ -11,20 +11,9 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginComponent implements OnInit {
 /***************** This is use for image upload ********************/ 
-  // public configData: any = {
-  //   baseUrl: "http://3.15.236.141:5005/",
-  //   endpoint: "uploads",
-  //   size: "51200", // kb
-  //   format: ["jpg", "jpeg", "png", "bmp", "zip", 'html'], // use all small font
-  //   type: "profile-picture",
-  //   path: "files",
-  //   prefix: "profile_picture_"
-  // }
-
   
   public logo: any = 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png';      // logo url 
   public fromTitle: any = "Login";    // This is a From Title 
-  // public fullUrl: any = "https://63zzhpnoti.execute-api.us-east-1.amazonaws.com/production/api/";  // server url
   public fullUrl: any = this.apiService.serverUrl;
   public endpoint: any = "login";  // login endpoint
   public buttonName:any= 'Login';
@@ -61,16 +50,13 @@ export class LoginComponent implements OnInit {
     this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
 
       this.routerStatus = {   
-        "data": [
-          {
-           "type":"admin",
-           "routerNav":"admin-dashboard"
-          },
-          {
-            "type":"affiliate",
-           "routerNav":"affiliate-dashboard"
-          }
-        ]
+        // "data": [
+        //   {
+           
+        //    "routerNav":"testimonial"
+        //   }
+          
+        // ]
       }
   
     }
