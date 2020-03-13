@@ -3,7 +3,7 @@ import { MetaService } from '@ngx-meta/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
-import {ApiService} from '../../../../api.service'
+import {ApiService} from '../../../../api.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -242,28 +242,29 @@ export class ImageGalleryComponent implements OnInit {
 
   // load more gallery 
   imageLoadMore(){
-    // console.log('hit')
-    // let data:any;
+    console.log('hit')
+    let data:any;
 
-    //   data={
-    //   "limit":10,
-    //    "skip":this.indexVal
-    //  }
-    //  this.apiService.CustomRequest(data,'imagegallerydata').subscribe(res=>{
-    //   let result:any=res;
-    //   console.log(result.image_list)
-     
-    //   if(result.image_list.length>0){
-    //           this.imageDataList = this.imageDataList.concat(result.image_list);
-    //           this.indexVal = this.indexVal + 8;
-    //         }else{
-    //              this.searchLoadMore=true;
-    //         }
+      data={
+      "limit":10,
+       "skip":this.indexVal
+     }
+     this.apiService.CustomRequest(data,'imagegallerydata').subscribe(res=>{
+      let result:any=res;
+      console.log(result.image_list)
+      this.indexvallength=result.image_list.length;
+
+      if(result.image_list.length>0){
+              this.imageDataList = this.imageDataList.concat(result.image_list);
+              this.indexVal = this.indexVal + 8;
+            }else{
+                 this.searchLoadMore=true;
+            }
 
 
-    //  })
+     })
 
-    this.indexVal=this.indexVal +8
+    // this.indexVal=this.indexVal +8
 
   }
 

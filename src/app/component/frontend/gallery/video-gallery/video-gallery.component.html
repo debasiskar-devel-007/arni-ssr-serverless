@@ -20,7 +20,7 @@
   </span>
   <span class="mainwrappercontent pt-30">
     <mat-list class="gallaryvideo">
-      <mat-list-item *ngFor="let item of videoDataList">
+      <mat-list-item *ngFor="let item of videoDataList | slice:0:indexVal ; let i = index ">
         <div class="video-responsive">
           <span class="singlecolgallarycontent">
             <h2>{{item.title}} </h2>
@@ -57,7 +57,9 @@
 
           
         </div>
+        
       </mat-list-item>
+      <button  *ngIf=" searchLoadMore == false &&  indexvallength > 3 " class="viewalleventbtn"  (click)="videoLoadMore()" >Load More</button>
     </mat-list>
   </span>
 </mat-card>

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
+import {ApiService} from '../../../../api.service';
 
 export interface DialogData {
 
@@ -43,7 +44,12 @@ export class VideoGalleryComponent implements OnInit {
   public safeSrc: any;
   public profile: any;
   public videoTextLength: any;
-  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog, public router: Router, public facebook: FacebookService) {
+  public indexVal:any=9;
+  public searchLoadMore:boolean=false;
+  public indexvallength:any;
+
+
+  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog, public router: Router, public facebook: FacebookService,public apiService:ApiService) {
     // this.meta.setTitle('Arnie Fonseca - Video Gallery');
     // this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
     // this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
@@ -69,7 +75,8 @@ export class VideoGalleryComponent implements OnInit {
       this.activatedRoute.data.forEach(res => {
         let result: any;
         result = res;
-        this.videoDataList = res.videoGallery.res;
+        this.videoDataList = res.videoGallery.video_list;
+        this.indexvallength=this.videoDataList.length;
         // console.log(this.videoDataList, '+++++')
       })
 
@@ -204,7 +211,28 @@ export class VideoGalleryComponent implements OnInit {
   }
 
 
+  videoLoadMore(){
+    let data:any;
+          data={
+      "limit":4,
+       "skip":this.indexVal
+     }
+     this.apiService.CustomRequest(data,'videogallerydata').subscribe(res=>{
+      let result:any=res;
+      console.log(result.video_list)
+      this.indexvallength=result.video_list.length;
+      if(result.video_list.length>0){
 
+              this.videoDataList = this.videoDataList.concat(result.video_list);
+              this.indexVal = this.indexVal + 3;
+            }else{
+                 this.searchLoadMore=true;
+            }
+
+
+     })
+
+  }
 
 
   viewDetails(val: any) {
