@@ -1,5 +1,5 @@
 
-<mat-card class="newsletter_modal">
+<mat-card class="newsletter_modal newsletter_modalnew">
     <h2 class="reviewmodalh2">Submit your review here</h2>
 
     <form [formGroup]="testimonialReviewForm">
@@ -27,6 +27,17 @@
       required.
     </mat-error>
         </mat-form-field>
+
+
+
+        <mat-form-field>
+          <textarea matInput placeholder="Description " formControlName="description" (blur)="inputBlur('description')"></textarea>
+          <mat-error *ngIf="!testimonialReviewForm.controls['description'].valid
+          && testimonialReviewForm.controls['description'].errors.required">Description is
+    required.
+  </mat-error>
+      </mat-form-field>
+
 
         <mat-form-field>
             <input matInput placeholder="Your Review " formControlName="review" (blur)="inputBlur('review')">

@@ -765,3 +765,12 @@ a{cursor:pointer;outline:none}
 
     .newsletter_modal button{ margin-right: 10px!important;}
    
+
+
+    .newsletter_modalnew .mat-form-field-subscript-wrapper{position: inherit; margin: 5px 0 8px 0;}
+
+    .newsletter_modalnew .mat-form-field-appearance-legacy .mat-form-field-infix {
+      padding: 1em!important;
+      background: #e1e0e6!important;
+      margin: 0px 0;
+  }

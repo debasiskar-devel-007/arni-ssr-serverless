@@ -296,11 +296,11 @@ export class timonialreviewmodal {
     //console.log(data);
     this.testimonialReviewForm=this.formBuilder.group({
       name:[null,[Validators.required]],
-      email:[null,[Validators.required]],
+      email:[null,[Validators.required,Validators.email]],
       phone:[null,[Validators.required]],
       review:[null,[Validators.required]],
       testimonial_img:[],
-      description:[''],
+      description:[null,[Validators.required]],
       flag:["review"],
       priority:0,
       status:3
