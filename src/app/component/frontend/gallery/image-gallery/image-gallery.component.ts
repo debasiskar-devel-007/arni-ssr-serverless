@@ -3,7 +3,7 @@ import { MetaService } from '@ngx-meta/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material';
-
+import {ApiService} from '../../../../api.service'
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -30,9 +30,15 @@ export class ImageGalleryComponent implements OnInit {
   public crimage:any;
   public image_0:any;
   public image_1:any;
+  public indexVal:any=8;
+  public searchLoadMore:boolean=false;
+  public imageData:any;
+  public indexvallength:any;
+
+
   // public img:any;
 
-  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog,public sanitizer:DomSanitizer) {
+  constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public router: Router, public facebook: FacebookService, public dialog: MatDialog,public sanitizer:DomSanitizer,public apiService:ApiService) {
     // this.meta.setTitle('Arnie Fonseca - Image Gallery');
     // this.meta.setTag('og:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
     // this.meta.setTag('twitter:description', 'Check out the latest images and pictures of Arnie Fonseca and the events he has attended. This gallery is updated after each event, so you can regularly check it for the images of the latest events.');
@@ -58,7 +64,8 @@ export class ImageGalleryComponent implements OnInit {
       this.activatedRoute.data.forEach(res => {
         let result: any;
         result = res;
-        this.imageDataList = res.imageGallery.res;
+        this.imageDataList = res.imageGallery.image_list;
+        this.indexvallength=res.imageGallery.image_list.length;
         // console.log(this.imageDataList)
 
         
@@ -230,6 +237,38 @@ export class ImageGalleryComponent implements OnInit {
 
     });
   }
+
+
+
+  // load more gallery 
+  imageLoadMore(){
+    // console.log('hit')
+    // let data:any;
+
+    //   data={
+    //   "limit":10,
+    //    "skip":this.indexVal
+    //  }
+    //  this.apiService.CustomRequest(data,'imagegallerydata').subscribe(res=>{
+    //   let result:any=res;
+    //   console.log(result.image_list)
+     
+    //   if(result.image_list.length>0){
+    //           this.imageDataList = this.imageDataList.concat(result.image_list);
+    //           this.indexVal = this.indexVal + 8;
+    //         }else{
+    //              this.searchLoadMore=true;
+    //         }
+
+
+    //  })
+
+    this.indexVal=this.indexVal +8
+
+  }
+
+
+
 
 
 

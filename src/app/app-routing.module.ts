@@ -131,8 +131,8 @@ const routes: Routes = [
   { path: 'image-gallery', component: ImageGalleryComponent,
   resolve: { imageGallery: ResolveService },
   data: {
-    requestcondition: {source: "imageGallery_management_view", condition: {} },
-    endpoint: "datalistwithouttoken"
+    requestcondition: {source: "", condition: {} },
+    endpoint: "imagegallerydata"
   }
   },
 
