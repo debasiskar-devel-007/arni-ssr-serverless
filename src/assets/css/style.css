@@ -865,3 +865,15 @@ a{cursor:pointer;outline:none}
       background: #e1e0e6!important;
       margin: 0px 0;
   }
+
+
+  .loginmodalspan{ display: block; text-align: center;}
+
+  .newsletter_modal .loginmodalspan .mat-button{ display: inline-block; margin: 5px; float: none; color: #fff!important; background: rgba(0,173,253,1)!important;
+    background: -moz-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,173,253,1)), color-stop(100%, rgba(0,133,216,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adfd', endColorstr='#0085d8', GradientType=0 )!important;} 

@@ -30,25 +30,25 @@
 
 
 
-        <mat-form-field>
+        <!-- <mat-form-field>
           <textarea matInput placeholder="Description " formControlName="description" (blur)="inputBlur('description')"></textarea>
           <mat-error *ngIf="!testimonialReviewForm.controls['description'].valid
           && testimonialReviewForm.controls['description'].errors.required">Description is
     required.
   </mat-error>
-      </mat-form-field>
+      </mat-form-field> -->
 
 
         <mat-form-field>
-            <input matInput placeholder="Your Review " formControlName="review" (blur)="inputBlur('review')">
-            <mat-error *ngIf="!testimonialReviewForm.controls['review'].valid
-            && testimonialReviewForm.controls['review'].errors.required">Review is
+            <input matInput placeholder="Your Review " formControlName="description" (blur)="inputBlur('description')">
+            <mat-error *ngIf="!testimonialReviewForm.controls['description'].valid
+            && testimonialReviewForm.controls['description'].errors.required">Review is
       required.
     </mat-error>
         </mat-form-field>
 
         <span>
-            <h3>Image</h3>
+            <h3 style="text-align: left; margin: 0; padding: 2px 0 0 0;">Image</h3>
            <lib-file-upload  [config]="configData"></lib-file-upload>
         </span> 
        

@@ -40,6 +40,8 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
 const routes: Routes = [
   /**Frontend Routing**/
   { path: 'login', component: LoginComponent },
+  { path: 'login/:id', component: LoginComponent },
+
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },

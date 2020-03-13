@@ -9,6 +9,7 @@ import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebo
 import { FormControl, FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 export interface DialogData { data: any; }
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-tesimoniallist',
@@ -31,7 +32,7 @@ export class TesimoniallistComponent implements OnInit {
     //console.log('copyText');
   }
 
-  constructor(public _snackBar: MatSnackBar,private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, private sanitizer: DomSanitizer, public dialog: MatDialog, private facebook: FacebookService) {
+  constructor(public Cookie:CookieService,public _snackBar: MatSnackBar,private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, private sanitizer: DomSanitizer, public dialog: MatDialog, private facebook: FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Testimonials');
 
@@ -53,12 +54,10 @@ export class TesimoniallistComponent implements OnInit {
       this.activatedRoute.data.forEach(data => {
         let result: any = {};
         result = data.testimonialListData.res;
-         console.warn(result);
+         //console.warn(result);
         this.TestimonialListArray = result;
         this.indexvallength = this.TestimonialListArray.length;
       })
-
-
 
 
 
@@ -170,18 +169,36 @@ export class TesimoniallistComponent implements OnInit {
 
   /**Submit Review modal */
   openReviewUrl() {
-    // console.log(aud.testimonial_audio);
-    const dialogRef = this.dialog.open(timonialreviewmodal, {
+    if(this.Cookie.check('user_details')==true){
+      const dialogRef = this.dialog.open(timonialreviewmodal, {
+        disableClose: true
+      });
+      dialogRef.afterClosed().subscribe(result => {
+      });
+    }else{
+      // console.warn("please log in");
+      this.openDialog();
+      // this.router.navigateByUrl('/login'+ this.router.url);
 
+    }
+    // const dialogRef = this.dialog.open(timonialreviewmodal, {
+    //   disableClose: true
+    // });
+    // dialogRef.afterClosed().subscribe(result => {
+    // });
+  }
+
+  /*******************Open Login Modal ********************************/
+  openDialog(): void {
+    const dialogRef = this.dialog.open(Dialoglogin, {
+      panelClass: 'Login_confirm',
       disableClose: true
-    
-
     });
+
     dialogRef.afterClosed().subscribe(result => {
     });
   }
-
-
+  /***************************************************** */
   //facebook share for event
 
   login() {
@@ -286,7 +303,7 @@ export class timonialreviewmodal {
     format: ["jpg", "jpeg", "png"], // use all small font
     type: "testimonial-review-image",
     path: "testimonial",
-    prefix: "testimonial-review_",
+    prefix: "tesindexvaltimonial-review_",
     formSubmit: false,
     conversionNeeded: 0,
     bucketName: "crmfiles.influxhostserver"
@@ -298,7 +315,7 @@ export class timonialreviewmodal {
       name:[null,[Validators.required]],
       email:[null,[Validators.required,Validators.email]],
       phone:[null,[Validators.required]],
-      review:[null,[Validators.required]],
+      // review:[null,[Validators.required]],
       testimonial_img:[],
       description:[null,[Validators.required]],
       flag:["review"],
@@ -349,4 +366,27 @@ export class timonialreviewmodal {
   onNoClick(): void {
     this.dialogRef.close();
   }
+}
+
+/** Login Modal*/
+@Component({
+  selector: 'Dialoglogin',
+  templateUrl: 'login.html',
+  // styleUrls: ['./inventory.component.css']
+})
+export class Dialoglogin {
+
+  constructor(
+    public dialogRef: MatDialogRef<Dialoglogin>, public router: Router,
+    @Inject(MAT_DIALOG_DATA) public DialogData) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  acceptToLoginPage() {
+    this.router.navigateByUrl('/login' + this.router.url);
+    this.onNoClick();
+  }
+
 }

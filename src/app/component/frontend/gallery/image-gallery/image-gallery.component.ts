@@ -73,24 +73,7 @@ export class ImageGalleryComponent implements OnInit {
           let result: any;
           result = this.imageDataList[i].decription.length;
           this.imageDataList[i].imageTextLength = result;
-          // this.img=i;
-          // console.log('>>>',this.img)
-
-    
-
-
-          // this.aspectratio= this.imageDataList[i].aspectratio;
-          // console.log( 'aaspectratio==',this.aspectratio)
-
-
-          // this.croppedfiles= this.imageDataList[i].croppedfiles;
-          // console.log('croppedfiles==',this.croppedfiles)
-
-          // for(let j in  this.croppedfiles){
-          //   this.crimage='data:image/png;base64,'+(this.sanitizer.bypassSecurityTrustStyle(this.croppedfiles[j]) as any).changingThisBreaksApplicationSecurity;
-          //   console.log('>>>>',this.crimage);
-
-          // }
+         
           this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
           this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
           //  console.log('>>>>img0',this.imageDataList[i].image_0)
@@ -124,6 +107,14 @@ export class ImageGalleryComponent implements OnInit {
 
       })
       for (let i in this.imageDataList) {
+        let result: any;
+          result = this.imageDataList[i].decription.length;
+          this.imageDataList[i].imageTextLength = result;
+
+          this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+
+          this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
+
         if (this.activatedRoute.snapshot.params.id == this.imageDataList[i]._id) {
 
 
@@ -133,6 +124,7 @@ export class ImageGalleryComponent implements OnInit {
           this.imageDataList[i].imageTextLength = result;
 
           this.imageDataList[i].image_0=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[0]+"_"+this.imageDataList[i].imagepath;
+
           this.imageDataList[i].image_1=this.imageDataList[i].basepath+this.imageDataList[i].aspectratio[1]+"_"+this.imageDataList[i].imagepath;
 
           let val: any;
