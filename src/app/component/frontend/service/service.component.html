@@ -46,7 +46,7 @@
         </span>
            <span class="homeblock2iconcontent">{{item.service_title}} <span class="small">(Revenue through Attitude)</span></span></h2>
         <p> <span [innerHtml]="item.description"></span></p>
-          <button mat-button class="btntransparent sim-button">view more</button>
+          <button mat-button class="btntransparent sim-button" (click)="servicedetail(item)">view more</button>
       </span>
     </mat-list-item>
     <!-- <mat-list-item class="homeblock2listssingleitem">

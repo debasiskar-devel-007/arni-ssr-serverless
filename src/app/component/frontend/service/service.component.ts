@@ -24,6 +24,15 @@ export class ServiceComponent implements OnInit {
     });
    }
 
+
+//***********blog list view in blog detail************//
+servicedetail(val:any){
+  this.router.navigateByUrl('/servicedetail')
+  //console.log(val)
+  // let title=val.blogtitle.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+  // this.router.navigateByUrl('/service/'+title+'/'+val._id)
+}
+
   ngOnInit() {
   }
 
