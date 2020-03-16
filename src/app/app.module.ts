@@ -60,6 +60,7 @@ import { SidenavService } from './../app/services/sidenav.service';
 import { PastSeminarsComponent } from './component/frontend/events/past-seminars/past-seminars.component';
 import { PastSpeakerEngagementsComponent } from './component/frontend/events/past-speaker-engagements/past-speaker-engagements.component';
 import { PastWorkshopsComponent } from './component/frontend/events/past-workshops/past-workshops.component';
+import { ServicedetailComponent } from './component/frontend/servicedetail/servicedetail.component';
 
 /**End Frontend Component**/
 
@@ -119,7 +120,8 @@ import { PastWorkshopsComponent } from './component/frontend/events/past-worksho
     PastWorkshopsComponent,
     VideoGalleryModalComponent,
     ImageGalleryModalComponent,
-    timonialreviewmodal
+    timonialreviewmodal,
+    ServicedetailComponent
 
   ],
   imports: [

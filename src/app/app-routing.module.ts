@@ -36,6 +36,7 @@ import { SpecialProgramsForYoungMenComponent } from './component/frontend/servic
 import { PastSeminarsComponent } from './component/frontend/events/past-seminars/past-seminars.component';
 import { PastSpeakerEngagementsComponent } from './component/frontend/events/past-speaker-engagements/past-speaker-engagements.component';
 import { PastWorkshopsComponent } from './component/frontend/events/past-workshops/past-workshops.component';
+import { ServicedetailComponent } from './component/frontend/servicedetail/servicedetail.component';
 
 const routes: Routes = [
   /**Frontend Routing**/
@@ -80,7 +81,9 @@ const routes: Routes = [
     }
   },
 
-
+  {
+    path: 'servicedetail', component: ServicedetailComponent
+  },
 
 
 

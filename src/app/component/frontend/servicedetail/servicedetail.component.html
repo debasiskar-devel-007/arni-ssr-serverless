@@ -1,0 +1,58 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner innercommonbannercls">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>Service Details</h1>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="ptb-40 generalcls blog bloglist blogdetail">
+    <span class="mainwrappercontent">
+      <span class="bloglistinner">
+        <span class="bloglistswrapper">
+          <mat-card-content class="bottom_blog">
+            <span class="item_wrapper">
+              <!-- <mat-card-content class="item"> -->
+              <mat-card-content class="item" *ngFor="let item of serviceListConfig">
+                
+               
+                <mat-card-content class="contentsection">  
+                  <span>
+                    <mat-card-title class="blogtitle">{{item.service_title}} <span class="small">(Revenue through Attitude)</span></mat-card-title>
+                    <!-- <mat-card-title class="blogtitle">Employee Training </mat-card-title> -->
+                  </span>                
+                  <span class="blogsociallists">
+  
+                    <a class="sociallink fa fb">
+                      <fa name="facebook" class="fa-facebook"></fa>
+                    </a>
+                    <a class="sociallink fa twi">
+                      <fa name="twitter" class="fa-twitter"></fa>
+                    </a>
+                    <a class="sociallink fa lin">
+                      <fa name="linkedin" class="fa-linkedin"></fa>
+                    </a>
+                    <a class="sociallink fa tumblr">
+                      <fa name="tumblr" class="fa-tumblr"></fa>
+                    </a>
+                  </span>
+                </mat-card-content>
+                <span class="item_images">
+                  <img [src]="item.service_img">
+                </span>
+                <p>
+                  <span class="description"><span [innerHtml]="item.description"></span></span>
+                </p>
+              </mat-card-content>
+            </span>
+          </mat-card-content>
+         
+  
+          
+        </span>        
+      </span>
+    </span>
+</mat-card>      
+
+<app-footer></app-footer>
