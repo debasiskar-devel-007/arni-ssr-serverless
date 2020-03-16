@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { FacebookService, UIParams, UIResponse, LoginResponse } from 'ngx-facebook';
 import { FormControl, FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 export interface DialogData { data: any; }
 import { CookieService } from 'ngx-cookie-service';
 
@@ -32,7 +32,7 @@ export class TesimoniallistComponent implements OnInit {
     //console.log('copyText');
   }
 
-  constructor(public Cookie:CookieService,public _snackBar: MatSnackBar,private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, private sanitizer: DomSanitizer, public dialog: MatDialog, private facebook: FacebookService) {
+  constructor(public Cookie: CookieService, public _snackBar: MatSnackBar, private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService, private readonly meta: MetaService, private sanitizer: DomSanitizer, public dialog: MatDialog, private facebook: FacebookService) {
 
     this.meta.setTitle('Arnie Fonseca - Testimonials');
 
@@ -54,7 +54,7 @@ export class TesimoniallistComponent implements OnInit {
       this.activatedRoute.data.forEach(data => {
         let result: any = {};
         result = data.testimonialListData.res;
-         //console.warn(result);
+        console.warn(result);
         this.TestimonialListArray = result;
         this.indexvallength = this.TestimonialListArray.length;
       })
@@ -169,23 +169,17 @@ export class TesimoniallistComponent implements OnInit {
 
   /**Submit Review modal */
   openReviewUrl() {
-    if(this.Cookie.check('user_details')==true){
+    if (this.Cookie.check('user_details') == true) {
       const dialogRef = this.dialog.open(timonialreviewmodal, {
         disableClose: true
       });
       dialogRef.afterClosed().subscribe(result => {
       });
-    }else{
-      // console.warn("please log in");
+    } else {
+
       this.openDialog();
-      // this.router.navigateByUrl('/login'+ this.router.url);
 
     }
-    // const dialogRef = this.dialog.open(timonialreviewmodal, {
-    //   disableClose: true
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    // });
   }
 
   /*******************Open Login Modal ********************************/
@@ -308,54 +302,54 @@ export class timonialreviewmodal {
     conversionNeeded: 0,
     bucketName: "crmfiles.influxhostserver"
   }
-  constructor(public _snackBar: MatSnackBar,public formBuilder: FormBuilder,public api:ApiService,public dialogRef: MatDialogRef<timonialreviewmodal>,
+  constructor(public _snackBar: MatSnackBar, public formBuilder: FormBuilder, public api: ApiService, public dialogRef: MatDialogRef<timonialreviewmodal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     //console.log(data);
-    this.testimonialReviewForm=this.formBuilder.group({
-      name:[null,[Validators.required]],
-      email:[null,[Validators.required,Validators.email]],
-      phone:[null,[Validators.required]],
+    this.testimonialReviewForm = this.formBuilder.group({
+      name: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
+      phone: [null, [Validators.required]],
       // review:[null,[Validators.required]],
-      testimonial_img:[],
-      description:[null,[Validators.required]],
-      flag:["review"],
-      priority:0,
-      status:3
+      testimonial_img: [],
+      description: [null, [Validators.required]],
+      flag: ["review"],
+      priority: 0,
+      status: 3
     });
   }
   /**submit Function */
-  submitfunction(){
+  submitfunction() {
     //console.warn(this.testimonialReviewForm.value)
 
     for (let x in this.testimonialReviewForm.controls) {
       this.testimonialReviewForm.controls[x].markAsTouched();
     }
-    if(this.testimonialReviewForm.valid){
-       // Image File Upload Works 
-       if (this.configData.files) {
-        this.testimonialReviewForm.value.testimonial_img=
+    if (this.testimonialReviewForm.valid) {
+      // Image File Upload Works 
+      if (this.configData.files) {
+        this.testimonialReviewForm.value.testimonial_img =
         {
           "basepath": this.configData.files[0].upload.data.basepath + '/' + this.configData.path + '/',
           "image": this.configData.files[0].upload.data.data.fileservername,
           "name": this.configData.files[0].name,
           "type": this.configData.files[0].type
         };
-      } 
+      }
       //api submit function
-      let postData:any={
-       "source":'testimonial',
-       "data":this.testimonialReviewForm.value
+      let postData: any = {
+        "source": 'testimonial',
+        "data": this.testimonialReviewForm.value
       }
       //console.warn(postData);
-      this.api.CustomRequest(postData,'testimonialaddandreview').subscribe((res:any)=>{
+      this.api.CustomRequest(postData, 'testimonialaddandreview').subscribe((res: any) => {
         //console.warn(res);
-        if(res.status=="success"){
+        if (res.status == "success") {
           this.testimonialReviewForm.reset();
-        this._snackBar.open('Review Submitted Successfully', '', {
-          duration: 2000,
-        });
-        this.dialogRef.close();
-      }
+          this._snackBar.open('Review Submitted Successfully', '', {
+            duration: 2000,
+          });
+          this.dialogRef.close();
+        }
       })
     }
   }
