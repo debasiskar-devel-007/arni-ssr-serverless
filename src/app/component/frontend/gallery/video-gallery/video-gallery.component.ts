@@ -47,7 +47,14 @@ export class VideoGalleryComponent implements OnInit {
   public indexVal:any=9;
   public searchLoadMore:boolean=false;
   public indexvallength:any;
+  public vimeo_url:any='https://player.vimeo.com/video/'
+  public safeUrlVimeo:any;
+  public vimeothumblin:any='https://i.vimeocdn.com/video/';
+  public vimeoimg:any;
+  public vimeosafesrc:any;
 
+
+  // https://i.vimeocdn.com/video/855687470_200x150.webp
 
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog, public router: Router, public facebook: FacebookService,public apiService:ApiService) {
     // this.meta.setTitle('Arnie Fonseca - Video Gallery');
@@ -82,13 +89,33 @@ export class VideoGalleryComponent implements OnInit {
 
       for (let i in this.videoDataList) {
         let result: any;
-        result = this.videoDataList[i].video;
+        let resultvimeo:any;
         // console.log('  this.safeUrl', result);
+
+        if(this.videoDataList[i].type == 'youtube'){
+          // console.log('youtube',this.videoDataList[i])
+        result = this.videoDataList[i].video_url;
         this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
         this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
+        this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
+        } 
+        if(this.videoDataList[i].type == 'vimeo') {
+          // console.log('vimeo',this.videoDataList[i])
+
+        resultvimeo = this.videoDataList[i].video_url;
+        this.safeUrlVimeo = this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + resultvimeo);
+        this.videoDataList[i].safeUrlVimeo = this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + resultvimeo);
+        this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
+        this.vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'_200x150.webp');
+        this.videoDataList[i].vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'.jpg');
+        // console.log(this.videoDataList[i].vimeoimg)
+        }
+
+
+        
+        this.videoDataList[i].vimeo=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + this.videoDataList[i].video_url);
 
         // console.log('  this.safeUrl', this.safeUrl);
-        this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
         // console.log('  this.videoTextLength', this.videoDataList[i].videoTextLength);
 
       }
@@ -135,7 +162,7 @@ export class VideoGalleryComponent implements OnInit {
 
           let videoimg:any;
           videoimg='https://img.youtube.com/vi/'+ this.videoDataList[i].video + '/0.jpg';
-          console.log('>>>>>>>>>>>>>',videoimg)
+          // console.log('>>>>>>>>>>>>>',videoimg)
 
           this.meta.setTitle('Arnie Fonseca - Video Gallery', this.videoDataList[i].title);
           this.meta.setTag('og:description', this.videoDataList[i].description_html);
@@ -164,6 +191,7 @@ export class VideoGalleryComponent implements OnInit {
     if(flag == 1){
       // console.log(val,flag)
 
+    if(val.type == 'youtube'){
       let videourl: any;
       videourl = this.video_url + val.video + '?autoplay=1';
       // console.log('>>', videourl)
@@ -179,32 +207,74 @@ export class VideoGalleryComponent implements OnInit {
   
   
       });
-  
       dialogRef.afterClosed().subscribe(result => {
   
       });
-
-    } else {
-      // console.log(val,flag)
-
-      // let videourl: any;
-      // videourl = this.video_url + val.video + '?autoplay=1';
-      // console.log('>>', videourl)
-  
-      this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + val.video);
-  
-      //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+    }
+    if(val.type == 'vimeo'){
+      let vimeourl: any;
+      vimeourl = this.vimeo_url + val.video+'?autoplay=1';
+      this.vimeosafesrc = this.sanitizer.bypassSecurityTrustResourceUrl(vimeourl);
       const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
         // panelClass:['modal-md','success-modal'],
         panelClass: 'blogdetail_videomodal',
         // width:'450px',
-        data: { url: this.safeSrc, fulldata: val,flag:flag }
-        
+        data: { url: this.vimeosafesrc, fulldata: val ,flag:flag}
+  
+  
       });
-     
       dialogRef.afterClosed().subscribe(result => {
   
       });
+
+    }
+
+  
+      
+
+    } else {
+
+
+      if(val.type=='youtube'){
+        console.log(val,flag)
+
+        // let videourl: any;
+        // videourl = this.video_url + val.video + '?autoplay=1';
+        // console.log('>>', videourl)
+    
+        this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + val.video);
+    
+        //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+        const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
+          // panelClass:['modal-md','success-modal'],
+          panelClass: 'blogdetail_videomodal',
+          // width:'450px',
+          data: { url: this.safeSrc, fulldata: val,flag:flag }
+          
+        });
+       
+        dialogRef.afterClosed().subscribe(result => {
+    
+        });
+
+      }
+      if(val.type=='vimeo'){
+        let vimeourl: any;
+        vimeourl = this.vimeo_url + val.video;
+        this.vimeosafesrc = this.sanitizer.bypassSecurityTrustResourceUrl(vimeourl);
+        const dialogRef = this.dialog.open(VideoGalleryModalComponent, {
+          // panelClass:['modal-md','success-modal'],
+          panelClass: 'blogdetail_videomodal',
+          // width:'450px',
+          data: { url: this.vimeosafesrc, fulldata: val ,flag:flag}
+    
+    
+        });
+        dialogRef.afterClosed().subscribe(result => {
+    
+        });
+      }
+
     }
 
 
