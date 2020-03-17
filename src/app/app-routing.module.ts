@@ -82,7 +82,10 @@ const routes: Routes = [
   },
 
   {
-    path: 'servicedetail', component: ServicedetailComponent
+    path: 'service-detail/:service_title/:_id', component: ServicedetailComponent,
+    resolve: { serviceData: ResolveService },
+    data: { requestcondition: {source: '', condition: {_id:"_id"} }, 
+    endpoint: 'servicedatabyid' }
   },
 
 

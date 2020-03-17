@@ -17,6 +17,8 @@ export class ServicelistComponent implements OnInit {
   showme=true;
   
   public indexval:any = 4;
+  public title:any;
+  public serviceTitle:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private readonly meta: MetaService, public apiservice: ApiService) {
 
@@ -40,7 +42,7 @@ export class ServicelistComponent implements OnInit {
     this.activatedRoute.data.subscribe(resolveData => {
       // console.log(resolveData.serviceList.res)
       this.serviceData = resolveData.serviceList.res;
-      console.log("The Service datalist",this.serviceData)
+      // console.log("The Service datalist",this.serviceData)
 
     });
 
@@ -56,11 +58,22 @@ export class ServicelistComponent implements OnInit {
 
   btnBackClick= function () {
     this.router.navigateByUrl('service');
+
   };
 
   showMoreFunc(){
     this.indexval = this.indexval + 3;   
     // console.log(this.indexval);
+  }
+
+
+  // view service 
+  viewService(val:any){
+    this.title = val.service_title;
+    this.serviceTitle = this.title.replace(/[' '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+    console.log(this.serviceTitle);
+    this.router.navigateByUrl('/service-detail/'+this.serviceTitle+'/'+val._id);
+
   }
 
 }

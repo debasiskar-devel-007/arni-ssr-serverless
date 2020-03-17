@@ -18,9 +18,9 @@ export class ServiceComponent implements OnInit {
       source:"service_view"
     }
     this.apiservice.addDataWithoutToken(data,"datalistwithouttoken").subscribe((result: any)=>{
-      //console.log('service',result.res);
+      console.log('service',result.res);
       this.serviceListConfig= result.res;
-      //console.log('service list', this.serviceListConfig.datasource);
+      console.log('service list', this.serviceListConfig);
     });
    }
 
