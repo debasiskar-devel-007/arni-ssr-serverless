@@ -411,20 +411,18 @@ export class timonialreviewmodal {
   }
   /**file upload */
   onClick() {
-    let url="https://fileupload.influxhostserver.com/uploads?path=audio"
+    let url="https://fileupload.influxhostserver.com/uploads?path=audio&prefix=audio"
     const formData = new FormData();
-    formData.append('file', this.blobUrl1);
-    // console.log('+++++++++++++++++++',this.blobUrl1);
+    formData.append('file', this.blobUrl1.blob);
     formData.append('bucketname','testimonial-assets');
     this.fileUploadProgress = '0%';
- 
+
     this.api.audioUpload(url, formData)
     .subscribe((events:any) => {
       if(events.status== "success")
       {
         this.serverData=events;
       }
-      console.log(events);
     }) 
   
 }
@@ -448,10 +446,10 @@ export class timonialreviewmodal {
         };
       }
       this.testimonialReviewForm.value.testimonial_audio={
-          "basepath": this.serverData.basepath,
+          "basepath": this.serverData.basepath+'/audio/',
           "audio": this.serverData.data.fileservername,
-          "name": this.configData.files[0].name,
-          "type": this.configData.files[0].type
+          "name": this.serverData.data.fileservername,
+          "type": "audio",
       };
       //api submit function
       let postData: any = {
