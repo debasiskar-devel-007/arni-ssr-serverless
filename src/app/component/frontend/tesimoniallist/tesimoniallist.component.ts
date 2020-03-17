@@ -11,6 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export interface DialogData { data: any; }
 import { CookieService } from 'ngx-cookie-service';
 
+export interface DialogDataTestimonial { details: any; }
+
 @Component({
   selector: 'app-tesimoniallist',
   templateUrl: './tesimoniallist.component.html',
@@ -27,6 +29,12 @@ export class TesimoniallistComponent implements OnInit {
   public profile: any;
 
   safeSrc: SafeResourceUrl;
+
+  
+    
+ 
+ 
+  
 
   copyText(val: any) {
     //console.log('copyText');
@@ -193,6 +201,24 @@ export class TesimoniallistComponent implements OnInit {
     });
   }
   /***************************************************** */
+
+
+   /************************detail***************************** */
+
+  openDialogDetail(testmon:any): void {
+    const dialogRef = this.dialog.open(testimonial_detail, {
+      panelClass: 'Login_confirm',
+      data: { details: testmon },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
+
+
+
   //facebook share for event
 
   login() {
@@ -381,6 +407,25 @@ export class Dialoglogin {
   acceptToLoginPage() {
     this.router.navigateByUrl('/login' + this.router.url);
     this.onNoClick();
+  }
+
+}
+
+
+
+
+@Component({
+  selector: 'testimonial_detail',
+  templateUrl: 'testimonial_detail.html',
+})
+export class testimonial_detail {
+
+  constructor(
+    public dialogRef: MatDialogRef<testimonial_detail>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogDataTestimonial) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

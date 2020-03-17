@@ -877,3 +877,67 @@ a{cursor:pointer;outline:none}
     background: -ms-linear-gradient(top, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
     background: linear-gradient(to bottom, rgba(0,173,253,1) 0%, rgba(0,133,216,1) 100%)!important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adfd', endColorstr='#0085d8', GradientType=0 )!important;} 
+
+
+    .detail_modalnew .logo{ display: block; margin: 10px auto; max-width: 100%;}
+
+    .detail_modalnew h3{    font-family: 'Helvetica-Normal';
+      font-size: 18px;
+      color: #24252c;
+      margin: 0;
+      padding: 0;
+      line-height: 24px;
+      font-weight: 400;}
+
+    .detail_modalnew h2 {
+      display: block;
+      text-align: center;
+      margin: 15px 0;
+      padding: 0;
+      font-size: 30px;
+      color: #3ab9d9;
+      font-family: 'HelveticaBold';
+  }
+
+
+
+  .tesDetail_text {
+    margin-top: 20px;
+    display: block;
+    color: #06a2b8;
+    text-transform: capitalize; cursor: pointer;     text-align: left;
+    padding-left: 40px;
+}
+
+
+.detail_modalnew  .testiimgwarpper{
+  width: 231px;
+  height: 231px;
+  border-radius: 100%;
+  background-color: #efefef;
+  display: block;
+  position: relative;
+  margin: 0 auto;     margin-bottom: 25px;
+  box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+.detail_modalnew  .testiimgwarpper-main img {
+  height: 100% !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100% !important;
+  width: auto;
+  height: auto;
+}
+
+.detail_modalnew  .testiimgwarpper-main{
+  width: 185px;
+  height: 185px;
+  border-radius: 100%;
+  background-color: #dedede;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  left: 25px;
+  top: 8px;
+}
