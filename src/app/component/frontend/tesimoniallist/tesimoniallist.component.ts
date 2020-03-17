@@ -54,7 +54,7 @@ export class TesimoniallistComponent implements OnInit {
       this.activatedRoute.data.forEach(data => {
         let result: any = {};
         result = data.testimonialListData.res;
-        console.warn(result);
+       // console.warn(result);
         this.TestimonialListArray = result;
         this.indexvallength = this.TestimonialListArray.length;
       })
