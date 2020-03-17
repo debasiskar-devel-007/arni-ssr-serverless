@@ -395,12 +395,15 @@ export class timonialreviewmodal implements OnInit{
   ngOnInit() {
     this.abortRecording();
     // this.onClick();
+    setTimeout(()=>{    //<<<---    using ()=> syntax
+      let video:HTMLVideoElement = this.video.nativeElement;
+      video.muted = false;
+      video.controls = true;
+      video.autoplay = false;
+ }, 3000);
 
      // set the initial state of the video
-     let video:HTMLVideoElement = this.video.nativeElement;
-     video.muted = false;
-     video.controls = true;
-     video.autoplay = false;
+   
   }
   ngAfterViewInit() {
 
@@ -449,7 +452,7 @@ export class timonialreviewmodal implements OnInit{
 
 /**video recording start here */
 toggleControls() {
-  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  let video: HTMLVideoElement = this.video.nativeElement;
   video.muted = !video.muted;
   video.controls = !video.controls;
   video.autoplay = !video.autoplay;
@@ -466,9 +469,9 @@ successCallback(stream: MediaStream) {
   const mediaStream = new MediaStream();
   this.stream = stream;
   this.recordRTC = RecordRTC(stream, options);
-  console.log('++++++++++',this.recordRTC);
+  //console.log('++++++++++',this.recordRTC);
   this.recordRTC.startRecording();
-  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  let video: HTMLVideoElement = this.video.nativeElement;
   video.srcObject = mediaStream;
   this.toggleControls();
 }
@@ -476,7 +479,7 @@ errorCallback() {
   //handle error here
 }
 processVideo(audioVideoWebMURL) {
-  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  let video: HTMLVideoElement = this.video.nativeElement;
   let recordRTC = this.recordRTC;
   video.src = audioVideoWebMURL;
   this.toggleControls();
@@ -485,12 +488,12 @@ processVideo(audioVideoWebMURL) {
   recordRTC.getDataURL(function (dataURL) { });
 }
 recordingData() {
-  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  let video: HTMLVideoElement = this.video.nativeElement;
   var mediaConstraints = {
     audio: true,
     video: {
-      width: 1280,
-      height: 720
+      width: 1000,
+      height: 420
   }
   };
   // let stream = this.stream;
@@ -502,7 +505,7 @@ recordingData() {
 }
 
 startVideoRecording() {
-  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  let video: HTMLVideoElement = this.video.nativeElement;
   var mediaConstraints = {
     audio: true,
     video: {

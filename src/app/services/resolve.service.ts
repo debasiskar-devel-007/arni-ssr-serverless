@@ -74,6 +74,7 @@ export class ResolveService implements Resolve<any> {
 
                     delete requestData.condition.blogtitle;
                     delete requestData.condition._id;
+                    delete requestData.condition.service_title;
                    
               }
                
