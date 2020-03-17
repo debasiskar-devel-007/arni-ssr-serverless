@@ -21,6 +21,8 @@
   <span class="mainwrappercontent pt-30">
     <mat-list class="gallaryvideo">
       <mat-list-item *ngFor="let item of videoDataList | slice:0:indexVal ; let i = index ">
+        <!-- {{item.type}} -->
+
         <div class="video-responsive">
           <span class="singlecolgallarycontent">
             <h2>{{item.title}} </h2>
@@ -51,11 +53,22 @@
         
             <div class="img_icon video_icon" style="opacity: 1; transition-duration: 1s;"
              (click)="openVideoModal(item,1)"></div>
-            <img src="//img.youtube.com/vi/{{item.video}}/0.jpg">     
-            
-          <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen></iframe>   
+                
+            <span *ngIf="item.type == 'youtube'">
 
-          
+          <iframe  frameborder="0" width="100%" marginheight="0" marginwidth="0" 
+          [src]="item.safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen></iframe>
+
+          <img src="https://img.youtube.com/vi/{{item.video}}/0.jpg"> 
+            </span> 
+
+            <span *ngIf="item.type == 'vimeo'" >
+              <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" 
+              [src]="item.vimeosafesrc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen ></iframe> 
+             <img [src]="item.vimeoimg"> 
+
+            </span>
+
         </div>
         
       </mat-list-item>
