@@ -54,20 +54,42 @@
            <lib-file-upload  [config]="configData"></lib-file-upload>
         </span> 
        
-          <button type="button" class="Record_subbtn" >Record Video </button>
+        <button type="button" class="Record_subbtn" (click)="openVideo();">Record Video </button>
         <button type="button" class="Record_subbtn" (click)="openaudio();">Record Audio </button>
 
+
+        <!-- audio record section -->
         <span  *ngIf="audio==true">
           <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
           <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
           <button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear Recording</button>
           <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
-         
           <audio *ngIf="!isRecording && blobUrl"  controls>
             <source [src]="blobUrl" type="audio/webm">
           </audio>
           <button type="button" mat-button   (click)="onClick()">Upload</button>
         </span>
+         <!-- audio record section end here-->
+
+
+         <!-- video record section start here-->
+         <span *ngIf="vdo==true">
+          <div class="row">
+            <div class="col-xs-12">
+              <video #video class="video"></video>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" md-raised-button  (click)="startVideoRecording()"> Record </button>
+              <button md-raised-button (click) ="stopVideoRecording()"> Stop</button>
+              <button md-raised-button  (click)="download()"> Download</button>
+              <button md-raised-button  (click)="onClick()"> Upload</button>
+            </div>
+          </div>
+         </span>
+
+
 <span class="clearboth"></span>
         
         <button mat-button (click)="submitfunction();">Submit</button>

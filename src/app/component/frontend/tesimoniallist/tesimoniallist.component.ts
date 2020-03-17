@@ -12,6 +12,8 @@ export interface DialogData { data: any; }
 import { CookieService } from 'ngx-cookie-service';
 import { FileUploader } from 'ng2-file-upload';
 import { AudioService } from '../../../services/audio.service';
+import { ViewChild}from '@angular/core';
+import * as RecordRTC from 'recordrtc';
 
 export interface DialogDataTestimonial { details: any; }
 
@@ -318,12 +320,18 @@ export class CommonTestimonialAudioModalComponent {
 //********** Submit Review modal component************//
 const uploadAPI = 'http://127.0.0.1:8000/api/upload';
 
+
 @Component({
   selector: 'timonialreviewmodal',
   templateUrl: './timonialreviewmodal.html'
 })
-export class timonialreviewmodal {
+export class timonialreviewmodal implements OnInit{
+  public stream: MediaStream;
+  public recordRTC: any;
+  @ViewChild('video',{static:false}) video;
+
   public audio: boolean = false;
+  public vdo:boolean=false;
   public serverData: any;
   public testimonialReviewForm: FormGroup;
   isRecording = false;
@@ -378,12 +386,24 @@ export class timonialreviewmodal {
   openaudio() {
     this.audio = true;
   }
+  openVideo(){
+    this.vdo=true;
+  }
   /**audio recording here */
   public uploader: FileUploader = new FileUploader({ url: uploadAPI, itemAlias: 'file' });
 
   ngOnInit() {
     this.abortRecording();
     // this.onClick();
+
+     // set the initial state of the video
+     let video:HTMLVideoElement = this.video.nativeElement;
+     video.muted = false;
+     video.controls = true;
+     video.autoplay = false;
+  }
+  ngAfterViewInit() {
+
   }
   startRecording() {
     if (!this.isRecording) {
@@ -424,6 +444,104 @@ export class timonialreviewmodal {
       })
 
   }
+  /**audio record end here */
+
+
+/**video recording start here */
+toggleControls() {
+  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  video.muted = !video.muted;
+  video.controls = !video.controls;
+  video.autoplay = !video.autoplay;
+}
+
+successCallback(stream: MediaStream) {
+
+  var options = {
+    mimeType: 'video/webm', // or video/webm\;codecs=h264 or video/webm\;codecs=vp9
+    audioBitsPerSecond: 128000,
+    videoBitsPerSecond: 128000,
+    bitsPerSecond: 128000 // if this line is provided, skip above two
+  };
+  const mediaStream = new MediaStream();
+  this.stream = stream;
+  this.recordRTC = RecordRTC(stream, options);
+  console.log('++++++++++',this.recordRTC);
+  this.recordRTC.startRecording();
+  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  video.srcObject = mediaStream;
+  this.toggleControls();
+}
+errorCallback() { 
+  //handle error here
+}
+processVideo(audioVideoWebMURL) {
+  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  let recordRTC = this.recordRTC;
+  video.src = audioVideoWebMURL;
+  this.toggleControls();
+  var recordedBlob = recordRTC.getBlob();
+  // console.log('++++++++++++',recordedBlob);
+  recordRTC.getDataURL(function (dataURL) { });
+}
+recordingData() {
+  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  var mediaConstraints = {
+    audio: true,
+    video: {
+      width: 1280,
+      height: 720
+  }
+  };
+  // let stream = this.stream;
+  navigator.mediaDevices
+    .getUserMedia(mediaConstraints)
+    // .then(this.successCallback.bind(this), this.errorCallback.bind(this));
+    .then(this.successCallback.bind(this),this.errorCallback.bind(this))
+
+}
+
+startVideoRecording() {
+  let video: HTMLVideoElement = this.video.nativeElement.innerText;
+  var mediaConstraints = {
+    audio: true,
+    video: {
+      width: 1280,
+      height: 720
+  }
+  };
+  // let stream = this.stream;
+  this.recordingData();
+   navigator.mediaDevices.getUserMedia(mediaConstraints).then(function success(stream) {
+    video.srcObject = stream;
+    stream.getTracks().forEach(function(track) {
+        console.log(track.getSettings());
+    })
+});
+
+}
+
+stopVideoRecording() {
+  // this.successCallback.bind(this)
+  let recordRTC = this.recordRTC;
+  recordRTC.stopRecording(this.processVideo.bind(this));
+  let stream = this.stream;
+//   navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
+//     video.srcObject = stream;
+//     stream.getTracks().forEach(function(track) {
+//         console.log(track.getSettings());
+//     })
+// });
+stream.getAudioTracks().forEach(track => track.stop());
+stream.getVideoTracks().forEach(track => track.stop());
+}
+
+download() {
+  this.recordRTC.save('video.webm');
+}
+
+
+
 
   /**submit Function */
   submitfunction() {
