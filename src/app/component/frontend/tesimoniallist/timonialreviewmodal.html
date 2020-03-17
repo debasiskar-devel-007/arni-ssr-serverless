@@ -52,9 +52,20 @@
            <lib-file-upload  [config]="configData"></lib-file-upload>
         </span> 
        
-          <button type="button" class="Record_subbtn">Record Video </button>
-        <button type="button" class="Record_subbtn">Record Audio </button>
+          <button type="button" class="Record_subbtn" >Record Video </button>
+        <button type="button" class="Record_subbtn" (click)="openaudio();">Record Audio </button>
 
+        <span  *ngIf="audio==true">
+          <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
+          <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
+          <button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear Recording</button>
+          <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
+         
+          <audio *ngIf="!isRecording && blobUrl"  controls>
+            <source [src]="blobUrl" type="audio/webm">
+          </audio>
+          <button mat-button color="primary" (click)="onClick()">Click me!</button>
+        </span>
 <span class="clearboth"></span>
         
         <button mat-button (click)="submitfunction();">Submit</button>

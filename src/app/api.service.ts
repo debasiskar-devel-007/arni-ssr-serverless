@@ -469,6 +469,19 @@ postdata(requestdata: any) {
     var result = this._http.post(this.serverUrl+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
     return result;
   }
+  /**audio upload */
+  audioUpload( endpoint: any,data: any) {
+    console.log('////////////////',data);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+   // console.log('endpoint');
+   // console.log(endpoint);
+    var result = this._http.post(endpoint,data,httpOptions).pipe(map(res => res));
+    return result;
+  }
 
 }
 
