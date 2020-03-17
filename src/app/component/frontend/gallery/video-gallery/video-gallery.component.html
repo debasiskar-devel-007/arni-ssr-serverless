@@ -66,7 +66,7 @@
               <iframe frameborder="0" width="100%" marginheight="0" marginwidth="0" 
               [src]="item.vimeosafesrc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" modestbranding="1" autohide="1" showinfo="0" controls="0" allowfullscreen ></iframe> 
              <img [src]="item.vimeoimg"> 
-
+             <!-- <img src="'https://i.vimeocdn.com/video/{{item.video}}.jpg'">  -->
             </span>
 
         </div>
@@ -76,7 +76,7 @@
     </mat-list>
   </span>
   <span class="mainwrappercontent bloghead">
-    <button  *ngIf=" searchLoadMore == false &&  indexvallength > 3 " class="viewalleventbtn"  (click)="videoLoadMore()" >Load More</button>
+    <button  *ngIf=" searchLoadMore == false &&  indexvallength > 9 " class="viewalleventbtn"  (click)="videoLoadMore()" >Load More</button>
   </span>
 </mat-card>
 
