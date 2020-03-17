@@ -87,15 +87,14 @@ export class VideoGalleryComponent implements OnInit {
         this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
         } 
         if(this.videoDataList[i].type == 'vimeo') {
-          // console.log('vimeo',this.videoDataList[i])
-
+        // console.log('vimeo',this.videoDataList[i])
         resultvimeo = this.videoDataList[i].video_url;
         this.safeUrlVimeo = this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + resultvimeo);
         this.videoDataList[i].safeUrlVimeo = this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + resultvimeo);
         this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
         this.vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'_200x150.webp');
         this.videoDataList[i].vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'.jpg');
-        // console.log(this.videoDataList[i].vimeoimg)
+        // console.log('>>>>>>',this.videoDataList[i].vimeoimg)
         }
 
 
@@ -136,15 +135,14 @@ export class VideoGalleryComponent implements OnInit {
 
         if (this.activatedRoute.snapshot.params.id == this.videoDataList[i]._id) {
 
-
-          if(this.videoDataList[i].type=='youtube'){
-
-            // console.log('>>>>>>>',this.videoDataList[i]);
           let val:any;
           val=this.videoDataList[i];
           let flag:any;
           flag=1;
           this.openVideoModal(val,flag);
+
+
+          if(this.videoDataList[i].type=='youtube'){
 
           let videoimg:any;
           videoimg='https://img.youtube.com/vi/'+ this.videoDataList[i].video + '/0.jpg';
@@ -164,15 +162,8 @@ export class VideoGalleryComponent implements OnInit {
           this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
 
           }
-
-          if(this.videoDataList[i].type=='vimeo'){
-
-            // console.log('>>>>>>>',this.videoDataList[i]);
-          let val:any;
-          val=this.videoDataList[i];
-          let flag:any;
-          flag=1;
-          this.openVideoModal(val,flag);
+          
+         else {
 
           let vimeoimg:any;
           vimeoimg='https://i.vimeocdn.com/video/'+ this.videoDataList[i].video_url + '.jpg';
@@ -303,7 +294,19 @@ export class VideoGalleryComponent implements OnInit {
      }
      this.apiService.CustomRequest(data,'videogallerydata').subscribe(res=>{
       let result:any=res;
-      console.log(result.video_list)
+      // console.log('>>>.>>>>',result.video_list)
+
+      for(let i in result.video_list){
+        if(result.video_list[i].type == 'vimeo'){
+          // console.log('>>>.>>>>',result.video_list[i])
+    
+            let resultvimeo:any;
+            resultvimeo = result.video_list[i].video_url;
+            this.vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'_200x150.webp');
+            result.video_list[i].vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'.jpg');
+          }
+      }
+
       this.indexvallength=result.video_list.length;
       if(result.video_list.length>0){
 

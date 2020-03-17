@@ -163,7 +163,7 @@ const routes: Routes = [
   { path: 'video-gallery/:id', component: VideoGalleryComponent,
   resolve: { videoGallery: ResolveService },
   data: {
-    requestcondition: {source: "", condition: {},"limit":10,"skip":0 },
+    requestcondition: {source: "", condition: {},"limit":0,"skip":0 },
     endpoint: "videogallerydata"
   }
   },
