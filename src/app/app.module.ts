@@ -34,7 +34,7 @@ import { AboutusComponent } from './component/frontend/aboutus/aboutus.component
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/services/servicelist/servicelist.component';
 import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.component';
-import { TesimoniallistComponent,Dialoglogin,CommonTestimonialVideoModalComponent ,CommonTestimonialAudioModalComponent,timonialreviewmodal} from './component/frontend/tesimoniallist/tesimoniallist.component';
+import { TesimoniallistComponent,Dialoglogin,CommonTestimonialVideoModalComponent ,CommonTestimonialAudioModalComponent,timonialreviewmodal, testimonial_detail} from './component/frontend/tesimoniallist/tesimoniallist.component';
 import { EmployeeTrainingComponent } from './component/frontend/services/employee-training/employee-training.component';
 import { CouplesCounselingComponent } from './component/frontend/services/couples-counseling/couples-counseling.component';
 import { PersonalDevelopmentCoachingComponent } from './component/frontend/services/personal-development-coaching/personal-development-coaching.component';
@@ -110,6 +110,7 @@ import { ServicedetailComponent } from './component/frontend/servicedetail/servi
     VideoModalComponent,
     CommonTestimonialVideoModalComponent,
     Dialoglogin,
+    testimonial_detail,
     CommonTestimonialAudioModalComponent,
     HttpLoaderComponent,
 
@@ -144,6 +145,6 @@ import { ServicedetailComponent } from './component/frontend/servicedetail/servi
   providers: [CookieService,SidenavService,DatePipe, HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [Dialoglogin,timonialreviewmodal,CommonTestimonialAudioModalComponent,comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent,ImageGalleryModalComponent]
+  entryComponents: [testimonial_detail, Dialoglogin,timonialreviewmodal,CommonTestimonialAudioModalComponent,comingSoonDialog,comingSoonDialogfooter,DialogTermsDialog,DialogPrivacyDialog,NewslatterDialogComponent,NewslattersuccessDialogComponent,CommonVideoModalComponent,VideoModalComponent,CommonTestimonialVideoModalComponent,VideoGalleryModalComponent,ImageGalleryModalComponent]
 })
 export class AppModule { }
