@@ -54,21 +54,8 @@ export class VideoGalleryComponent implements OnInit {
   public vimeosafesrc:any;
 
 
-  // https://i.vimeocdn.com/video/855687470_200x150.webp
-
   constructor(private readonly meta: MetaService, public activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer, public dialog: MatDialog, public router: Router, public facebook: FacebookService,public apiService:ApiService) {
-    // this.meta.setTitle('Arnie Fonseca - Video Gallery');
-    // this.meta.setTag('og:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
-    // this.meta.setTag('twitter:description', 'Check out the latest videos from the events attended or hosted by Arnie Fonseca. This gallery is updated after each event, so you can regularly check it for the videos from the latest events.');
-
-    // this.meta.setTag('og:keyword', 'Arnie Fonseca Videos, Arnie Fonseca Event Videos, Videos Of Arnie Fonseca');
-    // this.meta.setTag('twitter:keyword', 'Arnie Fonseca Videos, Arnie Fonseca Event Videos, Videos Of Arnie Fonseca');
-
-    // this.meta.setTag('og:title', 'Arnie Fonseca - Video Gallery');
-    // this.meta.setTag('twitter:title', 'Arnie Fonseca - Video Gallery');
-    // this.meta.setTag('og:type', 'website');
-    // this.meta.setTag('og:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
-    // this.meta.setTag('twitter:image', 'https://dev.arniefonseca.influxiq.com/assets/images/logo.png');
+   
     facebook.init({
       appId: '2912281308815518',
       version: 'v2.9'
@@ -100,23 +87,16 @@ export class VideoGalleryComponent implements OnInit {
         this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
         } 
         if(this.videoDataList[i].type == 'vimeo') {
-          // console.log('vimeo',this.videoDataList[i])
-
+        // console.log('vimeo',this.videoDataList[i])
         resultvimeo = this.videoDataList[i].video_url;
         this.safeUrlVimeo = this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + resultvimeo);
         this.videoDataList[i].safeUrlVimeo = this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + resultvimeo);
         this.videoDataList[i].videoTextLength = this.videoDataList[i].description_html.length;
         this.vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'_200x150.webp');
         this.videoDataList[i].vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'.jpg');
-        // console.log(this.videoDataList[i].vimeoimg)
+        // console.log('>>>>>>',this.videoDataList[i].vimeoimg)
         }
 
-
-        
-        this.videoDataList[i].vimeo=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeo_url + this.videoDataList[i].video_url);
-
-        // console.log('  this.safeUrl', this.safeUrl);
-        // console.log('  this.videoTextLength', this.videoDataList[i].videoTextLength);
 
       }
       this.meta.setTitle('Arnie Fonseca - Video Gallery');
@@ -143,22 +123,26 @@ export class VideoGalleryComponent implements OnInit {
         this.videoDataList = res.videoGallery.video_list;
         // console.log(this.videoDataList, '+++++')
       })
-      // for (let i in this.videoDataList) {
-      //   let result: any;
-      //   result = this.videoDataList[i].video;
-      //   this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
-      //   this.videoDataList[i].safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video_url + result);
-      // }
+     
 
       for (let i in this.videoDataList) {
+      
+        let resultvimeo:any;
+        resultvimeo = this.videoDataList[i].video_url;
+
+        this.vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'_200x150.webp');
+        this.videoDataList[i].vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'.jpg');
+
         if (this.activatedRoute.snapshot.params.id == this.videoDataList[i]._id) {
-          // console.log('>>>>>>>',this.videoDataList[i]);
+
           let val:any;
           val=this.videoDataList[i];
           let flag:any;
           flag=1;
-
           this.openVideoModal(val,flag);
+
+
+          if(this.videoDataList[i].type=='youtube'){
 
           let videoimg:any;
           videoimg='https://img.youtube.com/vi/'+ this.videoDataList[i].video + '/0.jpg';
@@ -171,25 +155,45 @@ export class VideoGalleryComponent implements OnInit {
           this.meta.setTag('og:title', this.videoDataList[i].title);
           this.meta.setTag('twitter:title', this.videoDataList[i].title);
           this.meta.setTag('og:type', 'website');
-          // this.meta.setTag('og:image', this.video_url + this.videoDataList[i].video + '/0.jpg');
-          // console.log('img src','img.youtube.com/vi/'+ this.videoDataList[i].video+ '/0.jpg')
+         
           this.meta.setTag('og:image', videoimg);
 
           this.meta.setTag('twitter:image', videoimg)
           this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
+
+          }
+          
+         else {
+
+          let vimeoimg:any;
+          vimeoimg='https://i.vimeocdn.com/video/'+ this.videoDataList[i].video_url + '.jpg';
+          // console.log('>>>>>>>>>>>>>',videoimg)
+
+          this.meta.setTitle('Arnie Fonseca - Video Gallery', this.videoDataList[i].title);
+          this.meta.setTag('og:description', this.videoDataList[i].description_html);
+          this.meta.setTag('twitter:description', this.videoDataList[i].description_html);
+          this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
+          this.meta.setTag('og:title', this.videoDataList[i].title);
+          this.meta.setTag('twitter:title', this.videoDataList[i].title);
+          this.meta.setTag('og:type', 'website');
+          // this.meta.setTag('og:image', this.video_url + this.videoDataList[i].video + '/0.jpg');
+          // console.log('img src','img.youtube.com/vi/'+ this.videoDataList[i].video+ '/0.jpg')
+          this.meta.setTag('og:image', vimeoimg);
+
+          this.meta.setTag('twitter:image', vimeoimg)
+          this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/video-gallery/' + this.videoDataList[i]._id);
+          }
           
         }
       }
+
     }
-//img.youtube.com/vi/{{item.video}}/0.jpg"
-
-
   }
 
   openVideoModal(val: any,flag:any) {
 
     if(flag == 1){
-      // console.log(val,flag)
+      console.log(val,flag)
 
     if(val.type == 'youtube'){
       let videourl: any;
@@ -280,21 +284,34 @@ export class VideoGalleryComponent implements OnInit {
 
   }
 
+  // load more function 
 
   videoLoadMore(){
     let data:any;
           data={
-      "limit":4,
+      "limit":10,
        "skip":this.indexVal
      }
      this.apiService.CustomRequest(data,'videogallerydata').subscribe(res=>{
       let result:any=res;
-      console.log(result.video_list)
+      // console.log('>>>.>>>>',result.video_list)
+
+      for(let i in result.video_list){
+        if(result.video_list[i].type == 'vimeo'){
+          // console.log('>>>.>>>>',result.video_list[i])
+    
+            let resultvimeo:any;
+            resultvimeo = result.video_list[i].video_url;
+            this.vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'_200x150.webp');
+            result.video_list[i].vimeoimg=this.sanitizer.bypassSecurityTrustResourceUrl(this.vimeothumblin + resultvimeo +'.jpg');
+          }
+      }
+
       this.indexvallength=result.video_list.length;
       if(result.video_list.length>0){
 
               this.videoDataList = this.videoDataList.concat(result.video_list);
-              this.indexVal = this.indexVal + 3;
+              this.indexVal = this.indexVal + 6;
             }else{
                  this.searchLoadMore=true;
             }
