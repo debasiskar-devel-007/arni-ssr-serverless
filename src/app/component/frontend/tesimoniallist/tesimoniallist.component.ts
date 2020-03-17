@@ -10,8 +10,8 @@ import { FormControl, FormGroup, FormBuilder, Validators, FormArray, AbstractCon
 import { MatSnackBar } from '@angular/material/snack-bar';
 export interface DialogData { data: any; }
 import { CookieService } from 'ngx-cookie-service';
-import {  FileUploader } from 'ng2-file-upload';
-import {AudioService} from '../../../services/audio.service';
+import { FileUploader } from 'ng2-file-upload';
+import { AudioService } from '../../../services/audio.service';
 
 @Component({
   selector: 'app-tesimoniallist',
@@ -57,7 +57,7 @@ export class TesimoniallistComponent implements OnInit {
       this.activatedRoute.data.forEach(data => {
         let result: any = {};
         result = data.testimonialListData.res;
-       // console.warn(result);
+        // console.warn(result);
         this.TestimonialListArray = result;
         this.indexvallength = this.TestimonialListArray.length;
       })
@@ -108,7 +108,7 @@ export class TesimoniallistComponent implements OnInit {
   }
 
 
- 
+
 
   detailsView(val: any) {
     //console.log(val)
@@ -297,13 +297,13 @@ const uploadAPI = 'http://127.0.0.1:8000/api/upload';
   templateUrl: './timonialreviewmodal.html'
 })
 export class timonialreviewmodal {
-  public audio:boolean=false;
-  public serverData:any;
+  public audio: boolean = false;
+  public serverData: any;
   public testimonialReviewForm: FormGroup;
   isRecording = false;
   recordedTime;
-  public blobUrl:any;
-  public blobUrl1:any;
+  public blobUrl: any;
+  public blobUrl1: any;
   public fileUploadProgress: string = null;
   public configData: any = {
     baseUrl: "https://fileupload.influxhostserver.com/",
@@ -318,7 +318,7 @@ export class timonialreviewmodal {
     bucketName: "crmfiles.influxhostserver"
   }
 
-  constructor(public activatedRoute: ActivatedRoute,public audioService:AudioService,public _snackBar: MatSnackBar, public sanitizer: DomSanitizer,public formBuilder: FormBuilder, public api: ApiService, public dialogRef: MatDialogRef<timonialreviewmodal>,
+  constructor(public activatedRoute: ActivatedRoute, public audioService: AudioService, public _snackBar: MatSnackBar, public sanitizer: DomSanitizer, public formBuilder: FormBuilder, public api: ApiService, public dialogRef: MatDialogRef<timonialreviewmodal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     //console.log(data);
     this.audioService.recordingFailed().subscribe(() => {
@@ -332,7 +332,7 @@ export class timonialreviewmodal {
     this.audioService.getRecordedBlob().subscribe((data) => {
       this.blobUrl = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(data.blob));
       this.blobUrl1 = data;
-      console.log('====================',this.blobUrl1); 
+      console.log('====================', this.blobUrl1);
     });
     //genarete form
     this.testimonialReviewForm = this.formBuilder.group({
@@ -342,16 +342,15 @@ export class timonialreviewmodal {
       // review:[null,[Validators.required]],
       testimonial_img: [],
       description: [null, [Validators.required]],
-      testimonial_audio:[null],
+      testimonial_audio: [null],
       flag: ["review"],
       priority: 0,
       status: 3
     });
   }
 
-  openaudio(){
-    console.warn("hit");
-    this.audio=true;
+  openaudio() {
+    this.audio = true;
   }
   /**audio recording here */
   public uploader: FileUploader = new FileUploader({ url: uploadAPI, itemAlias: 'file' });
@@ -385,21 +384,20 @@ export class timonialreviewmodal {
   }
   /**file upload */
   onClick() {
-    let url="https://fileupload.influxhostserver.com/uploads?path=audio&prefix=audio"
+    let url = "https://fileupload.influxhostserver.com/uploads?path=audio&prefix=audio"
     const formData = new FormData();
     formData.append('file', this.blobUrl1.blob);
-    formData.append('bucketname','testimonial-assets');
+    formData.append('bucketname', 'testimonial-assets');
     this.fileUploadProgress = '0%';
 
     this.api.audioUpload(url, formData)
-    .subscribe((events:any) => {
-      if(events.status== "success")
-      {
-        this.serverData=events;
-      }
-    }) 
-  
-}
+      .subscribe((events: any) => {
+        if (events.status == "success") {
+          this.serverData = events;
+        }
+      })
+
+  }
 
   /**submit Function */
   submitfunction() {
@@ -419,19 +417,18 @@ export class timonialreviewmodal {
           "type": this.configData.files[0].type
         };
       }
-      this.testimonialReviewForm.value.testimonial_audio={
-          "basepath": this.serverData.basepath+'/audio/',
-          "audio": this.serverData.data.fileservername,
-          "name": this.serverData.data.fileservername,
-          "type": "audio",
+      /**record audio save in database */
+      this.testimonialReviewForm.value.testimonial_audio = {
+        "basepath": this.serverData.basepath + '/audio/',
+        "audio": this.serverData.data.fileservername,
+        "name": this.serverData.data.fileservername,
+        "type": "audio",
       };
       //api submit function
       let postData: any = {
         "source": 'testimonial',
         "data": this.testimonialReviewForm.value
       }
-    console.warn(postData);
-    return;
       this.api.CustomRequest(postData, 'testimonialaddandreview').subscribe((res: any) => {
         //console.warn(res);
         if (res.status == "success") {
