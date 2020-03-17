@@ -470,8 +470,7 @@ postdata(requestdata: any) {
     return result;
   }
   /**audio upload */
-  audioUpload( endpoint: any,data: any) {
-    console.log('////////////////',data);
+  audioUpload( endpoint: any,data: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
@@ -479,7 +478,7 @@ postdata(requestdata: any) {
     };
    // console.log('endpoint');
    // console.log(endpoint);
-    var result = this._http.post(endpoint,data,httpOptions).pipe(map(res => res));
+    var result = this._http.post(endpoint,data);
     return result;
   }
 
