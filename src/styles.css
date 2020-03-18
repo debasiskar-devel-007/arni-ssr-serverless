@@ -46,7 +46,7 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .homeblock2servcontent h2 span.homeblock2iconcontent{text-align:left;margin-left:18px}
 .homeblock2servcontent h2 span.homeblock2iconcontent span{display:block;font-family:'Helvetica-Normal';font-size:14px!important;line-height:normal!important}
 .homeblock2servcontent p{
-  padding: 0 30px;
+  padding: 0 30px 0 15px;
   text-align: left;
   max-height: 196px;
   display: block;
