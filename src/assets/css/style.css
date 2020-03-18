@@ -311,14 +311,14 @@ a{cursor:pointer;outline:none}
   background-color: #34526f;
 }
 
-.sociallink.fb fa, .sociallink.fb i{background-color:#5170b1}
-.sociallink.twi fa, .sociallink.twi i{background-color:#1bbef7}
-.sociallink.tbl fa, .sociallink.tbl i{background-color:#34526f}
-.sociallink.pin fa, .sociallink.pin i{background-color:#c64348}
-.sociallink.lin fa, .sociallink.lin i{background-color:#1786b1}
-.sociallink.env fa, .sociallink.env i{background-color:#70787a}
-.sociallink.share fa, .sociallink a.share i{background-color:#97ce32}
-.sociallink.link fa, .sociallink a.link i{background-color:#97ce32}
+.sociallink.fb fa, .sociallink.fb i{background-color:#5170b1;text-align: center;}
+.sociallink.twi fa, .sociallink.twi i{background-color:#1bbef7;text-align: center;}
+.sociallink.tbl fa, .sociallink.tbl i{background-color:#34526f;text-align: center;}
+.sociallink.pin fa, .sociallink.pin i{background-color:#c64348;text-align: center;}
+.sociallink.lin fa, .sociallink.lin i{background-color:#1786b1;text-align: center;}
+.sociallink.env fa, .sociallink.env i{background-color:#70787a;text-align: center;}
+.sociallink.share fa, .sociallink a.share i{background-color:#97ce32;text-align: center;}
+.sociallink.link fa, .sociallink a.link i{background-color:#97ce32;text-align: center;}
 .searchlistblock.mat-card{padding:0!important}
 .bottom_blog .mat-dialog-container{height:auto!important}
 .bottom_blog .mat-tab-labels{flex-wrap:wrap}
