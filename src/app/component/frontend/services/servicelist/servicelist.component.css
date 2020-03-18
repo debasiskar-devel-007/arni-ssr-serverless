@@ -1,10 +1,11 @@
 .servicebg.mat-card{background:url(../../../../../assets/images/servicelistbg.jpg) no-repeat right top;background-size: cover;}
-
 .homeblock2servimg {position:relative;}
-.sharelinkswrapper{position: absolute;right: 1px;bottom: -60px; background: white; margin: 0; padding: 2px; display: block; transition: all 0.3s;}  
+.sharelinkswrapper .blogsociallists {margin-top: 0;margin-left: 0;position: relative;display: -webkit-box;display: flex;-webkit-box-align: center;align-items: center;width: 100%;-webkit-box-flex: inherit;flex: inherit;justify-content: space-between;}
+.homeblock2servcontent p {padding: 0 30px 0 15px;}
+.sharelinkswrapper{position: absolute;right: 1px;bottom: -60px; background: white; margin: 0; padding: 2px 0px; display: block; transition: all 0.3s;width: 100%;}  
 .sociallink fa{display: block;}
 .blogsociallists {margin-top: 0;}
 .blogsociallists a{padding: 0 1px;}
-.homeblock2servimg:hover .sharelinkswrapper{bottom: 1px;}
+.homeblock2servimg:hover .sharelinkswrapper{bottom: 0px;}
 
 
