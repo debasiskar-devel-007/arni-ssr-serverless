@@ -81,7 +81,7 @@
     </mat-carousel> -->
     
     <owl-carousel [options]="carouselBannerOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-      <div class="itemcls">    
+      <div class="itemcls pos0">    
           <img class="slide-image" [src]="slides[0].img">
           <img class="slide-image-mobile" [src]="slides[0].imgmobile">
             <div class="carousalinfo">
@@ -98,7 +98,7 @@
             </div>
       </div>
 
-      <div class="itemcls">    
+      <div class="itemcls pos1">    
         <img class="slide-image" [src]="slides[1].img">
         <img class="slide-image-mobile" [src]="slides[1].imgmobile">
           <div class="carousalinfo">
@@ -112,12 +112,11 @@
           </div>
     </div>
 
-    <div class="itemcls">    
+    <div class="itemcls pos2">    
       <img class="slide-image" [src]="slides[2].img">
       <img class="slide-image-mobile" [src]="slides[2].imgmobile">
         <div class="carousalinfo">
-          <div class="carousalinfoinner">
-            
+          <div class="carousalinfoinner">            
             <span class="slide1info">
               <h4 [innerHTML]="slides[2].subtitle2"></h4>
               <h1 [innerHTML]="slides[2].title"></h1>

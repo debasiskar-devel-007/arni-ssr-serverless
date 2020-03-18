@@ -325,7 +325,15 @@ width: auto;
   /* .homebanner .owl-carousel.owl-drag .owl-stage-outer.owl-height[style]{height: auto !important;} */
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-mobile{display: block; width: 100% !important;}
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls {height: auto !important;}
-
+  .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos0{
+    height: auto !important;
+}
+.homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1{
+    height: auto !important;
+}
+.homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos2{
+    height: auto !important;
+}
 
   .carousalinfo h4 {text-align: center;}
   .carousalinfoinner{ display: block; width: 100%;} 
