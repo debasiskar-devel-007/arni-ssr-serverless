@@ -636,5 +636,4 @@ export class testimonial_detail {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }
