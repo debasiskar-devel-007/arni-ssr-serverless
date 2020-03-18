@@ -24,16 +24,16 @@
                   </span>                
                   <span class="blogsociallists">
   
-                    <a class="sociallink fa fb">
+                    <a class="sociallink fa fb" target="_blank" (click)="fbShare(serviceListConfig)">
                       <fa name="facebook" class="fa-facebook"></fa>
                     </a>
-                    <a class="sociallink fa twi">
+                    <a class="sociallink fa twi" target="_blank" (click)="twitterShare(serviceListConfig)">
                       <fa name="twitter" class="fa-twitter"></fa>
                     </a>
-                    <a class="sociallink fa lin">
+                    <a class="sociallink fa lin" target="_blank" (click)="linkedinShare(serviceListConfig)">
                       <fa name="linkedin" class="fa-linkedin"></fa>
                     </a>
-                    <a class="sociallink fa tumblr">
+                    <a class="sociallink fa tumblr" target="_blank" (click)="tumblrShare(serviceListConfig)">
                       <fa name="tumblr" class="fa-tumblr"></fa>
                     </a>
                   </span>
@@ -48,7 +48,7 @@
             </span>
           </mat-card-content>
 
-          <button (click)="backbutton()">Back to Service List</button>
+          <button (click)="backbutton()" >Back to Our Services</button>
          
   
           

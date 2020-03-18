@@ -47,7 +47,7 @@ export class VideoGalleryComponent implements OnInit {
   public indexVal:any=9;
   public searchLoadMore:boolean=false;
   public indexvallength:any;
-  public vimeo_url:any='https://player.vimeo.com/video/'
+  public vimeo_url:any='https://player.vimeo.com/video/';
   public safeUrlVimeo:any;
   public vimeothumblin:any='https://i.vimeocdn.com/video/';
   public vimeoimg:any;
@@ -193,7 +193,7 @@ export class VideoGalleryComponent implements OnInit {
   openVideoModal(val: any,flag:any) {
 
     if(flag == 1){
-      console.log(val,flag)
+      // console.log(val,flag)
 
     if(val.type == 'youtube'){
       let videourl: any;
@@ -240,7 +240,7 @@ export class VideoGalleryComponent implements OnInit {
 
 
       if(val.type=='youtube'){
-        console.log(val,flag)
+        // console.log(val,flag)
 
         // let videourl: any;
         // videourl = this.video_url + val.video + '?autoplay=1';
