@@ -629,6 +629,9 @@ export class Dialoglogin {
 })
 export class testimonial_detail {
 
+  public detailsView:any;
+  public testmon:any;
+
   constructor(
     public dialogRef: MatDialogRef<testimonial_detail>,
     @Inject(MAT_DIALOG_DATA) public data: DialogDataTestimonial) {}
