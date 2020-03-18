@@ -79,28 +79,83 @@
             <img class="d-block w-100" src="../../assets/images/arnehome-slide1img.jpg">
         </mat-carousel-slide>
     </mat-carousel> -->
-
-    <owl-carousel [options]="carouselBannerOptions" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-      <div class="itemcls"  *ngFor="let item of slides">    
-          <img class="slide-image" [src]="item.img">
-          <img class="slide-image-mobile" [src]="item.imgmobile">
+    
+    <owl-carousel [options]="carouselBannerOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <div class="itemcls pos0">    
+          <img class="slide-image" [src]="slides[0].img">
+          <img class="slide-image-mobile" [src]="slides[0].imgmobile">
             <div class="carousalinfo">
               <div class="carousalinfoinner">
                 <span class="slide1imgperson">
-                  <img class="d-block w-100" [src]="item.slideimg">
+                  <img class="d-block w-100" [src]="slides[0].slideimg">
                 </span>
                 <span class="slide1info">
-                  <h4 [innerHTML]="item.subtitle2"></h4>
-                  <h1 [innerHTML]="item.title"></h1>
-                  <h3 [innerHTML]="item.subtitle"></h3>
+                  <h1 [innerHTML]="slides[0].title"></h1>
+                  <h3 [innerHTML]="slides[0].subtitle"></h3>
                 </span>           
               </div>
-              <p class="description1" [innerHTML]="item.description"></p>
-              <p class="description3" [innerHTML]="item.description3"></p>
-              <p class="description2" [innerHTML]="item.description2"></p>
+              <p class="description1" [innerHTML]="slides[0].description"></p>
             </div>
       </div>
+
+      <div class="itemcls pos1">    
+        <img class="slide-image" [src]="slides[1].img">
+        <img class="slide-image-mobile" [src]="slides[1].imgmobile">
+          <div class="carousalinfo">
+            <div class="carousalinfoinner">              
+              <span class="slide1info">                
+                <h1 [innerHTML]="slides[1].title"></h1>
+                <h3 [innerHTML]="slides[1].subtitle2"></h3>
+              </span>           
+            </div>
+            <p class="description1" [innerHTML]="slides[1].description"></p>
+          </div>
+    </div>
+
+    <div class="itemcls pos2">    
+      <img class="slide-image" [src]="slides[2].img">
+      <img class="slide-image-mobile" [src]="slides[2].imgmobile">
+        <div class="carousalinfo">
+          <div class="carousalinfoinner">            
+            <span class="slide1info">
+              <h4 [innerHTML]="slides[2].subtitle2"></h4>
+              <h1 [innerHTML]="slides[2].title"></h1>
+            </span>           
+          </div>
+          <p class="description3" [innerHTML]="slides[2].description3"></p>
+          <p class="description2" [innerHTML]="slides[2].description2"></p>
+        </div>
+  </div>
+      
     </owl-carousel>
+   
+
+    <!-- <div class="mobileviewcls">
+      <owl-carousel [options]="carouselBannerOptions" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div class="itemcls">    
+            <img class="slide-image" [src]="item.img">
+            <img class="slide-image-mobile" [src]="item.imgmobile">
+              <div class="carousalinfo">
+                <div class="carousalinfoinner">
+                  <span class="slide1imgperson">
+                    <img class="d-block w-100" [src]="item.slideimg">
+                  </span>
+                  <span class="slide1info">
+                    <h4 [innerHTML]="item.subtitle2"></h4>
+                    <h1 [innerHTML]="item.title"></h1>
+                    <h3 [innerHTML]="item.subtitle"></h3>
+                  </span>           
+                </div>
+                <p class="description1" [innerHTML]="item.description"></p>
+                <p class="description3" [innerHTML]="item.description3"></p>
+                <p class="description2" [innerHTML]="item.description2"></p>
+              </div>
+        </div>
+        
+      </owl-carousel>
+    </div>
+     -->
+
 </mat-card>
 
 <!-- <mat-card class="generalcls ptb-40" style="background: #fff !important;">  

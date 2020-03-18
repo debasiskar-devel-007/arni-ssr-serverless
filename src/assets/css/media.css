@@ -193,7 +193,7 @@ width: auto;
   .bottom_blog .item_wrapper .item{width:48%;margin:1%}
   .singleteam{height:auto!important;box-sizing:border-box;margin-bottom:30px;width:calc(1/1*100% - (1 - 1/1)*30px)!important}
   .homeblock2listssingleitem .mat-list-item-content{flex-wrap:wrap}
-  .homeblock2listssingleitem span{flex:1 1 100%!important}
+  .homeblock2listssingleitem span{flex:1 1 100%!important;width: 100%;}
   .homeblock2servcontent h2{margin-top:10px!important;padding-left:0!important;padding-right:0!important;text-align:center}
   .homeblock2servcontent p{ text-align:center!important}
 
@@ -325,7 +325,15 @@ width: auto;
   /* .homebanner .owl-carousel.owl-drag .owl-stage-outer.owl-height[style]{height: auto !important;} */
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-mobile{display: block; width: 100% !important;}
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls {height: auto !important;}
-
+  .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos0{
+    height: auto !important;
+}
+.homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1{
+    height: auto !important;
+}
+.homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos2{
+    height: auto !important;
+}
 
   .carousalinfo h4 {text-align: center;}
   .carousalinfoinner{ display: block; width: 100%;} 
