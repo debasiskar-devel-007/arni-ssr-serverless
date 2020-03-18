@@ -10,8 +10,10 @@ import { FormControl, FormGroup, FormBuilder, Validators, FormArray, AbstractCon
 import { MatSnackBar } from '@angular/material/snack-bar';
 export interface DialogData { data: any; }
 import { CookieService } from 'ngx-cookie-service';
-import {  FileUploader } from 'ng2-file-upload';
-import {AudioService} from '../../../services/audio.service';
+import { FileUploader } from 'ng2-file-upload';
+import { AudioService } from '../../../services/audio.service';
+import { ViewChild}from '@angular/core';
+import * as RecordRTC from 'recordrtc';
 
 export interface DialogDataTestimonial { details: any; }
 
@@ -65,7 +67,7 @@ export class TesimoniallistComponent implements OnInit {
       this.activatedRoute.data.forEach(data => {
         let result: any = {};
         result = data.testimonialListData.res;
-       // console.warn(result);
+        // console.warn(result);
         this.TestimonialListArray = result;
         this.indexvallength = this.TestimonialListArray.length;
       })
@@ -116,7 +118,7 @@ export class TesimoniallistComponent implements OnInit {
   }
 
 
- 
+
 
   detailsView(val: any) {
     //console.log(val)
@@ -318,18 +320,24 @@ export class CommonTestimonialAudioModalComponent {
 //********** Submit Review modal component************//
 const uploadAPI = 'http://127.0.0.1:8000/api/upload';
 
+
 @Component({
   selector: 'timonialreviewmodal',
   templateUrl: './timonialreviewmodal.html'
 })
-export class timonialreviewmodal {
-  public audio:boolean=false;
-  public serverData:any;
+export class timonialreviewmodal implements OnInit{
+  public stream: MediaStream;
+  public recordRTC: any;
+  @ViewChild('video',{static:false}) video;
+
+  public audio: boolean = false;
+  public vdo:boolean=false;
+  public serverData: any;
   public testimonialReviewForm: FormGroup;
   isRecording = false;
   recordedTime;
-  public blobUrl:any;
-  public blobUrl1:any;
+  public blobUrl: any;
+  public blobUrl1: any;
   public fileUploadProgress: string = null;
   public configData: any = {
     baseUrl: "https://fileupload.influxhostserver.com/",
@@ -344,7 +352,7 @@ export class timonialreviewmodal {
     bucketName: "crmfiles.influxhostserver"
   }
 
-  constructor(public activatedRoute: ActivatedRoute,public audioService:AudioService,public _snackBar: MatSnackBar, public sanitizer: DomSanitizer,public formBuilder: FormBuilder, public api: ApiService, public dialogRef: MatDialogRef<timonialreviewmodal>,
+  constructor(public activatedRoute: ActivatedRoute, public audioService: AudioService, public _snackBar: MatSnackBar, public sanitizer: DomSanitizer, public formBuilder: FormBuilder, public api: ApiService, public dialogRef: MatDialogRef<timonialreviewmodal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     //console.log(data);
     this.audioService.recordingFailed().subscribe(() => {
@@ -358,7 +366,7 @@ export class timonialreviewmodal {
     this.audioService.getRecordedBlob().subscribe((data) => {
       this.blobUrl = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(data.blob));
       this.blobUrl1 = data;
-      console.log('====================',this.blobUrl1); 
+      console.log('====================', this.blobUrl1);
     });
     //genarete form
     this.testimonialReviewForm = this.formBuilder.group({
@@ -368,16 +376,18 @@ export class timonialreviewmodal {
       // review:[null,[Validators.required]],
       testimonial_img: [],
       description: [null, [Validators.required]],
-      testimonial_audio:[null],
+      testimonial_audio: [null],
       flag: ["review"],
       priority: 0,
       status: 3
     });
   }
 
-  openaudio(){
-    console.warn("hit");
-    this.audio=true;
+  openaudio() {
+    this.audio = true;
+  }
+  openVideo(){
+    this.vdo=true;
   }
   /**audio recording here */
   public uploader: FileUploader = new FileUploader({ url: uploadAPI, itemAlias: 'file' });
@@ -385,6 +395,18 @@ export class timonialreviewmodal {
   ngOnInit() {
     this.abortRecording();
     // this.onClick();
+    setTimeout(()=>{    //<<<---    using ()=> syntax
+      let video:HTMLVideoElement = this.video.nativeElement;
+      video.muted = false;
+      video.controls = true;
+      video.autoplay = false;
+ }, 3000);
+
+     // set the initial state of the video
+   
+  }
+  ngAfterViewInit() {
+
   }
   startRecording() {
     if (!this.isRecording) {
@@ -411,21 +433,118 @@ export class timonialreviewmodal {
   }
   /**file upload */
   onClick() {
-    let url="https://fileupload.influxhostserver.com/uploads?path=audio&prefix=audio"
+    let url = "https://fileupload.influxhostserver.com/uploads?path=audio&prefix=audio"
     const formData = new FormData();
     formData.append('file', this.blobUrl1.blob);
-    formData.append('bucketname','testimonial-assets');
+    formData.append('bucketname', 'testimonial-assets');
     this.fileUploadProgress = '0%';
 
     this.api.audioUpload(url, formData)
-    .subscribe((events:any) => {
-      if(events.status== "success")
-      {
-        this.serverData=events;
-      }
-    }) 
-  
+      .subscribe((events: any) => {
+        if (events.status == "success") {
+          this.serverData = events;
+        }
+      })
+
+  }
+  /**audio record end here */
+
+
+/**video recording start here */
+toggleControls() {
+  let video: HTMLVideoElement = this.video.nativeElement;
+  video.muted = !video.muted;
+  video.controls = !video.controls;
+  video.autoplay = !video.autoplay;
 }
+
+successCallback(stream: MediaStream) {
+
+  var options = {
+    mimeType: 'video/webm', // or video/webm\;codecs=h264 or video/webm\;codecs=vp9
+    audioBitsPerSecond: 128000,
+    videoBitsPerSecond: 128000,
+    bitsPerSecond: 128000 // if this line is provided, skip above two
+  };
+  const mediaStream = new MediaStream();
+  this.stream = stream;
+  this.recordRTC = RecordRTC(stream, options);
+  //console.log('++++++++++',this.recordRTC);
+  this.recordRTC.startRecording();
+  let video: HTMLVideoElement = this.video.nativeElement;
+  video.srcObject = mediaStream;
+  this.toggleControls();
+}
+errorCallback() { 
+  //handle error here
+}
+processVideo(audioVideoWebMURL) {
+  let video: HTMLVideoElement = this.video.nativeElement;
+  let recordRTC = this.recordRTC;
+  video.src = audioVideoWebMURL;
+  this.toggleControls();
+  var recordedBlob = recordRTC.getBlob();
+  // console.log('++++++++++++',recordedBlob);
+  recordRTC.getDataURL(function (dataURL) { });
+}
+recordingData() {
+  let video: HTMLVideoElement = this.video.nativeElement;
+  var mediaConstraints = {
+    audio: true,
+    video: {
+      width: 1000,
+      height: 420
+  }
+  };
+  // let stream = this.stream;
+  navigator.mediaDevices
+    .getUserMedia(mediaConstraints)
+    // .then(this.successCallback.bind(this), this.errorCallback.bind(this));
+    .then(this.successCallback.bind(this),this.errorCallback.bind(this))
+
+}
+
+startVideoRecording() {
+  let video: HTMLVideoElement = this.video.nativeElement;
+  var mediaConstraints = {
+    audio: true,
+    video: {
+      width: 1280,
+      height: 720
+  }
+  };
+  // let stream = this.stream;
+  this.recordingData();
+   navigator.mediaDevices.getUserMedia(mediaConstraints).then(function success(stream) {
+    video.srcObject = stream;
+    stream.getTracks().forEach(function(track) {
+        console.log(track.getSettings());
+    })
+});
+
+}
+
+stopVideoRecording() {
+  // this.successCallback.bind(this)
+  let recordRTC = this.recordRTC;
+  recordRTC.stopRecording(this.processVideo.bind(this));
+  let stream = this.stream;
+//   navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
+//     video.srcObject = stream;
+//     stream.getTracks().forEach(function(track) {
+//         console.log(track.getSettings());
+//     })
+// });
+stream.getAudioTracks().forEach(track => track.stop());
+stream.getVideoTracks().forEach(track => track.stop());
+}
+
+download() {
+  this.recordRTC.save('video.webm');
+}
+
+
+
 
   /**submit Function */
   submitfunction() {
@@ -445,19 +564,18 @@ export class timonialreviewmodal {
           "type": this.configData.files[0].type
         };
       }
-      this.testimonialReviewForm.value.testimonial_audio={
-          "basepath": this.serverData.basepath+'/audio/',
-          "audio": this.serverData.data.fileservername,
-          "name": this.serverData.data.fileservername,
-          "type": "audio",
+      /**record audio save in database */
+      this.testimonialReviewForm.value.testimonial_audio = {
+        "basepath": this.serverData.basepath + '/audio/',
+        "audio": this.serverData.data.fileservername,
+        "name": this.serverData.data.fileservername,
+        "type": "audio",
       };
       //api submit function
       let postData: any = {
         "source": 'testimonial',
         "data": this.testimonialReviewForm.value
       }
-    console.warn(postData);
-    return;
       this.api.CustomRequest(postData, 'testimonialaddandreview').subscribe((res: any) => {
         //console.warn(res);
         if (res.status == "success") {
