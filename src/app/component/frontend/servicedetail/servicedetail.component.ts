@@ -46,8 +46,8 @@ export class ServicedetailComponent implements OnInit {
       this.meta.setTag('og:type', 'website');
       this.meta.setTag('og:url', 'https://arniefonseca.influxiq.com/service-detail/' + this.activatedRoute.snapshot.params.service_title + '/' + this.serviceListConfig._id);
       this.meta.setTag('twitter:url', 'https://arniefonseca.influxiq.com/service-detail/' + this.activatedRoute.snapshot.params.service_title + '/' + this.serviceListConfig._id);
-      this.meta.setTag('og:image', this.serviceListConfig.service_img);
-      this.meta.setTag('twitter:image',this.serviceListConfig.service_img);
+      this.meta.setTag('og:image', this.serviceListConfig.image);
+      this.meta.setTag('twitter:image',this.serviceListConfig.image);
     })
   }
 
