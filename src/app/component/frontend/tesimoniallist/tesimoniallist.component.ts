@@ -333,6 +333,7 @@ export class timonialreviewmodal implements OnInit{
   public audio: boolean = false;
   public vdo:boolean=false;
   public serverData: any;
+  public videoserverData:any;
   public testimonialReviewForm: FormGroup;
   isRecording = false;
   recordedTime;
@@ -394,15 +395,16 @@ export class timonialreviewmodal implements OnInit{
 
   ngOnInit() {
     this.abortRecording();
-    // this.onClick();
-    setTimeout(()=>{    //<<<---    using ()=> syntax
+   
+    setTimeout(()=>{   
+      // set the initial state of the video
       let video:HTMLVideoElement = this.video.nativeElement;
       video.muted = false;
       video.controls = true;
       video.autoplay = false;
  }, 3000);
 
-     // set the initial state of the video
+     
    
   }
   ngAfterViewInit() {
@@ -529,12 +531,6 @@ stopVideoRecording() {
   let recordRTC = this.recordRTC;
   recordRTC.stopRecording(this.processVideo.bind(this));
   let stream = this.stream;
-//   navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
-//     video.srcObject = stream;
-//     stream.getTracks().forEach(function(track) {
-//         console.log(track.getSettings());
-//     })
-// });
 stream.getAudioTracks().forEach(track => track.stop());
 stream.getVideoTracks().forEach(track => track.stop());
 }
@@ -542,7 +538,23 @@ stream.getVideoTracks().forEach(track => track.stop());
 download() {
   this.recordRTC.save('video.webm');
 }
+videoUpload(){
 
+  let url = "https://fileupload.influxhostserver.com/uploads?path=video&prefix=video"
+  let recordRTC = this.recordRTC;
+  const formData = new FormData();
+  formData.append('file', recordRTC.getBlob());
+  formData.append('bucketname','testimonial-assets');
+
+
+  this.api.audioUpload(url, formData)
+    .subscribe((events: any) => {
+     console.log("video upload",events)
+     if (events.status == "success") {
+      this.videoserverData = events;
+    }
+    })
+}
 
 
 
@@ -628,6 +640,9 @@ export class Dialoglogin {
   templateUrl: 'testimonial_detail.html',
 })
 export class testimonial_detail {
+
+  public detailsView:any;
+  public testmon:any;
 
   constructor(
     public dialogRef: MatDialogRef<testimonial_detail>,
