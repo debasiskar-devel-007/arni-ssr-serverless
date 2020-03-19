@@ -58,7 +58,10 @@
         <h2><span class="homeblock2icon">
           <img src="{{item.additional_img}}">
         </span>
-           <span class="homeblock2iconcontent">{{item.service_title}} <span class="small">(Revenue through Attitude)</span></span></h2>
+          <span class="homeblock2iconcontent">{{item.service_title}} 
+           <!-- <span class="small">(Revenue through Attitude)</span> -->
+          </span>
+        </h2>
         <p> <span [innerHtml]="item.description"></span></p>
           <button mat-button class="btntransparent sim-button" (click)="viewService(item)">view more</button>
       </span>
