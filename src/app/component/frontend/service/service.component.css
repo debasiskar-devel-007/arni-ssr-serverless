@@ -1,9 +1,22 @@
 .servicebg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat top right;background-size: cover;}
 .homeblock2servimg{position: relative; min-height: 315px; max-height: 400px;}
 .homeblock2servimg {position:relative;}
-.sharelinkswrapper{position: absolute; right: 0px; bottom: -60px; background: white; margin: 0; padding: 2px; display: block; transition: all 0.3s;}
+.sharelinkswrapper{position: absolute; right: 0px; bottom: -60px; background: white; margin: 0; padding: 2px; display: block; transition: all 0.3s;    width: 100%;}
 .sociallink fa{display: block;}
 .blogsociallists {margin-top: 0;}
 .blogsociallists a{padding: 0 1px;}
 .homeblock2servimg:hover .sharelinkswrapper{bottom: 0px;}
-.homeblock2servimg .blogsociallists {margin-right: 0px;}
+
+.sharelinkswrapper .blogsociallists {margin-top: 0;
+    margin-left: 0;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    -webkit-box-flex: inherit;
+    flex: inherit;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
