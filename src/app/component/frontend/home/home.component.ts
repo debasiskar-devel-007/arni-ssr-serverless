@@ -139,7 +139,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     var data: any = {};
-    console.log(this.slides);
+    //console.log(this.slides);
   }
 
   ngAfterViewInit(): void {
