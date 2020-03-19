@@ -381,6 +381,7 @@ export class timonialreviewmodal implements OnInit{
       video_url:[null],
       video_name:[null],
       video_desc:[null],
+      youtubefilename:[null],
       flag: ["review"],
       priority: 0,
       status: 3
@@ -554,7 +555,7 @@ videoUpload(){
     .subscribe((events: any) => {
      console.log("video upload",events)
      if (events.status == "success") {
-      this.videoserverData = events;
+      this.videoserverData = events.data.fileservername;
     }
     })
 }
@@ -568,7 +569,7 @@ videoUpload(){
     for (let x in this.testimonialReviewForm.controls) {
       this.testimonialReviewForm.controls[x].markAsTouched();
     }
-    
+
     if (this.testimonialReviewForm.valid) {
       // Image File Upload Works 
       if (this.configData.files) {
@@ -587,6 +588,7 @@ videoUpload(){
         "name": this.serverData.data.fileservername,
         "type": "audio",
       };
+      this.testimonialReviewForm.value.youtubefilename=this.videoserverData;
 
 
       //api submit function
@@ -594,6 +596,7 @@ videoUpload(){
         "source": 'testimonial',
         "data": this.testimonialReviewForm.value
       }
+      console.warn(postData);
       this.api.CustomRequest(postData, 'testimonialaddandreview').subscribe((res: any) => {
         //console.warn(res);
         if (res.status == "success") {
