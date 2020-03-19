@@ -367,7 +367,7 @@ export class timonialreviewmodal implements OnInit{
     this.audioService.getRecordedBlob().subscribe((data) => {
       this.blobUrl = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(data.blob));
       this.blobUrl1 = data;
-      console.log('====================', this.blobUrl1);
+      //console.log('====================', this.blobUrl1);
     });
     //genarete form
     this.testimonialReviewForm = this.formBuilder.group({
@@ -378,6 +378,9 @@ export class timonialreviewmodal implements OnInit{
       testimonial_img: [],
       description: [null, [Validators.required]],
       testimonial_audio: [null],
+      video_url:[null],
+      video_name:[null],
+      video_desc:[null],
       flag: ["review"],
       priority: 0,
       status: 3
@@ -565,6 +568,7 @@ videoUpload(){
     for (let x in this.testimonialReviewForm.controls) {
       this.testimonialReviewForm.controls[x].markAsTouched();
     }
+    
     if (this.testimonialReviewForm.valid) {
       // Image File Upload Works 
       if (this.configData.files) {
@@ -583,6 +587,8 @@ videoUpload(){
         "name": this.serverData.data.fileservername,
         "type": "audio",
       };
+
+
       //api submit function
       let postData: any = {
         "source": 'testimonial',
