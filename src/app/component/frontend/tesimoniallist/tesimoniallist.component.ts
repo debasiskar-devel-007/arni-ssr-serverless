@@ -340,6 +340,8 @@ export class timonialreviewmodal implements OnInit{
   public blobUrl: any;
   public blobUrl1: any;
   public fileUploadProgress: string = null;
+  public uploadButton:boolean=false;
+  public downloadButton:boolean=false;
   public configData: any = {
     baseUrl: "https://fileupload.influxhostserver.com/",
     endpoint: "uploads",
@@ -510,8 +512,8 @@ startVideoRecording() {
   var mediaConstraints = {
     audio: true,
     video: {
-      width: 1280,
-      height: 720
+      width: 510,
+      height: 620
   }
   };
   // let stream = this.stream;
@@ -526,13 +528,15 @@ startVideoRecording() {
 }
 
 stopVideoRecording() {
-  console.warn("stopvideo");
+ 
   // this.successCallback.bind(this)
   let recordRTC = this.recordRTC;
   recordRTC.stopRecording(this.processVideo.bind(this));
   let stream = this.stream;
 stream.getAudioTracks().forEach(track => track.stop());
 stream.getVideoTracks().forEach(track => track.stop());
+this.downloadButton=true;
+this.uploadButton=true;
 }
 
 download() {
