@@ -1,6 +1,7 @@
 @media only screen and (max-width: 1666px) {
   .mainwrappercontent{width:96%}
   .maincontainer{width:96%}
+  .singlecolgallarycontent p .readmoredesc {max-width: 76% !important;}
   }
 
   /* @media only screen and (max-width: 1428px) {
@@ -8,7 +9,11 @@
     .blogdetail .bottom_blog .item_wrapper .item .author{ display: block;}
 
   } */
+
+
+  
   @media only screen and (max-width: 1366px) {
+  .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover {font-size: 14px;}
   .probidhomeblock1.mat-card .mat-tab-header{width:100%}
   .homemain .mat-nav-list{width:100%;width:96%;align-items:center}
   .generalcls .mat-card-title{font-size:32px!important;line-height:36px!important}
@@ -20,8 +25,15 @@
   .meetcoacharenaimg{width:100%!important;height:auto!important}
   .meetcoacharenaimg img{width:100%}
   }
-  @media only screen and (max-width: 1199px) {
 
+  @media only screen and (max-width: 1280px) {
+  .singlecolgallarycontent p .readmoredesc {font-size: 14px;max-width: 72% !important;}
+  .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover{    font-size: 14px !important;}
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .singlecolgallarycontent p .readmoredesc {max-width: 75%;}
+    .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover{font-size: 14px;}
     .tesDetail_text { text-align: center;  }
 
  
@@ -145,11 +157,14 @@ width: auto;
   .homemain mat-nav-list span.logowrapper{flex:1 1 10%!important}
   .homeblock1content{flex-wrap:wrap}
   .homeblock1contentleft{width:100%!important}
+  .img_icon {width: 30px!important;height: 30px!important;}
+  .video_icon {background-size: 30px;}
   }
   @media only screen and (max-width:1024px) {
   .singleteam{width:calc(1/2*100% - (1 - 1/2)*10px)!important}
   }
   @media only screen and (max-width: 991px) {
+    .gallaryvideo .singlecolgallarycontent h2 {text-align: center;}
   .mat-list-base.lists .mat-list-item{width:49%}
   .probidhomeblock2inner .mat-list{flex-wrap:wrap}
   .probidhomeblock4 .mat-list-base.lists .mat-list-item{width:44%}
@@ -213,6 +228,10 @@ width: auto;
   .mat-form-field-appearance-legacy .mat-form-field-wrapper{padding-bottom:14px}
   .logowrapper{margin-top:0!important;margin-bottom:9px!important;width:80%}
   .example-container > *{width:inherit!important}
+  .singlecolgallarycontent h2 {text-align: center;}
+  .readmoredesc{text-align: center;}
+  .singlecolgallarycontent p .readmoredesc {max-width: 100% !important;text-align: center !important;}
+  .singlecolgallarycontent p {justify-content: center !important;}
   }
   @media screen and (max-width: 600px) {
   .search-sec .example-form{flex-wrap:wrap}
@@ -229,8 +248,14 @@ width: auto;
   .bottom_blog .item_wrapper .item .item_images img{width:100%}
   .listsimgwholewrap img{height:auto;width:100%}
   .probidhomeblock2inner .mat-list .mat-list-item{padding:10px}
+  .readmoredesc {flex-wrap: wrap;}
+  .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover {width: 100%;}
+  .singlecolgallarycontent .contentsection .blogsociallists .sociallink fa{font-size: 10px;padding: 4px 2px;}
+  .img_icon {width: 25px !important;height: 25px !important;}
+  .video_icon {background-size: 25px;}
   }
   @media only screen and (max-width: 540px) {
+  
   .innerpagebanner.mat-card h1{font-size:36px}
   .infoblock .mat-list-base{flex-wrap:wrap}
   .infoblock .mat-list .mat-list-item .mat-list-item-content{flex-wrap:wrap;justify-content:center}
