@@ -238,8 +238,12 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
   width:100%;
   position:absolute;
 }
+.videoaudiosection audio { width: 100%; }
+.videoaudiosection .recordedTime{margin-top: 10px; margin-bottom: 10px;}
+.videoaudiosection .audiodiv button{margin-top: 10px;}
 
-.videoaudiosection .centerdiv .start-button{}
+
+/* .videoaudiosection .centerdiv .start-button{} */
 
 @media only screen and (max-width: 1199px) {
   .videoaudiosection
