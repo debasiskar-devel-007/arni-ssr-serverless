@@ -130,7 +130,7 @@ export class ImageGalleryComponent implements OnInit {
           let val: any;
           val = this.imageDataList[i];
 
-          this.openVideoModal(val)
+          this.openImageModal(val)
           // console.log('id',this.imageDataList[i]._id)
 
 
@@ -216,7 +216,7 @@ export class ImageGalleryComponent implements OnInit {
   }
 
 
-  openVideoModal(val: any) {
+  openImageModal(val: any) {
     console.log(val)
     const dialogRef = this.dialog.open(ImageGalleryModalComponent, {
       // panelClass:['modal-md','success-modal'],
