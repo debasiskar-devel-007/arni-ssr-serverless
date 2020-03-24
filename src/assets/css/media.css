@@ -1,6 +1,10 @@
+
 @media only screen and (max-width: 1666px) {
   .mainwrappercontent{width:96%}
   .maincontainer{width:96%}
+  .singlecolgallarycontent p .readmoredesc {max-width: 76% !important;}
+   .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos2 .slide-image-right{right: -10%;}
+   /* .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1 .slide-image-right{right: -10%;} */
   }
 
   /* @media only screen and (max-width: 1428px) {
@@ -8,20 +12,35 @@
     .blogdetail .bottom_blog .item_wrapper .item .author{ display: block;}
 
   } */
+
+  @media only screen and (max-width: 1440px) {
+    .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1 .slide-image-right{right: -8%;}
+  }
+  
   @media only screen and (max-width: 1366px) {
+    .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos2 .slide-image-right{right: -15%;}
+  .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover {font-size: 14px;}
   .probidhomeblock1.mat-card .mat-tab-header{width:100%}
   .homemain .mat-nav-list{width:100%;width:96%;align-items:center}
   .generalcls .mat-card-title{font-size:32px!important;line-height:36px!important}
   .singleservice .mat-card-title{font-size:18px!important;line-height:normal!important}
   .generalcls p{font-size:16px;line-height:24px; text-align: left!important;}
+  .generalcls p.quatation{text-align: center!important;}
 
   .servicewrapper  .bloghead p{text-align: center!important;}
   .homeblock1contentright .mat-list-base .mat-list-item{height:auto;width:31.33%}
   .meetcoacharenaimg{width:100%!important;height:auto!important}
   .meetcoacharenaimg img{width:100%}
   }
-  @media only screen and (max-width: 1199px) {
 
+  @media only screen and (max-width: 1280px) {
+  .singlecolgallarycontent p .readmoredesc {font-size: 14px;max-width: 72% !important;}
+  .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover{    font-size: 14px !important;}
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .singlecolgallarycontent p .readmoredesc {max-width: 75%;}
+    .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover{font-size: 14px;}
     .tesDetail_text { text-align: center;  }
 
  
@@ -145,11 +164,14 @@ width: auto;
   .homemain mat-nav-list span.logowrapper{flex:1 1 10%!important}
   .homeblock1content{flex-wrap:wrap}
   .homeblock1contentleft{width:100%!important}
+  .img_icon {width: 30px!important;height: 30px!important;}
+  .video_icon {background-size: 30px;}
   }
   @media only screen and (max-width:1024px) {
   .singleteam{width:calc(1/2*100% - (1 - 1/2)*10px)!important}
   }
   @media only screen and (max-width: 991px) {
+    .gallaryvideo .singlecolgallarycontent h2 {text-align: center;}
   .mat-list-base.lists .mat-list-item{width:49%}
   .probidhomeblock2inner .mat-list{flex-wrap:wrap}
   .probidhomeblock4 .mat-list-base.lists .mat-list-item{width:44%}
@@ -213,6 +235,10 @@ width: auto;
   .mat-form-field-appearance-legacy .mat-form-field-wrapper{padding-bottom:14px}
   .logowrapper{margin-top:0!important;margin-bottom:9px!important;width:80%}
   .example-container > *{width:inherit!important}
+  .singlecolgallarycontent h2 {text-align: center;}
+  .readmoredesc{text-align: center;}
+  .singlecolgallarycontent p .readmoredesc {max-width: 100% !important;text-align: center !important;}
+  .singlecolgallarycontent p {justify-content: center !important;}
   }
   @media screen and (max-width: 600px) {
   .search-sec .example-form{flex-wrap:wrap}
@@ -229,8 +255,14 @@ width: auto;
   .bottom_blog .item_wrapper .item .item_images img{width:100%}
   .listsimgwholewrap img{height:auto;width:100%}
   .probidhomeblock2inner .mat-list .mat-list-item{padding:10px}
+  .readmoredesc {flex-wrap: wrap;}
+  .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover {width: 100%;}
+  .singlecolgallarycontent .contentsection .blogsociallists .sociallink fa{font-size: 10px;padding: 4px 2px;}
+  .img_icon {width: 25px !important;height: 25px !important;}
+  .video_icon {background-size: 25px;}
   }
   @media only screen and (max-width: 540px) {
+  
   .innerpagebanner.mat-card h1{font-size:36px}
   .infoblock .mat-list-base{flex-wrap:wrap}
   .infoblock .mat-list .mat-list-item .mat-list-item-content{flex-wrap:wrap;justify-content:center}
@@ -245,7 +277,10 @@ width: auto;
   .logomodalwrapper{width:90%;margin:0 auto;display:block}
   }
 
-
+  @media only screen and (max-width: 1800px) {
+    .carousalinfo {left: 2%;}
+  }
+  
 
   @media only screen and (max-width: 1700px) {
 
@@ -292,14 +327,19 @@ width: auto;
 
 
   @media only screen and (max-width: 1360px) {
-    .carousalinfo { width: 90%;}
+    
+    .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos0 .slide-image-right {right: -5%;}
+    .carousalinfo p.description3 {font-size: 22px;line-height: 30px;}
+    .carousalinfo h3 {font-size: 30px;line-height: 40px;}
+    .carousalinfo h1 {font-size: 62px!important;line-height: 62px!important;}
+    .carousalinfo { width: 50%;}
     .generalcls .slide-text p{text-align: center !important;}
   }
 
   
   @media only screen and (max-width: 1250px) {
     .carousalinfo {
-      width: 90%; left: 5%;
+      width: 41%;
   }
 
   .slide1imgperson{ width: 200px;display: block;}
@@ -313,12 +353,14 @@ width: auto;
 
   @media only screen and (min-width:1200px) {
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image{display: block;}
+  .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-right{position: absolute; right: 0; top:0;}
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-mobile{display: none;}
   }
 
   @media only screen and (max-width:1199px) {
     
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image{display: none;}
+  .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-right{display: none;}
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-mobile{height: auto;}
   .homebanner .owl-carousel.owl-drag .owl-item:nth-child(3) {background-color: #226170;flex: 0 0 100%;}
   .homebanner .owl-carousel.owl-drag .owl-item:nth-child(2) {background-color: #65cfdd;flex: 0 0 100%;}
@@ -369,13 +411,7 @@ width: auto;
   .carousalinfo h3 {font-size: 50px;line-height: normal;text-align: center;margin-left: auto;}
   .generalcls .carousalinfo p{text-align: center!important;}
   .carousalinfo h1 br{display: none;}
-
-    .slide1imgperson {
-      width: 200px;
-      display: block;
-      margin: 0 auto;
-  }
-
+  .slide1imgperson {width: 200px;display: block;margin: 0 auto !important;}
     
   }
 

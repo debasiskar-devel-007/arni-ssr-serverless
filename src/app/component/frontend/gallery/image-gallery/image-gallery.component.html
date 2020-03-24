@@ -37,7 +37,7 @@
                     <h2 (click)="viewDetails(item)">{{item.title}} </h2>
                     <p class="readmoredesc">
                         <span class="readmoredesc">{{item.decription}}</span>
-                        <a><span (click)="openVideoModal(item)" *ngIf="item.imageTextLength > 60">Read More</span></a>
+                        <a><span (click)="openImageModal(item)" *ngIf="item.imageTextLength > 60">Read More</span></a>
                     </p> 
                     <p class="dtcls">Date : <span>{{item.date_added}}</span></p>
                     
@@ -61,10 +61,10 @@
                     </span>    
                 </span>
                 <img *ngIf="i % 8 ==0 || i % 8 ==3 || i % 8 ==4 ||i % 8 ==7 " 
-                (click)="openVideoModal(item)" [src]="item.image_0" >
+                (click)="openImageModal(item)" [src]="item.image_0" >
 
                 <img *ngIf="i % 8 ==1 || i % 8 ==2 || i % 8 ==5 ||i % 8 ==6"  
-                (click)="openVideoModal(item)" [src]="item.image_1" >
+                (click)="openImageModal(item)" [src]="item.image_1" >
 
                 <!-- <span>test {{i % 8}}</span> -->
             </mat-list-item>
