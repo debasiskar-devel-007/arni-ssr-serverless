@@ -350,7 +350,7 @@ a{cursor:pointer;outline:none}
 .gallaryimgvideo .item{display:inline-block;background:#fff;padding:0;margin:0 0 10px;width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-shadow:0 1px 1px 0 rgba(0,0,0,0.18);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;position:relative;overflow:hidden;
 } 
 
-.quatation span p{width:100%;text-align:center!important;}
+.quatation span p{width:100%;}
 
 .gallaryimgvideo .item img{height:100%!important;-o-object-fit:cover;object-fit:cover;width:100%!important;width:auto;height:auto}
 .gallaryimgvideo .item .mat-list-item-content{padding:0!important;display:block!important}
@@ -614,7 +614,8 @@ a{cursor:pointer;outline:none}
     .bloglists .description span p{display: inline!important;}
 
     
-    .audiomodaltestimonial{ display: block; width: 300px; margin: 15px auto;}
+    .audiomodaltestimonial{ display: block; width: 100%; margin: 15px auto;}
+    .audiomodaltestimonial audio{width: 100%;}
 
 
     .blogdetail_audiomodal {
