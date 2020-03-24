@@ -217,7 +217,32 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .youmightalsolike .item_wrapper .item .blogsociallists{width: 100%;}
 /* .blogdetail .bottom_blog .item_wrapper .item .contentsection .blogsociallists{width: 300px;} */
 
+.btngroup {display: block;margin-top: 10px;text-align: center;}
+.videoaudiosection{background-color: #e1e0e6; display: block; padding: 10px;}
+.videoaudiosection .btngroup {display: block;margin-top: 0px;text-align: center;}
+.videoaudiosection .btngroup button{margin-top: 0 !important;}
+.centerdiv{display: block;margin-top: 0px;text-align: center;}
+
+.videoaudiosection .videoresponsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  background: #000;
+  margin-top: 10px;
+}
+.videoaudiosection .videoresponsive iframe, .videoaudiosection .videoresponsive img, .videoaudiosection .videoresponsive object, .videoaudiosection .videoresponsive video{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+.videoaudiosection .centerdiv .start-button{}
+
 @media only screen and (max-width: 1199px) {
+  .videoaudiosection
   .blogdetail_videomodal .mat-dialog-container{ width: 80%!Important}
 
   .blogdetail_audiomodal { width: 90%!Important}

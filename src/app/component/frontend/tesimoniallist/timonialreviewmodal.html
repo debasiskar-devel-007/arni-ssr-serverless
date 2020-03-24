@@ -53,48 +53,53 @@
             <h3 style="text-align: left; margin: 0; padding: 2px 0 0 0;">Image</h3>
            <lib-file-upload  [config]="configData"></lib-file-upload>
         </span> 
-       
-        <button type="button" class="Record_subbtn" (click)="openVideo();">Record Video </button>
-        <button type="button" class="Record_subbtn" (click)="openaudio();">Record Audio </button>
+
+        <span class="videoaudiosection">
+          <span class="btngroup">
+            <button type="button" class="Record_subbtn" (click)="openVideo();">Record Video </button>
+            <button type="button" class="Record_subbtn" (click)="openaudio();">Record Audio </button>
+          </span>     
+
+          <!-- audio record section -->
+          <span  *ngIf="audio==true" class="centerdiv">
+            <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()"><span class="material-icons">mic</span> Start Recording</button>
+            <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()"><span class="material-icons">mic_off</span> Stop Recording</button>
+            <button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear Recording</button>
+            <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
+            <audio *ngIf="!isRecording && blobUrl"  controls>
+              <source [src]="blobUrl" type="audio/webm">
+            </audio>
+            <button type="button" mat-button   (click)="onClick()">Upload</button>
+          </span>
+          <!-- audio record section end here-->
 
 
-        <!-- audio record section -->
-        <span  *ngIf="audio==true">
-          <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
-          <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
-          <button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear Recording</button>
-          <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
-          <audio *ngIf="!isRecording && blobUrl"  controls>
-            <source [src]="blobUrl" type="audio/webm">
-          </audio>
-          <button type="button" mat-button   (click)="onClick()">Upload</button>
+          <!-- video record section start here-->
+          <span *ngIf="vdo==true">
+            <div class="row">
+              <div class="col-xs-12 centerdiv">
+                <div class="videoresponsive">
+                  <video #video class="video"></video>
+                </div>                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 centerdiv">
+                <button type="button" md-raised-button  (click)="startVideoRecording()"> Record </button>
+                <button type="button" md-raised-button (click) ="stopVideoRecording()"> Stop</button>
+                <button type="button" *ngIf="downloadButton==true" md-raised-button  (click)="download()"> Download</button>
+                <button type="button" *ngIf="uploadButton==true" md-raised-button  (click)="videoUpload()"> Upload</button>
+              </div>
+            </div>
+          </span>
+
         </span>
-         <!-- audio record section end here-->
-
-
-         <!-- video record section start here-->
-         <span *ngIf="vdo==true">
-          <div class="row">
-            <div class="col-xs-12">
-              <video #video class="video"></video>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <button type="button" md-raised-button  (click)="startVideoRecording()"> Record </button>
-              <button type="button" md-raised-button (click) ="stopVideoRecording()"> Stop</button>
-              <button type="button" *ngIf="downloadButton==true" md-raised-button  (click)="download()"> Download</button>
-              <button type="button" *ngIf="uploadButton==true" md-raised-button  (click)="videoUpload()"> Upload</button>
-            </div>
-          </div>
-         </span>
-
-
 <span class="clearboth"></span>
+        <span class="btngroup">
+          <button mat-button (click)="submitfunction();">Submit</button>
+          <button mat-button   [mat-dialog-close]="data" cdkFocusInitial class="Record_Cancel">Cancel</button>
+        </span>
         
-        <button mat-button (click)="submitfunction();">Submit</button>
-
-        <button mat-button   [mat-dialog-close]="data" cdkFocusInitial class="Record_Cancel">Cancel</button>
 
     </form>
 
