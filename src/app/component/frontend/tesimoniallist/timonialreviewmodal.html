@@ -62,8 +62,8 @@
 
           <!-- audio record section -->
           <span  *ngIf="audio==true" class="centerdiv">
-            <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()"><span class="material-icons">mic</span> Start Recording</button>
-            <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()"><span class="material-icons">mic_off</span> Stop Recording</button>
+            <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()"> Start Recording</button>
+            <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()"> Stop Recording</button>
             <button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear Recording</button>
             <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
             <audio *ngIf="!isRecording && blobUrl"  controls>
