@@ -323,8 +323,14 @@ width: auto;
   }
 
 
+  @media only screen and (max-width: 1440px) {
+  .innerpagebanner.mat-card .mat-card-content span {padding-left: 0;}
+  .innerpagebanner.mat-card h1 {font-size: 66px;}
+  .innerpagebanner.mat-card p {font-size: 16px;}
+  }
+
   @media only screen and (max-width: 1360px) {
-    
+    .innerpagebanner.mat-card h1 {font-size: 56px;}
     .carousalinfo p.description3 {font-size: 22px;line-height: 30px;}
     .carousalinfo h3 {font-size: 30px;line-height: 40px;}
     .carousalinfo h1 {font-size: 62px!important;line-height: 62px!important;}

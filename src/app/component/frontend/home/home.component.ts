@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
     navigation:true,
     paginationSpeed : 1000,
     goToFirstSpeed : 2000,
-    // transitionStyle:"fade",
+    transitionStyle:"fade",
     margin: 0,
     nav: false,
     loop: false,

@@ -6,6 +6,9 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+* {
+    --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420)));
+}
 
 .contact-form .main-div{height:auto!important;display:inherit!important;justify-content:inherit!important;align-items:inherit!important}
 .contact-form .mat-form-field-appearance-legacy .mat-form-field-wrapper .mat-form-field-suffix{display:none}
