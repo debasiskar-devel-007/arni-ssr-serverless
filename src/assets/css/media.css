@@ -3,7 +3,6 @@
   .mainwrappercontent{width:96%}
   .maincontainer{width:96%}
   .singlecolgallarycontent p .readmoredesc {max-width: 76% !important;}
-   .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos2 .slide-image-right{right: -10%;}
    /* .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1 .slide-image-right{right: -10%;} */
   }
 
@@ -14,11 +13,9 @@
   } */
 
   @media only screen and (max-width: 1440px) {
-    .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1 .slide-image-right{right: -8%;}
   }
   
   @media only screen and (max-width: 1366px) {
-    .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos2 .slide-image-right{right: -15%;}
   .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover {font-size: 14px;}
   .probidhomeblock1.mat-card .mat-tab-header{width:100%}
   .homemain .mat-nav-list{width:100%;width:96%;align-items:center}
@@ -326,13 +323,18 @@ width: auto;
   }
 
 
+  @media only screen and (max-width: 1440px) {
+  .innerpagebanner.mat-card .mat-card-content span {padding-left: 0;}
+  .innerpagebanner.mat-card h1 {font-size: 66px;}
+  .innerpagebanner.mat-card p {font-size: 16px;}
+  }
+
   @media only screen and (max-width: 1360px) {
-    
-    .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos0 .slide-image-right {right: -5%;}
+    .innerpagebanner.mat-card h1 {font-size: 56px;}
     .carousalinfo p.description3 {font-size: 22px;line-height: 30px;}
     .carousalinfo h3 {font-size: 30px;line-height: 40px;}
     .carousalinfo h1 {font-size: 62px!important;line-height: 62px!important;}
-    .carousalinfo { width: 50%;}
+    .carousalinfo { width: 54%;}
     .generalcls .slide-text p{text-align: center !important;}
   }
 
