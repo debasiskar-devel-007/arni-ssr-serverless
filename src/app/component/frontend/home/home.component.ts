@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
   public slides: any = [
     {
       "img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", 
+
+      "imgright":"../../assets/images/homeslider-1imgright.png",
       
       "imgmobile":"../../assets/images/slide1img-imgmobile.jpg", 
       
@@ -45,7 +47,9 @@ export class HomeComponent implements OnInit {
 
     {
       "img":"../../assets/images/arnehome-slide2img.jpg", 
-      
+
+      "imgright":"../../assets/images/homeslider-2imgright.png", 
+
       "imgmobile":"../../assets/images/slide2img-imgmobile.jpg",       
       
       "title":"The Best",
@@ -56,6 +60,8 @@ export class HomeComponent implements OnInit {
 
     {
       "img":"../../assets/images/arnehome-slide3img.jpg", 
+
+      "imgright":"../../assets/images/homeslider-3imgright.png",
       
       "imgmobile":"../../assets/images/slide3img-imgmobile.jpg", 
       

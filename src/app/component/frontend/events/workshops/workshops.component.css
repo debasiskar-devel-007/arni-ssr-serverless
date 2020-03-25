@@ -83,6 +83,29 @@
     .eventlistrightthumbnail .event_share_block .sociallink fa{font-size: 16px;}
 
     @media only screen and (max-width: 1700px) {
+        .workshopsbg.mat-card{position: relative;}
+        .workshopsbg.mat-card::after{
+            content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 39%, rgba(255, 255, 255, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(39%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 39%, rgba(255, 255, 255, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 39%, rgba(255, 255, 255, 0) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 39%, rgba(255, 255, 255, 0) 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 39%, rgba(255, 255, 255, 0) 100%);
+  /* W3C */
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+  /* IE6-9 */
+        }
         .event_wrapper{width:96%!important;padding:0!important}
         .event_wrapper .event_left{width:70%;float:left}
         .event_wrapper .event_left{width:70%;float:left}
@@ -101,7 +124,7 @@
 
 
 @media only screen and (max-width: 1199px) {
-
+    .workshopsbg.mat-card::after{display: none;}
     /* .event_img{ height: auto!important;} */
 
     .event_wrapper .event_left{ width: 100%; float: none; margin-bottom: 15px;}

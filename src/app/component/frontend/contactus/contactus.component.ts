@@ -20,9 +20,6 @@ export class ContactusComponent implements OnInit {
   public routeingUrl: any = 'dashboard';
 
   constructor(private readonly meta: MetaService, public apiService: ApiService) {
-
-    //console.log('--koushikcontact-----', this.apiService.serverUrl);    
-
     this.meta.setTitle('Arnie Fonseca - Contact Me');
     this.meta.setTag('og:description', 'Get in touch with Arnie Fonseca today to learn how his programs can help you or your employees in improving their performances in the workplace, as well as create better lives for themselves.');
     this.meta.setTag('twitter:description', 'Get in touch with Arnie Fonseca today to learn how his programs can help you or your employees in improving their performances in the workplace, as well as create better lives for themselves.');
