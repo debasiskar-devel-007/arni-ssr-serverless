@@ -150,7 +150,7 @@
     background: #fff;
     flex: 1 1 100%;
   /*  margin-right:5px !important;*/
-    flex-basis: 100%; height: 20px!important;
+    flex-basis: 100%;
 
 }
 
@@ -231,4 +231,10 @@
 .newsletterwrapper {width: 100%;}
 .footertopwrapper .mat-list-item:before {display: none;}
 
+}
+
+@media (max-width: 480px) {
+    .newsletterwrapper form span {position: relative;}
+    .newslettermain .example-container .mat-raised-button {padding: 3px 6px 2px!important;position: absolute;right: 0;min-width: 1px;}
+    .newsletterwrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {height: 41px;}
 }
