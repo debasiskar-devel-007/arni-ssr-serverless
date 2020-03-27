@@ -35,11 +35,7 @@ export class TesimoniallistComponent implements OnInit {
 
   safeSrc: SafeResourceUrl;
 
-  
-    
- 
- 
-  
+
 
   copyText(val: any) {
     //console.log('copyText');
@@ -553,7 +549,7 @@ videoUpload(){
 
   this.api.audioUpload(url, formData)
     .subscribe((events: any) => {
-     console.log("video upload",events)
+     //console.log("video upload",events)
      if (events.status == "success") {
       this.videoserverData = events.data.fileservername;
     }
@@ -598,7 +594,7 @@ videoUpload(){
         "source": 'testimonial',
         "data": this.testimonialReviewForm.value
       }
-      console.warn(postData);
+      //console.warn(postData);
       this.api.CustomRequest(postData, 'testimonialaddandreview').subscribe((res: any) => {
         //console.warn(res);
         if (res.status == "success") {
