@@ -85,11 +85,15 @@ export class TesimonialComponent implements OnInit {
    }
 
   ngOnInit() {
+    
+      
+
     let data: any = {};
     data = {
       source:"testimonial_view"
     }
         this.apiService.addDataWithoutToken(data, "datalistwithouttoken").subscribe((res2:any)=>{
+          setTimeout(()=>{  
           this.TestimonialListArray = res2.res;
           for(let i in this.TestimonialListArray){
             if(this.TestimonialListArray[i].video_url!='' && this.TestimonialListArray[i].video_url!=null){
@@ -102,8 +106,9 @@ export class TesimonialComponent implements OnInit {
 
             }
           }
-         
+        }, 5000);
         });
+     
   }
 
 
