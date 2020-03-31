@@ -6,16 +6,7 @@
         <div *ngFor="let image of TestimonialListArray;let i= index">
            <!-- video -->
             <span *ngIf="image.video_url!=null && image.video_url!=''">
-              
-              <span (click)="fetchvideo()" *ngIf="hideSpan==true">
-                <img class="videoimage" src="https://img.youtube.com/vi/{{image.video_url}}/sddefault.jpg">
-              <!-- <img class="playicon" src="../../../assets/images/youtubevideoicon.png"> -->
-              </span>
-
-              <ng-container *ngIf="youtubeFlage==true">
-                <iframe width="420" height="315" [src]="image.video_full" allow="autoplay"></iframe>
-              </ng-container>
-              
+              <iframe width="420" height="315" [src]="image.video_full"></iframe>
             </span>
 
           <span  *ngIf="image.video_url==null">
