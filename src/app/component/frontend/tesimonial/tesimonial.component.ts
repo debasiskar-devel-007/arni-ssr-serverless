@@ -21,7 +21,8 @@ export interface DialogData {
 })
 export class TesimonialComponent implements OnInit {
 
-  public name: string;
+  public youtubeFlage:boolean=false;
+  public hideSpan:boolean=true;
   safeSrc: SafeResourceUrl;
   
   carouselOptions = {
@@ -101,17 +102,29 @@ export class TesimonialComponent implements OnInit {
               let url:any;
               url="https://www.youtube.com/embed/";
                // console.log('video url....>',url+val);
-               this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + this.TestimonialListArray[i].video_url);
-               this.TestimonialListArray[i].video_full=this.safeSrc
+               this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + this.TestimonialListArray[i].video_url+'?autoplay=1');
+               this.TestimonialListArray[i].video_full=this.safeSrc;
 
             }
           }
+          console.warn(this.TestimonialListArray);
         }, 5000);
         });
+
+
+
      
   }
 
 
+    /**show video modal on click of thamnail function by sourav */
+    fetchvideo(){
+      
+      this.youtubeFlage=true;
+      this.hideSpan=false;
+      console.log(this.youtubeFlage);
+      console.log(this.hideSpan);
+    }  
 
 
   //*********** Coming Soon ************//
