@@ -23,7 +23,9 @@ export class ServiceComponent implements OnInit {
       source:"service_view"
     }
     this.apiservice.addDataWithoutToken(data,"datalistwithouttoken").subscribe((result: any)=>{
+      // setTimeout(()=>{  
       this.serviceListConfig= result.res;
+    // }, 5000);
       //console.log('service list', this.serviceListConfig);
     });
 

@@ -211,7 +211,11 @@
       <p>Choose the ideal counselling and consulting services based on your needs from a <br>host of different services aimes towards offering varying benefits.</p>
     </mat-card-content>
     <mat-card-content class="blockcontent">
-      <app-service></app-service>
+
+     
+        <app-service></app-service>
+     
+     
       <button mat-button class="btnblue btnmiddle sim-button" [routerLink]="['/ourservices']">view more</button>
     </mat-card-content>
   </span>
@@ -257,7 +261,14 @@
       <h2>TESTIMONIAL</h2>
     </mat-card-content>
     <mat-card-content class="blockcontent">  
+      
+     <ng-container *ngIf="testimonial==true">
+
       <app-tesimonial></app-tesimonial>
+     </ng-container>
+       
+      
+      
       <button mat-button class="btnblue sim-button" (click)="btnClick();">View More</button>
     </mat-card-content>
   </span>

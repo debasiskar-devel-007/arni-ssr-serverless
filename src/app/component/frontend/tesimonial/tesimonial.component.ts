@@ -94,7 +94,8 @@ export class TesimonialComponent implements OnInit {
       source:"testimonial_view"
     }
         this.apiService.addDataWithoutToken(data, "datalistwithouttoken").subscribe((res2:any)=>{
-          setTimeout(()=>{  
+         
+           setTimeout(()=>{  
           this.TestimonialListArray = res2.res;
           for(let i in this.TestimonialListArray){
             if(this.TestimonialListArray[i].video_url!='' && this.TestimonialListArray[i].video_url!=null){
@@ -107,8 +108,9 @@ export class TesimonialComponent implements OnInit {
 
             }
           }
-          console.warn(this.TestimonialListArray);
-        }, 5000);
+          // console.warn(this.TestimonialListArray);
+         }, 3000);
+    
         });
 
 
