@@ -103,7 +103,7 @@ export class TesimonialComponent implements OnInit {
               let url:any;
               url="https://www.youtube.com/embed/";
                // console.log('video url....>',url+val);
-               this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + this.TestimonialListArray[i].video_url+'?autoplay=1');
+               this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + this.TestimonialListArray[i].video_url);
                this.TestimonialListArray[i].video_full=this.safeSrc;
 
             }
