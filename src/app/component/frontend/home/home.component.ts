@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
       
       "title":"Arnie <br>Fonseca",
       
-      "subtitle":"Personal Development Mentor", 
+      "subtitle":"Performance and Productivity Mentor", 
       
       "description":"Invite your audience to be mentored by me at your event, and learn <b>some simple, but powerful methods that will make immediate improvements in your lives.</b>", 
       
@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit {
       
       "title":"It’s All Here!!",
      
-      "description3":"Personal and Professional Coaching & Training, <br>Couples & Relationship Counselling, <br>High-Performance Programs and many other such <br>offerings -", 
+      "description3":"Personal and Professional Coaching & Training, <br>Couples & Relationship Counselling, <br>High Performance and Productivity Programs and many other such <br>offerings -", 
       
       "description2":"You have a large variety to choose from."
     }
