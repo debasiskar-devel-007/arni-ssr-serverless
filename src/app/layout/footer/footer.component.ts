@@ -4,7 +4,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,} from '@angular/material/dialo
 import {FormControl, FormBuilder, Validators, FormGroup} from '@angular/forms';
 import  {ApiService} from '../../api.service';
 import {CookieService} from "ngx-cookie-service";
-import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
 
 
 export interface DialogData {}
@@ -26,7 +25,7 @@ export class FooterComponent implements OnInit {
   navbarOpen = false;
 
 
-  constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService,public facebook:FacebookService) {
+  constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService) {
 
     // console.log(router.url);
       this.serverUrl = apiService.serverUrl;
@@ -37,13 +36,6 @@ export class FooterComponent implements OnInit {
       })
   /*    this.setvalue();
       console.log("souftrgsuhdfkjshifh",this.myform.controls['email'].value);*/
-
-
-
-      facebook.init({
-        appId: '2912281308815518',
-        version: 'v2.9'
-      });
 
     
    }
@@ -190,33 +182,23 @@ newslatterViewModal(deta:any){
 
   // Social share 
 
-  fbShare(val:any){
+  fbShare(){
     //console.log(val)
-    var url='https://www.facebook.com/TotalRecoveryArizona';
+    window.open('https://www.facebook.com/TotalRecoveryArizona');
     // console.log(url)
-
-    let params: UIParams = {
-      href: url,
-      method: 'share'
-    };
-    this.facebook.ui(params).then((res:UIResponse)=>{
-    }).catch(facebook=>{
-      // console.log(facebook)
-    });
   }
 
-  twitterShare(val:any){
+  twitterShare(){
     window.open('https://twitter.com/TotalRecoveryAZ');
   }
 
 
-  linkedinShare(val:any){
-
+  linkedinShare(){
     window.open('https://www.linkedin.com/pub/arnie-fonseca-jr/8/817/436');
 
   }
 
-  gplusShare(val:any){
+  gplusShare(){
     window.open('https://plus.google.com/112702437266074743597/posts');
 
 }
