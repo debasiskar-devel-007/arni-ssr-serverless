@@ -1,7 +1,9 @@
+
 @media only screen and (max-width: 1666px) {
   .mainwrappercontent{width:96%}
   .maincontainer{width:96%}
   .singlecolgallarycontent p .readmoredesc {max-width: 76% !important;}
+   /* .homebanner .owl-carousel.owl-drag .owl-item .itemcls.pos1 .slide-image-right{right: -10%;} */
   }
 
   /* @media only screen and (max-width: 1428px) {
@@ -10,7 +12,8 @@
 
   } */
 
-
+  @media only screen and (max-width: 1440px) {
+  }
   
   @media only screen and (max-width: 1366px) {
   .singlecolgallarycontent p a, .singlecolgallarycontent p a span, .singlecolgallarycontent p a:hover {font-size: 14px;}
@@ -271,7 +274,10 @@ width: auto;
   .logomodalwrapper{width:90%;margin:0 auto;display:block}
   }
 
-
+  @media only screen and (max-width: 1800px) {
+    .carousalinfo {left: 2%;}
+  }
+  
 
   @media only screen and (max-width: 1700px) {
 
@@ -317,15 +323,25 @@ width: auto;
   }
 
 
+  @media only screen and (max-width: 1440px) {
+  .innerpagebanner.mat-card .mat-card-content span {padding-left: 0;}
+  .innerpagebanner.mat-card h1 {font-size: 66px;}
+  .innerpagebanner.mat-card p {font-size: 16px;}
+  }
+
   @media only screen and (max-width: 1360px) {
-    .carousalinfo { width: 90%;}
+    .innerpagebanner.mat-card h1 {font-size: 56px;}
+    .carousalinfo p.description3 {font-size: 22px;line-height: 30px;}
+    .carousalinfo h3 {font-size: 30px;line-height: 40px;}
+    .carousalinfo h1 {font-size: 62px!important;line-height: 62px!important;}
+    .carousalinfo { width: 54%;}
     .generalcls .slide-text p{text-align: center !important;}
   }
 
   
   @media only screen and (max-width: 1250px) {
     .carousalinfo {
-      width: 90%; left: 5%;
+      width: 41%;
   }
 
   .slide1imgperson{ width: 200px;display: block;}
@@ -339,12 +355,14 @@ width: auto;
 
   @media only screen and (min-width:1200px) {
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image{display: block;}
+  .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-right{position: absolute; right: 0; top:0;}
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-mobile{display: none;}
   }
 
   @media only screen and (max-width:1199px) {
     
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image{display: none;}
+  .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-right{display: none;}
   .homebanner .owl-carousel.owl-drag .owl-item .itemcls .slide-image-mobile{height: auto;}
   .homebanner .owl-carousel.owl-drag .owl-item:nth-child(3) {background-color: #226170;flex: 0 0 100%;}
   .homebanner .owl-carousel.owl-drag .owl-item:nth-child(2) {background-color: #65cfdd;flex: 0 0 100%;}
@@ -395,13 +413,7 @@ width: auto;
   .carousalinfo h3 {font-size: 50px;line-height: normal;text-align: center;margin-left: auto;}
   .generalcls .carousalinfo p{text-align: center!important;}
   .carousalinfo h1 br{display: none;}
-
-    .slide1imgperson {
-      width: 200px;
-      display: block;
-      margin: 0 auto;
-  }
-
+  .slide1imgperson {width: 200px;display: block;margin: 0 auto !important;}
     
   }
 
