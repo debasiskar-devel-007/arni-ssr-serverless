@@ -30,9 +30,13 @@
 .headertopwrapper.mat-card-content{display:flex;align-items:center;justify-content:space-between;margin-bottom:0}
 .headertop.mat-card .mat-list-base .mat-list-item,.headertop.mat-card .mat-list-base .mat-list-option{height:auto}
 .headertop.mat-card{background:#292b33!important;padding:5px!important}
-.infoblock .mat-list-base{display:flex;padding-top:0}
+.infoblock .mat-list-base{display:flex;padding-top:0;align-items: center;}
 .infoblock .mat-list-item-content{color:#fff}
 .infoblock .mat-list-item{height:auto}
+.infoblock .homeblogsociallistswrapper {width: 148px;}
+.infoblock .blogsociallists .sociallink fa, .infoblock .blogsociallists .sociallink i {padding: 6px 4px!important;font-size: 14px!important;}
+.infoblock .blogsociallists{margin-top: 0;}
+
 .langblock select{color:#fff;text-transform:uppercase}
 .topcontactinfoblock .mat-list .mat-list-item{flex:1 1 auto;width:inherit;text-transform:uppercase}
 .topcontactinfoblock .mat-list .mat-list-item img{margin-right:10px}

@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
 
 
 export interface DialogData {
@@ -30,7 +31,7 @@ export class HeaderComponent implements OnInit {
   public user_full_name: any = '';
   public token:any='';
    
-  constructor(public router: Router, public cookieService: CookieService, public dialog: MatDialog, public activeroute: ActivatedRoute) {
+  constructor(public router: Router, public cookieService: CookieService, public dialog: MatDialog, public activeroute: ActivatedRoute,public facebook:FacebookService) {
     // console.log(router.url)
     // console.log('++++++++++++++++++',activeroute.snapshot.routeConfig.path)
     // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
@@ -44,6 +45,10 @@ export class HeaderComponent implements OnInit {
     //   console.log(this.userCookies)
     //   }
 
+    facebook.init({
+      appId: '2912281308815518',
+      version: 'v2.9'
+    });
       
    }
 
@@ -72,7 +77,38 @@ export class HeaderComponent implements OnInit {
     this.sidenavToggle.emit();
   }*/
 
+  // Social share 
 
+  fbShare(val:any){
+    //console.log(val)
+    var url='https://arniefonseca.influxiq.com/';
+    // console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+
+  twitterShare(val:any){
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/');
+  }
+
+
+  linkedinShare(val:any){
+
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/');
+
+  }
+
+tumblrShare(val:any){
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/');
+
+}
 
 }
 
