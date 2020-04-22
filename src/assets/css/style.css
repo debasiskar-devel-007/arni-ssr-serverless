@@ -317,8 +317,8 @@ a{cursor:pointer;outline:none}
 .sociallink.env fa, .sociallink.env i{background-color:#70787a;text-align: center;}
 .sociallink.share fa, .sociallink a.share i{background-color:#97ce32;text-align: center;}
 .sociallink.link fa, .sociallink a.link i{background-color:#97ce32;text-align: center;}
-.sociallink.gplus i, .sociallink a.gplus i{background-color:#dd4b39;text-align: center;}
-
+.sociallink.gplus, .sociallink a.gplus{background-color:#dd4b39;text-align: center;}
+.sociallink.gplus i{padding: 6px 10px;color: #fff;font-size: 24px;display: block;}
 .searchlistblock.mat-card{padding:0!important}
 .bottom_blog .mat-dialog-container{height:auto!important}
 .bottom_blog .mat-tab-labels{flex-wrap:wrap}
