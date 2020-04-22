@@ -1,34 +1,56 @@
 .contactusbg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat top right;background-size:cover}
 .contactuswrapper.mat-card{background:url(../../../../assets/images/contactuswrapperbg.png) no-repeat center center #fff!important;background-size:cover!important}
 .contactusimgwrap{position:absolute;bottom:-80px;left:2%;width:40%}
-.contactusblockinner{display:flex!important;justify-content:space-between;align-items:stretch}
-.contactusinfoblock{padding:0;position:absolute;top:50%;left:3%;width:40%;transform:translateY(-50%);z-index:9999}
-.contact-form .contactusinfoblock .main-div .mat-card{margin:4em auto!important}
+.contactusblockinner{display:flex!important;justify-content:space-between;align-items:stretch;position:relative}
+.contactusinfoblock{padding:0;position:absolute;top:48px;right:-38px;width:35%;z-index:99;background:#fff}
 .contactusformblock{flex:1 1 100%;position:relative}
-.contactusinfoblock .mat-card{box-shadow:none!important;padding:30px 48px!important;background:transparent!important;height:100%}
-.contactusinfoblock .mat-card img{margin-left:-22%;width:143%;margin-top:0}
-.contactusinfoblock .mat-card h2{text-transform:uppercase;color:#fff;font-size:40px}
-.contactusinfoblock .mat-card{box-shadow:none!important}
-.contactusinfoblock .mat-card{padding:0!important}
-.contactusinfoblock .mat-card img{width:130%}
 .contactusblock{position:relative}
+.contactusdocs{display:flex;justify-content:space-between;flex-direction:column;align-items:flex-start}
+.contactinfodetail{display:flex;-webkit-box-align:center;align-items:stretch;-webkit-box-pack:justify;justify-content:space-between}
+.contactusinfoblockmap{padding:14px;background:-moz-linear-gradient(0deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:-webkit-gradient(linear,left top,right top,color-stop(0%,rgba(10,217,252,1)),color-stop(100%,rgba(16,208,116,1)));background:-webkit-linear-gradient(0deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:-o-linear-gradient(0deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:-ms-linear-gradient(0deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:linear-gradient(90deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0ad9fc',endColorstr='#10d074',GradientType=1)}
+.googlemap{overflow:hidden;padding-bottom:56.25%;position:relative;height:0}
+.googlemap iframe{left:0;top:0;height:100%;width:100%;position:absolute}
+.googlemap::after{-webkit-box-shadow:inset 2px -1px 13px 0 rgba(0,0,0,0.5);-moz-box-shadow:inset 2px -1px 13px 0 rgba(0,0,0,0.5);box-shadow:inset 2px -1px 13px 0 rgba(0,0,0,0.5);content:'';position:absolute;width:100%;height:100%;z-index:999;top:0;left:0}
+.contactusinfoblocktop{border:1px solid #0adaff;padding:9px;margin:0}
+.contactusinfoblocktop .mat-card-title{padding:10px 2% 8px;width:96%;margin-bottom:14px!important;font-size:18px!important;font-size:18px!important;line-height:normal!important;justify-content:flex-start!important;background:-moz-linear-gradient(182deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:-webkit-gradient(linear,left top,right top,color-stop(0%,rgba(16,208,116,1)),color-stop(100%,rgba(10,217,252,1)));background:-webkit-linear-gradient(182deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:-o-linear-gradient(182deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:-ms-linear-gradient(182deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);background:linear-gradient(268deg,rgba(10,217,252,1) 0%,rgba(16,208,116,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#10d074',endColorstr='#0ad9fc',GradientType=1)}
+.generalcls p{text-align:center!important}
+.generalcls p a{color: #24252c !important;}
+.generalcls p a:hover{color: #00a2ff !important;}
+.contactusimg{width:142px;height:166px;display:block;background-color:#22dacd;padding:2px;overflow:hidden}
+.contactusimg img{display:block!important;width:100%!important;height:auto;background:#000}
+.generalcls .contactusdocs p {text-align: left!important;}
 
-.generalcls p{text-align: center!important;}
+@media (max-width: 1666px) {
+.contactusinfoblock{right:25px;width:30%;z-index:99;background:#fff}
+}
+@media (max-width: 1400px) {
+.contactusimgwrap{left:-4%}
+.contactusinfoblock{right:52px;width:32%;z-index:99;background:#fff}
+}
 @media (max-width: 1280px) {
-.contactusinfoblock .mat-card img{width:118%;margin-left:-10%;margin-top:-15%}
+.contactusinfoblock{right:52px;width:35%}
+.contactusimgwrap{left:-12%}
 }
 @media (max-width: 1199px) {
-.contactusinfoblock .mat-card img{margin-left:auto;width:100%;margin-top:0}
-.contactusimgwrap{position:absolute;bottom:-80px;left:-18%;width:56%}
+.contactusinfoblock{right:0;width:37%}
+.contactusimgwrap{position:absolute;bottom:-80px;left:-22%;width:56%}
+}
+@media (max-width: 1100px) {
+.contactusimgwrap{position:absolute;bottom:-80px;left:-21%;width:52%}
 }
 @media (max-width: 991px) {
 .contactusimgwrap{position:inherit;bottom:0;left:0;width:28%}
-.contactusinfoblock{padding:0;position:inherit;top:0;left:0;width:100%;transform:inherit;height:auto;z-index:9999}
-.contactusinfoblock .mat-card{box-shadow:none;padding:30px 48px!important;background:transparent;height:auto}
 .contact-form .main-div .from.mat-card{margin:0!important;width:100%!important;padding-left:15px!important;padding-right:15px!important;margin:0 auto!important}
-
-.contactusblockinner{   display: block;}
-
-.contactusimgwrap{ display: none;}
+.contactusblockinner{display:block}
+.contactusimgwrap{display:none}
+.contactusblockinner{flex-wrap:wrap}
+.contactusinfoblock{padding:0;position:inherit;top:0;right:0;width:93%!important;z-index:99;background:#fff;margin:0 auto}
 }
 
+@media (max-width: 480px) {
+.contactusinfoblock{width:90%!important}
+.contactinfodetail{display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:justify;justify-content:center;flex-wrap:wrap;text-align:center}
+.contactusdocs{-webkit-box-align:center;align-items:center;flex: 1 1 100%;}
+.contactusinfoblocktop .mat-card-title{justify-content:center!important}
+.generalcls .contactusdocs p {text-align: center!important;}
+}
