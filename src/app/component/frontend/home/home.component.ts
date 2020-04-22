@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, Inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, HostListener,Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MetaService } from '@ngx-meta/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
@@ -24,17 +24,18 @@ export class HomeComponent implements OnInit {
 
   public name: string;
 
-
+ public service:boolean=false;
+ public testimonial:boolean=false;
   
   public slides: any = [
     {
-      "img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", 
+      "img":"../../assets/images/arnehome-slide1img.jpg", 
 
       "imgright":"../../assets/images/homeslider-1imgright.png",
       
       "imgmobile":"../../assets/images/slide1img-imgmobile.jpg", 
       
-      "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg", 
+      "slideimg":"../../assets/images/slide1img-person.jpg", 
       
       
       "title":"Arnie <br>Fonseca",
@@ -80,7 +81,7 @@ export class HomeComponent implements OnInit {
 
   
 
-  // public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
+  // public slides: any = ["../../assets/images/arnehome-slide1img.jpg","../../assets/images/arnehome-slide1img.jpg","../../assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
     autoPlay : 6000,
@@ -127,7 +128,7 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private cdr: ChangeDetectorRef, private router: Router, private readonly meta: MetaService, public dialog: MatDialog) {
-
+    this.testimonial=false;
     this.meta.setTitle('Arnie Fonseca - Personal Development Mentor');
     this.meta.setTag('og:description', 'Invite your audience to be mentored by “Coach Arnie” at your events, and create an environment for them to learn simple, yet powerful self-development methods that will improve their lives considerably.');
     this.meta.setTag('twitter:description', 'Invite your audience to be mentored by “Coach Arnie” at your events, and create an environment for them to learn simple, yet powerful self-development methods that will improve their lives considerably.');
@@ -144,11 +145,9 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    var data: any = {};
-    //console.log(this.slides);
   }
-
-  ngAfterViewInit(): void {
+ 
+  ngAfterViewInit(): void {   
     this.cdr.detectChanges();
   }
 
@@ -156,7 +155,14 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/testimonial');
   };
 
-  
+  @HostListener("window:scroll", [])
+
+  onWindowScroll() {
+      if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+          this.testimonial = true;
+          // console.warn(this.testimonial);
+      }
+       }  
     
 }
 

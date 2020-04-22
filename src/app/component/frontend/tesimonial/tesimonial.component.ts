@@ -21,7 +21,8 @@ export interface DialogData {
 })
 export class TesimonialComponent implements OnInit {
 
-  public name: string;
+  public youtubeFlage:boolean=false;
+  public hideSpan:boolean=true;
   safeSrc: SafeResourceUrl;
   
   carouselOptions = {
@@ -85,11 +86,16 @@ export class TesimonialComponent implements OnInit {
    }
 
   ngOnInit() {
+    
+      
+
     let data: any = {};
     data = {
       source:"testimonial_view"
     }
         this.apiService.addDataWithoutToken(data, "datalistwithouttoken").subscribe((res2:any)=>{
+         
+           setTimeout(()=>{  
           this.TestimonialListArray = res2.res;
           for(let i in this.TestimonialListArray){
             if(this.TestimonialListArray[i].video_url!='' && this.TestimonialListArray[i].video_url!=null){
@@ -98,15 +104,29 @@ export class TesimonialComponent implements OnInit {
               url="https://www.youtube.com/embed/";
                // console.log('video url....>',url+val);
                this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + this.TestimonialListArray[i].video_url);
-               this.TestimonialListArray[i].video_full=this.safeSrc
+               this.TestimonialListArray[i].video_full=this.safeSrc;
 
             }
           }
-         
+          // console.warn(this.TestimonialListArray);
+         }, 3000);
+    
         });
+
+
+
+     
   }
 
 
+    /**show video modal on click of thamnail function by sourav */
+    fetchvideo(){
+      
+      this.youtubeFlage=true;
+      this.hideSpan=false;
+      console.log(this.youtubeFlage);
+      console.log(this.hideSpan);
+    }  
 
 
   //*********** Coming Soon ************//

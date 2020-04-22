@@ -45,6 +45,7 @@
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
     "@ngx-meta/core": "^8.0.2",
     "aws-serverless-express": "^3.2.0",
+    "compression": "^1.7.4",
     "contactus-lib-influxiq": "0.0.1",
     "cors": "~2.8.4",
     "cp-cli": "^1.1.0",
