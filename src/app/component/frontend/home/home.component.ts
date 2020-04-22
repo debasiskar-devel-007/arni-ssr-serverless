@@ -29,13 +29,13 @@ export class HomeComponent implements OnInit {
   
   public slides: any = [
     {
-      "img":"https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg", 
+      "img":"../../assets/images/arnehome-slide1img.jpg", 
 
       "imgright":"../../assets/images/homeslider-1imgright.png",
       
       "imgmobile":"../../assets/images/slide1img-imgmobile.jpg", 
       
-      "slideimg":"https://arniefonseca.influxiq.com/assets/images/slide1img-person.jpg", 
+      "slideimg":"../../assets/images/slide1img-person.jpg", 
       
       
       "title":"Arnie <br>Fonseca",
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
 
   
 
-  // public slides: any = ["https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg","https://arniefonseca.influxiq.com/assets/images/arnehome-slide1img.jpg"];
+  // public slides: any = ["../../assets/images/arnehome-slide1img.jpg","../../assets/images/arnehome-slide1img.jpg","../../assets/images/arnehome-slide1img.jpg"];
   
   carouselBannerOptions = {
     autoPlay : 6000,
