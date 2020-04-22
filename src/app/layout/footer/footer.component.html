@@ -142,6 +142,15 @@
               <a [routerLink]="['/home']"><img src="../../assets/images/logomain.png" class="landinglogoblock1" /></a>
             </span>
             <p>© 2019 Arnie Fonseca. All rights reserved.</p>
+
+            <span class="homeblogsociallistswrapper">
+              <span class="blogsociallists">
+                <a class="sociallink fa fb" (click)="fbShare(image)"><fa name="facebook" class="fa-facebook"></fa></a>
+                <a class="sociallink fa twi" (click)="twitterShare(image)"><fa name="twitter" class="fa-twitter"></fa></a>
+                <a class="sociallink fa lin" (click)="linkedinShare(image)"><fa name="linkedin" class="fa-linkedin"></fa></a>
+                <a class="sociallink fa tumblr" (click)="tumblrShare(image)"><fa name="tumblr" class="fa-tumblr"></fa></a>
+              </span>
+            </span>
           </span>
         </span>
       </mat-card-content>

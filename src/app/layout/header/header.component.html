@@ -118,6 +118,16 @@
         </span>
         <span class="infoblock">
           <mat-list role="list">
+            <mat-list-item>
+              <span class="homeblogsociallistswrapper">
+                <span class="blogsociallists">
+                  <a class="sociallink fa fb" (click)="fbShare(image)"><fa name="facebook" class="fa-facebook"></fa></a>
+                  <a class="sociallink fa twi" (click)="twitterShare(image)"><fa name="twitter" class="fa-twitter"></fa></a>
+                  <a class="sociallink fa lin" (click)="linkedinShare(image)"><fa name="linkedin" class="fa-linkedin"></fa></a>
+                  <a class="sociallink fa tumblr" (click)="tumblrShare(image)"><fa name="tumblr" class="fa-tumblr"></fa></a>
+                </span>
+              </span>
+            </mat-list-item>
             <mat-list-item role="listitem" class="activedropmenu">
               <span><a target="_blank" href="https://arniefonseca-backend.influxiq.com"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a></span>
               <!-- <span><a  (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></span> -->

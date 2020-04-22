@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,} from '@angular/material/dialo
 import {FormControl, FormBuilder, Validators, FormGroup} from '@angular/forms';
 import  {ApiService} from '../../api.service';
 import {CookieService} from "ngx-cookie-service";
+import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
 
 
 export interface DialogData {}
@@ -25,7 +26,7 @@ export class FooterComponent implements OnInit {
   navbarOpen = false;
 
 
-  constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService) {
+  constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService,public facebook:FacebookService) {
 
     // console.log(router.url);
       this.serverUrl = apiService.serverUrl;
@@ -39,7 +40,10 @@ export class FooterComponent implements OnInit {
 
 
 
-
+      facebook.init({
+        appId: '2912281308815518',
+        version: 'v2.9'
+      });
 
     
    }
@@ -180,6 +184,42 @@ newslatterViewModal(deta:any){
       this.dialog.closeAll();
     }, 4000);
   }
+
+
+
+
+  // Social share 
+
+  fbShare(val:any){
+    //console.log(val)
+    var url='https://arniefonseca.influxiq.com/';
+    // console.log(url)
+
+    let params: UIParams = {
+      href: url,
+      method: 'share'
+    };
+    this.facebook.ui(params).then((res:UIResponse)=>{
+    }).catch(facebook=>{
+      // console.log(facebook)
+    });
+  }
+
+  twitterShare(val:any){
+    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/');
+  }
+
+
+  linkedinShare(val:any){
+
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/');
+
+  }
+
+tumblrShare(val:any){
+    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/');
+
+}
 
 
 }
