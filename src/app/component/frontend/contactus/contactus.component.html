@@ -20,13 +20,34 @@
                 </mat-card-content>
             </span>
             <span class="mainwrappercontent contactusblock">  
-                    <span class="contactusimgwrap"><img src="../../../../assets/images/contactusmainimg.png" style="width: 100%; display: block; margin: 0; padding: 0;"></span>              
+                <span class="contactusimgwrap"><img src="../../../../assets/images/contactusmainimg.png" style="width: 100%; display: block; margin: 0; padding: 0;"></span>              
                 <mat-card-content class="contactusblockinner"> 
                     <span class="contactusformblock">
                         <lib-contactus [serverUrl]="serverUrl" [addEndpoint]="addEndpoint" [routeingUrl]="pageUrl" [formTitle]="formTitle" class="formgenrl contact-form"></lib-contactus>
-                    </span>            
+                    </span>         
+                    <mat-card-content class="contactusinfoblock">
+                        <mat-card-content class="contactusinfoblocktop">
+                            <mat-card-title>Contact information:</mat-card-title>
+                            <mat-card-content class="contactinfodetail">
+                                <span class="contactusdocs">
+                                    <p>Arnie Fonseca</p>
+                                    <p><a href="tel:6023909144">Call (602)-390-9144</a></p>
+                                    <p><a href="mailto:arniefonsecajr@gmail.com" target="_top">arniefonsecajr@gmail.com</a></p>
+                                    <p>Phoenix, Arizona 85078</p>
+                                </span>
+                                <span class="contactusimg">
+                                    <img src="../../../../assets/images/imgcontactinfo.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                        <mat-card-content class="contactusinfoblockmap">
+                                <div class="googlemap">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26577.532913860796!2d-112.0373290038273!3d33.626273366316674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b718c70bbc80f%3A0x482feddc2ef1e866!2sPhoenix%2C%20AZ%2085078%2C%20USA!5e0!3m2!1sen!2sin!4v1587558903130!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>                             
+                        </mat-card-content>
+                    </mat-card-content> 
                 </mat-card-content>
-                
+                 
             </span> 
         </mat-card>
 
