@@ -192,7 +192,7 @@ newslatterViewModal(deta:any){
 
   fbShare(val:any){
     //console.log(val)
-    var url='https://arniefonseca.influxiq.com/';
+    var url='https://www.facebook.com/TotalRecoveryArizona';
     // console.log(url)
 
     let params: UIParams = {
@@ -206,18 +206,18 @@ newslatterViewModal(deta:any){
   }
 
   twitterShare(val:any){
-    window.open('https://twitter.com/intent/tweet?url=arniefonseca.influxiq.com/');
+    window.open('https://twitter.com/TotalRecoveryAZ');
   }
 
 
   linkedinShare(val:any){
 
-    window.open('https://www.linkedin.com/sharing/share-offsite/?url=arniefonseca.influxiq.com/');
+    window.open('https://www.linkedin.com/pub/arnie-fonseca-jr/8/817/436');
 
   }
 
-tumblrShare(val:any){
-    window.open('http://www.tumblr.com/share?url=arniefonseca.influxiq.com/');
+  gplusShare(val:any){
+    window.open('https://plus.google.com/112702437266074743597/posts');
 
 }
 
