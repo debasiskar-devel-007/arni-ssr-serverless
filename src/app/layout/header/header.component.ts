@@ -76,26 +76,29 @@ export class HeaderComponent implements OnInit {
 
   fbShare(){
     //console.log(val)
-    window.open('https://www.facebook.com/TotalRecoveryArizona');
+    window.open('https://business.facebook.com/realcoacharnie/?business_id=1947997428579170');
     // console.log(url)
 
   }
 
   twitterShare(){
-    window.open('https://twitter.com/TotalRecoveryAZ');
+    window.open('https://twitter.com/RealCoachArnie');
+  }
+
+  instaShare(){
+    window.open('https://www.instagram.com/coach_arnief/');
   }
 
 
-  linkedinShare(){
+  // linkedinShare(){
 
-    window.open('https://www.linkedin.com/pub/arnie-fonseca-jr/8/817/436');
+  //   window.open('https://www.linkedin.com/pub/arnie-fonseca-jr/8/817/436');
 
-  }
+  // }
 
-  gplusShare(){
-    window.open('https://plus.google.com/112702437266074743597/posts');
-
-}
+  // gplusShare(){
+  //   window.open('https://plus.google.com/112702437266074743597/posts');
+ // }
 
 }
 

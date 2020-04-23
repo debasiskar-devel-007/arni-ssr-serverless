@@ -304,6 +304,7 @@ a{cursor:pointer;outline:none}
 .fa-envelope i{display:none}
 .fa-share i{display:none}
 .fa-link i{display:none}
+
 .sociallink.tumblr fa,.sociallink.tumblr i{background-color:#34526f}
 .sociallink.fb fa,.sociallink.fb i{background-color:#5170b1;text-align:center}
 .sociallink.twi fa,.sociallink.twi i{background-color:#1bbef7;text-align:center}
@@ -313,6 +314,8 @@ a{cursor:pointer;outline:none}
 .sociallink.env fa,.sociallink.env i{background-color:#70787a;text-align:center}
 .sociallink.share fa,.sociallink a.share i{background-color:#97ce32;text-align:center}
 .sociallink.link fa,.sociallink a.link i{background-color:#97ce32;text-align:center}
+.sociallink.insta,.sociallink a.insta{background-color:#3f729b;text-align:center}
+.sociallink.insta i{padding:6px 10px;color:#fff;font-size:24px;display:block}
 .sociallink.gplus,.sociallink a.gplus{background-color:#dd4b39;text-align:center}
 .sociallink.gplus i{padding:6px 10px;color:#fff;font-size:24px;display:block}
 .searchlistblock.mat-card{padding:0!important}
