@@ -13,7 +13,7 @@ export class ContactusComponent implements OnInit {
   public pageUrl: any = 'home';
   public serverUrl: any = this.apiService.serverUrl;
   public addEndpoint: any = {
-    endpoint:'addorupdatedata',
+    endpoint:'addorupdatedatawithouttoken',
     source:'contactusForm'
   };
   public getDataUrl: any = 'datalist';
