@@ -3,7 +3,8 @@
 .imgwrapper{background:#fff;width:208px;height:auto;float:left;padding:6px;box-shadow:0 2px 5px #ddd;margin-right:25px;margin-bottom:9px}
 .imgwrapper img{max-width:100%}
 .textwrapper h2{font-family:'HelveticaBold';font-size:36px;color:#24252c;padding-bottom:10px}
-.textwrapper h3{font-family:'Helvetica-Normal';font-size:20px;color:#24252c;text-transform:uppercase;padding:10px 0;text-align:left;padding-right:30%;line-height:31px}
+/* .textwrapper h3{font-family:'Helvetica-Normal';font-size:20px;color:#24252c;text-transform:uppercase;padding:10px 0;text-align:left;padding-right:30%;line-height:31px} */
+.textwrapper h3{font-family: 'Helvetica-Normal';font-size: 18px;color:#24252c;padding:10px 0;text-align:left;padding-right:34%}
 .textwrapper p{font-family: 'Helvetica-Normal';font-size: 18px;color:#24252c;padding:10px 0;text-align:left;padding-right:34%}
 .textwrapper p span{color:#14bfcf}
 /* .textwrapper p strong{font-family:'HelveticaBold'} */
