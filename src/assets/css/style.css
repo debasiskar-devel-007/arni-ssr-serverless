@@ -33,7 +33,9 @@ a{cursor:pointer;outline:none}
 .generalcls .mat-card-title{font-family:'HelveticaBold';font-size:48px!important;line-height:48px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:30px!important;color:#2a2b2c;display:flex;width:100%;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;justify-content:center}
 .generalcls .mat-card-title span span{font-family:'HelveticaBold';padding-left:10px}
 .generalcls p{font-family:'Helvetica-Normal';font-size:18px;color:#24252c;margin:0;padding:0;line-height:24px;font-weight:400}
-.generalcls p strong{text-transform:uppercase;font-family:'HelveticaBold'}
+.generalcls p {font-family:'Helvetica-Normal';font-size:18px;color:#24252c;margin:0;padding:0;line-height:24px;font-weight:400}
+/* .generalcls p strong{text-transform:uppercase;font-family:'HelveticaBold'} */
+.generalcls p strong{font-family:'HelveticaBold'}
 .generalcls{padding:40px 0!important}
 .generalcls .is-table-row{direction:rtl}
 .generalcls .is-table-row p{direction:rtl;direction:initial}

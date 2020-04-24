@@ -121,8 +121,9 @@
   .homeblock2servcontent h2{margin-top:10px!important;padding-left:0!important;padding-right:0!important;text-align:center}
   .homeblock2servcontent p{text-align:center!important}
   .homeblock2servcontent p p{padding:0!important}
-  .homeblock2servcontent h2 span.homeblock2iconcontent{text-align:center!important;margin-left:auto!important}
+  .homeblock2servcontent h2 span.homeblock2iconcontent{text-align:center!important;margin-left:auto!important;margin-top: 15px;}
   .homeblock2servcontent button{float:none!important;margin:10px 15px!important}
+  .homeblock2servcontent button {float: none!important;}
   }
   @media only screen and (max-width: 768px) {
   .probidhomeblock4 .mat-list-base.lists .mat-list-item{width:43%}
