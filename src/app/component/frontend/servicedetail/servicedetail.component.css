@@ -34,7 +34,7 @@
     min-height: 54px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;}
-.generalcls.blogdetail .mat-card-title{height: auto; margin: 15px 0px !important;text-transform: uppercase;}
+.generalcls.blogdetail .mat-card-title{height: 71px; margin: 15px 0px !important;text-transform: uppercase;}
 .generalcls.blogdetail .mat-card-title span{display: block;font-size: 18px;margin-top: 8px;color: #888;font-weight: normal;text-transform: capitalize;}
 
 
