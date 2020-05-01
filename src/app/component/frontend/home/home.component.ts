@@ -67,11 +67,11 @@ export class HomeComponent implements OnInit {
       "imgmobile":"../../assets/images/slide3img-imgmobile.jpg", 
       
      
-      "subtitle2":"Coaching, Training, <br>Counselling", 
+      "subtitle2":"Coaching, Training, <br>Counseling", 
       
       "title":"It’s All Here!!",
      
-      "description3":"Personal and Professional Coaching & Training, <br>Couples & Relationship Counselling, <br>High Performance and Productivity Programs and many other such <br>offerings -", 
+      "description3":"Personal and Professional Coaching & Training, <br>Couples & Relationship Counseling, <br>High Performance and Productivity Programs and many other such <br>offerings -", 
       
       "description2":"You have a large variety to choose from."
     }
