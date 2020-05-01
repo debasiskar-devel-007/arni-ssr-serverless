@@ -198,10 +198,10 @@ newslatterViewModal(deta:any){
   }
 
 
-//   linkedinShare(){
-//     window.open('https://www.linkedin.com/pub/arnie-fonseca-jr/8/817/436');
+  linkedinShare(){
+    window.open('https://www.linkedin.com/pub/arnie-fonseca-jr/8/817/436');
 
-//   }
+  }
 
 //   gplusShare(){
 //     window.open('https://plus.google.com/112702437266074743597/posts');
