@@ -380,7 +380,7 @@ a{cursor:pointer;outline:none}
 .innercommonbannercls.mat-card .mat-card-content{padding-top:20px}
 
 .paypalblock{overflow-x:hidden;background:url(../images/paypalbg.jpg) no-repeat left center;top:0;left:0;min-width:100%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;position:relative;text-align: center;}
-.paypalblock .mat-card-subtitle{color:#2a2a2a;font-family:"Helvetica-Regular";font-size:30px;text-align:center;margin-top:8px;}
+.paypalblock .mat-card-subtitle{color:#2a2a2a;font-family:"Helvetica-Regular";font-size:28px;text-align:center;margin-top:8px;}
 .paypalblock .paypal-button{margin-top: 30px;}
 .paypalblock .paypal-button.paypal-button-color-gold{background: #ffc439;color: #111;padding: 4px 70px;border: 1px solid #f2a81b;}
 .paypalblock .mainwrappercontent{width: 940px;margin: 0 auto; display: block;}
