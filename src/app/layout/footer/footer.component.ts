@@ -177,6 +177,10 @@ newslatterViewModal(deta:any){
     }, 4000);
   }
 
+    // paypal url 
+    openpaypalurl(){
+      window.open('https://www.paypal.com/webapps/shoppingcart?flowlogging_id=44edfef2153d2&mfid=1589861791353_44edfef2153d2#/checkout/openButton')
+    }
 
 
 

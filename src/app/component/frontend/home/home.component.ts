@@ -155,10 +155,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/testimonial');
   };
 
-  // paypal url 
-  openpaypalurl(){
-    window.open('https://www.paypal.com/webapps/shoppingcart?flowlogging_id=f549202440bfa&mfid=1589175658680_f549202440bfa')
-  }
+
 
   @HostListener("window:scroll", [])
 
