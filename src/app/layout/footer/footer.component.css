@@ -30,7 +30,7 @@
 .popupdetail p{font-family:"Helvetica-Normal";font-size:18px;line-height:28px;margin:0}
 .footermodal button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;border:0;background-color:#1d1d1d;color:#fff;opacity:1;border-radius:0;margin-right:0;margin-top:0;width:30px;height:30px}
 .footerwrappercontent h3{display:flex;flex:1 1 100%;padding-bottom:12px;margin-bottom:6px}
-.footernavlist{width:521px}
+.footernavlist{width:521px;margin-left: 30px;}
 .footerwrapper span h3{font-family:"HelveticaBold";font-size:24px;text-transform:capitalize;color:#fff}
 .footerwrapper .footerborder h3{display:inline-block;border-bottom:2px solid #fff;flex:inherit!important}
 .newsletterwrapper{width:321px}

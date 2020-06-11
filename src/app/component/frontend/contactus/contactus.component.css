@@ -1,8 +1,8 @@
 .contactusbg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat top right;background-size:cover}
 .contactuswrapper.mat-card{background:url(../../../../assets/images/contactuswrapperbg.png) no-repeat center center #fff!important;background-size:cover!important}
 .contactusimgwrap{position:absolute;bottom:-80px;left:2%;width:40%}
-.contactusblockinner{display:flex!important;justify-content:space-between;align-items:stretch;position:relative}
-.contactusinfoblock{padding:0;position:absolute;top:48px;right:-38px;width:35%;z-index:99;background:#fff}
+.contactusblockinner{display:flex!important;justify-content:space-between;align-items:stretch;position:relative;margin-bottom: 0;}
+.contactusinfoblock{padding:0;position:absolute;top:24px;right:-38px;width:35%;z-index:99;background:#fff}
 .contactusformblock{flex:1 1 100%;position:relative}
 .contactusblock{position:relative}
 .contactusdocs{display:flex;justify-content:space-between;flex-direction:column;align-items:flex-start}
@@ -19,6 +19,8 @@
 .contactusimg{width:142px;height:166px;display:block;background-color:#22dacd;padding:2px;overflow:hidden}
 .contactusimg img{display:block!important;width:100%!important;height:auto;background:#000}
 .generalcls .contactusdocs p {text-align: left!important;}
+
+.contact-form .form{box-shadow:none !important}
 
 @media (max-width: 1666px) {
 .contactusinfoblock{right:25px;width:30%;z-index:99;background:#fff}
