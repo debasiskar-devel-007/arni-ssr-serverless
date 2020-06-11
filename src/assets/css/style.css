@@ -379,11 +379,11 @@ a{cursor:pointer;outline:none}
 .innercommonbannercls{height:295px;width:100%}
 .innercommonbannercls.mat-card .mat-card-content{padding-top:20px}
 
-.paypalblock{overflow-x:hidden;background:url(../images/paypalbg.jpg) no-repeat left center;top:0;left:0;min-width:100%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;position:relative;text-align: center;min-height: 203px;}
-.paypalblock .mat-card-subtitle{color:#2a2a2a;font-family:"Helvetica-Regular";font-size:28px;text-align:center;margin-top:8px;}
+.paypalblock{overflow-x:hidden;background:url(../images/paypalbg.jpg) no-repeat left center;top:0;left:0;min-width:100%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;position:relative;text-align: center;height: auto;display: flex;align-items: center;}
+.paypalblock .mat-card-subtitle{color:#2a2a2a;font-family:"Helvetica-Regular";font-size:28px;text-align:center;margin-top:20px!important;margin-bottom: 0 !important;}
 .paypalblock .paypal-button{margin-top: 30px;}
 .paypalblock .paypal-button.paypal-button-color-gold{background: #ffc439;color: #111;padding: 4px 70px;border: 1px solid #f2a81b;}
-.paypalblock .mainwrappercontent{width: 940px;margin: 0 auto; display: block;}
+.paypalblock .mainwrappercontent{width: 940px;margin: 0 auto; display: block;padding-bottom: 5px;}
 
 @media (max-width: 1540px) {
 .paypalblock .mainwrappercontent {width: 710px;}
@@ -396,14 +396,7 @@ a{cursor:pointer;outline:none}
 .paypalblock .mainwrappercontent {width: 710px;margin-right: 2%;}
 }   
 @media (max-width: 991px) {
-.paypalblock {
-    background-size: 300%!important;
-    background-position: left top!important;
-    padding-top: 49%!important;
-    background-color: #7ddde4!important;
-    min-height: inherit!important;
-    padding-bottom: 40px!important;
-}
+.paypalblock{background-size:300%!important;background-position:left top!important;padding-top:54%!important;background-color:#7ddde4!important;min-height:inherit!important;padding-bottom:40px!important}
 .paypalblock .mainwrappercontent {width: 90%;margin-right: auto;} 
 .paypalblock .mat-card-subtitle {font-size: 24px;margin-bottom: 0;}
 .paypalblock.generalcls h2 {font-size: 27px!important;line-height: normal !important;}
@@ -559,7 +552,7 @@ a{cursor:pointer;outline:none}
 .singlecolgallarycontent p .readmoredesc{max-width:74%}
 .gallaryvideo .singlecolgallarycontent h2{text-align:center}
 }
-.homeblock2servcontent button{float:right!important;margin:10px 15px!important}
+.homeblock2servcontent button{float:right!important;margin:10px 15px!important;margin-left: 30px !important;}
 .homeblock2icon img{min-width:40px;min-height:30px;max-width:150px}
 .truncate{overflow:ellipsis;text-overflow:-o-ellipsis-lastline;display:-webkit-box;line-height:normal;max-height:108px;-webkit-line-clamp:5}
 .truncateopen{overflow:inherit!important;min-height:94px;height:100%!important;height:auto!important;text-overflow:inherit!important;-webkit-line-clamp:inherit!important}
