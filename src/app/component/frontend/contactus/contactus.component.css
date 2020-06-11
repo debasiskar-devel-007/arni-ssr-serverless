@@ -20,7 +20,6 @@
 .contactusimg img{display:block!important;width:100%!important;height:auto;background:#000}
 .generalcls .contactusdocs p {text-align: left!important;}
 
-.contact-form .form{box-shadow:none !important}
 
 @media (max-width: 1666px) {
 .contactusinfoblock{right:25px;width:30%;z-index:99;background:#fff}

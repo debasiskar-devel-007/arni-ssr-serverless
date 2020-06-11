@@ -57,6 +57,7 @@
 .newsletterwrapper{width:83%;display:block;margin:0 auto 30px}
 .footertopwrapper .mat-nav-list .mat-list-item{font-size:13px}
 .footerwrapper .mainwrappercontent .mat-card-content{margin-bottom:0;justify-content:center;display:flex;flex-wrap:wrap;text-align:center}
+.footernavlist {margin-left: auto;margin-right: auto;}
 }
 @media (max-width: 840px) {
 .footerwrapper .mainwrappercontent .mat-card-content{margin-bottom:0;justify-content:center;display:flex;flex-wrap:wrap;text-align:center}

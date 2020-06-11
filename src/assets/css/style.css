@@ -397,10 +397,14 @@ a{cursor:pointer;outline:none}
 .paypalblock .mainwrappercontent {width: 710px;margin-right: 2%;}
 }   
 @media (max-width: 991px) {
-.paypalblock{background-size:300%!important;background-position:left top!important;padding-top:54%!important;background-color:#7ddde4!important;min-height:inherit!important;padding-bottom:40px!important}
+.paypalblock{background-size:300%!important;background-position:left top!important;padding-top:48%!important;background-color:#7ddde4!important;min-height:inherit!important;padding-bottom:40px!important}
 .paypalblock .mainwrappercontent {width: 90%;margin-right: auto;} 
 .paypalblock .mat-card-subtitle {font-size: 24px;margin-bottom: 0;}
 .paypalblock.generalcls h2 {font-size: 27px!important;line-height: normal !important;}
+}
+
+@media (max-width: 600px) {
+.paypalblock{padding-top:51%!important;}
 }
 
 @media (min-width: 320px) {
@@ -413,7 +417,7 @@ a{cursor:pointer;outline:none}
 .innercommonbannercls{height:auto}
 }
 @media (max-width: 1540px) {
-.contact-form .main-div .from.mat-card{width:440px!important;padding:40px!important;    margin-left: 28% !important}
+.contact-form .main-div .from.mat-card{width:440px!important;padding:40px!important;    margin-left: 33% !important}
 }
 @media (max-width: 1366px) {
 .contact-form .main-div .from.mat-card{width:420px!important;padding:50px 24px!important;margin-left:28%!important}
@@ -432,7 +436,7 @@ a{cursor:pointer;outline:none}
 .contact-form .main-div .from.mat-card {margin-left: 20%!important;}
 }
 @media only screen and (max-width: 1100px) {
-.contact-form .main-div .from.mat-card{width:390px!important;padding:50px 24px!important;margin-left:20%!important}
+.contact-form .main-div .from.mat-card{width:414px!important;padding:50px 24px!important;margin-left:20%!important}
 }
 @media only screen and (min-width: 320px) {
 .gallaryvideo .mat-list-item{width:100%!important}
