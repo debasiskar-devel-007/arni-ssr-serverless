@@ -172,6 +172,8 @@ ckeditor{margin-bottom:9px!important;display:inline-block;width:100%}
 .videoaudiosection audio{width:100%}
 .videoaudiosection .recordedTime{margin-top:10px;margin-bottom:10px}
 .videoaudiosection .audiodiv button{margin-top:10px}
+.homeblock2servcontent p span p br{display: none;}
+
 @media only screen and (max-width: 1199px) {
 .homebanner .owl-carousel.owl-drag .owl-stage-outer.owl-height[style]{height:auto!important}
 .homebanner .owl-carousel.owl-drag .owl-item.active{display:block!important}
