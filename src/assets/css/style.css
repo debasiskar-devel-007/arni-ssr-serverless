@@ -379,6 +379,7 @@ a{cursor:pointer;outline:none}
 .block4subwrapper.textwrapper .mat-list .mat-list-item-content{flex-wrap:wrap;padding:0}
 .innercommonbannercls{height:295px;width:100%}
 .innercommonbannercls.mat-card .mat-card-content{padding-top:20px}
+.contact-form .main-div .from.mat-card{box-shadow: none !important;}
 
 .paypalblock{overflow-x:hidden;background:url(../images/paypalbg.jpg) no-repeat left center;top:0;left:0;min-width:100%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;position:relative;text-align: center;height: auto;display: flex;align-items: center;}
 .paypalblock .mat-card-subtitle{color:#2a2a2a;font-family:"Helvetica-Regular";font-size:28px;text-align:center;margin-top:20px!important;margin-bottom: 0 !important;}
